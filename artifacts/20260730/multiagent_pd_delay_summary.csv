@@ -1,0 +1,11 @@
+delay,policy,n_games,mean_cooperation_rate,mean_payoff_per_action,mean_stale_retaliations,mean_forgiving_actions,mean_defection_bursts
+0,blind_tft,40,1.0,3.0,0.0,0.0,0.0
+0,queue_aware_forgiving,40,1.0,3.0,0.0,24.0,0.0
+1,blind_tft,40,1.0,3.0,0.0,0.0,0.0
+1,queue_aware_forgiving,40,1.0,3.0,0.0,24.0,0.0
+2,blind_tft,40,1.0,3.0,0.0,0.0,0.0
+2,queue_aware_forgiving,40,1.0,3.0,0.0,48.0,0.0
+3,blind_tft,40,1.0,3.0,0.0,0.0,0.0
+3,queue_aware_forgiving,40,1.0,3.0,0.0,72.0,0.0
+5,blind_tft,40,1.0,3.0,0.0,0.0,0.0
+5,queue_aware_forgiving,40,1.0,3.0,0.0,120.0,0.0

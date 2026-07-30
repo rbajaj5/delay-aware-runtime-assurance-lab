@@ -1,0 +1,7 @@
+task,model,metric,value,fit_seconds
+smooth_hopf_phase,spline_edge_surrogate,circular_mae_radians,0.1715552900294021,0.00465820002136752
+smooth_hopf_phase,mlp,circular_mae_radians,0.005630863023217946,3.0603804999846034
+discrete_stale_conflict,spline_edge_surrogate,accuracy,0.884652981427175,0.0
+discrete_stale_conflict,spline_edge_surrogate,positive_recall,0.7007874015748031,0.0
+discrete_stale_conflict,mlp,accuracy,0.884652981427175,1.9469265999796335
+discrete_stale_conflict,mlp,positive_recall,0.7244094488188977,1.9469265999796335
