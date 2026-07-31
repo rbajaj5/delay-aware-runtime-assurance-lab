@@ -18,6 +18,8 @@ The most recent experiments are:
 - `run_crossplay_delay_protocol_simulation.py`: an OvercookedV2-inspired asymmetric-information signaling game with cross-play convention mismatch and delayed, sequence-aware feedback.
 
 The bounded-aging run is the current multi-agent extension. At delay 3 and background load 4 messages per agent per round, the exploratory mean stale-decision rates were approximately 0.496 for FIFO, 0.217 for strict priority, and 0.362 for priority with aging. The aging policy served roughly 2,125 background messages per game, while strict priority served roughly 46. These values are mechanism diagnostics, not registered claims.
+
+The literature notes in `docs/` include scoped connections to zero-shot coordination, oracle-consistency evaluation, and physics-informed kernel surrogates. They are conceptual guides, not additional evidence for the simulation results.
 - `run_delay_random_matrix_loop_diagnostic.py`: a finite random-matrix diagnostic for delayed receipt-age structure and loop residuals.
 - `run_delay_ensemble_transfer.py`: transfer of the same queue policies across ring, random-regular, and two-block topologies.
 - `run_delay_branch_sector_diagnostic.py`: branch/sector separation diagnostics for a complex phase surrogate.
