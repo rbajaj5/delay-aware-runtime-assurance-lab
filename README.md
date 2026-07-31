@@ -15,6 +15,7 @@ The most recent experiments are:
 - `run_semantic_queue_pollution_simulation.py`: useful coordination traffic competing with low-value background traffic under finite service capacity.
 - `run_queue_semantic_decision_simulation.py`: downstream decision staleness caused by acting on delayed neighbor state.
 - `run_fair_queue_multiagent_simulation.py`: FIFO, strict priority, and bounded-aging queue disciplines, measuring the trade-off between stale decisions and background-message starvation.
+- `run_crossplay_delay_protocol_simulation.py`: an OvercookedV2-inspired asymmetric-information signaling game with cross-play convention mismatch and delayed, sequence-aware feedback.
 
 The bounded-aging run is the current multi-agent extension. At delay 3 and background load 4 messages per agent per round, the exploratory mean stale-decision rates were approximately 0.496 for FIFO, 0.217 for strict priority, and 0.362 for priority with aging. The aging policy served roughly 2,125 background messages per game, while strict priority served roughly 46. These values are mechanism diagnostics, not registered claims.
 - `run_delay_random_matrix_loop_diagnostic.py`: a finite random-matrix diagnostic for delayed receipt-age structure and loop residuals.
