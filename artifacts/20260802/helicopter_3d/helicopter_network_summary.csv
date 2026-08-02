@@ -1,0 +1,3 @@
+policy,conflict_steps,total_conflict_edges,peak_edge_count,mean_degree_active,peak_largest_component,peak_algebraic_connectivity,triangle_steps,most_exposed_helicopter,most_exposed_steps
+delay_blind,132,846,7,1.175,3,3.0,115,H1,132
+queue_aware,115,115,1,0.3194444444444444,2,2.0,0,H1,115
