@@ -1,0 +1,3 @@
+policy,frames,mean_assignment_edges,total_conflict_edges,peak_conflict_edges
+delay_blind,180,8.0,846,7
+queue_aware,180,8.0,115,1
