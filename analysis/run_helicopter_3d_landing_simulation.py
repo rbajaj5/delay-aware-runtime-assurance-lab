@@ -205,10 +205,23 @@ def draw_helicopter(ax, position: np.ndarray, color: str, phase: str) -> None:
     ax.scatter([x], [y], [z], color=color, s=32 if phase != "landed" else 44, depthshade=False)
 
 
+def altara_terrain() -> tuple[np.ndarray, np.ndarray, np.ndarray]:
+    """Return a fictional horseshoe-canyon terrain, not copied map data."""
+    x = np.linspace(0.0, 14.0, 34)
+    y = np.linspace(0.0, 17.0, 38)
+    xx, yy = np.meshgrid(x, y)
+    ridge = 0.55 * np.exp(-((xx - 7.0) ** 2) / 7.0)
+    canyon = 0.35 * np.sin((yy - 2.0) / 2.4) ** 2
+    bowl = 0.45 * np.exp(-((xx - 7.0) ** 2 + (yy - 8.5) ** 2) / 18.0)
+    zz = 0.10 + ridge + canyon + bowl
+    return xx, yy, zz
+
+
 def render(rows_blind: list[dict[str, object]], rows_aware: list[dict[str, object]], summary: dict[str, dict[str, object]]) -> tuple[Path, Path]:
     video = OUT / "helicopter_3d_delay_comparison.mp4"
     poster = OUT / "helicopter_3d_delay_comparison_poster.png"
     colors = plt.cm.tab10(np.linspace(0, 1, N_HELICOPTERS))
+    terrain_x, terrain_y, terrain_z = altara_terrain()
     fig = plt.figure(figsize=(15, 8), constrained_layout=True)
     axes = [fig.add_subplot(1, 2, 1, projection="3d"), fig.add_subplot(1, 2, 2, projection="3d")]
 
@@ -221,7 +234,17 @@ def render(rows_blind: list[dict[str, object]], rows_aware: list[dict[str, objec
         ax.set_ylabel("north")
         ax.set_zlabel("altitude")
         ax.view_init(elev=26, azim=-62)
-        ax.set_title(policy.replace("_", " ").title())
+        ax.set_title(f"Altara Sidewind loop | {policy.replace('_', ' ').title()}")
+        ax.plot_surface(
+            terrain_x,
+            terrain_y,
+            terrain_z,
+            cmap="YlGn",
+            linewidth=0,
+            antialiased=True,
+            alpha=0.26,
+            zorder=0,
+        )
         for pad_id, pad in enumerate(PADS):
             ax.scatter([pad[0]], [pad[1]], [pad[2]], marker="s", s=130, color="black", depthshade=False)
             ax.text(pad[0], pad[1], pad[2] + 0.35, f"P{pad_id + 1}", fontsize=8)
@@ -258,7 +281,7 @@ def render(rows_blind: list[dict[str, object]], rows_aware: list[dict[str, objec
     def update(step):
         draw_panel(axes[0], rows_blind, "delay_blind", step)
         draw_panel(axes[1], rows_aware, "queue_aware", step)
-        fig.suptitle("3D helicopter landing coordination under delayed clearances", fontsize=15)
+        fig.suptitle("Republic of Altara: fictional Sidewind landing-coordination benchmark", fontsize=15)
 
     update(0)
     fig.savefig(poster, dpi=180)
@@ -283,9 +306,10 @@ def main() -> None:
     report.write_text(
         "\n".join(
             [
-                "# 3D Helicopter Landing Coordination",
+                "# Republic of Altara: 3D Helicopter Landing Coordination",
                 "",
                 "This is an exploratory kinematic communication experiment, not a validated helicopter flight-dynamics model.",
+                "Altara is fictional; its procedural horseshoe terrain is a new visual setting, not a copied game map or real location.",
                 "Both policies use the same eight helicopters, three pads, clearance schedule, and heterogeneous message delays.",
                 "The queue-aware policy rejects clearances older than the three-step freshness threshold or past their slot expiry.",
                 "",

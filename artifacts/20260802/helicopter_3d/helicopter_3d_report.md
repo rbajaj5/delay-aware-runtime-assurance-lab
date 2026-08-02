@@ -1,6 +1,7 @@
-# 3D Helicopter Landing Coordination
+# Republic of Altara: 3D Helicopter Landing Coordination
 
 This is an exploratory kinematic communication experiment, not a validated helicopter flight-dynamics model.
+Altara is fictional; its procedural horseshoe terrain is a new visual setting, not a copied game map or real location.
 Both policies use the same eight helicopters, three pads, clearance schedule, and heterogeneous message delays.
 The queue-aware policy rejects clearances older than the three-step freshness threshold or past their slot expiry.
 
