@@ -8,6 +8,8 @@ This repository is an exploratory companion to the delay-aware runtime-assurance
 
 - `analysis/`: standalone Python simulations and read-only diagnostics.
 - `paper/queue-aware-coordination-draft.md`: the current self-contained manuscript draft for the queue benchmark.
+- `paper/queue-aware-coordination-draft.docx`: formatted DOCX version of the manuscript draft.
+- `paper/build_queue_paper_docx.py`: reproducible DOCX builder.
 - `artifacts/20260730/`: CSV outputs, plots, replay artifacts, reports, and SHA-256 manifests from the runs.
 - `REPO_MANIFEST.sha256`: hash manifest for the repository's tracked files, generated after assembly.
 
