@@ -7,6 +7,7 @@ This repository is an exploratory companion to the delay-aware runtime-assurance
 ## What is here
 
 - `analysis/`: standalone Python simulations and read-only diagnostics.
+- `paper/queue-aware-coordination-draft.md`: the current self-contained manuscript draft for the queue benchmark.
 - `artifacts/20260730/`: CSV outputs, plots, replay artifacts, reports, and SHA-256 manifests from the runs.
 - `REPO_MANIFEST.sha256`: hash manifest for the repository's tracked files, generated after assembly.
 
@@ -20,6 +21,7 @@ The most recent experiments are:
 - `run_jl_projection_safety_diagnostic.py`: tests whether random-projection geometry preservation also preserves a coordinatewise safety predicate; in this toy setting it does not.
 - `run_helicopter_3d_landing_simulation.py`: renders an exploratory 3D helicopter landing-coordination replay under delayed clearances, comparing delay-blind and queue-aware freshness handling.
 - `analyze_helicopter_network.py`: derives temporal conflict-graph, component, motif, and spectral diagnostics from the retained helicopter trace without rerunning the simulation.
+- `derive_prime_graph_signature.py`: derives an optional prime-labeled arithmetic fingerprint from the retained conflict graph without rerunning the simulation.
 
 The bounded-aging run is the current multi-agent extension. At delay 3 and background load 4 messages per agent per round, the exploratory mean stale-decision rates were approximately 0.496 for FIFO, 0.217 for strict priority, and 0.362 for priority with aging. The aging policy served roughly 2,125 background messages per game, while strict priority served roughly 46. These values are mechanism diagnostics, not registered claims.
 
