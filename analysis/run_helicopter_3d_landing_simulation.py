@@ -44,9 +44,9 @@ class Clearance:
 
 PADS = np.array(
     [
-        [4.0, 6.0, 0.5],
-        [10.0, 6.0, 0.5],
-        [7.0, 12.0, 0.5],
+        [5.0, 8.5, 1.0],
+        [9.0, 8.5, 2.5],
+        [7.0, 10.8, 4.0],
     ],
     dtype=float,
 )
@@ -89,7 +89,7 @@ def initial_positions() -> np.ndarray:
     for heli in range(N_HELICOPTERS):
         pad = PADS[heli % N_PADS]
         angle = (heli * 2.0 * math.pi / N_HELICOPTERS) + 0.2
-        positions[heli] = pad + np.array([math.cos(angle) * 5.0, math.sin(angle) * 5.0, 7.5])
+        positions[heli] = np.array([pad[0] + math.cos(angle) * 5.0, pad[1] + math.sin(angle) * 5.0, 7.5])
     return positions
 
 
@@ -121,7 +121,6 @@ def simulate(queue_aware: bool) -> tuple[list[dict[str, object]], dict[str, obje
             if phases[heli] != "approach":
                 continue
             target = PADS[clearance.pad].copy()
-            target[2] = 0.8
             delta = target - positions[heli]
             distance = float(np.linalg.norm(delta))
             if distance <= 0.24:
@@ -192,6 +191,49 @@ def write_csv(path: Path, rows: list[dict[str, object]]) -> None:
         writer.writerows(rows)
 
 
+def threshold_sweep() -> list[dict[str, int]]:
+    global MAX_FRESHNESS
+    rows: list[dict[str, int]] = []
+    for threshold in range(0, 8):
+        MAX_FRESHNESS = threshold
+        summary = simulate(queue_aware=True)[1]
+        rows.append(
+            {
+                "freshness_threshold": threshold,
+                "accepted_clearances": int(summary["accepted_clearances"]),
+                "landed_helicopters": int(summary["landed_helicopters"]),
+                "conflict_steps": int(summary["conflict_steps"]),
+                "conflict_pair_steps": int(summary["conflict_pair_steps"]),
+                "conflict_pairs": int(summary["conflict_pairs"]),
+            }
+        )
+    MAX_FRESHNESS = 3
+    return rows
+
+
+def render_threshold_sweep(rows: list[dict[str, int]]) -> Path:
+    path = OUT / "helicopter_3d_threshold_sweep.png"
+    thresholds = [row["freshness_threshold"] for row in rows]
+    conflicts = [row["conflict_pair_steps"] for row in rows]
+    landed = [row["landed_helicopters"] for row in rows]
+    figure, axis = plt.subplots(figsize=(9, 5.2), constrained_layout=True)
+    axis.plot(thresholds, conflicts, marker="o", linewidth=2.4, color="#b2182b", label="pair-conflict events")
+    axis.set_xlabel("accepted message age threshold")
+    axis.set_ylabel("pair-conflict events", color="#b2182b")
+    axis.tick_params(axis="y", labelcolor="#b2182b")
+    axis.set_xticks(thresholds)
+    axis.grid(alpha=0.25)
+    landed_axis = axis.twinx()
+    landed_axis.plot(thresholds, landed, marker="s", linewidth=2.4, color="#2166ac", label="landed helicopters")
+    landed_axis.set_ylabel("landed helicopters", color="#2166ac")
+    landed_axis.set_ylim(0, N_HELICOPTERS + 0.5)
+    landed_axis.tick_params(axis="y", labelcolor="#2166ac")
+    figure.suptitle("Altara freshness threshold sweep: safety-throughput frontier")
+    figure.savefig(path, dpi=180)
+    plt.close(figure)
+    return path
+
+
 def frame_rows(rows: list[dict[str, object]], step: int) -> np.ndarray:
     selected = [row for row in rows if int(row["step"]) == step]
     return np.array([[float(row["x"]), float(row["y"]), float(row["z"])] for row in selected])
@@ -218,6 +260,26 @@ def altara_terrain() -> tuple[np.ndarray, np.ndarray, np.ndarray]:
     return xx, yy, zz
 
 
+def draw_stepped_tower(ax) -> None:
+    """Draw a fictional stepped tower; no real sacred-site geometry is used."""
+    center_x, center_y = 7.0, 8.5
+    levels = [(7.2, 0.25), (6.1, 0.9), (5.1, 1.55), (4.2, 2.2), (3.3, 2.85), (2.5, 3.5)]
+    colors = ["#8c96a8", "#929daf", "#9ba6b7", "#a5afbf", "#b0bac8", "#bbc4d0"]
+    for (width, height), color in zip(levels, colors):
+        ax.bar3d(
+            center_x - width / 2,
+            center_y - width / 2,
+            0.12,
+            width,
+            width,
+            height,
+            color=color,
+            alpha=0.16,
+            shade=True,
+            linewidth=0.2,
+        )
+
+
 def render(rows_blind: list[dict[str, object]], rows_aware: list[dict[str, object]], summary: dict[str, dict[str, object]]) -> tuple[Path, Path]:
     video = OUT / "helicopter_3d_delay_comparison.mp4"
     poster = OUT / "helicopter_3d_delay_comparison_poster.png"
@@ -236,7 +298,7 @@ def render(rows_blind: list[dict[str, object]], rows_aware: list[dict[str, objec
         ax.clear()
         ax.set_xlim(0, 14)
         ax.set_ylim(0, 17)
-        ax.set_zlim(0, 9)
+        ax.set_zlim(0, 10)
         ax.set_xlabel("east")
         ax.set_ylabel("north")
         ax.set_zlabel("altitude")
@@ -253,6 +315,7 @@ def render(rows_blind: list[dict[str, object]], rows_aware: list[dict[str, objec
             shade=False,
             zorder=0,
         )
+        draw_stepped_tower(ax)
         for pad_id, pad in enumerate(PADS):
             ax.scatter([pad[0]], [pad[1]], [pad[2]], marker="s", s=130, color="black", depthshade=False)
             ax.text(pad[0], pad[1], pad[2] + 0.35, f"P{pad_id + 1}", fontsize=8)
@@ -307,6 +370,10 @@ def main() -> None:
     trace = OUT / "helicopter_3d_step_trace.csv"
     summary_csv = OUT / "helicopter_3d_summary.csv"
     report = OUT / "helicopter_3d_report.md"
+    sweep_rows = threshold_sweep()
+    sweep_csv = OUT / "helicopter_3d_threshold_sweep.csv"
+    write_csv(sweep_csv, sweep_rows)
+    sweep_plot = render_threshold_sweep(sweep_rows)
     write_csv(trace, rows_blind + rows_aware)
     write_csv(summary_csv, [summary_blind, summary_aware])
     video, poster = render(rows_blind, rows_aware, {"delay_blind": summary_blind, "queue_aware": summary_aware})
@@ -317,7 +384,7 @@ def main() -> None:
                 "# Republic of Altara: 3D Helicopter Landing Coordination",
                 "",
                 "This is an exploratory kinematic communication experiment, not a validated helicopter flight-dynamics model.",
-                "Altara is fictional; its procedural horseshoe terrain is a new visual setting, not a copied game map or real location.",
+                "Altara is fictional; its procedural horseshoe terrain and stepped tower are new visual settings, not copied game or religious-site geometry.",
                 "Both policies use the same eight helicopters, three pads, clearance schedule, and heterogeneous message delays.",
                 "The queue-aware policy rejects clearances older than the three-step freshness threshold or past their slot expiry.",
                 "",
@@ -329,6 +396,7 @@ def main() -> None:
                 ],
                 "",
                 "The comparison is a mechanism diagnostic: freshness checks trade some late clearances for fewer pad conflicts in this toy schedule.",
+                "The threshold sweep exposes the tradeoff: stricter freshness reduces conflict events but rejects more clearances.",
                 "It should not be interpreted as evidence about real helicopter handling qualities or aviation operations.",
                 "",
             ]
@@ -336,7 +404,7 @@ def main() -> None:
         encoding="utf-8",
     )
     manifest = OUT / "HELICOPTER_3D_MANIFEST.sha256"
-    outputs = [trace, summary_csv, video, poster, report, Path(__file__)]
+    outputs = [trace, summary_csv, sweep_csv, sweep_plot, video, poster, report, Path(__file__)]
     manifest.write_text(
         "".join(
             f"{sha256(path)}  {str(path.relative_to(ROOT)).replace(chr(92), '/') }\n"
