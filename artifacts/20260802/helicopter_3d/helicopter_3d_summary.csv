@@ -1,0 +1,3 @@
+policy,helicopters,landing_pads,clearance_messages,accepted_clearances,stale_rejections,landed_helicopters,conflict_steps,conflict_pair_steps,conflict_pairs,max_clearance_age,freshness_threshold
+delay_blind,8,3,8,8,0,8,126,807,7,169,3
+queue_aware,8,3,8,4,4,4,112,112,1,169,3

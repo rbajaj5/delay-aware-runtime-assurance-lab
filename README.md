@@ -18,6 +18,7 @@ The most recent experiments are:
 - `run_crossplay_delay_protocol_simulation.py`: an OvercookedV2-inspired asymmetric-information signaling game with cross-play convention mismatch and delayed, sequence-aware feedback.
 - `run_delay_concentration_diagnostic.py`: compares global stale-event mass with spatial and temporal concentration under equal-mean spread versus clustered delay schedules.
 - `run_jl_projection_safety_diagnostic.py`: tests whether random-projection geometry preservation also preserves a coordinatewise safety predicate; in this toy setting it does not.
+- `run_helicopter_3d_landing_simulation.py`: renders an exploratory 3D helicopter landing-coordination replay under delayed clearances, comparing delay-blind and queue-aware freshness handling.
 
 The bounded-aging run is the current multi-agent extension. At delay 3 and background load 4 messages per agent per round, the exploratory mean stale-decision rates were approximately 0.496 for FIFO, 0.217 for strict priority, and 0.362 for priority with aging. The aging policy served roughly 2,125 background messages per game, while strict priority served roughly 46. These values are mechanism diagnostics, not registered claims.
 
