@@ -19,6 +19,7 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import numpy as np
 from matplotlib.animation import FuncAnimation, FFMpegWriter
+from matplotlib.colors import LightSource
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -222,6 +223,12 @@ def render(rows_blind: list[dict[str, object]], rows_aware: list[dict[str, objec
     poster = OUT / "helicopter_3d_delay_comparison_poster.png"
     colors = plt.cm.tab10(np.linspace(0, 1, N_HELICOPTERS))
     terrain_x, terrain_y, terrain_z = altara_terrain()
+    terrain_faces = LightSource(azdeg=305, altdeg=48).shade(
+        terrain_z,
+        cmap=plt.cm.terrain,
+        vert_exag=1.4,
+        blend_mode="overlay",
+    )
     fig = plt.figure(figsize=(15, 8), constrained_layout=True)
     axes = [fig.add_subplot(1, 2, 1, projection="3d"), fig.add_subplot(1, 2, 2, projection="3d")]
 
@@ -239,10 +246,11 @@ def render(rows_blind: list[dict[str, object]], rows_aware: list[dict[str, objec
             terrain_x,
             terrain_y,
             terrain_z,
-            cmap="YlGn",
+            facecolors=terrain_faces,
             linewidth=0,
             antialiased=True,
             alpha=0.26,
+            shade=False,
             zorder=0,
         )
         for pad_id, pad in enumerate(PADS):
