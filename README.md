@@ -22,6 +22,7 @@ The most recent experiments are:
 - `run_delay_concentration_diagnostic.py`: compares global stale-event mass with spatial and temporal concentration under equal-mean spread versus clustered delay schedules.
 - `run_jl_projection_safety_diagnostic.py`: tests whether random-projection geometry preservation also preserves a coordinatewise safety predicate; in this toy setting it does not.
 - `run_helicopter_3d_landing_simulation.py`: renders an exploratory 3D helicopter landing-coordination replay under delayed clearances, comparing delay-blind and queue-aware freshness handling.
+- `run_3d_formation_delay_monitor_simulation.py`: runs a CUDA-capable 3D formation-monitor demonstration with delayed messages, a bounded perturbation, and a separation fallback.
 - `analyze_helicopter_network.py`: derives temporal conflict-graph, component, motif, and spectral diagnostics from the retained helicopter trace without rerunning the simulation.
 - `derive_prime_graph_signature.py`: derives an optional prime-labeled arithmetic fingerprint from the retained conflict graph without rerunning the simulation.
 
