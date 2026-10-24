@@ -1,5 +1,30 @@
 # Delay-Aware Runtime Assurance Lab
 
+## Videos and MP4 Demonstrations
+
+**Start with a movie.** Click a preview or an **MP4** link below to open/download the original video. [All eight MP4s](https://github.com/rbajaj5/delay-aware-runtime-assurance-lab/releases/tag/videos-2026-10-24) are available without cloning the repository.
+
+These are recorded simulations and teaching demonstrations, not field trials. The final course study and its registered evidence remain [separately identified](course_study/README.md); the movies do not extend those claims.
+
+| Infrastructure planning | Covariance and runtime assurance |
+| --- | --- |
+| [![Linked maps, station inventories, and infrastructure rankings](docs/media/planning.jpg)](https://github.com/rbajaj5/delay-aware-runtime-assurance-lab/releases/download/videos-2026-10-24/river_links_planning_narrated.mp4) | [![Synthetic basketball, moving covariance spectrum, and RTA HOLD](docs/media/portfolio.jpg)](https://github.com/rbajaj5/delay-aware-runtime-assurance-lab/releases/download/videos-2026-10-24/portfolio_rta_synchronized.mp4) |
+| **[MP4: planning laboratory](https://github.com/rbajaj5/delay-aware-runtime-assurance-lab/releases/download/videos-2026-10-24/river_links_planning_narrated.mp4)** · 3:00 · narrated + captions. Fixed crossing interventions, service outcomes, and model-resolution sensitivity. [Methods](experiments/20261014_bikeshare_multiscale/README_PLANNING.md). | **[MP4: synchronized allocation and RTA](https://github.com/rbajaj5/delay-aware-runtime-assurance-lab/releases/download/videos-2026-10-24/portfolio_rta_synchronized.mp4)** · 1:30 · silent, on-screen telemetry. Synthetic actions and covariance evolve together; an independent geometry gate can reject the proposal. [Methods](artifacts/20261013/portfolio_rta/README.md). |
+| **3D formation under sensor uncertainty** | **Basketball affine conditioning** |
+| [![Matched 3D formation replays with and without uncertainty-aware RTA](docs/media/sensor.jpg)](https://github.com/rbajaj5/delay-aware-runtime-assurance-lab/releases/download/videos-2026-10-24/sensor_uncertainty_rta_comparison_narrated.mp4) | [![Tracking and spacing compared with conditioning-aware runtime assurance](docs/media/basketball.jpg)](https://github.com/rbajaj5/delay-aware-runtime-assurance-lab/releases/download/videos-2026-10-24/basketball_affine_conditioning_v2.mp4) |
+| **[MP4: sensor uncertainty](https://github.com/rbajaj5/delay-aware-runtime-assurance-lab/releases/download/videos-2026-10-24/sensor_uncertainty_rta_comparison_narrated.mp4)** · 0:22 · narrated + on-screen captions. Learned control versus uncertainty-aware RTA in a kinematic simulation. [Report](artifacts/20260808/sensor_uncertainty_3d/sensor_uncertainty_rta_report.md). | **[MP4: conditioning comparison](https://github.com/rbajaj5/delay-aware-runtime-assurance-lab/releases/download/videos-2026-10-24/basketball_affine_conditioning_v2.mp4)** · 0:20 · silent. Low tracking residual need not imply well-conditioned geometry. Synthetic players, not betting evidence. [Methods](artifacts/20260813/basketball_affine_conditioning_v2/README.md). |
+
+### More Videos
+
+| Demonstration | MP4 | Sound | Context |
+| --- | --- | --- | --- |
+| Fleet coordination on changing networks | [3:00 MP4](https://github.com/rbajaj5/delay-aware-runtime-assurance-lab/releases/download/videos-2026-10-24/fleet_changing_networks.mp4) | Narrated + captions | [Schematic bridge-fleet prototype](experiments/20261014_bridge_fleet/README.md) |
+| 3D affine-conditioning comparison | [0:22 MP4](https://github.com/rbajaj5/delay-aware-runtime-assurance-lab/releases/download/videos-2026-10-24/affine_conditioning_comparison.mp4) | Silent | [Illustrative geometry experiment](artifacts/20260811/affine_conditioning_gpu/affine_conditioning_report.md) |
+| 3D landing coordination | [0:12 MP4](https://github.com/rbajaj5/delay-aware-runtime-assurance-lab/releases/download/videos-2026-10-24/helicopter_3d_delay_comparison.mp4) | Silent | [Exploratory delayed-clearance replay](artifacts/20260802/helicopter_3d/helicopter_3d_report.md) |
+| Delayed-observation policy comparison | [0:14 MP4](https://github.com/rbajaj5/delay-aware-runtime-assurance-lab/releases/download/videos-2026-10-24/hex_policy_comparison_delay3_seed0.mp4) | Silent | [Hex-like coordination, delay 3, seed 0](artifacts/20260730/hex_policy_comparison_delay3_seed0_report.md) |
+
+The MP4s are release assets; small preview images live in Git. Playback versus download depends on the browser. [Video metadata and SHA-256 hashes](docs/media/video_catalog.json) identify the exact retained files. All eight passed a full media-decode check; this is not a new replication of their scientific results. [Media scope and reproduction](docs/media/README.md).
+
 ## Public Research Collection
 
 The October 24, 2026 source release adds the [final course study](course_study/README.md), later formation/risk-allocation demonstrations, and the [multiscale infrastructure-planning laboratory](experiments/20261014_bikeshare_multiscale/README_PLANNING.md). [Release scope and exclusions](docs/PUBLIC_RELEASE_20261024.md) distinguish registered evidence from exploratory extensions and identify large files retained locally. The current working tree includes source and compact evidence, not every raw trace or map cache.
