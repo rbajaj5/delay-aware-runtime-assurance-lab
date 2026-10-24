@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Multi-agent risk and assurance | Local review</title>
+<style>
+:root{color-scheme:light;--ink:#222e34;--muted:#59686f;--grid:#dfe6e8;--green:#167451;--gold:#aa6a05;--blue:#346ea7;--red:#c23442}
+*{box-sizing:border-box;letter-spacing:0}body{margin:0;background:#f5f7f8;color:var(--ink);font:14px "Segoe UI",Arial,sans-serif}main{max-width:1500px;margin:auto;padding:22px 28px}header{display:flex;justify-content:space-between;gap:18px;align-items:flex-start}h1{font-size:25px;line-height:1.2;margin:3px 0 8px}h2{font-size:16px;line-height:1.3;margin:0 0 3px}p{margin:0;line-height:1.5}.eyebrow{font-size:11px;font-weight:700;color:var(--green);text-transform:uppercase}.subtitle,.meta{color:var(--muted)}.meta{font-size:12px;max-width:310px;text-align:right}.filters{display:flex;align-items:end;gap:16px;padding:17px 0 15px;border-bottom:1px solid var(--grid)}label{display:flex;flex-direction:column;gap:5px;font-size:12px;font-weight:600}select{font:14px "Segoe UI",Arial,sans-serif;color:var(--ink);border:1px solid #aab8be;border-radius:4px;background:#fff;padding:8px 32px 8px 10px;min-width:210px;height:37px}.legend{display:flex;gap:18px;margin-left:auto;padding-bottom:8px;font-size:12px;flex-wrap:wrap}.key:before{content:"";display:inline-block;width:16px;height:3px;vertical-align:middle;margin-right:6px;background:var(--c)}.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;padding:15px 0}.kpi b{display:block;font-size:24px;font-weight:600}.kpi span{color:var(--muted);font-size:12px}.warning{min-height:30px;padding:6px 10px;background:#eaf1f4;border-left:3px solid #346ea7;font-size:12px;line-height:1.5}.warning.small{background:#fff2da;border-color:var(--gold)}.warning.empty{background:#fdecef;border-color:var(--red)}.charts{display:grid;grid-template-columns:1fr 1fr;gap:18px 26px;margin-top:17px}.chart{min-width:0;border-top:1px solid #ccd6db;padding-top:12px}.chart p{font-size:12px;color:var(--muted);min-height:18px}.chart canvas{display:block;width:100%;height:238px;margin-top:5px}.time{display:grid;grid-template-columns:100px 1fr 250px;gap:14px;align-items:center;margin:14px 0 9px;padding-top:12px;border-top:1px solid var(--grid)}input[type=range]{width:100%;accent-color:var(--green)}.readout{font-size:12px;text-align:right;font-variant-numeric:tabular-nums}.source{font-size:11px;line-height:1.6;color:var(--muted);overflow-wrap:anywhere}.source strong{color:var(--ink)}.foot{margin-top:7px;font-size:12px;color:var(--muted)}a{color:#245b8d}
+@media(max-width:800px){main{padding:17px}header{display:block}.meta{text-align:left;max-width:none;margin-top:8px}.filters{flex-wrap:wrap;gap:10px}select{min-width:0;width:100%}.filters label{flex:1 1 150px}.legend{margin:0;width:100%;padding:3px 0}.kpis{grid-template-columns:repeat(2,1fr);gap:10px}.charts{grid-template-columns:1fr}.time{grid-template-columns:75px 1fr}.readout{grid-column:1/-1;text-align:left}.chart canvas{height:235px}h1{font-size:23px}}
+</style>
+</head>
+<body><main>
+<header><div><div class="eyebrow">Synthetic simulation / one recorded episode</div><h1>Multi-agent risk and runtime assurance</h1><p class="subtitle">Motion covariance informs an allocation. An independent geometry check can reject it.</p></div><p class="meta">Local review preview<br>Native Tableau rendering and controls: not yet verified.<br>Nothing has been published.</p></header>
+<section class="filters" aria-label="Global filters">
+<label>Phase<select id="phase" aria-label="Phase"></select></label>
+<label>Controller decision<select id="controller" aria-label="Controller decision"><option>All</option><option>ACCEPT</option><option>RTA HOLD</option></select></label>
+<div class="legend"><span class="key" style="--c:var(--gold)">Proposed</span><span class="key" style="--c:var(--green)">Applied</span><span class="key" style="--c:var(--red)">Hidden collapse</span></div>
+</section>
+<section class="kpis" aria-label="Filtered measures">
+<div class="kpi"><b id="count">-</b><span>Selected frames, not independent trials</span></div>
+<div class="kpi"><b id="concentration">-</b><span>Mean leading eigenvalue share</span></div>
+<div class="kpi"><b id="holds">-</b><span>Frames in RTA HOLD</span></div>
+<div class="kpi"><b id="hidden">-</b><span>Hidden-collapse shadow frames</span></div>
+</section>
+<p id="warning" class="warning" role="status"></p>
+<section class="charts">
+<div class="chart"><h2>1. When do motions become concentrated?</h2><p>Leading eigenvalue / covariance trace; a larger share means more common motion.</p><canvas id="concentrationChart" role="img" aria-label="Leading eigenvalue share versus time"></canvas></div>
+<div class="chart"><h2>2. Which actions receive the allocation?</h2><p>Mean weights across selected frames. Each proposed or applied mix sums to one.</p><canvas id="weightsChart" role="img" aria-label="Proposed and applied action allocation weights"></canvas></div>
+<div class="chart"><h2>3. Can accurate tracking hide collapse?</h2><p>Unshielded shadow: error versus leader conditioning. Red also requires spacing at least 2 ft.</p><canvas id="scatterChart" role="img" aria-label="Shadow tracking error versus conditioning"></canvas></div>
+<div class="chart"><h2>Where does the independent shield intervene?</h2><p>Leader-map singular-value ratio; the rejection threshold is 0.12.</p><canvas id="geometryChart" role="img" aria-label="Proposed and applied affine conditioning versus time"></canvas></div>
+</section>
+<div class="time"><label for="cursor">Time cursor</label><input id="cursor" type="range" min="0" max="2159" value="1728" step="1" aria-label="Time cursor"><div id="readout" class="readout"></div></div>
+<p class="source"><strong>Source:</strong> synchronized_frames.json, seed 20261013, 24 frames/s, six-second rolling windows. SHA-256: __SOURCE_HASH__<br>No missing scalar values. Validity and identity checks never fail in this episode. Small-group flag: fewer than 120 frames (5 seconds), a descriptive warning, not a significance test.</p>
+<p class="foot">Synthetic action-motion features, not financial returns. The final drone depiction reuses the same trajectory; it is not an independent robotics trial. No betting-profit or operational-flight claim.</p>
+</main>
+<script>
+const frames=__FRAME_DATA__;
+const actions=['High pick-and-roll','Five-out drive','Weak-side cut','Post split','Advance','Reset'];
+const colors={gold:'#aa6a05',green:'#167451',blue:'#346ea7',red:'#c23442',grid:'#dfe6e8',ink:'#222e34',muted:'#59686f'};
+const byId=id=>document.getElementById(id);
+const phase=byId('phase'),controller=byId('controller'),cursor=byId('cursor');
+for(const name of ['All',...new Set(frames.map(r=>r.phase))]){const o=document.createElement('option');o.textContent=name;phase.append(o);}
+let subset=frames;
+function average(values){return values.length?values.reduce((a,b)=>a+b,0)/values.length:null;}
+function setup(id){const c=byId(id),dpr=devicePixelRatio||1,w=c.clientWidth,h=c.clientHeight;c.width=Math.round(w*dpr);c.height=Math.round(h*dpr);const ctx=c.getContext('2d');ctx.scale(dpr,dpr);ctx.font='11px "Segoe UI",Arial';ctx.fillStyle=colors.ink;return {ctx,w,h};}
+function axis(id,xmin,xmax,ymin,ymax,xlabel,ylabel){const s=setup(id),{ctx,w,h}=s;const p={l:47,r:13,t:21,b:34};const x=v=>p.l+(v-xmin)/(xmax-xmin)*(w-p.l-p.r),y=v=>h-p.b-(v-ymin)/(ymax-ymin)*(h-p.t-p.b);ctx.lineWidth=1;
+ for(let k=0;k<=4;k++){const v=ymin+(ymax-ymin)*k/4;ctx.strokeStyle=colors.grid;ctx.beginPath();ctx.moveTo(p.l,y(v));ctx.lineTo(w-p.r,y(v));ctx.stroke();ctx.fillStyle=colors.muted;ctx.textAlign='right';ctx.fillText(v.toFixed(v<1?2:1),p.l-7,y(v)+4);}
+ for(let k=0;k<=5;k++){const v=xmin+(xmax-xmin)*k/5;ctx.textAlign='center';ctx.fillStyle=colors.muted;ctx.fillText(v.toFixed(xmax<=1?2:0),x(v),h-p.b+16);}
+ ctx.textAlign='left';ctx.fillText(ylabel,p.l,12);ctx.textAlign='right';ctx.fillText(xlabel,w-p.r,h-2);
+ return {...s,p,x,y,xmin,xmax,ymin,ymax};}
+function reference(plot,v,label){const {ctx,x,y,xmin,xmax}=plot;ctx.strokeStyle=colors.red;ctx.setLineDash([5,4]);ctx.beginPath();ctx.moveTo(x(xmin),y(v));ctx.lineTo(x(xmax),y(v));ctx.stroke();ctx.setLineDash([]);ctx.fillStyle=colors.red;ctx.textAlign='right';ctx.fillText(label,x(xmax)-3,y(v)-5);}
+function curve(plot,key,color){const {ctx,x,y}=plot;ctx.strokeStyle=color;ctx.lineWidth=2;ctx.beginPath();let previous=null;for(const r of subset){if(previous===null||r.frame!==previous+1)ctx.moveTo(x(r.time_s),y(r[key]));else ctx.lineTo(x(r.time_s),y(r[key]));previous=r.frame;}ctx.stroke();if(subset.length<20){for(const r of subset){ctx.beginPath();ctx.arc(x(r.time_s),y(r[key]),2,0,Math.PI*2);ctx.fillStyle=color;ctx.fill();}}}
+function lineCursor(plot){const r=frames[+cursor.value],{ctx,x,y,ymin,ymax}=plot;ctx.strokeStyle='#747f85';ctx.lineWidth=1;ctx.setLineDash([2,3]);ctx.beginPath();ctx.moveTo(x(r.time_s),y(ymin));ctx.lineTo(x(r.time_s),y(ymax));ctx.stroke();ctx.setLineDash([]);}
+function empty(plot){if(subset.length)return;plot.ctx.fillStyle=colors.muted;plot.ctx.textAlign='center';plot.ctx.fillText('No frames match these filters',plot.w/2,plot.h/2);}
+function draw(){const c=axis('concentrationChart',0,90,0,1,'Time (s)','Share (unitless)');curve(c,'leading_share',colors.blue);lineCursor(c);empty(c);
+ const g=axis('geometryChart',0,90,0,1,'Time (s)','Conditioning (unitless)');curve(g,'conditioning_proposed',colors.gold);curve(g,'conditioning_applied',colors.green);reference(g,.12,'0.12 threshold');lineCursor(g);empty(g);
+ const maxError=Math.max(.6,Math.ceil(Math.max(...frames.map(r=>r.shadow_tracking_rmse_ft))*10)/10);
+ const s=axis('scatterChart',0,maxError,0,1,'Tracking RMSE (ft)','Conditioning (unitless)');reference(s,.12,'0.12 threshold');s.ctx.setLineDash([5,4]);s.ctx.strokeStyle='#8d989e';s.ctx.beginPath();s.ctx.moveTo(s.x(.5),s.y(0));s.ctx.lineTo(s.x(.5),s.y(1));s.ctx.stroke();s.ctx.setLineDash([]);s.ctx.fillStyle=colors.muted;s.ctx.textAlign='right';s.ctx.fillText('0.5 ft low-error limit',s.x(.5)-5,s.y(.92));
+ for(const r of subset){s.ctx.beginPath();s.ctx.arc(s.x(r.shadow_tracking_rmse_ft),s.y(r.conditioning_shadow),r.hidden_collapse?2:1.5,0,Math.PI*2);s.ctx.fillStyle=r.hidden_collapse?colors.red:'#346ea750';s.ctx.fill();}empty(s);
+ const b=setup('weightsChart'),{ctx,w,h}=b,L=125,R=41,T=20,B=23,bw=w-L-R;const sums=window.dashboardState;
+ ctx.fillStyle=colors.muted;ctx.textAlign='left';ctx.fillText('Allocation weight (%)',L,11);for(let i=0;i<=4;i++){const xx=L+bw*i/4;ctx.strokeStyle=colors.grid;ctx.beginPath();ctx.moveTo(xx,T);ctx.lineTo(xx,h-B);ctx.stroke();ctx.textAlign='center';ctx.fillStyle=colors.muted;ctx.fillText(String(i*25),xx,h-5);}
+ for(let i=0;i<6;i++){const yy=T+i*(h-B-T)/6;ctx.textAlign='right';ctx.fillStyle=colors.ink;ctx.fillText(actions[i],L-9,yy+16);for(const [index,key,color] of [[0,'proposed',colors.gold],[1,'applied',colors.green]]){const value=sums[key][i];if(value===null)continue;ctx.fillStyle=color;ctx.fillRect(L,yy+3+index*11,bw*value,8);ctx.textAlign='left';ctx.fillText((value*100).toFixed(1),L+bw*value+4,yy+11+index*11);}}
+ if(!subset.length){ctx.textAlign='center';ctx.fillStyle=colors.muted;ctx.fillText('No frames',L+bw/2,h/2);}
+ const r=frames[+cursor.value],included=subset.some(x=>x.frame===r.frame);byId('readout').textContent=r.time_s.toFixed(2)+' s | '+r.controller_decision+(included?'':' | outside filter');
+}
+function update(){subset=frames.filter(r=>(phase.value==='All'||r.phase===phase.value)&&(controller.value==='All'||r.controller_decision===controller.value));const n=subset.length;
+ const state={phase:phase.value,controller:controller.value,frames:n,frameIds:subset.map(r=>r.frame),mean_leading_share:average(subset.map(r=>r.leading_share)),hidden_frames:subset.filter(r=>r.hidden_collapse).length,hold_frames:subset.filter(r=>r.controller_decision==='RTA HOLD').length,proposed:actions.map((_,i)=>average(subset.map(r=>r.weights_proposed[i]))),applied:actions.map((_,i)=>average(subset.map(r=>r.weights_applied[i]))),small_group:n>0&&n<120};window.dashboardState=state;
+ byId('count').textContent=n.toLocaleString('en-US');byId('concentration').textContent=n?(100*state.mean_leading_share).toFixed(1)+'%':'n/a';byId('holds').textContent=state.hold_frames.toLocaleString('en-US');byId('hidden').textContent=state.hidden_frames.toLocaleString('en-US');
+ const warning=byId('warning');warning.className='warning'+(!n?' empty':state.small_group?' small':'');warning.textContent=!n?'No observations match this combination. Missing results are not zeros.':state.small_group?'Small group: '+n+' correlated frames ('+(n/24).toFixed(2)+' seconds). Do not interpret this as independent replication.':'One episode; adjacent frames and overlapping windows are dependent. Filters select observations; they do not identify causal effects.';
+ draw();}
+phase.addEventListener('change',update);controller.addEventListener('change',update);cursor.addEventListener('input',draw);window.addEventListener('resize',draw);update();
+</script>
+</body></html>

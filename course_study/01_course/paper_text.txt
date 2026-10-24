@@ -1,0 +1,245 @@
+SEARCHABLE EXTRACTION; equations are linearized. Original DOCX is authoritative.
+
+Prediction-Horizon Sensitivity in Delay-Aware Runtime Assurance
+Falsification, registered repair, and deep-horizon failure in a 2D quadrotor
+Ravi Bajaj
+EN.695.715 Assured Autonomy
+Johns Hopkins University
+August 2026
+
+Abstract—Runtime-assurance components are hypotheses, and this study treats them as falsifiable ones. An earlier v2 fault-profile analysis was found to combine incompatible physical-action conversion semantics under one label; affected endpoint comparisons were quarantined and are not pooled here. After that correction, a frozen horizon program tested the shared trigger-plus-scorer lookahead. Under iid uniform actuation delay, the queue-aware E-N3 stack records 175/1000 out-of-bounds (OOB) exits on the fresh registered range, while E-N4 records 0/1000. The complete measured spectrum is non-monotone: N=5 records 0/1000 in an exploratory extension, followed by 454/1000 at N=6, 479/1000 at N=7, 821/1000 at N=8, 981/1000 at N=9, and 200/200 in the N=10 pilot. In the saturated region every library candidate predicts violation; harmful cells combine compressed score margins with fixation on gentle_down. These results characterize an implementation-specific failure mode in a finite-library heuristic monitor and a configuration-scoped N=4 repair; they do not establish a general limitation of delay-aware runtime assurance or replace formal safety analysis.
+Index Terms—runtime assurance, Simplex architecture, actuation delay, safe reinforcement learning, quadrotor control, safety monitors, falsification.
+I. Introduction
+Runtime-assurance (RTA) architectures separate a high-performance controller from an assurance layer that monitors, predicts, or replaces actions before a safety boundary is crossed [1]. That separation is useful for learned controllers because policy performance and safety evidence are not the same artifact. It also creates a second object that must be tested: the monitor itself. This paper therefore treats each trigger, scorer, queue model, and fallback rule as a falsifiable hypothesis rather than as a safety certificate.
+The experiment uses a safe-control-gym 2D quadrotor with a fixed PPO checkpoint, a FIFO actuation-delay channel, and a finite action-replacement library [2], [3]. An earlier v2 audit found that two fault-profile runs had been reported under one label despite using different physical-action conversion semantics. That defect made the affected v2 comparisons unsuitable as final evidence. The conversion paths were separated, corrected counts were rerun and labeled by pipeline, and the scientific follow-up was to test whether increasing the shared prediction horizon above N=3 repaired the queue-aware monitor. The horizon study is therefore a post-audit experiment, not a retrospective reinterpretation of the buggy table.
+The unified account is this: in the tested scorer, a state is saturated when all eight library candidates predict positive constraint violation within the shared trigger-plus-scorer lookahead. Inside that region, selection can become non-discriminating in relative score and fixate on the least-predicted-violation candidate, which is the slow-drift symmetric action in the observed fatal families. N=4 is the smallest tested horizon that removes the registered OOB tail, but the complete integer spectrum shows that this is a local configuration result rather than a safe-horizon rule: N=5 remains at zero in an exploratory extension, while N=6 through N=10 enter an increasingly severe failure regime. These statements are bounded to the tested score, trigger, library, plant, checkpoint, delay distribution, and endpoint.
+The contributions are organized by the claims ledger. C1 reproduces the shallow E-N3 tail on a fresh range and inventories its deterministic families. C2 confirms E-N4 as the primary registered repair. C3 confirms the AP-N3 dual-branch artifact while preserving its full-state qualification. C4 maps every integer horizon from N=3 through N=10, with registered, exploratory, and pilot classes kept distinct. C5 and C6 provide exploratory attribution and measured saturation diagnostics. C7 compresses the prior Markov, fault-profile, severity-censoring, pipeline-reconciliation, and lambda=50 results into scoped boundary conditions.
+Evidence classes are used consistently. Registered results follow a frozen protocol and report only its specified tests. Pilot results determine advancement by a pre-written mechanical rule. Exploratory results are descriptive and receive no hypothesis-test p-values. Table I records those classes, sample sizes, statistics, and first-12-hex source identifiers.
+
+TABLE I
+Claims ledger. C7a-C7c are traceability subrows of the single carried-methodology claim C7. Source artifacts and hashes for every row are listed in Appendix B and in v5_claims_ledger.csv.
+[TABLE]
+ID | One-sentence statement | Class and n | Key statistic
+C1 | Across IID uniform-delay blocks, E-N3 produced 159/1000 OOB exits on the original range and 175/1000 on the fresh confirmation range while D-N3 produced 0/1000 on both; the original exits occupy six named families and the fresh exits reproduce six known families plus one unnamed two-seed signature. | registered; family census descriptive; n=1000 original + 1000 fresh matched schedules | E-N3: 159/1000 original, 175/1000 fresh; D-N3: 0/1000 both; fresh family inventory: 7 signatures, including unnamed E-N3-F006 with 2 seeds
+C2 | Registered HZ1 found E-N4 at 0/1000 versus E-N3 at 175/1000, with 0/100 versus 11/100 on the corrected-physical_multiplier gradual guardrail; CHK-V does not show a lambda=50-style shift toward the reverse-velocity bound for E-N4. | registered co-primary; guardrail and CHK-V descriptive; n=1000 confirmation + 100 guardrail; 825 and 89 paired dual survivors | Exact two-sided McNemar p ≈ 4.2 × 10⁻⁵³ at Bonferroni alpha=0.025; confirmation reverse crossings 352 to 22 and mean min(vx) -0.7623359383375032 to -0.8065171582278999; guardrail crossings 0 to 0 and mean min(vx) -0.2691364775703908 to -0.19548418695262118
+C3 | Registered HA1 found AP-N3 at 0/1000 versus E-N3 at 175/1000, but confirms only the dual-branch artifact as implemented because fallback was used on most interventions and CHK-V finds a reverse-channel shift on the corrected-physical_multiplier gradual guardrail. The full-state qualification is recorded in analysis/out/v5_manuscript_w1_20260723/chkv_fullstate_census.csv. | registered co-primary; branch census and CHK-V descriptive; n=1000 confirmation + 100 guardrail; 76,855 interventions | Exact two-sided McNemar p ≈ 4.2 × 10⁻⁵³ at Bonferroni alpha=0.025; fallback 44,264/76,855=57.6%; guardrail reverse crossings 0 to 20 and paired mean min(vx) -0.2691364775703908 to -0.8161404198999049
+C4 | The measured horizon spectrum is non-monotone across every integer N from 3 through 10: the registered N=4 endpoint is 0/1000, N=5 remains 0/1000 in an exploratory extension, and N=6 through N=10 rise to 454/1000, 479/1000, 821/1000, 981/1000, and 200/200. | registered; exploratory; pilot; n=1000 at N=3,4,5,6,7,8,9; n=200 at N=10 | N=3: 175/1000; N=4: 0/1000; N=5: 0/1000; N=6: 454/1000; N=7: 479/1000; N=8: 821/1000; N=9: 981/1000; N=10: 200/200
+C5 | The exploratory trigger/scorer 2x2 produced 199/200 exits for the baseline-trigger/deep-scorer cell (3,10) and 113/200 for (10,3), after bit-identical diagonal regression gates, with exact family overlap linking (3,10) to the deep coupled pilot and (10,3) to the largest shallow family. | exploratory with pre-committed readings; regression gates; n=200 matched schedules per off-diagonal cell | (3,10): 199/200; (10,3): 113/200; (3,10) and (10,10) share 8 signatures covering 73.869% and 73.500% of basin mass; (10,3) and shallow E-N3 share 1 signature covering 20.354% and 48.555%
+C6 | Measured scorer diagnostics identify the harmful deep regime as saturated and fixated, while the N=4 rescue is trajectory-distributed rather than a one-state repricing correction. | exploratory/read-only mechanism diagnostics; n=432 (3,10) intervention rows; 134 E-N3 and 101 E-N4 reference rows; 175 fatal onsets | (3,10): 98.8426% saturated, median feasible support 0, median normalized margin 0.0036849335 versus E-N3 0.1538009131, gentle_down 419/432, churn 0.024691; M3 98/98 saturated with support 0; CHK1 E-N3 to E-N4 intervention rates 83.7746 to 77.1150 in pilot and 82.7306 to 77.2740 in confirmation; CHK2 inversion 49/63, gentle_down win share 41% to 25%, churn approximately 4x; CHK3 N4 non-gentle winner 77/175=44%, trajectory-divergence-mediated
+C7a | Under the canonical pre-reconciliation fault-profile conversion pipeline, ordering depended on fault timing: gradual loss produced B/D/E counts of 103/1000, 1000/1000, and 302/1000, whereas persistent loss produced 348/1000, 56/1000, and 170/1000, so both monitors beat B only in the persistent row. | registered fault-profile study; pipeline-scoped; n=1000 matched schedules per arm/profile | Canonical pipeline gradual B/D/E=103/1000,1000/1000,302/1000; persistent B/D/E=348/1000,56/1000,170/1000
+C7b | The pre-horizon lambda=50 penalty removed the frozen 100-step IID endpoint tail on a fresh block, but its rescued trajectories were horizon-censored and shifted toward the masked reverse-velocity bound, so it remains an endpoint mitigation rather than a full-state safety repair. | registered confirmation; extended audit qualification; n=1000 IID schedules; 850 paired dual survivors; 100 gradual schedules under the uniform-pipeline physical_multiplier cell | IID baseline/lambda=50 OOB 150/1000 to 0/1000; paired mean min(vx) -0.7881584297457002 to -0.9754527963674094 and reverse crossings 387 to 503; all 150 rescued trajectories attain minimum vx at step 99
+C7c | The carried methodology results retain OOB occurrence as primary because survivor and per-step severity are right-censored by early exits, and they preserve the action-conversion reconciliation because the canonical and corrected physical_multiplier pipelines can invert fault-profile endpoint counts. | registered endpoints; audit reconciliation; n=multiple matched 1000-seed cells | Original uniform E records 159/1000 OOB despite lower recorded per-step severity than B or D; canonical-to-corrected gradual counts change B 103 to 0, D 1000 to 0, and E 302 to 96
+[/TABLE]
+
+
+II. Problem Definition and Hypotheses
+The object under test is the assurance layer, not the controller. A queue-aware monitor is expected to improve on a delay-blind one because it rolls the pending FIFO actuation queue forward before scoring a replacement action. Whether that expectation holds for a concrete finite-library heuristic is an empirical question, and it is the question this study answers. The tested configuration fixes the components a safety argument would otherwise have to quantify over: one pretrained PPO checkpoint, one safe-control-gym 2D quadrotor, a FIFO delay family drawing values from {0,1,2}, an eight-candidate replacement library, a single horizon constant shared by the predictive trigger and the candidate scorer, and the corrected physical_multiplier conversion pipeline. The registered endpoint is positional/attitude out-of-bounds occurrence within 100 control steps.
+Two co-primary hypotheses were registered on 2026-07-23, before the 200-seed pilot and before any confirmation seed was drawn. HZ1 tests whether increasing the shared trigger-plus-scorer horizon above N=3 removes the queue-aware endpoint tail. HA1 tests the discrete candidate-projection arm AP-N3 against the same E-N3 reference. Both use the exact two-sided McNemar test on schedule-matched arms [9] at Bonferroni alpha=0.025. The horizon carried into confirmation was not chosen by inspecting the pilot: a mechanical advancement rule, written before execution, checked first for a zero-failure boundary, then an inflection, then monotonic decrease, then a residual flat spectrum, and the first branch fired at N=4.
+One scope condition governs every claim below. A monitor that fails on this configuration falsifies that configuration. The results characterize a finite-library queue-aware heuristic and its measured failure mechanism; they do not establish that delay-aware runtime assurance is generally unsafe, and they do not substitute for a formal safety argument.
+III. System Proposal
+A. Plant, Endpoint, and Arms
+The state is xt = x, vx, z, vz, θ, θT. The state box has lower bounds (-2,-1,0,-1,-0.2,-1.5) and upper bounds (2,1,2,1,0.2,1.5); physical motor commands are bounded to [0.06,0.29]. Episodes run for 100 control steps at 50 Hz or terminate at first OOB. OOB occurrence is primary. Survivor and per-step severity remain secondary because termination right-censors the exposure record.
+The fixed PPO checkpoint proposes each source action. B applies delayed PPO without intervention. D-N3 uses the current observed state and scores a candidate as immediately active. E-Nk rolls the pending FIFO queue before inserting the candidate and uses a shared lookahead k for both its predictive trigger and candidate scorer. AP-N3 uses the dual-branch rule defined in Section V-E. Delay schedules draw values from {0,1,2} and are matched across arms by seed.
+
+TABLE II
+Arms used in the v5 analysis.
+[TABLE]
+Arm | Controller / monitor | Delay handling | Role
+B | Delayed PPO; no monitor | Matched FIFO only | Unmonitored baseline
+D-N3 | Delay-blind replacement | Candidate treated as immediately active | Primary comparator
+E-Nk | Queue-aware replacement | Shared trigger/scorer horizon k | Tested monitor family
+H | Held-state E variant | Last-applied rollout initialization | Initialization sensitivity
+AP-N3 | Dual-branch discrete projection proxy | Queue-aware N=3 score and PPO distance | Registered artifact
+[/TABLE]
+
+
+B. Candidate Library and Shared Lookahead
+Every intervention ranks the same eight normalized-action candidates: clipped PPO, hover, symmetric gentle_up and gentle_down, differential diff_left and diff_right, and two state-dependent attitude corrections. For component i, normalized positive violation is
+vx = ∑imaxℓi−xisi, xi−uisi, 0
+si = maxℓi, ui, ui−ℓi, 1
+For lookahead N, the queue-aware candidate score is
+JNc = 100 maxk ∈ 1, … , Nvxt + k
+ + 5 vuc + 0.05 RMSExt + N, rt + 0.005 ‖c‖2.(1)
+All scalar weights and conversion rules remain fixed as N changes. DX1 verified that the original implementation exposes one horizon constant to both the predictive trigger and scorer. The paper therefore refers to the shared trigger-plus-scorer lookahead. It does not call horizon depth alone a randomized causal factor.
+IV. Experimental Setup
+The initial horizon protocol was frozen on 2026-07-23 before the 200-seed pilot. Its advancement rule first checked for a zero-failure boundary, then an inflection, then monotonic decrease, and finally a residual flat-spectrum branch. The first rule fired: N=4 was the smallest horizon at 0/200, so the registered confirmation included E-N3 and E-N4 plus mandatory AP-N3 and D-N3. HZ1 and HA1 were Bonferroni co-primary tests at alpha=0.025. The dense extension for N={5,6,8,9} was separately frozen on 2026-07-25, after the registered confirmation and before those exploratory runs. It preserved the same checkpoint, candidate library, delay schedule family, corrected no-fault path, and 1,000 matched seeds per new horizon.
+A trajectory family is the exact pair of terminal-state and applied-action-sequence SHA-256 signatures after rounding logged values to 12 decimal places. Family counts describe deterministic outcome redundancy; the independently generated delay schedule remains the unit for registered schedule-frequency inference.
+Two conversion pipelines must remain distinct. The horizon study and its guardrail use corrected physical_multiplier conversion, u_eff=clip(eta*u_physical,u_min,u_max). The older pre-registered fault-profile table used the canonical pre-reconciliation wrapper. Every gradual-loss number below is labeled by pipeline because conversion semantics materially changed the endpoint counts.
+Endpoint proportions are reported as exact Clopper-Pearson 95% intervals [8]. Registered paired comparisons use the exact two-sided McNemar test [9] on schedule-matched arms at Bonferroni alpha=0.025. Exploratory and pilot cells carry descriptive intervals only and receive no hypothesis-test p-values.
+V. Experimental Results
+A. The Shallow Tail
+C1 is reproduced across disjoint registered ranges. Under iid uniform delay, original-range E-N3 records 159/1000 OOB exits and fresh-confirmation E-N3 records 175/1000; D-N3 records 0/1000 in both. The fresh comparison contains 175 E-N3-only discordances and no D-N3-only discordance. These are range-scoped schedule-frequency results, not claims that all 1000 trajectories are dynamically distinct.
+The original 159 exits collapse to six named families with basin sizes 72, 40, 31, 9, 6, and 1. The fresh 175 exits occupy seven signatures: six map to the known families and one new unnamed signature, E-N3-F006, contains two seeds. The new signature must remain visible because a six-family summary would silently drop a fresh registered outcome.
+Seed 1373 is the original fixation exemplar: E repeatedly selects gentle_down while forward velocity grows toward exit. Fresh seed 61004 reproduces the shallow fatal pattern, and E-N4 survives the same schedule. The logged-state comparison in Fig. 1 is descriptive mechanism evidence; it does not create additional independent replications.
+
+Fig. 1. Trajectory exemplars from logged state only. Panel (a) is registered E-N3 seed 61004 (fatal), panel (b) is exploratory (3,10) seed 60001 (fatal), and panel (c) is registered E-N4 seed 61004 (survived). Intervention steps and terminal symmetric runs are read from retained full-step CSVs.
+Recorded severity points in the opposite direction: on the original range, E's survivor severity is 2.402 versus 7.881 for D and its per-step severity is 0.0585 versus 0.0788. That contrast cannot reverse the primary conclusion because the 159 E exits terminate exposure early. Severity is a tradeoff measure, not a substitute for first exit.
+B. Horizon Dose-Response
+The frozen pilot measured N in {3,4,5,7,10}; the subsequent frozen dense extension filled N=6,8,9 and scaled N=5 to 1,000 schedules. The measured OOB counts are 175/1000 at registered N=3, 0/1000 at registered N=4, 0/1000 at exploratory N=5, 454/1000 at exploratory N=6, 479/1000 at exploratory N=7, 821/1000 at exploratory N=8, 981/1000 at exploratory N=9, and 200/200 at pilot N=10. The first additional step removes the registered tail, but the full spectrum then rises sharply. Points are reported as measured cells only; no interpolation or monotonicity theorem is claimed.
+
+Fig. 2. Horizon dose-response. Table III preserves the complete N=3 through N=10 spectrum with its evidence classes. Points are not connected because no interpolation across unmeasured horizons is claimed.
+Raw sources: horizon_ablation_summary.csv; horizon_spectrum_pilot.csv; en7_exploratory_summary.csv; and the frozen dense-extension FILE_MANIFEST.csv. The N=5,6,8,9 rows were exploratory 1,000-seed extensions frozen before execution; they add descriptive coverage and no hypothesis tests.
+TABLE III
+Complete integer horizon spectrum. Counts are endpoint OOB events; intervals are exact Clopper-Pearson 95% intervals.
+[TABLE]
+N | OOB | n | Evidence class | Exact 95% CI
+3 | 175 | 1000 | registered | 15.2% to 20.0%
+4 | 0 | 1000 | registered | 0.0% to 0.37%
+5 | 0 | 1000 | exploratory | 0.0% to 0.37%
+6 | 454 | 1000 | exploratory | 42.3% to 48.5%
+7 | 479 | 1000 | exploratory | 44.8% to 51.0%
+8 | 821 | 1000 | exploratory | 79.6% to 84.4%
+9 | 981 | 1000 | exploratory | 97.0% to 98.9%
+10 | 200 | 200 | pilot | 98.2% to 100%
+[/TABLE]
+
+1) Registered Primary Repair: E-N4
+HZ1 confirms E-N4 as the primary repair. On the 1000-seed confirmation block, E-N3 records 175 exits and E-N4 records none; the exact two-sided McNemar result is p ≈ 4.2 × 10⁻⁵³ at Bonferroni alpha=0.025. On the corrected physical_multiplier gradual guardrail, the corresponding OOB counts are 11/100 and 0/100. The result demonstrates sufficiency at the tested endpoint for this shared trigger-plus-scorer configuration.
+CHK-V supplies the required full-state check. Among 825 confirmation schedules on which E-N3 also survives, reverse-bound crossings fall from 352 under E-N3 to 22 under E-N4; paired mean episode-minimum vx changes from -0.7623359383375032 to -0.8065171582278999. In the corrected physical_multiplier gradual guardrail, both arms have 0 reverse crossings among the 89 E-N3 survivors, while paired mean minimum vx changes from -0.2691364775703908 to -0.19548418695262118. E-N4 does not reproduce the lambda=50 reverse-bound migration and is presented without that endpoint qualification.
+
+Fig. 3. Registered confirmation outcomes and corrected physical_multiplier gradual guardrail. HZ1 compares E-N3 with E-N4; HA1 compares E-N3 with AP-N3. Exact McNemar tests are registered only for the 1000-seed uniform confirmation.
+C. Mechanism: The Saturated Region
+The measured defect is not merely short horizon. A scorer state is saturated when all eight candidate rollouts have positive constraint violation, so feasible support is zero and the 100-weighted violation term is active for the entire library. In the tested fatal region, the remaining score differences are small enough that the selector repeatedly chooses the least-predicted-violation symmetric action. The historical phrase short-horizon myopia is therefore retired; the old observation is the ranking blind spot at the tested horizon, later identified as the boundary-shell expression of the saturation defect.
+CHK1 first rejects a simple trigger-frequency explanation. Moving from E-N3 to E-N4 changes mean interventions per 100 executed steps from 83.7746 to 77.1150 in the pilot and from 82.7306 to 77.2740 in confirmation, reductions of 7.9% and 6.6%. The safe arm intervenes less often, opposite the prediction that rescue requires a more aggressive trigger.
+CHK2 evaluates the same logged onset states under N=3 and N=4 scoring. The N=3-style inversion persists on 49/63 rows, so one extra scoring step does not uniformly reprice every fatal state. Gentle_down win share falls from 41% to 25%, however, and E-N4's argmin churn is approximately four times the E-N3 reference. CHK3 then rescored all 175 E-N3 fatal onsets: N=4 selects a non-gentle candidate on only 77/175 states (44%). Under the pre-committed rule, rescue is trajectory-distributed rather than explained by a one-state ranking correction. The dense extension shows the same mechanism deepening with N: saturated-step fraction is 50.6%, 84.3%, 97.4%, and 98.7% at N=5,6,8,9, while gentle_down winner share is 4.0%, 37.7%, 58.7%, and 75.0%, respectively.
+1) Saturation Arithmetic and Fixation
+M1 makes the deep failure arithmetic explicit. In the exploratory baseline-trigger/deep-scorer cell (3,10), 427/432 intervention rows (98.8426%) are saturated, median feasible support is 0, and the median normalized top-two margin is 0.0036849335 versus 0.1538009131 for E-N3. Gentle_down wins 419/432 rows and mean argmin churn is 0.024691. M3 connects the shallow boundary to the same arithmetic: all 98 fatal-onset states at which N=4 still chooses gentle_down are saturated with feasible support 0.
+Compression alone is not the failure label. E-N4 has a smaller median margin than E-N3, 0.013259, yet its winner churn is 0.218182 and the registered arm survives. The harmful observed combination is compressed discrimination plus fixation, not compressed margins by themselves. Fig. 4 displays that contrast without adding a classifier or hypothesis test.
+
+Fig. 4. Fixation versus flicker from logged intervention payloads. Horizontal position is median normalized top-two score margin; vertical position is mean argmin churn; marker area encodes within-shape gentle_down winner share. The plot is descriptive.
+
+Fig. 5. Saturation condition by cell. Bars report the fraction of saturated intervention rows and median feasible support. The M3 annotation reports 98/98 persistent fatal-onset states saturated with support 0.
+D. Attribution: The 2x2
+All coupled E arms change trigger and scorer lookahead together. To separate those channels, a frozen exploratory protocol evaluated N_trig and N_score in {3,10}. Before either off-diagonal cell ran, RG1 and RG2 reproduced the (3,3) and (10,10) diagonals bit-identically on their specified gates. The N_trig=3 condition uses the baseline trigger; E-N3 intervenes 83.8 times per 100 steps in the pilot.
+The externally proposed decoupling prescription is falsified in the tested form. With the baseline trigger and deep scorer, (3,10) exits on 199/200 schedules. With a deep trigger and shallow scorer, (10,3) exits on 113/200. The coupled pilot endpoints are 33/200 at (3,3) and 200/200 at (10,10). These exploratory cells receive no p-values. Their mean intervention rates are outcomes of the closed loop, not independently assigned mediators.
+
+Fig. 6. Trigger/scorer factorial grid. Each cell reports OOB rate, k/n, evidence class, and mean interventions per 100 executed steps. The off-diagonal cells are exploratory.
+Exact-signature overlap ties the off-diagonal failures to the coupled regimes. The (3,10) and (10,10) pilot cells share eight signatures covering 73.869% and 73.500% of their respective failing basin mass. The (10,3) cell shares one signature with shallow E-N3, covering 20.354% of its failing mass and 48.555% of the shallow census; that signature is the largest shallow family. Deep scoring is therefore harmful even with the baseline trigger, while deep triggering with the shallow scorer recovers a major shallow failure surface.
+
+Fig. 7. Exact trajectory-family overlap. Off-diagonal cells display shared-signature counts and basin-mass fractions for both sides; zero-overlap cells are shown as zero rather than blank.
+E. The Projection Arm
+1) Primary Repair First: E-N4
+E-N4 is the primary repair because it is the minimal horizon selected by the frozen advancement rule, it is tested by HZ1, and it records 0/1000 confirmation exits and 0/100 corrected-physical_multiplier guardrail exits. CHK-V does not attach the lambda=50-style reverse-bound qualification. The result is still configuration-scoped: it validates this shared trigger-plus-scorer lookahead, library, and endpoint, not arbitrary horizon extension.
+2) AP-N3 as Implemented
+The candidate-projection arm selects the predicted-safe library member nearest the clipped PPO action when at least one exists; when no candidate is predicted safe, it falls back to the infeasible candidate minimizing the raw delay-aware score plus its distance to the PPO action. It is a discrete proxy without reachability guarantees; step logs show the fallback branch is exercised on a majority of interventions.
+HA1 records AP-N3 at 0/1000 versus E-N3 at 175/1000, with exact two-sided McNemar p ≈ 4.2 × 10⁻⁵³ at Bonferroni alpha=0.025. Yet 44,264 of 76,855 AP interventions use the fallback branch, a 57.6% fallback rate. The registered result therefore confirms the dual-branch artifact as implemented and attributes nothing to predicted-safe restriction in isolation.
+CHK-V adds the required qualification. Under the corrected physical_multiplier gradual guardrail, 20/100 AP episodes cross vx<-1, while 0/89 E-N3 survivor episodes do so. These are census facts from the retained step logs. They parallel the masked reverse-channel pattern previously observed for lambda=50; no additional mechanism is inferred. AP-N3 is consequently described as an endpoint- and horizon-bounded repair in the abstract, this section, and the limitations.
+Formal action projection instead projects onto a reachable safe set and can provide guarantees under its model assumptions [12]. AP-N3 does not implement that method. Its value here is empirical: the finite library contains alternative closed-loop paths, while the dominant ranker and branch semantics determine which path is selected.
+F. Prior Registered Extensions
+1) Delay and Fault-Profile Dependence
+The older Markov-delay robustness arm retains the uniform marginal but adds persistence q=0.70. B and D record 0/1000 exits and E records 105/1000. The Markov result shows that the E tail is not confined to iid jitter, but it is not the mechanism-identification experiment developed above.
+Fault-profile ordering depends on timing and conversion semantics. Under the canonical pre-reconciliation fault-profile conversion pipeline, gradual loss produces B/D/E OOB counts of 103/1000, 1000/1000, and 302/1000. Persistent loss produces 348/1000, 56/1000, and 170/1000, so both monitors beat unmonitored B in that row. Under the corrected physical_multiplier pipeline, the gradual counts are B/D/E=0/1000, 0/1000, and 96/1000. Pipeline labels are part of each claim, not implementation footnotes.
+
+TABLE IV
+Pipeline-scoped prior extensions.
+[TABLE]
+Profile | Conversion / delay process | OOB counts | Status
+Markov nominal | uniform-marginal Markov, q=0.70 | B 0/1000; D 0/1000; E 105/1000 | registered
+Gradual | canonical pre-reconciliation | B 103/1000; D 1000/1000; E 302/1000 | registered
+Persistent | canonical pre-reconciliation | B 348/1000; D 56/1000; E 170/1000 | registered
+Gradual | corrected physical_multiplier | B 0/1000; D 0/1000; E 96/1000 | reconciled cell
+[/TABLE]
+
+
+2) Lambda=50 Endpoint Mitigation
+Before the horizon study, the velocity-gated lambda=50 penalty was the best tested endpoint mitigation. On fresh iid schedules it changes E OOB from 150/1000 to 0/1000; on the corrected physical_multiplier uniform-pipeline gradual cell it changes 9/100 to 0/100. It remains a qualified, pre-horizon endpoint mitigation rather than the v5 primary repair.
+The extended audit demotes that apparent repair. Among 850 dual survivors, paired mean minimum vx shifts from -0.7881584297457002 to -0.9754527963674094 and reverse-bound crossings increase from 387 to 503. All 150 rescued trajectories reach their minimum vx at step 99 while vx is still moving negative. The result is a horizon-bounded endpoint mitigation, not a full-state safety repair. This contrast is why CHK-V was required before E-N4 or AP could be promoted.
+VI. Discussion
+A. Monitored Versus Unmonitored Is Profile-Dependent
+No arm is globally dominant. In the canonical pre-reconciliation gradual row, unmonitored B records 103/1000 exits while D and E record 1000/1000 and 302/1000; under persistent loss, B records 348/1000 while D and E record 56/1000 and 170/1000. A monitor can therefore introduce risk in one disturbance regime and reduce it in another. This is the safety-relevant comparison: monitored versus unmonitored, not delay-aware versus delay-blind in isolation.
+B. Test Before Prescribe
+The externally prescribed decoupling idea was reasonable: hold the trigger near baseline while extending only the scorer. The (3,10) result, 199/200 exits, shows why architectural plausibility is not enough. Prescriptions should enter the same workflow as original hypotheses: define the mechanism, freeze the reading, gate equivalence, run the test, and retain the null or reversal. The scientific contribution is the method of falsification, not the identity of the critic.
+VII. Related Work
+Runtime assurance in the Simplex tradition organizes control authority around monitored switching: a high-assurance component stands ready to take over from a high-performance one when a decision procedure judges the safety boundary to be near. SOTER develops that pattern into a programming framework in which the switching logic is part of the built artifact rather than an afterthought [1]. The present study inherits that decomposition unchanged. What it changes is the object of study: the assurance layer itself is treated as the hypothesis under test, so its trigger, scorer, queue model, and fallback branch each become falsifiable rather than assumed.
+Actuation delay is the specific assumption this paper stresses. Slagel et al. make sampling delay explicit inside a verification framework for runtime assurance of autonomous UAS, deriving conditions under which a switching argument survives the gap between measurement and actuation [10]. That work establishes what must hold of a monitor for its guarantee to remain valid under delay. The question here is complementary and one level lower: given a monitor that does model the delay channel, rolling the pending queue forward before scoring any candidate, does the resulting ranking rule actually reduce boundary exits? The queue model in this harness is correct by construction, so a negative answer localizes the defect elsewhere.
+A parallel line of work bounds what monitors can know. Kane et al. report a case study of runtime monitoring on an autonomous research vehicle and document how much safety-relevant state a passive monitor cannot observe [4]. Park et al. analyze cyber-physical safety when sensors are transiently faulty, where soundness depends on assumptions about the observation channel rather than on the controller [11]. Both bear on how the present result should be read. This harness assumes exact simulator state and an exactly modeled queue, so the measured failures cannot be charged to sensing, estimation, or fault detection. What remains is the deterministic ranking rule itself.
+Formal safety filters supply the comparison class this study does not implement. Control barrier functions give forward-invariance conditions a filter can enforce online [5]. Action projection using reachability analysis and polynomial zonotopes projects a proposed action onto a set that is provably safe under stated model assumptions [12]. The AP-N3 arm resembles the latter only in shape: it selects the predicted-safe library member nearest the clipped policy action over a fixed set of eight candidates, with no reachable-set computation and no invariance argument, and its infeasibility fallback is exercised on most interventions. Brown et al. address a further gap by propagating perception uncertainty through runtime verification for learning-enabled systems [7]; this paper instead holds the state exact and audits deterministic closed-loop ranking. A formal filter would still be conditional on modeling delayed u(t-d), queued releases, action conversion, and time-varying authority correctly, which is the same modeling surface on which the heuristic is measured here.
+Krasowski et al. survey and benchmark provably safe reinforcement learning, and their framing applies directly: safety in these systems is usually argued through the shield or the projection operator, and cross-method comparison is difficult when each approach is evaluated on its own harness [6]. The learned controller here is deliberately fixed and ordinary, a pretrained PPO checkpoint [3] on the safe-control-gym 2D quadrotor benchmark [2], so that differences between arms are attributable to the assurance layer rather than to policy quality.
+The gap addressed here is correspondingly narrow. Prior work motivates delay-aware monitoring, formalizes what a delayed switching argument requires, and provides filter classes with guarantees under model assumptions. It says considerably less about the heuristic surrogates that are easy to implement and are often deployed in place of those filters: a finite candidate library, a predictive trigger, and a weighted score. This paper supplies one such test end to end and, where the monitor fails, characterizes the implementation-level mechanism as a saturated region in which every candidate predicts violation and selection fixates on the least-predicted-violation action. The counterexample is directed at that heuristic, not at formal delay-aware assurance. Its transferable claim is that a heuristic surrogate inherits none of the guarantee it stands in for, and should be preregistered, audited, and falsified on the same terms as the controller it supervises.
+VIII. Limitations
+Claims are scoped to one pretrained PPO checkpoint, one safe-control-gym 2D plant, a fixed initial state, the tested FIFO and physical conversion semantics, a 100-step endpoint, and one finite candidate library. The study does not establish safety for 3D flight, randomized initial conditions, arbitrary delay processes, asymmetric actuator loss, adversarial or OOD observations, hidden internal faults, human handoff, or CAN-network latency.
+The off-diagonal 2x2 cells use n=200 and are exploratory. Family counts depend on the terminal-state plus action-sequence recipe and 12-decimal rounding. Trigger and scorer remain coupled in every E-Nk arm outside the exploratory factorial, so E-N4 identifies a successful shared configuration rather than a single independent component. The registered endpoint is positional/attitude OOB; CHK-V adds a reverse-velocity census but not an unbounded full-state certificate.
+CHK-V distinguishes the repairs. E-N4 does not show a lambda=50-style migration toward the reverse bound in either retained block and is presented without that qualification. AP-N3 remains horizon- and endpoint-bounded because, under the corrected physical_multiplier gradual guardrail, 20/100 AP episodes cross vx<-1 versus 0/89 E-N3 survivors. The comparison is a census fact and a parallel to the lambda=50 pattern, not a demonstrated common mechanism.
+The saturation account is empirical, not a global theorem. Payload capture is concentrated at logged intervention windows; a different policy, library, score weighting, or plant may define another saturation surface. The phrase discrimination collapse is used only for the measured arithmetic in which all candidate violation terms are active and margins are compressed.
+IX. Conclusions and Future Work
+The queue-aware E-N3 tail is reproducible: 159/1000 original-range exits and 175/1000 fresh-range exits against 0/1000 for D-N3 in both blocks. Horizon testing then turns a negative result into a implementation-level mechanism characterization. E-N4 removes the registered tail without the reverse-bound migration that demoted lambda=50. Deeper coupled horizons are not safer by default; E-N7 reaches 479/1000 in exploratory scale-up and N=10 fails throughout the pilot.
+In this harness, prediction depth changes the size of a measured scorer-saturation region, making a locally successful horizon choice unsafe when extended further. The empirical contribution is a carefully confirmed counterexample and an implementation-level mechanism characterization, not a general theory of runtime assurance. The broader conclusion is methodological: runtime-assurance components, repairs, and prescriptions should be preregistered, audited, and falsified as aggressively as the controller they supervise.
+Several tests of external validity follow from the limitations above. They are proposed here, not established by the present experiments. Randomized initial conditions and additional PPO checkpoints would separate the measured saturation surface from this fixed start state and this policy. Modest plant-model mismatch between the rollout model and the simulated plant would test whether the mechanism survives when the monitor's prediction is no longer exact. Broader and correlated delay processes, beyond the iid uniform family and the q=0.70 Markov arm already run, would probe the delay-distribution boundary. Additional actuator-fault models, including asymmetric loss, would extend the fault-profile axis beyond gradual and persistent symmetric degradation. A delay-explicit CBF-QP or reachable-set filter would supply the formal comparison class this study lacks and would test whether an analogous region appears when feasibility is decided by a certificate rather than by a ranked finite library.
+References
+[1]	A. Desai, T. Dreossi, and S. A. Seshia, "SOTER: A runtime assurance framework for programming safe robotics systems," in 2019 IEEE/IFIP International Conference on Dependable Systems and Networks Workshops (DSN-W), 2019.
+[2]	Z. Yuan et al., "safe-control-gym: A unified benchmark suite for safe learning-based control and reinforcement learning in robotics," IEEE Robotics and Automation Letters, vol. 7, no. 4, pp. 11142-11149, 2022.
+[3]	J. Schulman, F. Wolski, P. Dhariwal, A. Radford, and O. Klimov, "Proximal policy optimization algorithms," arXiv:1707.06347, 2017.
+[4]	A. Kane, O. Chowdhury, A. Datta, and P. Koopman, "A case study on runtime monitoring of an autonomous research vehicle (ARV) system," in Runtime Verification, LNCS 9333, pp. 102-117, Springer, 2015.
+[5]	A. D. Ames, S. Coogan, M. Egerstedt, G. Notomista, K. Sreenath, and P. Tabuada, "Control barrier functions: Theory and applications," in Proc. European Control Conference (ECC), pp. 3420-3431, 2019.
+[6]	H. Krasowski, J. Thumm, M. Muller, L. Schafer, X. Wang, and M. Althoff, "Provably safe reinforcement learning: Conceptual analysis, survey, and benchmarking," Transactions on Machine Learning Research, 2023.
+[7]	Brown et al., "Perception-based quantitative runtime verification for learning-enabled cyber-physical systems," 2025.
+[8]	C. J. Clopper and E. S. Pearson, "The use of confidence or fiducial limits illustrated in the case of the binomial," Biometrika, vol. 26, pp. 404-413, 1934.
+[9]	Q. McNemar, "Note on the sampling error of the difference between correlated proportions or percentages," Psychometrika, vol. 12, pp. 153-157, 1947.
+[10]	J. T. Slagel, L. M. White, A. Dutle, C. A. Munoz, and N. Crespo, "A verification framework for runtime assurance of autonomous UAS," in 2024 AIAA DATC/IEEE 43rd Digital Avionics Systems Conference (DASC), pp. 1-8, 2024, doi: 10.1109/DASC62030.2024.10748654.
+[11]	J. Park, R. Ivanov, J. Weimer, M. Pajic, S. H. Son, and I. Lee, "Security of cyber-physical systems in the presence of transient sensor faults," ACM Transactions on Cyber-Physical Systems, vol. 1, no. 3, Art. no. 15, May 2017, doi: 10.1145/3064809.
+[12]	N. Kochdumper, H. Krasowski, X. Wang, S. Bak, and M. Althoff, "Provably safe reinforcement learning via action projection using reachability analysis and polynomial zonotopes," IEEE Open Journal of Control Systems, vol. 2, pp. 79-92, 2023, doi: 10.1109/OJCSYS.2023.3256305.
+Appendix A. Audit Apparatus and What It Caught
+
+TABLE V
+Audit controls that changed the manuscript's claims.
+[TABLE]
+Issue | Audit mechanism | Consequence
+AP fallback | Per-intervention branch logging | Fallback used on 44,264/76,855 interventions; AP cannot be attributed to predicted-safe restriction alone.
+Conversion-semantics collision | Canonical-versus-corrected endpoint reconciliation | Gradual B/D/E counts changed from 103/1000,1000/1000,302/1000 to 0/1000,0/1000,96/1000.
+Seed remap | Recorded-seed census and disjoint hash checks | A legacy named range reused another seed block; later protocols gate actual seed and schedule identity.
+Freeze discipline | Dated preregistration plus mechanical advancement | The zero-boundary rule selected N=4 before the 1000-seed confirmation.
+Full-state side effect | CHK-V and the earlier lambda=50 extended audit | E-N4 passed the reverse-channel check; AP and lambda=50 retain endpoint/horizon qualifications.
+Dense horizon extension manifest | analysis/out/horizon_spectrum_20260723/dense_extension_20260725/FILE_MANIFEST.csv | ce3b830e2f234f848bc10196b1b6a4346237b44181991d73cfbde7ddceb95ba9
+[/TABLE]
+
+
+Appendix B. Manifests and Frozen Protocols
+
+TABLE VI
+Primary preregistration and manifest identities.
+[TABLE]
+Artifact | Project-relative path | SHA-256
+W1 source/output manifest | analysis/out/v5_manuscript_w1_20260723/W1_MANIFEST.sha256 | ebac6b5838697927893e0f1c89a44488cbb49b1b33be9ae74df78d9ed0382c25
+Horizon/AP preregistration | analysis/prereg/horizon_spectrum_ap_confirmation_20260723.md | c5e69ad66d47edb1d4c087ab08945150f289b39a386e91ac1b2b98c29fc9b4a1
+Exploratory 2x2 protocol | analysis/prereg/exploratory_2x2_decouple_20260723.md | 523dc3e29680f38324d4158e5fd79e10df100d0d8fc9cbdf611d3431a25b7737
+Phase 2b manifest | analysis/out/horizon_spectrum_20260723/phase2b/MANIFEST.sha256 | 0657fbf5ee52bf826bcd3f330089179a3c689dfc18f7f205609e73f50f2ae7b5
+Mechanism metrics manifest | analysis/out/horizon_spectrum_20260723/read_only_discrimination_family_metrics_20260723/METRICS_MANIFEST.sha256 | a52edc1dbab6a2f527c314192c9f3ffcb42478a91461d8e5452c579bb0c7c269
+Figures manifest | analysis/out/horizon_spectrum_20260723/presentation_figures_data_derived_20260723/FIGURES_MANIFEST.sha256 | 169404dd8418672f73df257af3d2f8f2d028794db8ce681f1942f467d0b53fac
+Figure revisions/animations manifest | analysis/out/horizon_spectrum_20260723/presentation_figures_data_derived_20260723/ANIMATIONS_MANIFEST.sha256 | d7f24eb452792827635490bcec24fbb28ba5ae115f3a6efa525021b753aa3741
+[/TABLE]
+
+
+Appendix C. Full E-N3 Family Inventories
+
+TABLE VII
+Original-range E-N3 OOB families.
+[TABLE]
+Family | Basin | Rep. seed | Exit | Anchor candidate | Terminal vx | Action hash
+F1 | 72 | 1349 | 79 | hover | 1.909312 | 2c6be4ccedec
+F2 | 40 | 1344 | 80 | gentle_down | 2.385452 | 2c6fea9771d0
+F3 | 31 | 1340 | 82 | hover | 1.884686 | d10f8cdbb9cc
+F4 | 9 | 1457 | 79 | gentle_down | 2.571766 | d83e5d15466c
+F5 | 6 | 1373 | 77 | gentle_down | 2.745387 | 8b78cf3a2d47
+F6 | 1 | 1665 | 79 | gentle_down | 2.558004 | dd47aace5543
+[/TABLE]
+
+
+TABLE VIII
+Fresh confirmation E-N3 OOB families. E-N3-F006 is the unnamed two-seed signature.
+[TABLE]
+Fresh family | Basin | Rep. seed | Known family | Terminal hash | Action hash
+E-N3-F001 | 84 | 61004 | F1 | 39e7c99b7933 | 2c6be4ccedec
+E-N3-F002 | 38 | 61019 | F3 | 1a99aa1f0676 | d10f8cdbb9cc
+E-N3-F003 | 31 | 61001 | F2 | fb7d25581ddc | 2c6fea9771d0
+E-N3-F004 | 14 | 61016 | F5 | 0f7451715530 | 8b78cf3a2d47
+E-N3-F005 | 5 | 61546 | F4 | 6b91763e8338 | d83e5d15466c
+E-N3-F006 | 2 | 61111 |  | 5ffa0182839b | 2429b819cc90
+E-N3-F007 | 1 | 61433 | F6 | 3ced655a6ce0 | dd47aace5543
+[/TABLE]
+
+
+Appendix D. Pipeline Labels and Superseded Variants
+A queue-aware safety monitor failed because its finite action library and shared prediction horizon entered an implementation-specific saturated region. The v2 conversion-semantics defect first had to be isolated and removed from the evidence base. The post-audit horizon program then showed that one additional step repaired the registered OOB endpoint, while the complete N=3 through N=10 spectrum later failed again at deeper horizons. The replacement study used those findings as requirements rather than as a universal indictment of delay-aware RTA.
+The canonical pre-reconciliation fault-profile pipeline and corrected physical_multiplier pipeline are not interchangeable. On the gradual profile, canonical B/D/E OOB counts are 103/1000, 1000/1000, and 302/1000; corrected counts are 0/1000, 0/1000, and 96/1000. The horizon guardrail uses only corrected physical_multiplier conversion. The older fault-profile section is retained because it was registered and audited as executed, but every value carries its pipeline label. The held-state variant H and the uniform-delay ablations ran at nominal effectiveness (disturbance_mode=none) and were structurally unexposed to the conversion defect; their exploratory results are superseded by the v5 mechanism program and are not carried into the claims ledger.
+Appendix E. AP-N3 Provenance
+AP-N3 is the exact historical dual-branch artifact frozen in the horizon protocol. At each intervention, it chooses the predicted-safe library candidate nearest clipped PPO when feasible support is nonzero; otherwise it adds a common infeasibility offset and minimizes raw E-N3 score plus PPO distance. The confirmation contains 76,855 interventions: 32,591 use the feasible branch and 44,264 use fallback. Its 0/1000 endpoint result therefore confirms that combined implementation, not a pure projection operator.

@@ -1,0 +1,3 @@
+arm,episodes,rank_loss_episodes,condition_violation_episodes,separation_violation_episodes,collision_episodes,hidden_collapse_episodes,mean_tracking_error,median_minimum_condition_ratio,median_minimum_separation,mean_intervention_steps
+tracking_only,4096,2304,4096,46,0,1101,0.19331506082016858,0.03244739957153797,0.4731955826282501,0.0
+conditioning_rta,4096,0,0,0,0,0,0.17697565199341625,0.13345669955015182,0.6665603220462799,74.886474609375

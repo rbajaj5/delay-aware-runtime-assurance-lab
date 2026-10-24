@@ -8,3 +8,12 @@ venv/
 *.egg-info/
 *.tmp
 *.log
+.env
+.env.*
+*.pem
+*.key
+*.pfx
+/tools/tableau_deps/
+**/node_modules/
+**/.venv/
+**/.cache/

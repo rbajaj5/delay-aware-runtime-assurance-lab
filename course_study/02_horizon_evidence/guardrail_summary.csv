@@ -1,0 +1,4 @@
+block,pipeline,arm,prediction_horizon,n,oob_count,oob_rate,cp95_lower,cp95_upper,survivor_mean_cumulative_severity,exposure_weighted_per_step_severity,mean_intervention_count,mean_runtime_seconds,episodes_csv
+gradual_guardrail,physical_multiplier,AP-N3,3,100,0,0.0,0.0,0.03621669264517641,11.783261191283334,0.11783261191283327,79.83,0.77589639599988,C:\Users\anaxe\RAGforAssurredAutonomy\analysis\out\horizon_spectrum_20260723\phase2b\episodes.csv
+gradual_guardrail,physical_multiplier,E-N3,3,100,11,0.11,0.05620702028548746,0.18830113219644257,7.902371691498128,0.09793824274323905,75.63,0.7221604470004968,C:\Users\anaxe\RAGforAssurredAutonomy\analysis\out\horizon_spectrum_20260723\phase2b\episodes.csv
+gradual_guardrail,physical_multiplier,E-N4,4,100,0,0.0,0.0,0.03621669264517641,11.50284469446667,0.11502844694466668,75.32,0.8779797370004235,C:\Users\anaxe\RAGforAssurredAutonomy\analysis\out\horizon_spectrum_20260723\phase2b\episodes.csv

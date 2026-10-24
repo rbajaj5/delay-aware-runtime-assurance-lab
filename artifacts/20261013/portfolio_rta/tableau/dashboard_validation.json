@@ -1,0 +1,183 @@
+{
+  "engine": "Tableau Hyper SQL",
+  "rows": 25920,
+  "distinct_frames": 2160,
+  "filter_combinations": [
+    {
+      "phase": "All",
+      "controller": "All",
+      "frames": 2160,
+      "mean_leading_share": 0.6820363598774367,
+      "hidden_frames": 346,
+      "small_group": false,
+      "passed": true
+    },
+    {
+      "phase": "All",
+      "controller": "ACCEPT",
+      "frames": 1808,
+      "mean_leading_share": 0.6531490034252967,
+      "hidden_frames": 0,
+      "small_group": false,
+      "passed": true
+    },
+    {
+      "phase": "All",
+      "controller": "RTA HOLD",
+      "frames": 352,
+      "mean_leading_share": 0.8304123271089427,
+      "hidden_frames": 346,
+      "small_group": false,
+      "passed": true
+    },
+    {
+      "phase": "Stable five-out",
+      "controller": "All",
+      "frames": 360,
+      "mean_leading_share": 0.36143638715632537,
+      "hidden_frames": 0,
+      "small_group": false,
+      "passed": true
+    },
+    {
+      "phase": "Stable five-out",
+      "controller": "ACCEPT",
+      "frames": 360,
+      "mean_leading_share": 0.36143638715632537,
+      "hidden_frames": 0,
+      "small_group": false,
+      "passed": true
+    },
+    {
+      "phase": "Stable five-out",
+      "controller": "RTA HOLD",
+      "frames": 0,
+      "mean_leading_share": null,
+      "hidden_frames": 0,
+      "small_group": false,
+      "passed": true
+    },
+    {
+      "phase": "Coverage changes",
+      "controller": "All",
+      "frames": 600,
+      "mean_leading_share": 0.5971318420644746,
+      "hidden_frames": 0,
+      "small_group": false,
+      "passed": true
+    },
+    {
+      "phase": "Coverage changes",
+      "controller": "ACCEPT",
+      "frames": 600,
+      "mean_leading_share": 0.5971318420644746,
+      "hidden_frames": 0,
+      "small_group": false,
+      "passed": true
+    },
+    {
+      "phase": "Coverage changes",
+      "controller": "RTA HOLD",
+      "frames": 0,
+      "mean_leading_share": null,
+      "hidden_frames": 0,
+      "small_group": false,
+      "passed": true
+    },
+    {
+      "phase": "Allocation adapts",
+      "controller": "All",
+      "frames": 600,
+      "mean_leading_share": 0.8504270293315752,
+      "hidden_frames": 0,
+      "small_group": false,
+      "passed": true
+    },
+    {
+      "phase": "Allocation adapts",
+      "controller": "ACCEPT",
+      "frames": 600,
+      "mean_leading_share": 0.8504270293315752,
+      "hidden_frames": 0,
+      "small_group": false,
+      "passed": true
+    },
+    {
+      "phase": "Allocation adapts",
+      "controller": "RTA HOLD",
+      "frames": 0,
+      "mean_leading_share": null,
+      "hidden_frames": 0,
+      "small_group": false,
+      "passed": true
+    },
+    {
+      "phase": "Geometry under stress",
+      "controller": "All",
+      "frames": 360,
+      "mean_leading_share": 0.8276592541587403,
+      "hidden_frames": 342,
+      "small_group": false,
+      "passed": true
+    },
+    {
+      "phase": "Geometry under stress",
+      "controller": "ACCEPT",
+      "frames": 14,
+      "mean_leading_share": 0.7721168986010634,
+      "hidden_frames": 0,
+      "small_group": true,
+      "passed": true
+    },
+    {
+      "phase": "Geometry under stress",
+      "controller": "RTA HOLD",
+      "frames": 346,
+      "mean_leading_share": 0.8299066327073173,
+      "hidden_frames": 342,
+      "small_group": false,
+      "passed": true
+    },
+    {
+      "phase": "General multi-agent system",
+      "controller": "All",
+      "frames": 240,
+      "mean_leading_share": 0.7357865984342737,
+      "hidden_frames": 4,
+      "small_group": false,
+      "passed": true
+    },
+    {
+      "phase": "General multi-agent system",
+      "controller": "ACCEPT",
+      "frames": 234,
+      "mean_leading_share": 0.7326125615325182,
+      "hidden_frames": 0,
+      "small_group": false,
+      "passed": true
+    },
+    {
+      "phase": "General multi-agent system",
+      "controller": "RTA HOLD",
+      "frames": 6,
+      "mean_leading_share": 0.8595740376026337,
+      "hidden_frames": 4,
+      "small_group": true,
+      "passed": true
+    }
+  ],
+  "all_numeric_checks_passed": true,
+  "native_desktop_render_tested": false,
+  "native_desktop_filters_tested": false,
+  "note": "Hyper query results were checked against frame JSON. Native Tableau Desktop is not installed; workbook layout and native filter controls still require Desktop acceptance.",
+  "workbook_parse": {
+    "worksheets": [
+      "1  How concentrated is motion?",
+      "2  Which actions receive weight?",
+      "3  Proposed and applied geometry",
+      "4  Can accurate tracking hide collapse?"
+    ],
+    "datasources": 2
+  },
+  "source_sha256": "171e7a803ecf328a8df53cfbc03e9bc9dbc1cd2763d8a4bd553a23f8c1dec839"
+}

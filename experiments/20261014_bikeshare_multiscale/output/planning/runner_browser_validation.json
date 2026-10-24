@@ -1,0 +1,165 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "name": "Custom timing and matched initial inventory",
+      "result": {
+        "id": "52fab7e0010eea59b7ad4240",
+        "status": "complete",
+        "origin": "cached_custom_calculation",
+        "config": {
+          "city": "washington",
+          "workload": "controlled",
+          "policy": "no_redistribution",
+          "intervention": "B04",
+          "seed": 2026101400,
+          "scale_m": 200,
+          "closure_start_s": 4200,
+          "closure_duration_s": 2400,
+          "initial_bikes": 7,
+          "source_tape_sha256": "52f251d534f9be0c4c6db81ccaecac540901bfb1773debc2a2724fd0ab8fc653",
+          "engine": "corrected_v1",
+          "schema": 1,
+          "source_hashes": {
+            "config.json": "3b028a3f1499ef0057806cff58ddf632005633a9108a0751cbd919feafaaace6",
+            "simulate.py": "2394ba7f80255f47b020f57cb2899d871494c18e1b215a71a06e3a7d4bd92b9d",
+            "routing.py": "92cddccb12cc7f3f2a136cfbf5b65e52594c7e9bf374abae75b3eb32d1ac93c4",
+            "corrected_model.py": "07b0aa52814829b7620d22d102778427a71306ea2e003d1bc47986c24a171513",
+            "scenario_runner.py": "235d486bb44571884cd67446a07bbbb78bc5f539d67627cf9ab5d3f21108dd0f",
+            "network": "0e85b6fd11ab61fc98ce69578266f2fd4a9a250ed1bcb6e4e9d8e0e180bd763e",
+            "stations": "894518f2a7a4165d879f0098c3840b80f4ea8c904d3610357452877d8b939caa",
+            "model": "eea99d996bde5bda57eb7a6e08f2d9ad0cddd80d872d3d9a0c62fbf15e584a77",
+            "interventions": "e7176981c30e2e30f6b5be4b197142193cb24f61365336ca9c7e3363375f7e7b"
+          }
+        },
+        "catalog": [
+          {
+            "version": "custom",
+            "city": "washington",
+            "workload": "controlled",
+            "day": "",
+            "seed": 2026101400,
+            "scenario": "all_open",
+            "policy": "no_redistribution",
+            "input_sha256": "24b3757a683a9d8d4fdbac230cbccff6004edc7394893ed0c0f45e8bc9b70f1d",
+            "requests": 504,
+            "picked_up": 421,
+            "completed": 421,
+            "served_fraction": 0.8353174603174603,
+            "failed_pickups": 83,
+            "unreachable": 0,
+            "full_station_events": 131,
+            "full_affected_requests": 116,
+            "unfinished": 0,
+            "alternative_legs": 131,
+            "mean_completed_journey_s": 595.4543358930747,
+            "mean_finite_route_inflation": 1.1214370202906014,
+            "mean_completed_time_inflation": 1.1214370202906012,
+            "empty_station_hours": 11.776931928968729,
+            "empty_station_hours_hidden_by_group_totals": 0,
+            "redistributed_bikes": 0,
+            "crew_distance_km": 0,
+            "closure_wait_rider_hours": 0,
+            "fleet": 168,
+            "capacity": 384,
+            "requests_per_bike_hour": 0.75,
+            "route_arcs_validated": 56108,
+            "wall_s": 1.9882090999744833,
+            "scale_m": 200,
+            "file": "output/custom_runs/52fab7e0010eea59b7ad4240/baseline.json.gz",
+            "network": "washington"
+          },
+          {
+            "version": "custom",
+            "city": "washington",
+            "workload": "controlled",
+            "day": "",
+            "seed": 2026101400,
+            "scenario": "B04",
+            "policy": "no_redistribution",
+            "input_sha256": "24b3757a683a9d8d4fdbac230cbccff6004edc7394893ed0c0f45e8bc9b70f1d",
+            "requests": 504,
+            "picked_up": 421,
+            "completed": 421,
+            "served_fraction": 0.8353174603174603,
+            "failed_pickups": 83,
+            "unreachable": 0,
+            "full_station_events": 132,
+            "full_affected_requests": 114,
+            "unfinished": 0,
+            "alternative_legs": 132,
+            "mean_completed_journey_s": 599.227468271471,
+            "mean_finite_route_inflation": 1.1296336395041362,
+            "mean_completed_time_inflation": 1.1296336395041362,
+            "empty_station_hours": 11.889519656594793,
+            "empty_station_hours_hidden_by_group_totals": 0,
+            "redistributed_bikes": 0,
+            "crew_distance_km": 0,
+            "closure_wait_rider_hours": 0,
+            "fleet": 168,
+            "capacity": 384,
+            "requests_per_bike_hour": 0.75,
+            "route_arcs_validated": 56561,
+            "wall_s": 4.443559200037271,
+            "scale_m": 200,
+            "file": "output/custom_runs/52fab7e0010eea59b7ad4240/intervention.json.gz",
+            "network": "washington"
+          }
+        ],
+        "metrics": {
+          "additional_completed": 0,
+          "served_change_pp": 0,
+          "common_completed_n": 420,
+          "common_completed_time_change_s": 4.082602525540512,
+          "baseline_unserved": 83,
+          "intervention_unserved": 83,
+          "baseline_unfinished": 0,
+          "intervention_unfinished": 0,
+          "empty_station_hours_change": 0.11258772762606384,
+          "full_events_change": 1,
+          "crew_distance_km_change": 0
+        },
+        "validation": {
+          "passed": true,
+          "episodes": 2,
+          "ledger_events": 2113,
+          "paired_inputs": 1,
+          "replay_snapshots": 0,
+          "checks": [
+            "station capacity after every event",
+            "bike conservation including riders and cargo",
+            "request outcome accounting",
+            "same tape across policies/closures/scales",
+            "saved frames match independent event reconstruction"
+          ]
+        },
+        "coverage": "One new matched seed pair only. No multi-seed uncertainty or multi-scale ranking inferred.",
+        "config_file": "output/custom_runs/52fab7e0010eea59b7ad4240/config.json"
+      }
+    },
+    {
+      "name": "Changed settings hide all stale trajectories",
+      "passed": true
+    },
+    {
+      "name": "Out-of-horizon closure rejected",
+      "passed": true
+    },
+    {
+      "name": "Exact saved intervention selected without rerun",
+      "origin": "exact_saved_match"
+    },
+    {
+      "name": "Unsimulated combinations rejected",
+      "status": 400,
+      "body": {
+        "error": "Select exactly one predefined intervention or crossing"
+      }
+    },
+    {
+      "name": "Disabled hypothetical connection loads matching open baseline",
+      "passed": true
+    }
+  ],
+  "errors": []
+}

@@ -1,0 +1,42 @@
+{
+  "title": "Autonomous Fleets on Changing Networks: From Konigsberg to Kaliningrad",
+  "network_type": "Historical seven-bridge schematic, not a modern road map",
+  "horizon_s": 900,
+  "demand_end_s": 720,
+  "request_rate_per_s": 0.065,
+  "fleet_size": 6,
+  "service_capacity_per_recipient_per_s": 1,
+  "road_update_period_s": 30,
+  "status_update_period_s": 10,
+  "road_freshness_s": 45,
+  "status_freshness_s": 25,
+  "delay_base_min_s": 1,
+  "delay_base_max_s": 8,
+  "delay_burst_extra_min_s": 18,
+  "delay_burst_extra_max_s": 30,
+  "delay_bursts_s": [[180, 330], [600, 660]],
+  "dispatcher_background_rate_per_s": 0.65,
+  "vehicle_background_rate_per_s": 0.35,
+  "seed_start": 2026101400,
+  "seeds_per_scenario": 100,
+  "policies": ["latest_received", "priority_updates", "freshness_monitor"],
+  "nodes": {"A": [0.36, 0.50], "B": [0.19, 0.13], "C": [0.19, 0.87], "D": [0.84, 0.50]},
+  "edges": [
+    {"id": "a", "u": "A", "v": "B", "travel_s": 28},
+    {"id": "b", "u": "A", "v": "B", "travel_s": 44},
+    {"id": "c", "u": "A", "v": "C", "travel_s": 30},
+    {"id": "d", "u": "A", "v": "C", "travel_s": 42},
+    {"id": "e", "u": "A", "v": "D", "travel_s": 36},
+    {"id": "f", "u": "B", "v": "D", "travel_s": 46},
+    {"id": "g", "u": "C", "v": "D", "travel_s": 48}
+  ],
+  "scenarios": [
+    {"id": "all_open", "label": "All links open", "closures": []},
+    {"id": "detour", "label": "A-B closure; detour available", "closures": [{"edges": ["a", "b"], "start_s": 240, "end_s": 540}]},
+    {"id": "district_isolation", "label": "B temporarily isolated", "closures": [{"edges": ["a", "b", "f"], "start_s": 240, "end_s": 600}]}
+  ],
+  "fps": 24,
+  "movie_duration_s": 180,
+  "replay_scenario": "detour",
+  "replay_rule": "Nearest robust-scaled nine-dimensional scenario median: completion fraction, closed-entry attempts, and capped pickup wait for all three policies; tie broken by smallest seed."
+}

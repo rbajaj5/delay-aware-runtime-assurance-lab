@@ -1,0 +1,127 @@
+1
+00:00:00,000 --> 00:00:06,562
+Which infrastructure changes improve bike service, and does a simplified model make the same planning
+
+2
+00:00:06,562 --> 00:00:07,000
+choice?
+
+3
+00:00:07,000 --> 00:00:12,455
+We start with the existing network. The original seven-bridge graph introduces topology, but ordinary bike
+
+4
+00:00:12,455 --> 00:00:15,000
+trips do not require an Euler tour.
+
+5
+00:00:15,000 --> 00:00:22,200
+Now enable the fixed northern bicycle link. Purple shows proposed infrastructure. The baseline and intervention
+
+6
+00:00:22,200 --> 00:00:27,000
+share exactly the same demand tape, bicycles, and operating policy.
+
+7
+00:00:27,000 --> 00:00:33,964
+The ranking uses twelve matched seeds, while the maps show one saved episode. This link
+
+8
+00:00:33,964 --> 00:00:40,000
+adds about zero point five eight completed trips on average, with substantial variation.
+
+9
+00:00:40,000 --> 00:00:45,769
+Select a journey that actually uses the new connection. Blue marks its baseline path; purple
+
+10
+00:00:45,769 --> 00:00:50,000
+marks its intervention path. The moving dots follow recorded route timing.
+
+11
+00:00:50,000 --> 00:00:55,357
+The selected origin station has a linked inventory trace. A shorter journey can change return
+
+12
+00:00:55,357 --> 00:01:00,000
+timing, then change which later riders find a bicycle or an empty dock.
+
+13
+00:01:00,000 --> 00:01:07,500
+Change routing resolution to two hundred metres. The left map remains detailed; the right uses
+
+14
+00:01:07,500 --> 00:01:12,000
+the reduced network. Both contain the same proposed infrastructure.
+
+15
+00:01:12,000 --> 00:01:18,724
+For this candidate, the mean benefit changes sign, from plus zero point five eight to
+
+16
+00:01:18,724 --> 00:01:25,000
+minus zero point five eight trips. The highest mean now belongs to another candidate.
+
+17
+00:01:25,000 --> 00:01:32,800
+At fourteen hundred metres the distortion is much larger. The reduction preserves directed route connectivity
+
+18
+00:01:32,800 --> 00:01:38,000
+but sends some trips through retained hubs, producing long detours.
+
+19
+00:01:38,000 --> 00:01:45,200
+The maps and completion curves expose the consequences. Washington mean route-length error is about sixty-nine
+
+20
+00:01:45,200 --> 00:01:50,000
+percent at this resolution. Poor simplifications remain in the comparison.
+
+21
+00:01:50,000 --> 00:01:55,455
+In Kaliningrad, stations and demand are hypothetical. With a cargo crew, the western link adds
+
+22
+00:01:55,455 --> 00:02:00,909
+about one point nine two trips with detailed routing, but zero point one seven at
+
+23
+00:02:00,909 --> 00:02:02,000
+two hundred metres.
+
+24
+00:02:02,000 --> 00:02:09,222
+The highest-mean intervention changes here too. Another fixed candidate is unused by these station routes
+
+25
+00:02:09,222 --> 00:02:15,000
+and produces zero benefit. We do not substitute a more successful candidate.
+
+26
+00:02:15,000 --> 00:02:23,333
+Reopening an existing crossing is shown separately, against its disrupted baseline. This is recovery, not
+
+27
+00:02:23,333 --> 00:02:30,000
+investment. Extra completions mean serving fixed requests, not generating new real-world demand.
+
+28
+00:02:30,000 --> 00:02:37,759
+The observed Washington workload covers seven April days, not months. Recorded rentals omit denied demand,
+
+29
+00:02:37,759 --> 00:02:45,000
+and many benefits are tied. The whiskers describe variation across runs, not confidence intervals.
+
+30
+00:02:45,000 --> 00:02:51,667
+New-scenario mode calculates a matched pair with changed closure timing and inventory. Pending settings never
+
+31
+00:02:51,667 --> 00:02:53,000
+reuse old trajectories.
+
+32
+00:02:53,000 --> 00:03:00,000
+Original results remain auditable. These small, variable effects are sensitivity evidence, not reliable construction recommendations.

@@ -1,0 +1,71 @@
+{
+  "status": "FROZEN",
+  "freeze_timestamp_local": "2026-07-23T11:38:56.3313973-04:00",
+  "preregistration": {
+    "path": "C:\\Users\\anaxe\\RAGforAssurredAutonomy\\analysis\\prereg\\horizon_spectrum_ap_confirmation_20260723.md",
+    "sha256": "c5e69ad66d47edb1d4c087ab08945150f289b39a386e91ac1b2b98c29fc9b4a1"
+  },
+  "runner": {
+    "path": "C:\\Users\\anaxe\\RAGforAssurredAutonomy\\analysis\\run_horizon_spectrum_pilot.py",
+    "sha256": "6c785c63bb16db03bd5b1b1356d060b04aecda7f941581fdad894c5a0f05b85b"
+  },
+  "harness": {
+    "path": "C:\\Users\\anaxe\\RAGforAssurredAutonomy\\tools\\quadrotor_delay_ra_experiment.py",
+    "sha256": "8fb2df2b0ea09e9740540cf0ff0cb889fae3f9a2b38aab689f2572e828f5a1a5"
+  },
+  "archived_A_episodes": {
+    "path": "C:\\Users\\anaxe\\RAGforAssurredAutonomy\\analysis\\out\\markov_robustness_arm_2026-07-06\\markov_robustness_episodes.csv",
+    "sha256": "7631fcb674af1bae4cdc53795b2c55cb3347d50784933eba3b0d4418aa2ef06f",
+    "sequence_hash_12": "b74f787d735d04c6"
+  },
+  "historical_AP_source": {
+    "path": "C:\\Users\\anaxe\\Documents\\Codex\\2026-05-05\\master-codex-prompt-agentic-rag-with\\outputs\\uniform_thrust_provenance_ADDENDUM_bundle_20260720\\run_followup_experiments_20260708.py",
+    "sha256": "9cf5740426f35b2a13d5e3dfcd1a270452c9be345b94f00fb335d9ed87d151f5",
+    "implementation_lines": "143-207",
+    "user_signoff": "SIGNOFF-AP-FALLBACK-AS-IMPLEMENTED"
+  },
+  "phase0_artifacts": [
+    {
+      "path": "C:\\Users\\anaxe\\RAGforAssurredAutonomy\\analysis\\out\\horizon_spectrum_phase0_20260723\\ap_provenance.txt",
+      "sha256": "18176d3d694887e7f55067e7470d09a3725119e8fbaa637a894cac1b28ddfa24"
+    },
+    {
+      "path": "C:\\Users\\anaxe\\RAGforAssurredAutonomy\\analysis\\out\\horizon_spectrum_phase0_20260723\\n3_equivalence.json",
+      "sha256": "ef59c769a1617f7393d23b8f44173c98d807f3de622189b44e19520731f638e7"
+    },
+    {
+      "path": "C:\\Users\\anaxe\\RAGforAssurredAutonomy\\analysis\\out\\horizon_spectrum_phase0_20260723\\score_payload_logging_n3_equivalence.json",
+      "sha256": "11d7cf00a61ce7eb08c05b43f214627e8b407bfe89043bdccae9e10b28c22c15"
+    },
+    {
+      "path": "C:\\Users\\anaxe\\RAGforAssurredAutonomy\\analysis\\out\\horizon_spectrum_phase0_20260723\\seed_hash_disjointness.json",
+      "sha256": "b148a27b142eebee96c57423e785dc20c496bf385c1016d0a2638fa2d30e4c52"
+    },
+    {
+      "path": "C:\\Users\\anaxe\\RAGforAssurredAutonomy\\analysis\\out\\horizon_spectrum_phase0_20260723\\guardrail_seed_disjointness.json",
+      "sha256": "9c1594d8377c423d511897f075f888964cf44a44059f37dfb618f6baab909f15"
+    },
+    {
+      "path": "C:\\Users\\anaxe\\RAGforAssurredAutonomy\\analysis\\out\\horizon_spectrum_phase0_20260723\\compute_benchmark.json",
+      "sha256": "d66f8afd3e18e4be0bd5039bd47c9aa693705c6acea263de6906c6ab1df12877"
+    }
+  ],
+  "registered_blocks": {
+    "pilot": {
+      "seed_start": 60000,
+      "seed_stop": 60199,
+      "n": 200
+    },
+    "confirmation": {
+      "seed_start": 61000,
+      "seed_stop": 61999,
+      "n": 1000
+    },
+    "gradual_guardrail": {
+      "seed_start": 62000,
+      "seed_stop": 62099,
+      "n": 100
+    }
+  },
+  "post_pilot_mutation_policy": "Only a mechanical record of the fired advancement branch and resulting confirmation arm list may be added outside this frozen file. This manifest and preregistration are immutable."
+}

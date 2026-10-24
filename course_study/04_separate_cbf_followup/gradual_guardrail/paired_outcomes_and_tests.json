@@ -1,0 +1,25 @@
+{
+  "F-comp_vs_E-N4_oob": {
+    "E-N4_only": 0,
+    "F-comp_only": 0,
+    "both": 0,
+    "neither": 1000
+  },
+  "F-comp_vs_E-N4_reverse_vx": {
+    "E-N4_only": 0,
+    "F-comp_only": 0,
+    "both": 0,
+    "neither": 1000
+  },
+  "F-comp_vs_F-blind_oob": {
+    "F-blind_only": 0,
+    "F-comp_only": 0,
+    "both": 0,
+    "neither": 1000
+  },
+  "block": "gradual_guardrail",
+  "fault_profile": "gradual_1p0_to_0p70_steps_0_99",
+  "guardrail_tests_registered": false,
+  "pipeline": "physical_multiplier",
+  "test_note": "Guardrail block: paired counts are descriptive; no exact test is registered or computed."
+}

@@ -1,0 +1,254 @@
+{
+  "ap_confirmation_fallback_rows": 44264,
+  "ap_confirmation_intervention_rows": 76855,
+  "confirmation_gates": {
+    "block": "confirmation",
+    "gates": {
+      "G1": {
+        "matched_delay_hash_seeds": 1000,
+        "required": 1000,
+        "status": "PASS"
+      },
+      "G2": {
+        "observed_A_archived_style_hash": "b74f787d735d04c6",
+        "required_A_archived_style_hash": "b74f787d735d04c6",
+        "status": "PASS"
+      },
+      "G3a": {
+        "E_N3_oob_count": 175,
+        "n": 1000,
+        "rate": 0.175,
+        "required_inclusive_rate": [
+          0.12,
+          0.22
+        ],
+        "status": "PASS"
+      },
+      "G3b": {
+        "all_six_signatures": {
+          "F1": "39e7c99b7933_2c6be4ccedec",
+          "F2": "fb7d25581ddc_2c6fea9771d0",
+          "F3": "1a99aa1f0676_d10f8cdbb9cc",
+          "F4": "6b91763e8338_d83e5d15466c",
+          "F5": "0f7451715530_8b78cf3a2d47",
+          "F6": "3ced655a6ce0_dd47aace5543"
+        },
+        "missing_required_families": [],
+        "present_known_families": [
+          "F1",
+          "F2",
+          "F3",
+          "F4",
+          "F5",
+          "F6"
+        ],
+        "required_largest_families": [
+          "F1",
+          "F2",
+          "F3"
+        ],
+        "status": "PASS"
+      },
+      "G4": {
+        "required_per_arm": 1000,
+        "row_counts": {
+          "AP-N3": 1000,
+          "D-N3": 1000,
+          "E-N3": 1000,
+          "E-N4": 1000
+        },
+        "status": "PASS"
+      },
+      "G5": {
+        "errors": {},
+        "registered_seed_start": 61000,
+        "registered_seed_stop": 61999,
+        "status": "PASS"
+      },
+      "G6": {
+        "duplicate_or_gap_pairs": [],
+        "echoed_seed_mismatches": [],
+        "status": "PASS"
+      }
+    }
+  },
+  "confirmation_summary": [
+    {
+      "arm": "AP-N3",
+      "block": "confirmation",
+      "cp95_lower": 0.0,
+      "cp95_upper": 0.003682083896865671,
+      "episodes_csv": "C:\\Users\\anaxe\\RAGforAssurredAutonomy\\analysis\\out\\horizon_spectrum_20260723\\phase2b\\episodes.csv",
+      "exposure_weighted_per_step_severity": 0.019520464874450152,
+      "mean_intervention_count": 76.855,
+      "mean_runtime_seconds": 0.7670244340997743,
+      "n": 1000,
+      "oob_count": 0,
+      "oob_rate": 0.0,
+      "pipeline": "physical_multiplier",
+      "prediction_horizon": 3,
+      "survivor_mean_cumulative_severity": 1.9520464874449999
+    },
+    {
+      "arm": "D-N3",
+      "block": "confirmation",
+      "cp95_lower": 0.0,
+      "cp95_upper": 0.003682083896865671,
+      "episodes_csv": "C:\\Users\\anaxe\\RAGforAssurredAutonomy\\analysis\\out\\horizon_spectrum_20260723\\phase2b\\episodes.csv",
+      "exposure_weighted_per_step_severity": 0.0787466569887009,
+      "mean_intervention_count": 62.044,
+      "mean_runtime_seconds": 0.334228229900109,
+      "n": 1000,
+      "oob_count": 0,
+      "oob_rate": 0.0,
+      "pipeline": "physical_multiplier",
+      "prediction_horizon": 3,
+      "survivor_mean_cumulative_severity": 7.8746656988699995
+    },
+    {
+      "arm": "E-N3",
+      "block": "confirmation",
+      "cp95_lower": 0.15193403290953064,
+      "cp95_upper": 0.19999682556933696,
+      "episodes_csv": "C:\\Users\\anaxe\\RAGforAssurredAutonomy\\analysis\\out\\horizon_spectrum_20260723\\phase2b\\episodes.csv",
+      "exposure_weighted_per_step_severity": 0.057050402891890596,
+      "mean_intervention_count": 79.5,
+      "mean_runtime_seconds": 0.7078408562998811,
+      "n": 1000,
+      "oob_count": 175,
+      "oob_rate": 0.175,
+      "pipeline": "physical_multiplier",
+      "prediction_horizon": 3,
+      "survivor_mean_cumulative_severity": 2.5410626805616157
+    },
+    {
+      "arm": "E-N4",
+      "block": "confirmation",
+      "cp95_lower": 0.0,
+      "cp95_upper": 0.003682083896865671,
+      "episodes_csv": "C:\\Users\\anaxe\\RAGforAssurredAutonomy\\analysis\\out\\horizon_spectrum_20260723\\phase2b\\episodes.csv",
+      "exposure_weighted_per_step_severity": 0.016462344233366708,
+      "mean_intervention_count": 77.274,
+      "mean_runtime_seconds": 0.8703188551001076,
+      "n": 1000,
+      "oob_count": 0,
+      "oob_rate": 0.0,
+      "pipeline": "physical_multiplier",
+      "prediction_horizon": 4,
+      "survivor_mean_cumulative_severity": 1.6462344233366668
+    }
+  ],
+  "confirmation_token": "CONFIRM-E-N3,E-N4,AP-N3,D-N3",
+  "guardrail_gates": {
+    "block": "gradual_guardrail",
+    "gates": {
+      "G1": {
+        "matched_delay_hash_seeds": 100,
+        "required": 100,
+        "status": "PASS"
+      },
+      "G2": {
+        "observed_A_archived_style_hash": "b74f787d735d04c6",
+        "required_A_archived_style_hash": "b74f787d735d04c6",
+        "status": "PASS"
+      },
+      "G4": {
+        "required_per_arm": 100,
+        "row_counts": {
+          "AP-N3": 100,
+          "E-N3": 100,
+          "E-N4": 100
+        },
+        "status": "PASS"
+      },
+      "G5": {
+        "errors": {},
+        "registered_seed_start": 62000,
+        "registered_seed_stop": 62099,
+        "status": "PASS"
+      },
+      "G6": {
+        "duplicate_or_gap_pairs": [],
+        "echoed_seed_mismatches": [],
+        "status": "PASS"
+      }
+    }
+  },
+  "guardrail_summary": [
+    {
+      "arm": "AP-N3",
+      "block": "gradual_guardrail",
+      "cp95_lower": 0.0,
+      "cp95_upper": 0.03621669264517641,
+      "episodes_csv": "C:\\Users\\anaxe\\RAGforAssurredAutonomy\\analysis\\out\\horizon_spectrum_20260723\\phase2b\\episodes.csv",
+      "exposure_weighted_per_step_severity": 0.11783261191283327,
+      "mean_intervention_count": 79.83,
+      "mean_runtime_seconds": 0.77589639599988,
+      "n": 100,
+      "oob_count": 0,
+      "oob_rate": 0.0,
+      "pipeline": "physical_multiplier",
+      "prediction_horizon": 3,
+      "survivor_mean_cumulative_severity": 11.783261191283334
+    },
+    {
+      "arm": "E-N3",
+      "block": "gradual_guardrail",
+      "cp95_lower": 0.05620702028548746,
+      "cp95_upper": 0.18830113219644257,
+      "episodes_csv": "C:\\Users\\anaxe\\RAGforAssurredAutonomy\\analysis\\out\\horizon_spectrum_20260723\\phase2b\\episodes.csv",
+      "exposure_weighted_per_step_severity": 0.09793824274323905,
+      "mean_intervention_count": 75.63,
+      "mean_runtime_seconds": 0.7221604470004968,
+      "n": 100,
+      "oob_count": 11,
+      "oob_rate": 0.11,
+      "pipeline": "physical_multiplier",
+      "prediction_horizon": 3,
+      "survivor_mean_cumulative_severity": 7.902371691498128
+    },
+    {
+      "arm": "E-N4",
+      "block": "gradual_guardrail",
+      "cp95_lower": 0.0,
+      "cp95_upper": 0.03621669264517641,
+      "episodes_csv": "C:\\Users\\anaxe\\RAGforAssurredAutonomy\\analysis\\out\\horizon_spectrum_20260723\\phase2b\\episodes.csv",
+      "exposure_weighted_per_step_severity": 0.11502844694466668,
+      "mean_intervention_count": 75.32,
+      "mean_runtime_seconds": 0.8779797370004235,
+      "n": 100,
+      "oob_count": 0,
+      "oob_rate": 0.0,
+      "pipeline": "physical_multiplier",
+      "prediction_horizon": 4,
+      "survivor_mean_cumulative_severity": 11.50284469446667
+    }
+  ],
+  "paired_tests": {
+    "alpha_per_test": 0.025,
+    "hypotheses": {
+      "HA1": {
+        "E_N3_only": 175,
+        "both_fail": 0,
+        "comparator": "AP-N3",
+        "comparator_only": 0,
+        "discordant_total": 175,
+        "exact_two_sided_mcnemar_p": 4.176194859519056e-53,
+        "neither": 825,
+        "reference": "E-N3"
+      },
+      "HZ1": {
+        "E_N3_only": 175,
+        "both_fail": 0,
+        "comparator": "E-N4",
+        "comparator_only": 0,
+        "discordant_total": 175,
+        "exact_two_sided_mcnemar_p": 4.176194859519056e-53,
+        "neither": 825,
+        "reference": "E-N3"
+      }
+    },
+    "test": "exact two-sided McNemar"
+  },
+  "status": "COMPLETE"
+}

@@ -1,0 +1,309 @@
+{
+  "evidence_class": "exploratory",
+  "horizons": [
+    5,
+    6,
+    8,
+    9
+  ],
+  "hypothesis_tests_executed": 0,
+  "mechanism_summaries": [
+    {
+      "argmin_churn_mean": 0.2812134154445045,
+      "arm": "E-N5-dense",
+      "gentle_down_winner_count": 2888,
+      "gentle_down_winner_share": 0.04015349535620933,
+      "intervention_step_rows": 71924,
+      "mean_feasible_support": 2.723152216228241,
+      "median_feasible_support": 0.0,
+      "norm_top2_margin_mean": 0.0014018814026217211,
+      "norm_top2_margin_p25": 7.224417930221614e-05,
+      "norm_top2_margin_p50": 0.00012536976235999857,
+      "norm_top2_margin_p75": 0.00018979943884094583,
+      "prediction_horizon": 5,
+      "saturated_step_fraction": 0.5059229186363383,
+      "source": "C:\\Users\\anaxe\\RAGforAssurredAutonomy\\analysis\\out\\horizon_spectrum_20260723\\dense_extension_20260725\\n5\\E-N5-dense_discrimination.csv",
+      "winner_counts_json": "{\"diff_left\":2540,\"diff_right\":5357,\"gentle_down\":2888,\"hover\":50704,\"ppo_clipped\":2476,\"theta_correct_a\":885,\"theta_correct_b\":7074}"
+    },
+    {
+      "argmin_churn_mean": 0.16847172669478772,
+      "arm": "E-N6-dense",
+      "gentle_down_winner_count": 31500,
+      "gentle_down_winner_share": 0.3769114796467801,
+      "intervention_step_rows": 83574,
+      "mean_feasible_support": 0.5677244118984374,
+      "median_feasible_support": 0.0,
+      "norm_top2_margin_mean": 0.0026529555781765134,
+      "norm_top2_margin_p25": 4.120018739330671e-05,
+      "norm_top2_margin_p50": 6.973514864398001e-05,
+      "norm_top2_margin_p75": 0.003021254245986699,
+      "prediction_horizon": 6,
+      "saturated_step_fraction": 0.8434082370115108,
+      "source": "C:\\Users\\anaxe\\RAGforAssurredAutonomy\\analysis\\out\\horizon_spectrum_20260723\\dense_extension_20260725\\n6\\E-N6-dense_discrimination.csv",
+      "winner_counts_json": "{\"diff_left\":1739,\"diff_right\":799,\"gentle_down\":31500,\"gentle_up\":122,\"hover\":39130,\"ppo_clipped\":4373,\"theta_correct_a\":203,\"theta_correct_b\":5708}"
+    },
+    {
+      "argmin_churn_mean": 0.1333813283840709,
+      "arm": "E-N8-dense",
+      "gentle_down_winner_count": 42233,
+      "gentle_down_winner_share": 0.5872300782825123,
+      "intervention_step_rows": 71919,
+      "mean_feasible_support": 0.07491761565094064,
+      "median_feasible_support": 0.0,
+      "norm_top2_margin_mean": 0.004247011812364004,
+      "norm_top2_margin_p25": 2.3532803263895772e-05,
+      "norm_top2_margin_p50": 0.002806791243450308,
+      "norm_top2_margin_p75": 0.003855018334954081,
+      "prediction_horizon": 8,
+      "saturated_step_fraction": 0.9739150989307416,
+      "source": "C:\\Users\\anaxe\\RAGforAssurredAutonomy\\analysis\\out\\horizon_spectrum_20260723\\dense_extension_20260725\\n8\\E-N8-dense_discrimination.csv",
+      "winner_counts_json": "{\"diff_left\":1087,\"gentle_down\":42233,\"gentle_up\":1705,\"hover\":18648,\"ppo_clipped\":5680,\"theta_correct_a\":257,\"theta_correct_b\":2309}"
+    },
+    {
+      "argmin_churn_mean": 0.09200958883539133,
+      "arm": "E-N9-dense",
+      "gentle_down_winner_count": 47920,
+      "gentle_down_winner_share": 0.7495229455375856,
+      "intervention_step_rows": 63934,
+      "mean_feasible_support": 0.019379359964963868,
+      "median_feasible_support": 0.0,
+      "norm_top2_margin_mean": 0.005072003671815616,
+      "norm_top2_margin_p25": 0.001550534443786659,
+      "norm_top2_margin_p50": 0.002250915891244618,
+      "norm_top2_margin_p75": 0.005044370892755272,
+      "prediction_horizon": 9,
+      "saturated_step_fraction": 0.9866268339224825,
+      "source": "C:\\Users\\anaxe\\RAGforAssurredAutonomy\\analysis\\out\\horizon_spectrum_20260723\\dense_extension_20260725\\n9\\E-N9-dense_discrimination.csv",
+      "winner_counts_json": "{\"diff_left\":454,\"gentle_down\":47920,\"gentle_up\":290,\"hover\":9521,\"ppo_clipped\":4935,\"theta_correct_a\":40,\"theta_correct_b\":774}"
+    }
+  ],
+  "seed_start": 61000,
+  "seed_stop": 61999,
+  "status": "COMPLETE",
+  "structural_gates": {
+    "G1_N3_reproduction": {
+      "checks": [
+        {
+          "applied_action_sequence_hash_12": "ecc1706421c2",
+          "delay_schedule_hash": "39cd4b847955b08d",
+          "first_oob_step": "",
+          "oob": false,
+          "seed": 61000,
+          "state_sequence_hash_12": "2be8554a4b55",
+          "status": "PASS",
+          "terminal_state_hash_12": "0b8000897405",
+          "trajectory_family_key": "0b8000897405_ecc1706421c2"
+        },
+        {
+          "applied_action_sequence_hash_12": "2c6be4ccedec",
+          "delay_schedule_hash": "51a55de3ebc4ff86",
+          "first_oob_step": 79,
+          "oob": true,
+          "seed": 61004,
+          "state_sequence_hash_12": "c3d8c09dfc80",
+          "status": "PASS",
+          "terminal_state_hash_12": "39e7c99b7933",
+          "trajectory_family_key": "39e7c99b7933_2c6be4ccedec"
+        },
+        {
+          "applied_action_sequence_hash_12": "90a3d133ae72",
+          "delay_schedule_hash": "b0a91225ba398395",
+          "first_oob_step": "",
+          "oob": false,
+          "seed": 61137,
+          "state_sequence_hash_12": "19d8d8fd0cec",
+          "status": "PASS",
+          "terminal_state_hash_12": "af056ea29a37",
+          "trajectory_family_key": "af056ea29a37_90a3d133ae72"
+        },
+        {
+          "applied_action_sequence_hash_12": "ebcbbe3bc801",
+          "delay_schedule_hash": "40133a769b2cb06c",
+          "first_oob_step": "",
+          "oob": false,
+          "seed": 61665,
+          "state_sequence_hash_12": "756e600a96c9",
+          "status": "PASS",
+          "terminal_state_hash_12": "245e42702ea5",
+          "trajectory_family_key": "245e42702ea5_ebcbbe3bc801"
+        },
+        {
+          "applied_action_sequence_hash_12": "90a3d133ae72",
+          "delay_schedule_hash": "86ea13f75e94920c",
+          "first_oob_step": "",
+          "oob": false,
+          "seed": 61999,
+          "state_sequence_hash_12": "19d8d8fd0cec",
+          "status": "PASS",
+          "terminal_state_hash_12": "af056ea29a37",
+          "trajectory_family_key": "af056ea29a37_90a3d133ae72"
+        }
+      ],
+      "seeds": [
+        61000,
+        61004,
+        61137,
+        61665,
+        61999
+      ],
+      "status": "PASS"
+    },
+    "G2_seed_rows_and_echo": {
+      "errors": {},
+      "horizons": [
+        5,
+        6,
+        8,
+        9
+      ],
+      "required_seeds": 1000,
+      "status": "PASS"
+    },
+    "G3_delay_hash_matching": {
+      "errors": [],
+      "matched_seeds": 1000,
+      "reference_arm": "E-N3 registered",
+      "status": "PASS"
+    },
+    "G4_configuration": {
+      "delay_mode": "uniform_0_2",
+      "disturbance_mode": "none",
+      "errors": [],
+      "pipeline": "physical_multiplier",
+      "status": "PASS"
+    },
+    "G5_step_log_endpoint_recomputation": {
+      "audits": [
+        {
+          "arm": "E-N5-dense",
+          "episode_count": 1000,
+          "mismatches": [],
+          "oob_count_recomputed": 0,
+          "status": "PASS"
+        },
+        {
+          "arm": "E-N6-dense",
+          "episode_count": 1000,
+          "mismatches": [],
+          "oob_count_recomputed": 454,
+          "status": "PASS"
+        },
+        {
+          "arm": "E-N8-dense",
+          "episode_count": 1000,
+          "mismatches": [],
+          "oob_count_recomputed": 821,
+          "status": "PASS"
+        },
+        {
+          "arm": "E-N9-dense",
+          "episode_count": 1000,
+          "mismatches": [],
+          "oob_count_recomputed": 981,
+          "status": "PASS"
+        }
+      ],
+      "status": "PASS"
+    }
+  },
+  "summaries": [
+    {
+      "arm": "E-N5-dense",
+      "cp95_lower": 0.0,
+      "cp95_upper": 0.003682083896865671,
+      "evidence_class": "exploratory",
+      "exposure_weighted_per_step_severity": 0.018087219699816543,
+      "failure_family_count": 0,
+      "mean_intervention_count": 71.924,
+      "mean_runtime_seconds": 1.352069991199994,
+      "n": 1000,
+      "oob_count": 0,
+      "oob_rate": 0.0,
+      "prediction_horizon": 5,
+      "source": "C:\\Users\\anaxe\\RAGforAssurredAutonomy\\analysis\\out\\horizon_spectrum_20260723\\dense_extension_20260725\\n5\\episodes.csv",
+      "survivor_mean_cumulative_severity": 1.8087219699816666,
+      "trajectory_family_count": 42
+    },
+    {
+      "arm": "E-N6-dense",
+      "cp95_lower": 0.42281604972039905,
+      "cp95_upper": 0.48545550813337907,
+      "evidence_class": "exploratory",
+      "exposure_weighted_per_step_severity": 0.15358833194538588,
+      "failure_family_count": 15,
+      "mean_intervention_count": 83.574,
+      "mean_runtime_seconds": 1.4909458940999933,
+      "n": 1000,
+      "oob_count": 454,
+      "oob_rate": 0.454,
+      "prediction_horizon": 6,
+      "source": "C:\\Users\\anaxe\\RAGforAssurredAutonomy\\analysis\\out\\horizon_spectrum_20260723\\dense_extension_20260725\\n6\\episodes.csv",
+      "survivor_mean_cumulative_severity": 6.935801314526862,
+      "trajectory_family_count": 42
+    },
+    {
+      "arm": "E-N8-dense",
+      "cp95_lower": 0.7958060898416877,
+      "cp95_upper": 0.8442872654420769,
+      "evidence_class": "exploratory",
+      "exposure_weighted_per_step_severity": 0.38757203425694303,
+      "failure_family_count": 38,
+      "mean_intervention_count": 71.919,
+      "mean_runtime_seconds": 1.575497169000004,
+      "n": 1000,
+      "oob_count": 821,
+      "oob_rate": 0.821,
+      "prediction_horizon": 8,
+      "source": "C:\\Users\\anaxe\\RAGforAssurredAutonomy\\analysis\\out\\horizon_spectrum_20260723\\dense_extension_20260725\\n8\\episodes.csv",
+      "survivor_mean_cumulative_severity": 11.142380271052136,
+      "trajectory_family_count": 45
+    },
+    {
+      "arm": "E-N9-dense",
+      "cp95_lower": 0.9704875983749023,
+      "cp95_upper": 0.988522963006899,
+      "evidence_class": "exploratory",
+      "exposure_weighted_per_step_severity": 0.6381757597048865,
+      "failure_family_count": 44,
+      "mean_intervention_count": 63.934,
+      "mean_runtime_seconds": 1.5280964842000073,
+      "n": 1000,
+      "oob_count": 981,
+      "oob_rate": 0.981,
+      "prediction_horizon": 9,
+      "source": "C:\\Users\\anaxe\\RAGforAssurredAutonomy\\analysis\\out\\horizon_spectrum_20260723\\dense_extension_20260725\\n9\\episodes.csv",
+      "survivor_mean_cumulative_severity": 12.050098445000003,
+      "trajectory_family_count": 45
+    }
+  ],
+  "worker_results": [
+    {
+      "arm": "E-N5-dense",
+      "episodes": 1000,
+      "mean_wall_seconds_per_episode": 1.4764726803000001,
+      "prediction_horizon": 5,
+      "runtime_seconds": 1476.4726803
+    },
+    {
+      "arm": "E-N6-dense",
+      "episodes": 1000,
+      "mean_wall_seconds_per_episode": 1.6121629732999998,
+      "prediction_horizon": 6,
+      "runtime_seconds": 1612.1629732999997
+    },
+    {
+      "arm": "E-N8-dense",
+      "episodes": 1000,
+      "mean_wall_seconds_per_episode": 1.6929124325,
+      "prediction_horizon": 8,
+      "runtime_seconds": 1692.9124325
+    },
+    {
+      "arm": "E-N9-dense",
+      "episodes": 1000,
+      "mean_wall_seconds_per_episode": 1.6438489752999998,
+      "prediction_horizon": 9,
+      "runtime_seconds": 1643.8489753
+    }
+  ]
+}

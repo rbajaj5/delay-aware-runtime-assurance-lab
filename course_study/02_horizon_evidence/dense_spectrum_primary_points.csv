@@ -1,0 +1,9 @@
+prediction_horizon,arm,evidence_class,n,oob_count,oob_rate,cp95_lower,cp95_upper,source
+3,E-N3,registered,1000,175,0.175,0.15193403290953064,0.19999682556933696,C:\Users\anaxe\RAGforAssurredAutonomy\analysis\out\horizon_spectrum_20260723\phase2b\horizon_ablation_summary.csv
+4,E-N4,registered,1000,0,0.0,0.0,0.003682083896865671,C:\Users\anaxe\RAGforAssurredAutonomy\analysis\out\horizon_spectrum_20260723\phase2b\horizon_ablation_summary.csv
+5,E-N5-dense,exploratory,1000,0,0.0,0.0,0.003682083896865671,C:\Users\anaxe\RAGforAssurredAutonomy\analysis\out\horizon_spectrum_20260723\dense_extension_20260725\n5\episodes.csv
+6,E-N6-dense,exploratory,1000,454,0.454,0.42281604972039905,0.48545550813337907,C:\Users\anaxe\RAGforAssurredAutonomy\analysis\out\horizon_spectrum_20260723\dense_extension_20260725\n6\episodes.csv
+7,E-N7-exploratory,exploratory,1000,479,0.479,0.44763843123273916,0.5104855322311781,C:\Users\anaxe\RAGforAssurredAutonomy\analysis\out\horizon_spectrum_20260723\exploratory_2x2_20260723\part_b\en7_exploratory_summary.csv
+8,E-N8-dense,exploratory,1000,821,0.821,0.7958060898416877,0.8442872654420769,C:\Users\anaxe\RAGforAssurredAutonomy\analysis\out\horizon_spectrum_20260723\dense_extension_20260725\n8\episodes.csv
+9,E-N9-dense,exploratory,1000,981,0.981,0.9704875983749023,0.988522963006899,C:\Users\anaxe\RAGforAssurredAutonomy\analysis\out\horizon_spectrum_20260723\dense_extension_20260725\n9\episodes.csv
+10,E-N10,pilot,200,200,1.0,0.9817246596448638,1.0,C:\Users\anaxe\RAGforAssurredAutonomy\analysis\out\horizon_spectrum_20260723\pilot\horizon_spectrum_pilot.csv

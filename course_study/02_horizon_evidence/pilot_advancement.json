@@ -1,0 +1,22 @@
+{
+  "branch": "zero_failure_threshold",
+  "confirmation_arms": [
+    "E-N3",
+    "E-N4",
+    "AP-N3",
+    "D-N3"
+  ],
+  "hypothesis_tests_run": false,
+  "pilot_oob_counts": {
+    "E-N10": 200,
+    "E-N3": 33,
+    "E-N4": 0,
+    "E-N5": 0,
+    "E-N7": 106
+  },
+  "reason": "Smallest zero-failure horizon is N=4; confirm it and its immediate predecessor N=3.",
+  "selected_E_horizons": [
+    3,
+    4
+  ]
+}

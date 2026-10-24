@@ -1,0 +1,12 @@
+body.movie-mode .maps,body.movie-mode .transport,body.movie-mode .legend,body.movie-mode .description,body.movie-mode .affected-note,body.movie-mode .plots{width:66.7%}
+body.movie-mode .maps canvas{height:360px}
+body.movie-mode .analysis{display:block;position:absolute;top:251px;right:0;width:33.3%;bottom:84px;border-left:1px solid #c8d5d8;overflow:hidden}
+body.movie-mode .analysis article{border-right:0;border-bottom:1px solid #d6dede;padding:12px 16px}
+body.movie-mode .analysis canvas{height:146px}
+body.movie-mode .analysis .panel-title{display:block}
+body.movie-mode .analysis .panel-title span{display:block;margin-top:6px}
+body.movie-mode #scalePlot{height:125px}
+body.movie-mode .plots canvas{height:110px}
+body.movie-mode #costNote{max-height:none;overflow:visible;font-size:11px;line-height:1.35}
+body.movie-mode #movieCaption{font-size:25px}
+body.movie-mode .metrics small{font-size:11px}

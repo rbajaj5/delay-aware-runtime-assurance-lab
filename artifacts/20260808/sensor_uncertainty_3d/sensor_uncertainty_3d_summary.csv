@@ -1,0 +1,3 @@
+arm,device,agents,steps,unsafe_separation_steps,collision_steps,formation_breakdown_steps,minimum_separation,mean_formation_error,maximum_command_norm,filter_steps,fallback_steps,constraint_projections,final_centroid_x,simulation_seconds
+lec_only,cuda,10,240,87,0,0,0.5444308519363403,0.44040059571464857,1.0447359085083008,0,0,0,8.310420989990234,4.092437200015411
+rta,cuda,10,240,0,0,0,1.2933093309402466,0.4065580659545958,0.9044091105461121,101,14,435,8.310468673706055,43.72713150002528

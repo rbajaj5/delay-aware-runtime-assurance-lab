@@ -1,0 +1,176 @@
+{
+  "schema_version": "1.0",
+  "scope": "Illustrative deterministic programmatic simulation; not real basketball evidence or proof of betting profitability.",
+  "random_seed": 20260812,
+  "device": "NVIDIA GeForce RTX 5070 Ti Laptop GPU",
+  "torch_version": "2.12.0.dev20260408+cu128",
+  "simulation_parameters": {
+    "matched_episodes_per_arm": 4096,
+    "players": 5,
+    "leaders": 3,
+    "simulation_frames": 300,
+    "fps": 15,
+    "dt_seconds": 0.06666666666666667,
+    "duration_seconds": 20.0,
+    "court_width_ft": 50.0,
+    "court_length_ft": 47.0,
+    "maximum_player_speed_ft_s": 18.0,
+    "command_sequence": [
+      {
+        "frames": [
+          0,
+          39
+        ],
+        "state": "healthy five-out"
+      },
+      {
+        "frames": [
+          40,
+          104
+        ],
+        "state": "horns / high pick-and-roll"
+      },
+      {
+        "frames": [
+          105,
+          214
+        ],
+        "state": "progressive compression"
+      },
+      {
+        "frames": [
+          215,
+          234
+        ],
+        "state": "maximum compression"
+      },
+      {
+        "frames": [
+          235,
+          284
+        ],
+        "state": "recovery"
+      },
+      {
+        "frames": [
+          285,
+          299
+        ],
+        "state": "healthy reset"
+      }
+    ],
+    "gpu_batch_seconds": 6.597605800023302,
+    "matching": "Both arms use identical command maps, initial states, tracking-noise phases, and disturbance phases for each episode."
+  },
+  "thresholds": {
+    "conditioning_reject_below": 0.12,
+    "proposal_uncertainty_margin": 0.01,
+    "fallback_checkpoint_at_or_above": 0.18,
+    "conditioning_resume_at_or_above": 0.18,
+    "affine_rank_loss_below": 0.04,
+    "low_tracking_rmse_at_or_below_ft": 1.0,
+    "acceptable_pairwise_spacing_at_or_above_ft": 2.0,
+    "collision_below_ft": 1.0,
+    "hidden_collapse_definition": "normalized conditioning < 0.12 AND tracking RMSE <= 1.0 ft AND minimum pairwise spacing >= 2.0 ft"
+  },
+  "players": [
+    {
+      "player_id": "P01",
+      "name": "Avery Cole",
+      "role": "Primary guard",
+      "role_group": "guard",
+      "impact_rating": 96,
+      "designation": "L1"
+    },
+    {
+      "player_id": "P02",
+      "name": "Marcus Vale",
+      "role": "Impact wing",
+      "role_group": "wing",
+      "impact_rating": 93,
+      "designation": "L2"
+    },
+    {
+      "player_id": "P03",
+      "name": "Darius Okafor",
+      "role": "Impact center",
+      "role_group": "center",
+      "impact_rating": 91,
+      "designation": "L3"
+    },
+    {
+      "player_id": "P04",
+      "name": "Nico Park",
+      "role": "Spacing wing",
+      "role_group": "wing",
+      "impact_rating": 86,
+      "designation": "F1"
+    },
+    {
+      "player_id": "P05",
+      "name": "Theo Grant",
+      "role": "Stretch forward",
+      "role_group": "forward",
+      "impact_rating": 84,
+      "designation": "F2"
+    }
+  ],
+  "leader_selection": {
+    "L1": "P01",
+    "L2": "P02",
+    "L3": "P03",
+    "rule": "highest-impact primary guard, highest-impact wing, highest-impact center"
+  },
+  "follower_affine_weights": {
+    "P04": {
+      "P01": -1.2999999523162842,
+      "P02": 1.75,
+      "P03": 0.550000011920929
+    },
+    "P05": {
+      "P01": -1.2999999523162842,
+      "P02": 0.5500001311302185,
+      "P03": 1.7500001192092896
+    }
+  },
+  "episode_results": {
+    "tracking_separation_only": {
+      "episodes": 4096,
+      "affine_rank_loss_episodes": 1220,
+      "hidden_collapse_episodes": 2992,
+      "spacing_violation_episodes": 0,
+      "collision_episodes": 0,
+      "mean_tracking_rmse_ft": 0.4828500842631911,
+      "mean_follower_rmse_ft": 0.6911640741163865,
+      "median_minimum_conditioning": 0.07839109376072884,
+      "median_minimum_spacing_ft": 2.8277088403701782,
+      "mean_reject_steps": 6.724365234375,
+      "mean_hold_steps": 24.107666015625
+    },
+    "conditioning_aware_rta": {
+      "episodes": 4096,
+      "affine_rank_loss_episodes": 0,
+      "hidden_collapse_episodes": 0,
+      "spacing_violation_episodes": 0,
+      "collision_episodes": 0,
+      "mean_tracking_rmse_ft": 0.45720799332048045,
+      "mean_follower_rmse_ft": 0.6528300191130256,
+      "median_minimum_conditioning": 0.15636736899614334,
+      "median_minimum_spacing_ft": 3.2814522981643677,
+      "mean_reject_steps": 0.773193359375,
+      "mean_hold_steps": 39.25390625
+    }
+  },
+  "representative_episode": {
+    "episode_index": 2082,
+    "possession_id": "POS-AFFINE-2082",
+    "minimum_commanded_scale": 0.004983413033187389,
+    "commanded_shear": -0.05674686282873154,
+    "commanded_rotation_rad": 0.08099477738142014,
+    "first_hidden_collapse_frame": 194,
+    "hidden_collapse_frame_count": 54,
+    "first_affine_rank_loss_frame": 206,
+    "affine_rank_loss_frame_count": 40,
+    "sidecar_rows": 3000
+  }
+}

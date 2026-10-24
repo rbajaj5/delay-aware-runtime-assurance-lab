@@ -1,0 +1,242 @@
+{
+  "tables": [
+    {
+      "file": "frame_metrics.csv",
+      "rows": 2160,
+      "columns": 26,
+      "fields": {
+        "frame": {
+          "type": "integer",
+          "missing": 0,
+          "unique": 2160
+        },
+        "time_s": {
+          "type": "real",
+          "missing": 0,
+          "unique": 2160
+        },
+        "possession_id": {
+          "type": "string",
+          "missing": 0,
+          "unique": 1,
+          "values": [
+            "SYNTH-001"
+          ]
+        },
+        "phase": {
+          "type": "string",
+          "missing": 0,
+          "unique": 5,
+          "values": [
+            "Allocation adapts",
+            "Coverage changes",
+            "General multi-agent system",
+            "Geometry under stress",
+            "Stable five-out"
+          ]
+        },
+        "coverage": {
+          "type": "string",
+          "missing": 0,
+          "unique": 3,
+          "values": [
+            "DROP",
+            "SWITCH + HELP",
+            "TRANSITION"
+          ]
+        },
+        "application_view": {
+          "type": "string",
+          "missing": 0,
+          "unique": 2,
+          "values": [
+            "BASKETBALL",
+            "SCHEMATIC DRONES"
+          ]
+        },
+        "controller_decision": {
+          "type": "string",
+          "missing": 0,
+          "unique": 2,
+          "values": [
+            "ACCEPT",
+            "RTA HOLD"
+          ]
+        },
+        "leading_share": {
+          "type": "real",
+          "missing": 0,
+          "unique": 2160
+        },
+        "eigenvector_overlap": {
+          "type": "real",
+          "missing": 0,
+          "unique": 2160
+        },
+        "covariance_condition_number": {
+          "type": "real",
+          "missing": 0,
+          "unique": 2160
+        },
+        "conditioning_proposed": {
+          "type": "real",
+          "missing": 0,
+          "unique": 2116
+        },
+        "conditioning_applied": {
+          "type": "real",
+          "missing": 0,
+          "unique": 2160
+        },
+        "area_proposed": {
+          "type": "real",
+          "missing": 0,
+          "unique": 2114
+        },
+        "area_applied": {
+          "type": "real",
+          "missing": 0,
+          "unique": 2160
+        },
+        "spacing_proposed_ft": {
+          "type": "real",
+          "missing": 0,
+          "unique": 2112
+        },
+        "spacing_applied_ft": {
+          "type": "real",
+          "missing": 0,
+          "unique": 2160
+        },
+        "tracking_rmse_ft": {
+          "type": "real",
+          "missing": 0,
+          "unique": 2160
+        },
+        "shadow_tracking_rmse_ft": {
+          "type": "real",
+          "missing": 0,
+          "unique": 2160
+        },
+        "follower_rmse_ft": {
+          "type": "real",
+          "missing": 0,
+          "unique": 2160
+        },
+        "hidden_collapse": {
+          "type": "boolean",
+          "missing": 0,
+          "unique": 2
+        },
+        "identity_continuity": {
+          "type": "boolean",
+          "missing": 0,
+          "unique": 1
+        },
+        "observation_valid_fraction": {
+          "type": "integer",
+          "missing": 0,
+          "unique": 1
+        },
+        "observation_age_s": {
+          "type": "real",
+          "missing": 0,
+          "unique": 1
+        },
+        "lambda1": {
+          "type": "real",
+          "missing": 0,
+          "unique": 2160
+        },
+        "lambda2": {
+          "type": "real",
+          "missing": 0,
+          "unique": 2160
+        },
+        "lambda3": {
+          "type": "real",
+          "missing": 0,
+          "unique": 2160
+        }
+      }
+    },
+    {
+      "file": "action_weights.csv",
+      "rows": 12960,
+      "columns": 8,
+      "fields": {
+        "frame": {
+          "type": "integer",
+          "missing": 0,
+          "unique": 2160
+        },
+        "time_s": {
+          "type": "real",
+          "missing": 0,
+          "unique": 2160
+        },
+        "phase": {
+          "type": "string",
+          "missing": 0,
+          "unique": 5,
+          "values": [
+            "Allocation adapts",
+            "Coverage changes",
+            "General multi-agent system",
+            "Geometry under stress",
+            "Stable five-out"
+          ]
+        },
+        "coverage": {
+          "type": "string",
+          "missing": 0,
+          "unique": 3,
+          "values": [
+            "DROP",
+            "SWITCH + HELP",
+            "TRANSITION"
+          ]
+        },
+        "controller_decision": {
+          "type": "string",
+          "missing": 0,
+          "unique": 2,
+          "values": [
+            "ACCEPT",
+            "RTA HOLD"
+          ]
+        },
+        "action": {
+          "type": "string",
+          "missing": 0,
+          "unique": 6,
+          "values": [
+            "Advance",
+            "Five-out drive",
+            "High pick-and-roll",
+            "Post split",
+            "Reset",
+            "Weak-side cut"
+          ]
+        },
+        "proposed_weight": {
+          "type": "real",
+          "missing": 0,
+          "unique": 9643
+        },
+        "applied_weight": {
+          "type": "real",
+          "missing": 0,
+          "unique": 8171
+        }
+      }
+    }
+  ],
+  "issues": [
+    "Overlapping windows are serially dependent; frames are not independent trials.",
+    "Adjacent-frame eigenvector overlap can stay near one during gradual cumulative rotation.",
+    "Covariance is regularized; its condition number is estimator-dependent.",
+    "Basketball-to-drone morph reuses the same coordinates; it is not a second experiment.",
+    "Advance is a half-court surrogate for transition, not a full-court play."
+  ]
+}

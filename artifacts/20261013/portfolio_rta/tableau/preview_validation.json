@@ -1,0 +1,175 @@
+{
+  "tool": "Playwright Chromium; local HTML review only",
+  "native_tableau_ui_tested": false,
+  "filter_tests": [
+    {
+      "phase": "All",
+      "controller": "All",
+      "frames": 2160,
+      "mean_leading_share": 0.6820363598774367,
+      "hidden_frames": 346,
+      "small_group": false,
+      "passed": true
+    },
+    {
+      "phase": "All",
+      "controller": "ACCEPT",
+      "frames": 1808,
+      "mean_leading_share": 0.6531490034252967,
+      "hidden_frames": 0,
+      "small_group": false,
+      "passed": true
+    },
+    {
+      "phase": "All",
+      "controller": "RTA HOLD",
+      "frames": 352,
+      "mean_leading_share": 0.8304123271089427,
+      "hidden_frames": 346,
+      "small_group": false,
+      "passed": true
+    },
+    {
+      "phase": "Stable five-out",
+      "controller": "All",
+      "frames": 360,
+      "mean_leading_share": 0.36143638715632537,
+      "hidden_frames": 0,
+      "small_group": false,
+      "passed": true
+    },
+    {
+      "phase": "Stable five-out",
+      "controller": "ACCEPT",
+      "frames": 360,
+      "mean_leading_share": 0.36143638715632537,
+      "hidden_frames": 0,
+      "small_group": false,
+      "passed": true
+    },
+    {
+      "phase": "Stable five-out",
+      "controller": "RTA HOLD",
+      "frames": 0,
+      "mean_leading_share": null,
+      "hidden_frames": 0,
+      "small_group": false,
+      "passed": true
+    },
+    {
+      "phase": "Coverage changes",
+      "controller": "All",
+      "frames": 600,
+      "mean_leading_share": 0.5971318420644746,
+      "hidden_frames": 0,
+      "small_group": false,
+      "passed": true
+    },
+    {
+      "phase": "Coverage changes",
+      "controller": "ACCEPT",
+      "frames": 600,
+      "mean_leading_share": 0.5971318420644746,
+      "hidden_frames": 0,
+      "small_group": false,
+      "passed": true
+    },
+    {
+      "phase": "Coverage changes",
+      "controller": "RTA HOLD",
+      "frames": 0,
+      "mean_leading_share": null,
+      "hidden_frames": 0,
+      "small_group": false,
+      "passed": true
+    },
+    {
+      "phase": "Allocation adapts",
+      "controller": "All",
+      "frames": 600,
+      "mean_leading_share": 0.8504270293315752,
+      "hidden_frames": 0,
+      "small_group": false,
+      "passed": true
+    },
+    {
+      "phase": "Allocation adapts",
+      "controller": "ACCEPT",
+      "frames": 600,
+      "mean_leading_share": 0.8504270293315752,
+      "hidden_frames": 0,
+      "small_group": false,
+      "passed": true
+    },
+    {
+      "phase": "Allocation adapts",
+      "controller": "RTA HOLD",
+      "frames": 0,
+      "mean_leading_share": null,
+      "hidden_frames": 0,
+      "small_group": false,
+      "passed": true
+    },
+    {
+      "phase": "Geometry under stress",
+      "controller": "All",
+      "frames": 360,
+      "mean_leading_share": 0.8276592541587403,
+      "hidden_frames": 342,
+      "small_group": false,
+      "passed": true
+    },
+    {
+      "phase": "Geometry under stress",
+      "controller": "ACCEPT",
+      "frames": 14,
+      "mean_leading_share": 0.7721168986010634,
+      "hidden_frames": 0,
+      "small_group": true,
+      "passed": true
+    },
+    {
+      "phase": "Geometry under stress",
+      "controller": "RTA HOLD",
+      "frames": 346,
+      "mean_leading_share": 0.8299066327073173,
+      "hidden_frames": 342,
+      "small_group": false,
+      "passed": true
+    },
+    {
+      "phase": "General multi-agent system",
+      "controller": "All",
+      "frames": 240,
+      "mean_leading_share": 0.7357865984342737,
+      "hidden_frames": 4,
+      "small_group": false,
+      "passed": true
+    },
+    {
+      "phase": "General multi-agent system",
+      "controller": "ACCEPT",
+      "frames": 234,
+      "mean_leading_share": 0.7326125615325182,
+      "hidden_frames": 0,
+      "small_group": false,
+      "passed": true
+    },
+    {
+      "phase": "General multi-agent system",
+      "controller": "RTA HOLD",
+      "frames": 6,
+      "mean_leading_share": 0.8595740376026337,
+      "hidden_frames": 4,
+      "small_group": true,
+      "passed": true
+    }
+  ],
+  "console_errors": [],
+  "small_group_warning": "Small group: 14 correlated frames (0.58 seconds). Do not interpret this as independent replication.",
+  "empty_warning": "No observations match this combination. Missing results are not zeros.",
+  "cursor_readout": "75.00 s | RTA HOLD",
+  "desktop_horizontal_overflow": false,
+  "mobile_horizontal_overflow": false,
+  "all_passed": true
+}

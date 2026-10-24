@@ -1,0 +1,7 @@
+block,fault_profile,pipeline,arm,n,oob_k,oob_rate,oob_cp95_lower,oob_cp95_upper,first_exit_min,first_exit_median,first_exit_max,first_exit_sorted,mean_steps_recorded,mean_cumulative_severity,per_step_severity,mean_interventions_per_episode,mean_reward,mean_runtime_seconds,severity_right_censored_by_oob
+persistent_guardrail,persistent_0p70_from_step_35,physical_multiplier,F-blind,1000,0,0.0,0.0,0.003682083896865671,,,,[],100.0,6.729559042085,0.06729559042085001,97.067,83.27834675864706,0.5071356334995362,True
+persistent_guardrail,persistent_0p70_from_step_35,physical_multiplier,F-comp,1000,0,0.0,0.0,0.003682083896865671,,,,[],100.0,8.840394086335,0.08840394086335,94.469,83.22239093954009,0.5088268718998006,True
+persistent_guardrail,persistent_0p70_from_step_35,physical_multiplier,E-N4,1000,0,0.0,0.0,0.003682083896865671,,,,[],100.0,16.229107079846663,0.16229107079846664,82.639,77.48816978064083,0.9815839130003587,True
+persistent_guardrail,persistent_0p70_from_step_35,physical_multiplier,AP-N3,1000,0,0.0,0.0,0.003682083896865671,,,,[],100.0,25.471858638256666,0.25471858638256667,82.958,81.82923116182327,0.8627131047995062,True
+persistent_guardrail,persistent_0p70_from_step_35,physical_multiplier,D-N3,1000,0,0.0,0.0,0.003682083896865671,,,,[],100.0,15.348771115665004,0.15348771115665003,73.875,80.3622475139012,0.41649570899974786,True
+persistent_guardrail,persistent_0p70_from_step_35,physical_multiplier,B,1000,0,0.0,0.0,0.003682083896865671,,,,[],100.0,32.13714041249666,0.3213714041249666,0.0,82.0676353227917,0.1492539594001719,True

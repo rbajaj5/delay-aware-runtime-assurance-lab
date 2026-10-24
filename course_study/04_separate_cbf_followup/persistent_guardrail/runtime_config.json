@@ -1,0 +1,28 @@
+{
+  "amended_prereg_sha256": "b1a007ef4dfecdbb309e58db4fbf1f941fb72f2f9719f5da92699922d01df494",
+  "arms": [
+    "F-blind",
+    "F-comp",
+    "E-N4",
+    "AP-N3",
+    "D-N3",
+    "B"
+  ],
+  "authorization": "AUTHORIZE-V6-FAULTPATH-REBIND-AND-GUARDRAIL-COMPLETION",
+  "block": "persistent_guardrail",
+  "delay_mode": "uniform_0_2",
+  "exact_helper_sha256": "b9c16860b134735b61904ae9ae1c0d24ba306b2af280db125e2f4ee84853bb70",
+  "fault_profile": "persistent_0p70_from_step_35",
+  "gamma": 0.2,
+  "numpy_version": "1.26.4",
+  "original_prereg_sha256": "a220eef71bc201eedd5810b1af47e1e5592463c6944a689ca0b415530b0e810f",
+  "osqp_version": "1.0.4",
+  "pipeline": "physical_multiplier",
+  "platform": "Windows-10-10.0.26200-SP0",
+  "python": "3.11.15 | packaged by conda-forge | (main, Jun 11 2026, 03:27:10) [MSC v.1944 64 bit (AMD64)]",
+  "runner_sha256": "64d457462d24050d70d6254a19291cd5b3679c9fc4d241890e897d0bb6c40bca",
+  "runtime_seconds": 4055.552109000011,
+  "seed_end": 73999,
+  "seed_start": 73000,
+  "steps": 100
+}

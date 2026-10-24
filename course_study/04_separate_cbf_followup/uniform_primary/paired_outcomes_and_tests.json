@@ -1,0 +1,35 @@
+{
+  "F-comp_vs_E-N4_oob": {
+    "E-N4_only": 0,
+    "F-comp_only": 0,
+    "HF1_endpoint_matching": true,
+    "both": 0,
+    "exact_two_sided_mcnemar_p": 1.0,
+    "neither": 1000
+  },
+  "F-comp_vs_E-N4_reverse_vx": {
+    "E-N4_only": 27,
+    "F-comp_only": 0,
+    "HF2_supported": true,
+    "alternative": "F-comp has fewer min_t(vx_t) < -1.0 crossings",
+    "both": 0,
+    "exact_one_sided_mcnemar_p_lower_tail": 7.450580596923828e-09,
+    "neither": 973,
+    "paired_bootstrap_95_lower": -0.038,
+    "paired_bootstrap_95_upper": -0.017,
+    "paired_bootstrap_resamples": 10000,
+    "paired_bootstrap_rng_seed": 20260724,
+    "paired_risk_difference_Fcomp_minus_E-N4": -0.027
+  },
+  "F-comp_vs_F-blind_oob": {
+    "F-blind_only": 0,
+    "F-comp_only": 0,
+    "both": 0,
+    "exact_two_sided_mcnemar_p": 1.0,
+    "neither": 1000
+  },
+  "block": "uniform_primary",
+  "fault_profile": "nominal",
+  "guardrail_tests_registered": true,
+  "pipeline": "nominal_uniform_iid"
+}

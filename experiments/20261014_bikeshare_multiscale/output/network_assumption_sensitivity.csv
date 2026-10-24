@@ -1,0 +1,9 @@
+city,variant,station_od_pairs,unreachable,lost_vs_turn_aware,gained_vs_turn_aware,changed_finite_routes,mean_finite_relative_change,max_finite_relative_change,graph_nodes,graph_edges,cold_all_selected_station_od_s
+washington,turn_aware,552,0,0,0,0,0.0,0.0,61617,114277,4.052193699986674
+washington,legacy_whole_junction_removal,552,46,46,0,436,0.3948193720042498,12.565774804029019,60406,110592,3.974855599924922
+washington,via_way_exclusion_relaxed_upper_bound,552,0,0,0,20,-0.0006014375149747,0.0,61692,114668,4.726315499981865
+washington,half_width_routing_buffer,552,0,0,0,0,0.0,0.0,35458,65248,2.597818100010045
+kaliningrad,turn_aware,552,0,0,0,0,0.0,0.0,21882,40238,2.0325402000453323
+kaliningrad,legacy_whole_junction_removal,552,538,538,0,3,0.004423876545622469,0.03413433702063062,19483,34507,0.017398800002411008
+kaliningrad,via_way_exclusion_relaxed_upper_bound,552,0,0,0,243,-0.0697626352134242,0.0,21939,40376,1.8861609000014141
+kaliningrad,half_width_routing_buffer,552,147,147,0,8,0.0011857602386012667,0.08930926547133078,11851,21049,0.49370429990813136

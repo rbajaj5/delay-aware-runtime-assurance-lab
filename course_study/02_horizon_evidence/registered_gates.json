@@ -1,0 +1,71 @@
+{
+  "block": "confirmation",
+  "gates": {
+    "G1": {
+      "matched_delay_hash_seeds": 1000,
+      "required": 1000,
+      "status": "PASS"
+    },
+    "G2": {
+      "observed_A_archived_style_hash": "b74f787d735d04c6",
+      "required_A_archived_style_hash": "b74f787d735d04c6",
+      "status": "PASS"
+    },
+    "G3a": {
+      "E_N3_oob_count": 175,
+      "n": 1000,
+      "rate": 0.175,
+      "required_inclusive_rate": [
+        0.12,
+        0.22
+      ],
+      "status": "PASS"
+    },
+    "G3b": {
+      "all_six_signatures": {
+        "F1": "39e7c99b7933_2c6be4ccedec",
+        "F2": "fb7d25581ddc_2c6fea9771d0",
+        "F3": "1a99aa1f0676_d10f8cdbb9cc",
+        "F4": "6b91763e8338_d83e5d15466c",
+        "F5": "0f7451715530_8b78cf3a2d47",
+        "F6": "3ced655a6ce0_dd47aace5543"
+      },
+      "missing_required_families": [],
+      "present_known_families": [
+        "F1",
+        "F2",
+        "F3",
+        "F4",
+        "F5",
+        "F6"
+      ],
+      "required_largest_families": [
+        "F1",
+        "F2",
+        "F3"
+      ],
+      "status": "PASS"
+    },
+    "G4": {
+      "required_per_arm": 1000,
+      "row_counts": {
+        "AP-N3": 1000,
+        "D-N3": 1000,
+        "E-N3": 1000,
+        "E-N4": 1000
+      },
+      "status": "PASS"
+    },
+    "G5": {
+      "errors": {},
+      "registered_seed_start": 61000,
+      "registered_seed_stop": 61999,
+      "status": "PASS"
+    },
+    "G6": {
+      "duplicate_or_gap_pairs": [],
+      "echoed_seed_mismatches": [],
+      "status": "PASS"
+    }
+  }
+}

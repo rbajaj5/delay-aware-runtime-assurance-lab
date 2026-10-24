@@ -1,0 +1,226 @@
+SEARCHABLE EXTRACTION; original PPTX governs visual layout and equations.
+
+=== SLIDE 1 ===
+More Lookahead Is Not Always Safer
+What matched-delay experiments revealed about a heuristic safety monitor
+EN.695.715 Assured Autonomy  ·  Ravi  ·  July 2026
+REGISTERED  n=1000
+PILOT  n=200
+EXPLORATORY  n=200/1000
+Every number in this talk traces to a SHA-256-manifested artifact; evidence class is labeled on every result.
+[SPEAKER NOTES]
+SAY: "This talk asks whether more prediction depth makes a runtime safety monitor safer. In this two-dimensional quadrotor harness, a queue-aware monitor made the drone less safe. We reproduced that failure, mapped every integer horizon from three through ten, and tested the obvious repairs. Registered, pilot, and exploratory labels stay separate, and every number maps to a hash-manifested artifact." [About 25 seconds.]
+
+=== SLIDE 2 ===
+A learned controller, a delay queue, and two safety monitors
+2D quadrotor (safe-control-gym) · delayed actuation · 100-step episodes · fixed initial state · one PPO checkpoint
+Arm
+What it is
+B
+Delayed PPO, no monitor (the unmonitored baseline)
+D
+Delay-blind monitor: trigger + 8-candidate scorer, rollouts ignore the queue
+E
+Delay-aware monitor: same library and score, rollouts condition on the pending FIFO queue
+AP
+Projection-style selector over the same library (nearest predicted-safe; disclosed fallback)
+Score (both monitors, horizon N):  J(c) = 100·max violation over N predicted steps + action-bounds + RMSE-to-reference + small L2. Trigger and scorer share the horizon constant.
+1,000 matched delay schedules per arm; endpoint = out-of-bounds exit; exact McNemar on discordant pairs.
+Failure families: exact trajectory classes by terminal-state + applied-action-sequence hash (12-decimal).
+Protocol discipline: preregistration frozen (SHA-256) before data; structural gates as hard asserts; seed echoes; every artifact hash-manifested.
+Evidence classes — registered: preregistered + 1,000-seed confirmation. pilot: 200-seed protocol runs. exploratory: labeled post-pilot additions with pre-committed readings.
+Full protocol, gates, and manifests: paper appendices
+2
+[SPEAKER NOTES]
+SAY: "The learned PPO controller sends commands into a delayed FIFO queue. Arm B is the unmonitored policy. D and E use the same trigger, eight-candidate library, and score; D evaluates the observed state, while E first rolls the pending queue. AP uses the same library but selects projection-style. The key parameter is N: both E's trigger and scorer use that prediction horizon." [About 38 seconds.]
+
+=== SLIDE 3 ===
+The baseline result: the queue-aware monitor increases the OOB tail
+Uniform actuation delay — the monitor built for delay loses to the one that ignores it
+REGISTERED n=1000
+Queue-aware monitor (N=3): 159 / 1000 out-of-bounds exits
+Current-state monitor: 0 / 1000    Policy alone: 0 / 1000
+All 159 matched pairs favor the queue-aware monitor.
+Fresh-range reproduction: 175 / 1000.
+The severity reversal is censoring: failed episodes stop early, so OOB occurrence is primary.
+Left: F5 family representative, failure seed 1373 vs schedule-matched survivor — pitch pinned at the bound while forward velocity compounds
+3
+[SPEAKER NOTES]
+SAY: "Under uniform actuation delay, the queue-aware E-N3 monitor exits bounds 159 times in a thousand, while the delay-blind monitor and the bare policy record zero. A fresh range reproduces the queue-aware tail at 175 in a thousand. The orange trace shows the mechanism: pitch stays pinned while forward velocity compounds. Severity looks deceptively smaller only because failed episodes end early, so occurrence remains the primary endpoint." [About 42 seconds.] Q&A: The first 159-in-1000 observation was unexpected; the fresh reproduction and the HZ1 and HA1 tests were frozen before launch.
+
+=== SLIDE 4 ===
+The failure tail is six deterministic trajectory families
+Exact terminal-state + action-sequence hashing collapses the tail into deterministic families
+REGISTERED n=1000
+159 failures map to six exact terminal-state + full-action signatures.
+Basins 72 / 40 / 31 / 9 / 6 / 1; three cover 89.9% of failures.
+All six exit at steps 77–82.
+This is systematic evidence, but the mechanistic sample is six families—not 159 independent trajectories.
+e_iid_key_insights_v3.md · fresh confirmation range adds a seventh 2-seed signature (six named cover 173/175)
+4
+[SPEAKER NOTES]
+SAY: "The 159 failures are not 159 distinct mechanisms. Hashing terminal state and the complete applied-action sequence collapses them into six exact trajectory families, all exiting between steps 77 and 82. Three families contain almost ninety percent of the tail. That proves the failure is systematic, but it also means the mechanistic sample is six families, not 159 episodes." [About 32 seconds.]
+
+=== SLIDE 5 ===
+Neither monitor dominates: fault-profile dependence
+Pre-registered thrust-effectiveness study · 1,000 matched seeds per profile · fault-profile conclusions are pipeline-scoped
+REGISTERED n=1000
+Gradual loss: D fails on every seed (1000/1000); the bare policy beats both monitors (103 vs 302 vs 1000).
+Persistent loss: both monitors beat the bare policy (56 and 170 vs 348).
+A monitor can be strictly worse than no monitor — in either direction — depending on fault timing.
+Under corrected physical conversion, gradual B/D/E counts are 0/1000, 0/1000, and 96/1000. E remains worse than B, but the canonical D/E ordering does not transfer.
+Pre-registered 2026-07-20 study · prereg SHA dc93e0d3… · pipeline reconciliation in the paper
+5
+[SPEAKER NOTES]
+SAY: "The fault study contains five profile families across seven tested conditions: nominal, two isolated dips, two burst losses, gradual decay, and persistent loss. Under the canonical pipeline, gradual loss makes both monitors worse than the bare policy, while persistent loss makes both better. Under corrected conversion, gradual B, D, and E become zero, zero, and 96 failures. The rates and the D-versus-E ordering are pipeline-dependent, so no monitor dominates across fault timing and conversion semantics." [About 40 seconds.]
+
+=== SLIDE 6 ===
+First repair attempt: a velocity-gated penalty — and its honest audit
+λ=50 penalty on predicted forward drift at positive pitch, frozen confirmation on disjoint seeds
+REGISTERED n=1000
+Endpoint result
+150/1000 → 0/1000 OOB on the frozen block (p=1.4e-45); gradual 9/100 → 0/100.
+What the extended audit found
+Rescued survivors shift toward the MASKED reverse-velocity bound: dual-survivor vx<−1 crossings rise 387 → 503; mean min-vx −0.788 → −0.975.
+The tail it hid
+One rescued family exits the simulator at step 155 in a 200-step replay — x and θ both out, vx = −2.28.
+Status in this paper
+An endpoint- and horizon-bounded mitigation — not a repair. Retired as the default once the horizon study produced better options.
+Extended audit 2026-07-22 · simulator OOB predicate terminates on x/z/θ only; velocities masked at the endpoint
+6
+[SPEAKER NOTES]
+SAY: "The first repair added a velocity-gated penalty. It removed the frozen endpoint tail, 150 in a thousand to zero, but the full-state audit found risk migrating to the masked reverse-velocity channel: crossings rose from 387 to 503. In a longer replay, one rescued family exits at step 155. This is an endpoint mitigation, not a safety repair." [About 35 seconds.]
+
+=== SLIDE 7 ===
+Watch it happen: same seed, one more prediction step
+REGISTERED n=1000
+EXPLORATORY n=200
+Left & right: the SAME seed (61004), same delay schedule - N=3 vs N=4.
+Middle: a different exploratory seed for the decoupled deep-scorer configuration.
+Poster badges summarize logged selections: left & middle lock onto gentle_down; N=4 keeps changing winners.
+Both locked cases cross at step 79; the N=4 vehicle survives through step 99.
+Static poster assembled from retained logged rows.
+Static poster from retained full-step CSVs - outer panels share seed 61004
+7
+[SPEAKER NOTES]
+SAY: "This static poster is assembled from retained logged states. The outer panels use the same seed and delay schedule. E-N3 on the left locks onto gentle_down and exits at step 79; E-N4 on the right keeps changing winners and survives through step 99. The middle panel is a different exploratory seed for the decoupled deep scorer, which also locks and exits. The registered outer-panel contrast is 175 failures in a thousand versus zero." [About 38 seconds.]
+
+=== SLIDE 8 ===
+So give it more foresight? The dose-response says no
+Every measured integer N=3..10 is shown — no interpolation or connecting line
+PILOT n=200
+REGISTERED n=1000
+EXPLORATORY n=1000
+N=3 175/1000 registered; N=4 0/1000 registered
+N=5 0/1000; N=6 454/1000; N=7 479/1000 exploratory
+N=8 821/1000; N=9 981/1000 exploratory
+N=10 200/200 pilot - every seed
+One registered step repairs the tail.
+Deeper horizons return the failure regime.
+Advancement rule, hypotheses, and all interpretations frozen (SHA-256) before the pilot ran
+8
+[SPEAKER NOTES]
+SAY: "The natural response is to keep increasing the horizon. The complete measured spectrum rejects that rule. Registered N equals three has 175 failures in a thousand; N equals four has zero. Exploratory N equals five also has zero, then failures return: 454, 479, 821, and 981 per thousand at N equals six through nine. The N equals ten pilot fails on all 200 seeds. Every point is measured and no line is interpolated. N equals four is a local repair in this harness, not a universally safe horizon." [About 48 seconds.]
+
+=== SLIDE 9 ===
+Why one step works: it breaks fixation
+Zero-compute checks on logged payloads · pre-committed readings, then data
+REGISTERED n=1000
+EXPLORATORY n=200/1000
+Trigger frequency did not explain the rescue: N=4 intervenes 6.6–7.9% less.
+The old ranking still appears in 49/63 payload pairs.
+What changes is persistence: gentle_down wins 41%→25%, winner churn rises 4×, and no ≥27-step run forms.
+Rescoring all 175 fatal onset states: N=4 still picks gentle_down 56%. Rescued paths avoid those states. Dense extension: saturation rises 50.6% at N=5 to 98.7% at N=9.
+chkA_report.md · chk3_fatal_state_rescoring.csv · m1_cell_summary.csv
+9
+[SPEAKER NOTES]
+SAY: "Why does one extra step work? Trigger frequency barely changes, and the old bad ranking still appears in 49 of 63 paired payloads. What changes is persistence: gentle_down wins less often, winner churn rises about fourfold, and the long fixation run disappears. Rescoring the 175 fatal onset states shows N equals four still chooses gentle_down on most of them; surviving paths simply avoid reaching those states. Across the dense extension, saturation rises from 50.6 percent at N equals five to 98.7 percent at N equals nine, while gentle_down share rises from 4 to 75 percent." [About 52 seconds.]
+
+=== SLIDE 10 ===
+The same scoring defect appears at two scales
+The score cannot discriminate where every candidate predicts violation — and that region grows with N
+REGISTERED n=1000
+EXPLORATORY n=200
+At (3,10), 98.8% of intervention steps are saturated: no candidate is predicted safe. Median feasible support = 0; margins are compressed 40×.
+Fatal-onset check: all 98 persistent states have feasible support 0.
+Shallow regime: the saturated region is a boundary shell. Deep regime: it expands across the envelope.
+Left: schematic (labeled). Below: measured saturation fractions (F5).
+m1_cell_summary.csv · m3_fatal_state_metrics.csv · schematic is illustrative; quantities cited from data
+10
+[SPEAKER NOTES]
+SAY: "The unifying defect is saturation. A scorer state is saturated when every one of the eight candidates predicts a violation, so selection reduces to the least predicted violation. In the shallow regime this forms a boundary shell and occasionally produces the six fatal families. At deep horizons the region expands across the envelope and fixation becomes global. The schematic is conceptual; the measured fractions are below it. All 98 fatal states where N equals four still selects gentle_down satisfy the same zero-support condition." [About 42 seconds.]
+
+=== SLIDE 11 ===
+The proposed trigger/scorer split fails too
+N_trig split from N_score · bit-identical diagonal regression gates · pre-committed readings for all four outcomes
+PILOT n=200
+REGISTERED n=1000
+EXPLORATORY n=200
+(3,10), baseline trigger + deep scorer: 199/200.
+(10,3), deep trigger + shallow scorer: 113/200.
+(10,10): 200/200.
+The (3,10) cell shares 8 exact signatures with (10,10), covering ~74% of basin mass on each side. The deep scorer reproduces most of the collapse even when the trigger is shallow.
+exploratory_2x2_summary.csv · m2_family_overlap_matrix.csv · RG1/RG2 diagonal reproduction: bit-identical PASS
+11
+[SPEAKER NOTES]
+SAY: "Because trigger and scorer originally share N, we separated them in a two-by-two experiment after bit-identical regression gates. Keeping the shallow trigger but using the deep scorer fails on 199 of 200 schedules. Deep trigger with shallow scorer fails on 113 of 200. Either channel can therefore break the closed loop, and the deep-scorer cell shares about three quarters of its failure mass with the coupled deep collapse. Intervention rate is endogenous: poor selections move the vehicle toward the boundary and make the unchanged trigger fire more often." [About 46 seconds.]
+
+=== SLIDE 12 ===
+Two registered repairs avoid the saturated region
+Bonferroni co-primaries α=0.025 · exact McNemar on matched seeds · frozen before any run
+REGISTERED n=1000
+N=4 horizon repair: 175→0/1000; gradual guardrail 0/100 vs N=3’s 11/100.
+Projection-style selection: 175→0/1000, but gradual reverse-bound crossings are 20/100 vs 0/89, so the claim is qualified.
+Primary reading: the N=4 repair is clean. The projection arm remains endpoint- and horizon-bounded, with its fallback branch disclosed.
+horizon_ablation_paired_tests.json · guardrail_summary.csv · ap_fallback_rate.csv
+12
+[SPEAKER NOTES]
+SAY: "Two registered endpoint repairs remain. E-N4 records zero failures in a thousand and passes the reverse-channel audit: among matched survivors, crossings fall from 352 to 22, and the gradual guardrail stays at zero. AP also records zero failures, but 20 of its 100 gradual episodes cross the reverse-velocity bound and 57.6 percent of its interventions use fallback. E-N4 is therefore the primary registered repair; AP remains useful but endpoint- and horizon-qualified." [About 45 seconds.]
+
+=== SLIDE 13 ===
+Failure structure across every configuration
+Exact-signature family overlap — the census behind the attribution claims
+PILOT n=200
+REGISTERED n=1000
+EXPLORATORY n=200
+(3,10) ↔ (10,10): 8 shared signatures, ~74% of basin mass on both sides — different trigger depths, literally coincident trajectories.
+(10,3) ↔ shallow E-N3: exactly one shared signature — and it is the largest shallow family (48.6% of shallow mass): forced intervention expresses the shallow scorer's dominant basin.
+E-N7's 35 families are signature-disjoint from everything — a strictness fact about exact hashing, stated as census, not mechanism.
+m2_family_overlap_matrix.csv · family recipe identical across all cells
+13
+[SPEAKER NOTES]
+SAY: "The exact-signature census strengthens the attribution. The decoupled deep-scorer cell and the coupled deep collapse share eight trajectory signatures covering roughly 74 percent of the failure mass on both sides. The saturated-trigger cell shares one signature with the shallow failures, and it is the largest shallow family. E-N7 shares none under this strict hash, which is reported as a census fact rather than evidence of a different mechanism." [About 36 seconds.]
+
+=== SLIDE 14 ===
+Audit findings changed the interpretation
+Four catches prevented four overclaims
+Provenance audit
+AP's undocumented infeasibility fallback — found before confirmation, disclosed, registered as-implemented.
+Semantics reconciliation
+Two thrust-conversion pipelines under one label (gradual E: 302 vs 96) — all fault-profile counts and even the D/E ordering are conversion-dependent; every cell now carries its pipeline label.
+Seed-echo gates
+A silent seed remap (30000-range → 1337–1536) — caught, reconciled, made structurally impossible to repeat.
+Pre-pilot freeze
+Advancement rule + all interpretations hashed before pilot data existed — the non-monotonic surprise could not be spun.
+All artifacts hash-manifested; every number in this deck carries a raw-file path in its source figure
+14
+[SPEAKER NOTES]
+SAY: "The audit changed the interpretation four times. It found AP's undocumented fallback before confirmation. It separated two thrust-conversion pipelines that changed both rates and the D-versus-E ordering. Seed-echo gates caught a silent remap and made recurrence structurally impossible. Finally, the pre-pilot freeze placed the non-monotonic horizon result inside interpretations written before the data existed. These checks were not ceremonial; each prevented an overclaim." [About 38 seconds.]
+
+=== SLIDE 15 ===
+What this study establishes
+The finite heuristic monitor has a saturation region: when every candidate predicts violation, it repeatedly chooses the least-bad option. The region is a boundary shell at N=3-4, expands across N=5-9, and is nearly the whole envelope at N=10.
+Two registered repairs avoid the region: the N=4 horizon repair and projection-style selection both reach 0/1000, but neither proves that the scorer itself is fixed.
+The local lesson is narrower and useful: monitor sophistication is not safety by itself. These results are an implementation-specific counterexample, not a general limitation of delay-aware assurance.
+Scope: one PPO checkpoint, one 2D plant, fixed initialization; off-diagonal cells are exploratory.
+Next: formal safety filtering, a second checkpoint, and randomized initial states.
+Artifacts: hash-manifested bundles for every block · prereg SHAs on file · figures reproducible from committed CSVs
+[SPEAKER NOTES]
+SAY: "Three conclusions. First, this finite heuristic monitor contains a saturation region whose size changes with the shared horizon. Second, E-N4 and projection-style selection avoid that region, but neither repairs the scorer itself. Third, monitor sophistication is not safety by itself. This is an implementation-specific counterexample, not a general limitation of delay-aware assurance. The next tests are formal filtering, additional checkpoints, randomized initial states, and plant mismatch." [About 34 seconds.]
+Q&A PREP:
+1. Scope: one PPO checkpoint, one 2D plant, and fixed initialization.
+2. E-N4 full-state audit: reverse-bound crossings fell from 352 to 22; gradual guardrail crossings remained 0 to 0.
+3. AP qualification: 20/100 gradual episodes crossed vx < -1 and fallback handled 57.6% of interventions.
+4. The saturation schematic is conceptual; the adjacent fractions are measured.
+5. Family counts use terminal state plus action sequence with 12-decimal rounding.
+6. N=5 through N=9 are exploratory 1000-seed cells; they are descriptive, not new registered hypotheses.

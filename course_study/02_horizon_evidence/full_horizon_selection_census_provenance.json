@@ -1,0 +1,58 @@
+{
+  "output": {
+    "path": "C:\\Users\\anaxe\\RAGforAssurredAutonomy\\analysis\\out\\horizon_spectrum_20260723\\dense_extension_20260725\\full_horizon_selection_census.csv",
+    "sha256": "3040d77b0296b6e828f97e9036147e1fd68097f2854b0612fdbf6a5ea724adc0"
+  },
+  "simulation_steps_executed": 0,
+  "sources": [
+    {
+      "path": "C:\\Users\\anaxe\\RAGforAssurredAutonomy\\analysis\\out\\horizon_spectrum_20260723\\phase2b\\confirmation\\full_steps\\E-N3_steps.csv",
+      "prediction_horizon": 3,
+      "sha256": "a30b8c773cd16bb0dcc2276dfd2fad01c3ed9629794e31d246f488ef8660e1f6",
+      "size_bytes": 188152121
+    },
+    {
+      "path": "C:\\Users\\anaxe\\RAGforAssurredAutonomy\\analysis\\out\\horizon_spectrum_20260723\\phase2b\\confirmation\\full_steps\\E-N4_steps.csv",
+      "prediction_horizon": 4,
+      "sha256": "3eb5ddaef25938fce953c7a659bd3b6f63e506d6a4518f8092808f5031e36c59",
+      "size_bytes": 195306149
+    },
+    {
+      "path": "C:\\Users\\anaxe\\RAGforAssurredAutonomy\\analysis\\out\\horizon_spectrum_20260723\\dense_extension_20260725\\n5\\E-N5-dense_steps.csv",
+      "prediction_horizon": 5,
+      "sha256": "518c6b059faa92091d0f1394f16303cf9eff1f05aac6c71df8316653a207ce84",
+      "size_bytes": 198795977
+    },
+    {
+      "path": "C:\\Users\\anaxe\\RAGforAssurredAutonomy\\analysis\\out\\horizon_spectrum_20260723\\dense_extension_20260725\\n6\\E-N6-dense_steps.csv",
+      "prediction_horizon": 6,
+      "sha256": "cd2434117c64f98f9a4a49fc3bfd7cee6d6d82d9aa5ab6a4ec33ed6c56cab646",
+      "size_bytes": 178169453
+    },
+    {
+      "path": "C:\\Users\\anaxe\\RAGforAssurredAutonomy\\analysis\\out\\horizon_spectrum_20260723\\exploratory_2x2_20260723\\part_b\\en7_coupled\\full_steps\\E-N7-exploratory_steps.csv",
+      "prediction_horizon": 7,
+      "sha256": "aa594a97119ff6e203d9c8c9dd3cca38c54b0616eee05748eb922d60912947cd",
+      "size_bytes": 168153638
+    },
+    {
+      "path": "C:\\Users\\anaxe\\RAGforAssurredAutonomy\\analysis\\out\\horizon_spectrum_20260723\\dense_extension_20260725\\n8\\E-N8-dense_steps.csv",
+      "prediction_horizon": 8,
+      "sha256": "0585e0c1f5c371b68413222a6ad70cd35a8ab1bc0a77777cbe9a03802d6fc9c4",
+      "size_bytes": 148610461
+    },
+    {
+      "path": "C:\\Users\\anaxe\\RAGforAssurredAutonomy\\analysis\\out\\horizon_spectrum_20260723\\dense_extension_20260725\\n9\\E-N9-dense_steps.csv",
+      "prediction_horizon": 9,
+      "sha256": "227ed96e1335e581d8b1cb3eaeedeffe2954626d79aa69987f3bed5c6994a616",
+      "size_bytes": 132383578
+    },
+    {
+      "path": "C:\\Users\\anaxe\\RAGforAssurredAutonomy\\analysis\\out\\horizon_spectrum_20260723\\pilot\\full_steps\\E-N10_steps.csv",
+      "prediction_horizon": 10,
+      "sha256": "fb672fde5245ca9695a736b540f276691ec58a3901b82845e00dd21b2c2b506b",
+      "size_bytes": 24978407
+    }
+  ],
+  "status": "COMPLETE"
+}

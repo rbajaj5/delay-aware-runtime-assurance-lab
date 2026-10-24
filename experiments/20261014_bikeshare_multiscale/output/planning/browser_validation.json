@@ -1,0 +1,1103 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "name": "Initial investment",
+      "settings": {
+        "city": "washington",
+        "workload": "controlled",
+        "seed": "2026101400",
+        "policy": "no_redistribution",
+        "evidence": "corrected",
+        "comparison": "investment",
+        "scenario": "all_open",
+        "scale": "200"
+      },
+      "results": [
+        {
+          "completed": 442,
+          "expected": 442,
+          "failed": 62,
+          "expectedFailed": 62,
+          "fleet": 192,
+          "expectedFleet": 192
+        },
+        {
+          "completed": 442,
+          "expected": 442,
+          "failed": 62,
+          "expectedFailed": 62,
+          "fleet": 192,
+          "expectedFleet": 192
+        }
+      ]
+    },
+    {
+      "name": "{\"city\":\"washington\",\"workload\":\"controlled\",\"policy\":\"cargo_crew\",\"comparison\":\"scale\",\"scenario\":\"I1\",\"scale\":\"1400\",\"seed\":\"2026101405\"}",
+      "settings": {
+        "city": "washington",
+        "workload": "controlled",
+        "seed": "2026101405",
+        "policy": "cargo_crew",
+        "evidence": "corrected",
+        "comparison": "scale",
+        "scenario": "I1",
+        "scale": "1400"
+      },
+      "results": [
+        {
+          "completed": 468,
+          "expected": 468,
+          "failed": 36,
+          "expectedFailed": 36,
+          "fleet": 192,
+          "expectedFleet": 192
+        },
+        {
+          "completed": 439,
+          "expected": 439,
+          "failed": 46,
+          "expectedFailed": 46,
+          "fleet": 192,
+          "expectedFleet": 192
+        }
+      ]
+    },
+    {
+      "name": "{\"city\":\"washington\",\"workload\":\"observed_week\",\"policy\":\"no_redistribution\",\"comparison\":\"investment\",\"scenario\":\"I2\",\"scale\":\"600\",\"seed\":\"2026101403\"}",
+      "settings": {
+        "city": "washington",
+        "workload": "observed_week",
+        "seed": "2026101403",
+        "policy": "no_redistribution",
+        "evidence": "corrected",
+        "comparison": "investment",
+        "scenario": "I2",
+        "scale": "600"
+      },
+      "results": [
+        {
+          "completed": 265,
+          "expected": 265,
+          "failed": 11,
+          "expectedFailed": 11,
+          "fleet": 192,
+          "expectedFleet": 192
+        },
+        {
+          "completed": 265,
+          "expected": 265,
+          "failed": 11,
+          "expectedFailed": 11,
+          "fleet": 192,
+          "expectedFleet": 192
+        }
+      ]
+    },
+    {
+      "name": "{\"city\":\"kaliningrad\",\"workload\":\"controlled\",\"policy\":\"cargo_crew\",\"comparison\":\"investment\",\"scenario\":\"I3\",\"scale\":\"200\",\"seed\":\"2026101411\"}",
+      "settings": {
+        "city": "kaliningrad",
+        "workload": "controlled",
+        "seed": "2026101400",
+        "policy": "cargo_crew",
+        "evidence": "corrected",
+        "comparison": "investment",
+        "scenario": "I3",
+        "scale": "200"
+      },
+      "results": [
+        {
+          "completed": 362,
+          "expected": 362,
+          "failed": 136,
+          "expectedFailed": 136,
+          "fleet": 192,
+          "expectedFleet": 192
+        },
+        {
+          "completed": 362,
+          "expected": 362,
+          "failed": 136,
+          "expectedFailed": 136,
+          "fleet": 192,
+          "expectedFleet": 192
+        }
+      ]
+    },
+    {
+      "name": "{\"city\":\"kaliningrad\",\"comparison\":\"recovery\",\"scenario\":\"B03\",\"scale\":\"0\",\"seed\":\"2026101402\"}",
+      "settings": {
+        "city": "kaliningrad",
+        "workload": "controlled",
+        "seed": "2026101402",
+        "policy": "cargo_crew",
+        "evidence": "corrected",
+        "comparison": "recovery",
+        "scenario": "B01",
+        "scale": "0"
+      },
+      "results": [
+        {
+          "completed": 405,
+          "expected": 405,
+          "failed": 93,
+          "expectedFailed": 93,
+          "fleet": 192,
+          "expectedFleet": 192
+        },
+        {
+          "completed": 403,
+          "expected": 403,
+          "failed": 98,
+          "expectedFailed": 98,
+          "fleet": 192,
+          "expectedFleet": 192
+        }
+      ]
+    },
+    {
+      "name": "{\"city\":\"washington\",\"workload\":\"controlled\",\"evidence\":\"retained\",\"comparison\":\"recovery\",\"scenario\":\"B04\",\"scale\":\"600\",\"seed\":\"2026101400\"}",
+      "settings": {
+        "city": "washington",
+        "workload": "controlled",
+        "seed": "2026101400",
+        "policy": "cargo_crew",
+        "evidence": "retained",
+        "comparison": "recovery",
+        "scenario": "B01",
+        "scale": "600"
+      },
+      "results": [
+        {
+          "completed": 390,
+          "expected": 390,
+          "failed": 114,
+          "expectedFailed": 114,
+          "fleet": 192,
+          "expectedFleet": 192
+        },
+        {
+          "completed": 454,
+          "expected": 454,
+          "failed": 50,
+          "expectedFailed": 50,
+          "fleet": 192,
+          "expectedFleet": 192
+        }
+      ]
+    },
+    {
+      "name": "{\"city\":\"washington\",\"evidence\":\"corrected\",\"comparison\":\"investment\",\"scenario\":\"I1\",\"scale\":\"200\"}",
+      "settings": {
+        "city": "washington",
+        "workload": "controlled",
+        "seed": "2026101400",
+        "policy": "cargo_crew",
+        "evidence": "corrected",
+        "comparison": "investment",
+        "scenario": "all_open",
+        "scale": "200"
+      },
+      "results": [
+        {
+          "completed": 454,
+          "expected": 454,
+          "failed": 50,
+          "expectedFailed": 50,
+          "fleet": 192,
+          "expectedFleet": 192
+        },
+        {
+          "completed": 454,
+          "expected": 454,
+          "failed": 50,
+          "expectedFailed": 50,
+          "fleet": 192,
+          "expectedFleet": 192
+        }
+      ]
+    },
+    {
+      "name": "city=washington",
+      "settings": {
+        "city": "washington",
+        "workload": "controlled",
+        "seed": "2026101400",
+        "policy": "cargo_crew",
+        "evidence": "corrected",
+        "comparison": "investment",
+        "scenario": "all_open",
+        "scale": "200"
+      },
+      "results": [
+        {
+          "completed": 454,
+          "expected": 454,
+          "failed": 50,
+          "expectedFailed": 50,
+          "fleet": 192,
+          "expectedFleet": 192
+        },
+        {
+          "completed": 454,
+          "expected": 454,
+          "failed": 50,
+          "expectedFailed": 50,
+          "fleet": 192,
+          "expectedFleet": 192
+        }
+      ]
+    },
+    {
+      "name": "city=kaliningrad",
+      "settings": {
+        "city": "kaliningrad",
+        "workload": "controlled",
+        "seed": "2026101400",
+        "policy": "cargo_crew",
+        "evidence": "corrected",
+        "comparison": "investment",
+        "scenario": "all_open",
+        "scale": "200"
+      },
+      "results": [
+        {
+          "completed": 362,
+          "expected": 362,
+          "failed": 136,
+          "expectedFailed": 136,
+          "fleet": 192,
+          "expectedFleet": 192
+        },
+        {
+          "completed": 362,
+          "expected": 362,
+          "failed": 136,
+          "expectedFailed": 136,
+          "fleet": 192,
+          "expectedFleet": 192
+        }
+      ]
+    },
+    {
+      "name": "workload=controlled",
+      "settings": {
+        "city": "kaliningrad",
+        "workload": "controlled",
+        "seed": "2026101400",
+        "policy": "cargo_crew",
+        "evidence": "corrected",
+        "comparison": "investment",
+        "scenario": "all_open",
+        "scale": "200"
+      },
+      "results": [
+        {
+          "completed": 362,
+          "expected": 362,
+          "failed": 136,
+          "expectedFailed": 136,
+          "fleet": 192,
+          "expectedFleet": 192
+        },
+        {
+          "completed": 362,
+          "expected": 362,
+          "failed": 136,
+          "expectedFailed": 136,
+          "fleet": 192,
+          "expectedFleet": 192
+        }
+      ]
+    },
+    {
+      "name": "policy=no_redistribution",
+      "settings": {
+        "city": "kaliningrad",
+        "workload": "controlled",
+        "seed": "2026101400",
+        "policy": "no_redistribution",
+        "evidence": "corrected",
+        "comparison": "investment",
+        "scenario": "all_open",
+        "scale": "200"
+      },
+      "results": [
+        {
+          "completed": 334,
+          "expected": 334,
+          "failed": 149,
+          "expectedFailed": 149,
+          "fleet": 192,
+          "expectedFleet": 192
+        },
+        {
+          "completed": 334,
+          "expected": 334,
+          "failed": 149,
+          "expectedFailed": 149,
+          "fleet": 192,
+          "expectedFleet": 192
+        }
+      ]
+    },
+    {
+      "name": "policy=cargo_crew",
+      "settings": {
+        "city": "kaliningrad",
+        "workload": "controlled",
+        "seed": "2026101400",
+        "policy": "cargo_crew",
+        "evidence": "corrected",
+        "comparison": "investment",
+        "scenario": "all_open",
+        "scale": "200"
+      },
+      "results": [
+        {
+          "completed": 362,
+          "expected": 362,
+          "failed": 136,
+          "expectedFailed": 136,
+          "fleet": 192,
+          "expectedFleet": 192
+        },
+        {
+          "completed": 362,
+          "expected": 362,
+          "failed": 136,
+          "expectedFailed": 136,
+          "fleet": 192,
+          "expectedFleet": 192
+        }
+      ]
+    },
+    {
+      "name": "evidence=corrected",
+      "settings": {
+        "city": "kaliningrad",
+        "workload": "controlled",
+        "seed": "2026101400",
+        "policy": "cargo_crew",
+        "evidence": "corrected",
+        "comparison": "investment",
+        "scenario": "all_open",
+        "scale": "200"
+      },
+      "results": [
+        {
+          "completed": 362,
+          "expected": 362,
+          "failed": 136,
+          "expectedFailed": 136,
+          "fleet": 192,
+          "expectedFleet": 192
+        },
+        {
+          "completed": 362,
+          "expected": 362,
+          "failed": 136,
+          "expectedFailed": 136,
+          "fleet": 192,
+          "expectedFleet": 192
+        }
+      ]
+    },
+    {
+      "name": "evidence=retained",
+      "settings": {
+        "city": "kaliningrad",
+        "workload": "controlled",
+        "seed": "2026101400",
+        "policy": "cargo_crew",
+        "evidence": "retained",
+        "comparison": "recovery",
+        "scenario": "B01",
+        "scale": "200"
+      },
+      "results": [
+        {
+          "completed": 316,
+          "expected": 316,
+          "failed": 173,
+          "expectedFailed": 173,
+          "fleet": 192,
+          "expectedFleet": 192
+        },
+        {
+          "completed": 342,
+          "expected": 342,
+          "failed": 143,
+          "expectedFailed": 143,
+          "fleet": 192,
+          "expectedFleet": 192
+        }
+      ]
+    },
+    {
+      "name": "scale=0",
+      "settings": {
+        "city": "kaliningrad",
+        "workload": "controlled",
+        "seed": "2026101400",
+        "policy": "cargo_crew",
+        "evidence": "retained",
+        "comparison": "recovery",
+        "scenario": "B01",
+        "scale": "0"
+      },
+      "results": [
+        {
+          "completed": 319,
+          "expected": 319,
+          "failed": 172,
+          "expectedFailed": 172,
+          "fleet": 192,
+          "expectedFleet": 192
+        },
+        {
+          "completed": 345,
+          "expected": 345,
+          "failed": 141,
+          "expectedFailed": 141,
+          "fleet": 192,
+          "expectedFleet": 192
+        }
+      ]
+    },
+    {
+      "name": "scale=200",
+      "settings": {
+        "city": "kaliningrad",
+        "workload": "controlled",
+        "seed": "2026101400",
+        "policy": "cargo_crew",
+        "evidence": "retained",
+        "comparison": "recovery",
+        "scenario": "B01",
+        "scale": "200"
+      },
+      "results": [
+        {
+          "completed": 316,
+          "expected": 316,
+          "failed": 173,
+          "expectedFailed": 173,
+          "fleet": 192,
+          "expectedFleet": 192
+        },
+        {
+          "completed": 342,
+          "expected": 342,
+          "failed": 143,
+          "expectedFailed": 143,
+          "fleet": 192,
+          "expectedFleet": 192
+        }
+      ]
+    },
+    {
+      "name": "scale=600",
+      "settings": {
+        "city": "kaliningrad",
+        "workload": "controlled",
+        "seed": "2026101400",
+        "policy": "cargo_crew",
+        "evidence": "retained",
+        "comparison": "recovery",
+        "scenario": "B01",
+        "scale": "600"
+      },
+      "results": [
+        {
+          "completed": 320,
+          "expected": 320,
+          "failed": 173,
+          "expectedFailed": 173,
+          "fleet": 192,
+          "expectedFleet": 192
+        },
+        {
+          "completed": 343,
+          "expected": 343,
+          "failed": 143,
+          "expectedFailed": 143,
+          "fleet": 192,
+          "expectedFleet": 192
+        }
+      ]
+    },
+    {
+      "name": "scale=1400",
+      "settings": {
+        "city": "kaliningrad",
+        "workload": "controlled",
+        "seed": "2026101400",
+        "policy": "cargo_crew",
+        "evidence": "retained",
+        "comparison": "recovery",
+        "scenario": "B01",
+        "scale": "1400"
+      },
+      "results": [
+        {
+          "completed": 320,
+          "expected": 320,
+          "failed": 172,
+          "expectedFailed": 172,
+          "fleet": 192,
+          "expectedFleet": 192
+        },
+        {
+          "completed": 343,
+          "expected": 343,
+          "failed": 143,
+          "expectedFailed": 143,
+          "fleet": 192,
+          "expectedFleet": 192
+        }
+      ]
+    },
+    {
+      "name": "seed=2026101400",
+      "settings": {
+        "city": "kaliningrad",
+        "workload": "controlled",
+        "seed": "2026101400",
+        "policy": "cargo_crew",
+        "evidence": "retained",
+        "comparison": "recovery",
+        "scenario": "B01",
+        "scale": "1400"
+      },
+      "results": [
+        {
+          "completed": 320,
+          "expected": 320,
+          "failed": 172,
+          "expectedFailed": 172,
+          "fleet": 192,
+          "expectedFleet": 192
+        },
+        {
+          "completed": 343,
+          "expected": 343,
+          "failed": 143,
+          "expectedFailed": 143,
+          "fleet": 192,
+          "expectedFleet": 192
+        }
+      ]
+    },
+    {
+      "name": "seed=2026101401",
+      "settings": {
+        "city": "kaliningrad",
+        "workload": "controlled",
+        "seed": "2026101401",
+        "policy": "cargo_crew",
+        "evidence": "retained",
+        "comparison": "recovery",
+        "scenario": "B01",
+        "scale": "1400"
+      },
+      "results": [
+        {
+          "completed": 307,
+          "expected": 307,
+          "failed": 187,
+          "expectedFailed": 187,
+          "fleet": 192,
+          "expectedFleet": 192
+        },
+        {
+          "completed": 339,
+          "expected": 339,
+          "failed": 147,
+          "expectedFailed": 147,
+          "fleet": 192,
+          "expectedFleet": 192
+        }
+      ]
+    },
+    {
+      "name": "seed=2026101402",
+      "settings": {
+        "city": "kaliningrad",
+        "workload": "controlled",
+        "seed": "2026101402",
+        "policy": "cargo_crew",
+        "evidence": "retained",
+        "comparison": "recovery",
+        "scenario": "B01",
+        "scale": "1400"
+      },
+      "results": [
+        {
+          "completed": 364,
+          "expected": 364,
+          "failed": 135,
+          "expectedFailed": 135,
+          "fleet": 192,
+          "expectedFleet": 192
+        },
+        {
+          "completed": 399,
+          "expected": 399,
+          "failed": 98,
+          "expectedFailed": 98,
+          "fleet": 192,
+          "expectedFleet": 192
+        }
+      ]
+    },
+    {
+      "name": "seed=2026101403",
+      "settings": {
+        "city": "kaliningrad",
+        "workload": "controlled",
+        "seed": "2026101403",
+        "policy": "cargo_crew",
+        "evidence": "retained",
+        "comparison": "recovery",
+        "scenario": "B01",
+        "scale": "1400"
+      },
+      "results": [
+        {
+          "completed": 321,
+          "expected": 321,
+          "failed": 167,
+          "expectedFailed": 167,
+          "fleet": 192,
+          "expectedFleet": 192
+        },
+        {
+          "completed": 378,
+          "expected": 378,
+          "failed": 110,
+          "expectedFailed": 110,
+          "fleet": 192,
+          "expectedFleet": 192
+        }
+      ]
+    },
+    {
+      "name": "seed=2026101404",
+      "settings": {
+        "city": "kaliningrad",
+        "workload": "controlled",
+        "seed": "2026101404",
+        "policy": "cargo_crew",
+        "evidence": "retained",
+        "comparison": "recovery",
+        "scenario": "B01",
+        "scale": "1400"
+      },
+      "results": [
+        {
+          "completed": 343,
+          "expected": 343,
+          "failed": 152,
+          "expectedFailed": 152,
+          "fleet": 192,
+          "expectedFleet": 192
+        },
+        {
+          "completed": 353,
+          "expected": 353,
+          "failed": 133,
+          "expectedFailed": 133,
+          "fleet": 192,
+          "expectedFleet": 192
+        }
+      ]
+    },
+    {
+      "name": "seed=2026101405",
+      "settings": {
+        "city": "kaliningrad",
+        "workload": "controlled",
+        "seed": "2026101405",
+        "policy": "cargo_crew",
+        "evidence": "retained",
+        "comparison": "recovery",
+        "scenario": "B01",
+        "scale": "1400"
+      },
+      "results": [
+        {
+          "completed": 328,
+          "expected": 328,
+          "failed": 165,
+          "expectedFailed": 165,
+          "fleet": 192,
+          "expectedFleet": 192
+        },
+        {
+          "completed": 364,
+          "expected": 364,
+          "failed": 130,
+          "expectedFailed": 130,
+          "fleet": 192,
+          "expectedFleet": 192
+        }
+      ]
+    },
+    {
+      "name": "seed=2026101406",
+      "settings": {
+        "city": "kaliningrad",
+        "workload": "controlled",
+        "seed": "2026101406",
+        "policy": "cargo_crew",
+        "evidence": "retained",
+        "comparison": "recovery",
+        "scenario": "B01",
+        "scale": "1400"
+      },
+      "results": [
+        {
+          "completed": 333,
+          "expected": 333,
+          "failed": 158,
+          "expectedFailed": 158,
+          "fleet": 192,
+          "expectedFleet": 192
+        },
+        {
+          "completed": 358,
+          "expected": 358,
+          "failed": 125,
+          "expectedFailed": 125,
+          "fleet": 192,
+          "expectedFleet": 192
+        }
+      ]
+    },
+    {
+      "name": "seed=2026101407",
+      "settings": {
+        "city": "kaliningrad",
+        "workload": "controlled",
+        "seed": "2026101407",
+        "policy": "cargo_crew",
+        "evidence": "retained",
+        "comparison": "recovery",
+        "scenario": "B01",
+        "scale": "1400"
+      },
+      "results": [
+        {
+          "completed": 318,
+          "expected": 318,
+          "failed": 184,
+          "expectedFailed": 184,
+          "fleet": 192,
+          "expectedFleet": 192
+        },
+        {
+          "completed": 344,
+          "expected": 344,
+          "failed": 153,
+          "expectedFailed": 153,
+          "fleet": 192,
+          "expectedFleet": 192
+        }
+      ]
+    },
+    {
+      "name": "seed=2026101408",
+      "settings": {
+        "city": "kaliningrad",
+        "workload": "controlled",
+        "seed": "2026101408",
+        "policy": "cargo_crew",
+        "evidence": "retained",
+        "comparison": "recovery",
+        "scenario": "B01",
+        "scale": "1400"
+      },
+      "results": [
+        {
+          "completed": 317,
+          "expected": 317,
+          "failed": 169,
+          "expectedFailed": 169,
+          "fleet": 192,
+          "expectedFleet": 192
+        },
+        {
+          "completed": 340,
+          "expected": 340,
+          "failed": 136,
+          "expectedFailed": 136,
+          "fleet": 192,
+          "expectedFleet": 192
+        }
+      ]
+    },
+    {
+      "name": "seed=2026101409",
+      "settings": {
+        "city": "kaliningrad",
+        "workload": "controlled",
+        "seed": "2026101409",
+        "policy": "cargo_crew",
+        "evidence": "retained",
+        "comparison": "recovery",
+        "scenario": "B01",
+        "scale": "1400"
+      },
+      "results": [
+        {
+          "completed": 298,
+          "expected": 298,
+          "failed": 194,
+          "expectedFailed": 194,
+          "fleet": 192,
+          "expectedFleet": 192
+        },
+        {
+          "completed": 353,
+          "expected": 353,
+          "failed": 135,
+          "expectedFailed": 135,
+          "fleet": 192,
+          "expectedFleet": 192
+        }
+      ]
+    },
+    {
+      "name": "seed=2026101410",
+      "settings": {
+        "city": "kaliningrad",
+        "workload": "controlled",
+        "seed": "2026101410",
+        "policy": "cargo_crew",
+        "evidence": "retained",
+        "comparison": "recovery",
+        "scenario": "B01",
+        "scale": "1400"
+      },
+      "results": [
+        {
+          "completed": 328,
+          "expected": 328,
+          "failed": 176,
+          "expectedFailed": 176,
+          "fleet": 192,
+          "expectedFleet": 192
+        },
+        {
+          "completed": 361,
+          "expected": 361,
+          "failed": 140,
+          "expectedFailed": 140,
+          "fleet": 192,
+          "expectedFleet": 192
+        }
+      ]
+    },
+    {
+      "name": "seed=2026101411",
+      "settings": {
+        "city": "kaliningrad",
+        "workload": "controlled",
+        "seed": "2026101411",
+        "policy": "cargo_crew",
+        "evidence": "retained",
+        "comparison": "recovery",
+        "scenario": "B01",
+        "scale": "1400"
+      },
+      "results": [
+        {
+          "completed": 341,
+          "expected": 341,
+          "failed": 159,
+          "expectedFailed": 159,
+          "fleet": 192,
+          "expectedFleet": 192
+        },
+        {
+          "completed": 379,
+          "expected": 379,
+          "failed": 109,
+          "expectedFailed": 109,
+          "fleet": 192,
+          "expectedFleet": 192
+        }
+      ]
+    },
+    {
+      "name": "scenario=B01",
+      "settings": {
+        "city": "kaliningrad",
+        "workload": "controlled",
+        "seed": "2026101411",
+        "policy": "cargo_crew",
+        "evidence": "retained",
+        "comparison": "recovery",
+        "scenario": "B01",
+        "scale": "1400"
+      },
+      "results": [
+        {
+          "completed": 341,
+          "expected": 341,
+          "failed": 159,
+          "expectedFailed": 159,
+          "fleet": 192,
+          "expectedFleet": 192
+        },
+        {
+          "completed": 379,
+          "expected": 379,
+          "failed": 109,
+          "expectedFailed": 109,
+          "fleet": 192,
+          "expectedFleet": 192
+        }
+      ]
+    },
+    {
+      "name": "scenario=B03",
+      "settings": {
+        "city": "kaliningrad",
+        "workload": "controlled",
+        "seed": "2026101411",
+        "policy": "cargo_crew",
+        "evidence": "retained",
+        "comparison": "recovery",
+        "scenario": "B03",
+        "scale": "1400"
+      },
+      "results": [
+        {
+          "completed": 341,
+          "expected": 341,
+          "failed": 159,
+          "expectedFailed": 159,
+          "fleet": 192,
+          "expectedFleet": 192
+        },
+        {
+          "completed": 377,
+          "expected": 377,
+          "failed": 119,
+          "expectedFailed": 119,
+          "fleet": 192,
+          "expectedFleet": 192
+        }
+      ]
+    },
+    {
+      "name": "scenario=B07",
+      "settings": {
+        "city": "kaliningrad",
+        "workload": "controlled",
+        "seed": "2026101411",
+        "policy": "cargo_crew",
+        "evidence": "retained",
+        "comparison": "recovery",
+        "scenario": "B07",
+        "scale": "1400"
+      },
+      "results": [
+        {
+          "completed": 341,
+          "expected": 341,
+          "failed": 159,
+          "expectedFailed": 159,
+          "fleet": 192,
+          "expectedFleet": 192
+        },
+        {
+          "completed": 377,
+          "expected": 377,
+          "failed": 119,
+          "expectedFailed": 119,
+          "fleet": 192,
+          "expectedFleet": 192
+        }
+      ]
+    },
+    {
+      "name": "viewport",
+      "size": {
+        "width": 1920,
+        "height": 1080
+      },
+      "fit": {
+        "body": 1920,
+        "viewport": 1920,
+        "canvases": [
+          {
+            "id": "leftMap",
+            "nonblank": 113896
+          },
+          {
+            "id": "rightMap",
+            "nonblank": 113780
+          },
+          {
+            "id": "timeline",
+            "nonblank": 11032
+          },
+          {
+            "id": "inventoryPlot",
+            "nonblank": 10271
+          },
+          {
+            "id": "ranking",
+            "nonblank": 7109
+          },
+          {
+            "id": "scalePlot",
+            "nonblank": 10666
+          }
+        ]
+      }
+    },
+    {
+      "name": "viewport",
+      "size": {
+        "width": 390,
+        "height": 844
+      },
+      "fit": {
+        "body": 390,
+        "viewport": 390,
+        "canvases": [
+          {
+            "id": "leftMap",
+            "nonblank": 47987
+          },
+          {
+            "id": "rightMap",
+            "nonblank": 47987
+          },
+          {
+            "id": "timeline",
+            "nonblank": 4745
+          },
+          {
+            "id": "inventoryPlot",
+            "nonblank": 4678
+          },
+          {
+            "id": "ranking",
+            "nonblank": 3740
+          },
+          {
+            "id": "scalePlot",
+            "nonblank": 5154
+          }
+        ]
+      }
+    }
+  ],
+  "errors": []
+}

@@ -1,0 +1,126 @@
+{
+  "G1_N3_reproduction": {
+    "checks": [
+      {
+        "applied_action_sequence_hash_12": "ecc1706421c2",
+        "delay_schedule_hash": "39cd4b847955b08d",
+        "first_oob_step": "",
+        "oob": false,
+        "seed": 61000,
+        "state_sequence_hash_12": "2be8554a4b55",
+        "status": "PASS",
+        "terminal_state_hash_12": "0b8000897405",
+        "trajectory_family_key": "0b8000897405_ecc1706421c2"
+      },
+      {
+        "applied_action_sequence_hash_12": "2c6be4ccedec",
+        "delay_schedule_hash": "51a55de3ebc4ff86",
+        "first_oob_step": 79,
+        "oob": true,
+        "seed": 61004,
+        "state_sequence_hash_12": "c3d8c09dfc80",
+        "status": "PASS",
+        "terminal_state_hash_12": "39e7c99b7933",
+        "trajectory_family_key": "39e7c99b7933_2c6be4ccedec"
+      },
+      {
+        "applied_action_sequence_hash_12": "90a3d133ae72",
+        "delay_schedule_hash": "b0a91225ba398395",
+        "first_oob_step": "",
+        "oob": false,
+        "seed": 61137,
+        "state_sequence_hash_12": "19d8d8fd0cec",
+        "status": "PASS",
+        "terminal_state_hash_12": "af056ea29a37",
+        "trajectory_family_key": "af056ea29a37_90a3d133ae72"
+      },
+      {
+        "applied_action_sequence_hash_12": "ebcbbe3bc801",
+        "delay_schedule_hash": "40133a769b2cb06c",
+        "first_oob_step": "",
+        "oob": false,
+        "seed": 61665,
+        "state_sequence_hash_12": "756e600a96c9",
+        "status": "PASS",
+        "terminal_state_hash_12": "245e42702ea5",
+        "trajectory_family_key": "245e42702ea5_ebcbbe3bc801"
+      },
+      {
+        "applied_action_sequence_hash_12": "90a3d133ae72",
+        "delay_schedule_hash": "86ea13f75e94920c",
+        "first_oob_step": "",
+        "oob": false,
+        "seed": 61999,
+        "state_sequence_hash_12": "19d8d8fd0cec",
+        "status": "PASS",
+        "terminal_state_hash_12": "af056ea29a37",
+        "trajectory_family_key": "af056ea29a37_90a3d133ae72"
+      }
+    ],
+    "seeds": [
+      61000,
+      61004,
+      61137,
+      61665,
+      61999
+    ],
+    "status": "PASS"
+  },
+  "G2_seed_rows_and_echo": {
+    "errors": {},
+    "horizons": [
+      5,
+      6,
+      8,
+      9
+    ],
+    "required_seeds": 1000,
+    "status": "PASS"
+  },
+  "G3_delay_hash_matching": {
+    "errors": [],
+    "matched_seeds": 1000,
+    "reference_arm": "E-N3 registered",
+    "status": "PASS"
+  },
+  "G4_configuration": {
+    "delay_mode": "uniform_0_2",
+    "disturbance_mode": "none",
+    "errors": [],
+    "pipeline": "physical_multiplier",
+    "status": "PASS"
+  },
+  "G5_step_log_endpoint_recomputation": {
+    "audits": [
+      {
+        "arm": "E-N5-dense",
+        "episode_count": 1000,
+        "mismatches": [],
+        "oob_count_recomputed": 0,
+        "status": "PASS"
+      },
+      {
+        "arm": "E-N6-dense",
+        "episode_count": 1000,
+        "mismatches": [],
+        "oob_count_recomputed": 454,
+        "status": "PASS"
+      },
+      {
+        "arm": "E-N8-dense",
+        "episode_count": 1000,
+        "mismatches": [],
+        "oob_count_recomputed": 821,
+        "status": "PASS"
+      },
+      {
+        "arm": "E-N9-dense",
+        "episode_count": 1000,
+        "mismatches": [],
+        "oob_count_recomputed": 981,
+        "status": "PASS"
+      }
+    ],
+    "status": "PASS"
+  }
+}

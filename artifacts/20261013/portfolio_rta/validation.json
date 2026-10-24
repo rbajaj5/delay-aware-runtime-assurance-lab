@@ -1,0 +1,38 @@
+{
+  "frames": 2160,
+  "duration_s": 90.0,
+  "seed": 20261013,
+  "errors": [],
+  "checks_passed": true,
+  "covariance_recomputation_max_abs_error": 0.0,
+  "spectral_risk_recomputation_max_abs_error": 8.326672684688674e-16,
+  "held_map_max_change": 0.0,
+  "max_optimizer_kkt_residual": 3.3232722643772306e-06,
+  "first_hold_time_s": 65.58333333333333,
+  "hold_frames": 352,
+  "hidden_collapse_shadow_frames": 346,
+  "minimum_applied_conditioning": 0.1264950102034277,
+  "minimum_proposed_conditioning": 0.02354965155678678,
+  "minimum_shadow_spacing_ft": 2.515406997373338,
+  "stable_mean_leading_share": 0.37006391480143414,
+  "switch_help_mean_leading_share": 0.8472752351505622,
+  "stable_mean_lambda1": 0.10372917927555365,
+  "switch_help_mean_lambda1": 5.338486759534451,
+  "mean_L1_weight_difference_from_frozen_covariance": 1.1467677976053443,
+  "phase_counts": {
+    "Stable five-out": 360,
+    "Coverage changes": 600,
+    "Allocation adapts": 600,
+    "Geometry under stress": 360,
+    "General multi-agent system": 240
+  },
+  "independent_episodes": 1,
+  "null_scalar_values": 0,
+  "quality_notes": [
+    "Overlapping windows are serially dependent; frames are not independent trials.",
+    "Adjacent-frame eigenvector overlap can stay near one during gradual cumulative rotation.",
+    "Covariance is regularized; its condition number is estimator-dependent.",
+    "Basketball-to-drone morph reuses the same coordinates; it is not a second experiment.",
+    "Advance is a half-court surrogate for transition, not a full-court play."
+  ]
+}

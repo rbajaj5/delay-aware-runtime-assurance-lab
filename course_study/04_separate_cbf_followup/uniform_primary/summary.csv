@@ -1,0 +1,7 @@
+block,fault_profile,pipeline,arm,n,oob_k,oob_rate,oob_cp95_lower,oob_cp95_upper,first_exit_min,first_exit_median,first_exit_max,first_exit_sorted,mean_steps_recorded,mean_cumulative_severity,per_step_severity,mean_interventions_per_episode,mean_reward,mean_runtime_seconds,severity_right_censored_by_oob
+uniform_primary,nominal,nominal_uniform_iid,F-blind,1000,0,0.0,0.0,0.003682083896865671,,,,[],100.0,0.4100010985933333,0.004100010985933333,97.304,92.0261140305636,0.40833984909966237,True
+uniform_primary,nominal,nominal_uniform_iid,F-comp,1000,0,0.0,0.0,0.003682083896865671,,,,[],100.0,0.0,0.0,94.391,92.64984411952351,0.40254277759979595,True
+uniform_primary,nominal,nominal_uniform_iid,E-N4,1000,0,0.0,0.0,0.003682083896865671,,,,[],100.0,1.6513487695966669,0.01651348769596667,77.533,88.97946673604609,0.8020770948997815,True
+uniform_primary,nominal,nominal_uniform_iid,AP-N3,1000,0,0.0,0.0,0.003682083896865671,,,,[],100.0,1.9460566039249998,0.019460566039249998,76.883,92.30007043159651,0.7022659230999998,True
+uniform_primary,nominal,nominal_uniform_iid,D-N3,1000,0,0.0,0.0,0.003682083896865671,,,,[],100.0,7.89199446751,0.0789199446751,62.222,90.31653699883515,0.3107531630006852,True
+uniform_primary,nominal,nominal_uniform_iid,B,1000,0,0.0,0.0,0.003682083896865671,,,,[],100.0,23.400546388121665,0.23400546388121662,0.0,86.76503917804637,0.12214487340007327,True

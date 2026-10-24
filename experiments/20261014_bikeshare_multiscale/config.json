@@ -1,0 +1,19 @@
+{
+  "cities": {
+    "washington": {"name": "Washington / Potomac", "epsg": 32618, "core": [38.882,-77.091,38.914,-77.043], "buffer": [38.864,-77.115,38.934,-77.022]},
+    "kaliningrad": {"name": "Kaliningrad / Pregolya", "epsg": 32634, "core": [54.698,20.487,54.717,20.529], "buffer": [54.679,20.458,54.737,20.561]}
+  },
+  "trip_url": "https://s3.amazonaws.com/capitalbikeshare-data/202504-capitalbikeshare-tripdata.zip",
+  "week_start": "2025-04-01", "week_end_exclusive": "2025-04-08",
+  "stations": 24, "capacity": 16, "initial_bikes_per_station": 8,
+  "rider_speed_m_s": 4.0, "crew_speed_m_s": 3.0,
+  "crew_capacity": 4, "handling_s_per_bike": 30,
+  "alternative_return_max_m": 1200, "return_retry_s": 300,
+  "pickup_walk_m": 0,
+  "scales_m": [0,200,600,1400], "seed_start": 2026101400, "seeds": 12,
+  "controlled_horizon_s": 14400, "controlled_demand_end_s": 12600,
+  "controlled_requests_per_bike_hour": 0.75,
+  "closure_start_s": 3600, "closure_end_s": 9000,
+  "snapshot_s": 60, "policies": ["no_redistribution","cargo_crew"],
+  "movie_seconds": 150, "fps": 24
+}

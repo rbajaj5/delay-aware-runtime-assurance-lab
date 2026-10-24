@@ -1,0 +1,22 @@
+{
+  "probe": {
+    "codec_name": "h264",
+    "width": 1920,
+    "height": 1080,
+    "pix_fmt": "yuv420p",
+    "avg_frame_rate": "24/1",
+    "duration": "90.000000",
+    "nb_frames": "2160"
+  },
+  "full_decode_exit_code": 0,
+  "full_decode_errors": "",
+  "deterministic_regeneration_exact": true,
+  "rendered_snapshots_visually_inspected_s": [
+    8,
+    72,
+    87
+  ],
+  "numerical_device": "CPU",
+  "video_encoder": "NVIDIA h264_nvenc",
+  "all_passed": true
+}

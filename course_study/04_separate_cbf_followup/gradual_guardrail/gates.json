@@ -1,0 +1,177 @@
+{
+  "amendment1": {
+    "class_counts": {
+      "F-blind": {
+        "mixed_or_tied_n": 0,
+        "no_uncertifiable_states_n": 0,
+        "registered_discriminator_supported": false,
+        "theta_dominant_n": 1000,
+        "vx_upper_dominant_n": 0
+      },
+      "F-comp": {
+        "mixed_or_tied_n": 947,
+        "no_uncertifiable_states_n": 0,
+        "registered_discriminator_supported": false,
+        "theta_dominant_n": 53,
+        "vx_upper_dominant_n": 0
+      }
+    },
+    "criterion_unmodified": true,
+    "pass": true
+  },
+  "block": "gradual_guardrail",
+  "certificate_accounting": {
+    "pass": true
+  },
+  "comparator_anchors": {
+    "arms": [
+      "E-N4",
+      "AP-N3",
+      "D-N3"
+    ],
+    "pass": true
+  },
+  "conversion": {
+    "pass": true
+  },
+  "no_silent_fallback": {
+    "pass": true
+  },
+  "rows": {
+    "episode_rows": 6000,
+    "pass": true,
+    "step_rows_by_arm": {
+      "AP-N3": 100000,
+      "B": 100000,
+      "D-N3": 100000,
+      "E-N4": 100000,
+      "F-blind": 100000,
+      "F-comp": 100000
+    }
+  },
+  "section10_native_outputs": {
+    "files": {
+      "active_constraint_census.csv": {
+        "present": true,
+        "size_bytes": 2266
+      },
+      "binding_channel_episode_census.csv": {
+        "present": true,
+        "size_bytes": 320952
+      },
+      "binding_channel_summary.csv": {
+        "present": true,
+        "size_bytes": 667
+      },
+      "constraint_slack_summary.csv": {
+        "present": true,
+        "size_bytes": 2552
+      },
+      "episodes.csv": {
+        "present": true,
+        "size_bytes": 6425070
+      },
+      "failure_family_inventory.csv": {
+        "present": true,
+        "size_bytes": 204
+      },
+      "fallback_family_inventory.csv": {
+        "present": true,
+        "size_bytes": 27166
+      },
+      "full_state_census.csv": {
+        "present": true,
+        "size_bytes": 8124
+      },
+      "full_steps/AP-N3_steps.csv": {
+        "present": true,
+        "size_bytes": 232338699
+      },
+      "full_steps/B_steps.csv": {
+        "present": true,
+        "size_bytes": 206483225
+      },
+      "full_steps/D-N3_steps.csv": {
+        "present": true,
+        "size_bytes": 223937965
+      },
+      "full_steps/E-N4_steps.csv": {
+        "present": true,
+        "size_bytes": 234838883
+      },
+      "full_steps/F-blind_steps.csv": {
+        "present": true,
+        "size_bytes": 635957297
+      },
+      "full_steps/F-comp_steps.csv": {
+        "present": true,
+        "size_bytes": 637218377
+      },
+      "infeasibility_fallback_ledger.csv": {
+        "present": true,
+        "size_bytes": 247274128
+      },
+      "intervention_family_inventory.csv": {
+        "present": true,
+        "size_bytes": 68185
+      },
+      "model_mismatch_ledger.csv": {
+        "present": true,
+        "size_bytes": 218004406
+      },
+      "paired_outcomes_and_tests.json": {
+        "present": true,
+        "size_bytes": 633
+      },
+      "runtime_config.json": {
+        "present": true,
+        "size_bytes": 1047
+      },
+      "solver_timing.csv": {
+        "present": true,
+        "size_bytes": 792
+      },
+      "summary.csv": {
+        "present": true,
+        "size_bytes": 1568
+      },
+      "vx_bound_episode_census.csv": {
+        "present": true,
+        "size_bytes": 955051
+      },
+      "vx_bound_summary.csv": {
+        "present": true,
+        "size_bytes": 1867
+      },
+      "vx_upper_early_warning_census.csv": {
+        "present": true,
+        "size_bytes": 446
+      }
+    },
+    "manifest_written_and_verified_before_completion": true,
+    "pass": true
+  },
+  "seed_hash": {
+    "episode_cells": 6000,
+    "matched_seed_hashes": 1000,
+    "pass": true,
+    "prior_overlap_count": 0
+  },
+  "vx_registered_descriptive": {
+    "HF2_remains_reverse_channel_only": true,
+    "all_arms": [
+      "F-blind",
+      "F-comp",
+      "E-N4",
+      "AP-N3",
+      "D-N3",
+      "B"
+    ],
+    "both_bounds": [
+      -1.0,
+      1.0
+    ],
+    "both_tails": true,
+    "pass": true
+  }
+}

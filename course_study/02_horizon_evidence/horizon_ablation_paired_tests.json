@@ -1,0 +1,26 @@
+{
+  "alpha_per_test": 0.025,
+  "hypotheses": {
+    "HA1": {
+      "E_N3_only": 175,
+      "both_fail": 0,
+      "comparator": "AP-N3",
+      "comparator_only": 0,
+      "discordant_total": 175,
+      "exact_two_sided_mcnemar_p": 4.176194859519056e-53,
+      "neither": 825,
+      "reference": "E-N3"
+    },
+    "HZ1": {
+      "E_N3_only": 175,
+      "both_fail": 0,
+      "comparator": "E-N4",
+      "comparator_only": 0,
+      "discordant_total": 175,
+      "exact_two_sided_mcnemar_p": 4.176194859519056e-53,
+      "neither": 825,
+      "reference": "E-N3"
+    }
+  },
+  "test": "exact two-sided McNemar"
+}

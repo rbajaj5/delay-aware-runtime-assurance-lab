@@ -1,0 +1,949 @@
+{
+  "date": "2026-10-24",
+  "scope": "Source and compact evidence, not a full raw-data archive",
+  "hash_scope": "Local retained files before Git newline conversion; course_study uses -text to preserve pinned bytes in Git",
+  "files": [
+    {
+      "path": ".gitattributes",
+      "bytes": 100,
+      "sha256": "2ac26b3b6284148738b37cda309aaf90e405f95c685f4d0e02f9653110d42e6a"
+    },
+    {
+      "path": ".gitignore",
+      "bytes": 190,
+      "sha256": "472dc5496474378de120566bf7379b3465954f9b058dcc66f2c5f68fb791769a"
+    },
+    {
+      "path": "analysis/build_portfolio_dashboard.py",
+      "bytes": 17733,
+      "sha256": "599db4e25151705183f6666423d9cd04add78d3e24278be299434d2081ba9bb3"
+    },
+    {
+      "path": "analysis/package_portfolio_demo.py",
+      "bytes": 2553,
+      "sha256": "189871f950aea336ecb828b9a324576faf6d76bfc0ebf5729cd1738c361edaf4"
+    },
+    {
+      "path": "analysis/portfolio_dashboard_preview.html",
+      "bytes": 13073,
+      "sha256": "c6c439f9429fed9443f9ef5d3f6a9c86a09a2904ec5c8341d49f3af652e2544d"
+    },
+    {
+      "path": "analysis/portfolio_rta_demo.py",
+      "bytes": 32806,
+      "sha256": "b85943ee39eba0066ac7ae86a9ae2882911e487d67b0a8aff41dd713696b7597"
+    },
+    {
+      "path": "analysis/render_satellite_multirate_rta_illustration.py",
+      "bytes": 14504,
+      "sha256": "cef00e83911eb4067ad041ed1e12653b86e51fe0934c7ead67d6584d55cb99d8"
+    },
+    {
+      "path": "analysis/render_satellite_multirate_rta_mp4.py",
+      "bytes": 11443,
+      "sha256": "95ed7b99a05b14ac0bf99cbe7f9156f8033640b0b592783ce70c59bb1431c8f5"
+    },
+    {
+      "path": "analysis/render_sensor_uncertainty_voiceover.ps1",
+      "bytes": 3564,
+      "sha256": "c24a1ef6d5eed5a65a7224fa84b6a3ced1fe645bb9849884560b4867555dc114"
+    },
+    {
+      "path": "analysis/run_3d_sensor_uncertainty_rta_simulation.py",
+      "bytes": 34991,
+      "sha256": "5434625cf845bdae4bde97006bb15b88b51ced7afaa9d7ea690ddb16567e117a"
+    },
+    {
+      "path": "analysis/run_affine_conditioning_gpu_simulation.py",
+      "bytes": 35623,
+      "sha256": "965deea8fa64d4150cbb987063c995f6195ce7cc3e8ceb662733e03dad7f30c4"
+    },
+    {
+      "path": "analysis/run_basketball_affine_conditioning_gpu.py",
+      "bytes": 49354,
+      "sha256": "c3bba8a392264a622577bd9a147c8d5bfdfda9029bee21e17d3289b983a2812a"
+    },
+    {
+      "path": "analysis/run_basketball_affine_conditioning_v2_gpu.py",
+      "bytes": 76994,
+      "sha256": "7121b446ca4bf3f978bd5d45b86691b904fec4ac2e9bd83bcabc64fb0fc28c5e"
+    },
+    {
+      "path": "analysis/test_portfolio_dashboard.cjs",
+      "bytes": 4201,
+      "sha256": "37b6615d718ad3e1ebcf07b3c4cdd05ae43bf0cf49cd5d58ad25b08e1053e1b5"
+    },
+    {
+      "path": "artifacts/20260808/sensor_uncertainty_3d/nominal_lec_training.json",
+      "bytes": 231,
+      "sha256": "7ba62af520342f4b5ef2a78df93985b937a3428526b3a17a39e241c6ed1d2335"
+    },
+    {
+      "path": "artifacts/20260808/sensor_uncertainty_3d/sensor_uncertainty_3d_summary.csv",
+      "bytes": 495,
+      "sha256": "29b63790ca7969edebc50bcfb24e0bcd7536aa0b3abba286b17203f6edb5d76c"
+    },
+    {
+      "path": "artifacts/20260808/sensor_uncertainty_3d/sensor_uncertainty_rta_report.md",
+      "bytes": 1582,
+      "sha256": "72355115ada9ebdaa32d359670433beeb935092b3465e2b5ebb60ca71cc8a6c9"
+    },
+    {
+      "path": "artifacts/20260809/satellite_multirate_rta/satellite_multirate_rta_report.md",
+      "bytes": 646,
+      "sha256": "3566506e5c4147c01841eb5c52015cb85b26c084b7e7f3bda21baee5745fd765"
+    },
+    {
+      "path": "artifacts/20260811/affine_conditioning_gpu/affine_conditioning_batch_summary.csv",
+      "bytes": 448,
+      "sha256": "34e9966cb75004c5e9944d52ef688823155ad89cc5f800a560568ba20dffa923"
+    },
+    {
+      "path": "artifacts/20260811/affine_conditioning_gpu/affine_conditioning_config.json",
+      "bytes": 5266,
+      "sha256": "3ba728b8b4ec8f4818b201646e1767529d8704344c44cb7d609a92d9b766e465"
+    },
+    {
+      "path": "artifacts/20260811/affine_conditioning_gpu/affine_conditioning_report.md",
+      "bytes": 1328,
+      "sha256": "35d9bee405c2698942b7f06aa40e9f29c3b61a840ddf8e5100ed9f4e30968736"
+    },
+    {
+      "path": "artifacts/20260812/basketball_affine_conditioning_gpu/basketball_simulation_report.md",
+      "bytes": 989,
+      "sha256": "abb73e95c49a581b7ff2042987e254579ec4a3351f04f7e52aa35bfa34079107"
+    },
+    {
+      "path": "artifacts/20260812/basketball_affine_conditioning_gpu/basketball_simulation_summary.json",
+      "bytes": 4997,
+      "sha256": "d08442ba61e75d43920d385743b44ef063c5e7597d65a77d9baa37ed13fdd0f1"
+    },
+    {
+      "path": "artifacts/20260813/basketball_affine_conditioning_v2/basketball_affine_config.json",
+      "bytes": 6873,
+      "sha256": "9780975b39da3732419c53e8f8dd8b4176607739e523352612bd7acd426e88ed"
+    },
+    {
+      "path": "artifacts/20260813/basketball_affine_conditioning_v2/basketball_affine_csv_verification.json",
+      "bytes": 1342,
+      "sha256": "22f786a7729ab97af9fdf8b2a809b7e2dcb3223c49d64d2e0ab3ecd66ba0ff70"
+    },
+    {
+      "path": "artifacts/20260813/basketball_affine_conditioning_v2/basketball_affine_summary.json",
+      "bytes": 5595,
+      "sha256": "5d5e75a3f77da8e91cb8be52394848e46edd439c8d39fbfee38be835ef636cd4"
+    },
+    {
+      "path": "artifacts/20260813/basketball_affine_conditioning_v2/README.md",
+      "bytes": 5547,
+      "sha256": "3ce9a7f345ce13302f18908d4148fcd095eadb4b3f20180e44d8cb4774d376c6"
+    },
+    {
+      "path": "artifacts/20260813/basketball_affine_conditioning_v2_pilot/basketball_affine_config.json",
+      "bytes": 6769,
+      "sha256": "5d9894fc527d4753760ee04eeb61643d602cabc03c1f2deaf60e500908626a69"
+    },
+    {
+      "path": "artifacts/20260813/basketball_affine_conditioning_v2_pilot/basketball_affine_summary.json",
+      "bytes": 4880,
+      "sha256": "76a64e56bee7fd56825c4259ed79162e999341dab85b4a0031f6e025e6c16f50"
+    },
+    {
+      "path": "artifacts/20260813/basketball_affine_conditioning_v2_pilot/README.md",
+      "bytes": 5062,
+      "sha256": "6de0e49697ec83ae3e27e902777bafd0b7d9bf9706d5d7104402ead197f1918a"
+    },
+    {
+      "path": "artifacts/20261013/portfolio_rta/manifest.json",
+      "bytes": 3195,
+      "sha256": "b6e7498327bebd9249ae2793ebf44df3075d786db2307f1d4c81df1097bcadc8"
+    },
+    {
+      "path": "artifacts/20261013/portfolio_rta/media_validation.json",
+      "bytes": 482,
+      "sha256": "74879876ba19388ce3b6ce30d8c5a478a0ed27be4eb0cf52f0ea39caf5909489"
+    },
+    {
+      "path": "artifacts/20261013/portfolio_rta/README.md",
+      "bytes": 8335,
+      "sha256": "8cb75a5539c3d401ac8925658b356e44e93ed28f0493b3c5be3963e0649790b2"
+    },
+    {
+      "path": "artifacts/20261013/portfolio_rta/tableau/dashboard_validation.json",
+      "bytes": 4885,
+      "sha256": "f06fa9ee6a73edb08bcc132f98821e2eb15a3f24f51cd75d3681785c384ab08d"
+    },
+    {
+      "path": "artifacts/20261013/portfolio_rta/tableau/dataset_profile.json",
+      "bytes": 5945,
+      "sha256": "b37806b5c749972227a8a7f311d55fe091a47fe4999d006a15a755eaf059930e"
+    },
+    {
+      "path": "artifacts/20261013/portfolio_rta/tableau/preview_validation.json",
+      "bytes": 4463,
+      "sha256": "9b6944cc9eb8484c188acfdd23e79bfcae2dafdc85356ab6ef78e2404474946d"
+    },
+    {
+      "path": "artifacts/20261013/portfolio_rta/tableau/README.md",
+      "bytes": 6384,
+      "sha256": "3ae67bb9c9e74370973ad4535875cc973e9eafe12a178411a14d67bdbc921013"
+    },
+    {
+      "path": "artifacts/20261013/portfolio_rta/validation.json",
+      "bytes": 1585,
+      "sha256": "4c369c2aa7afca305659808b9dbfc2a86634e2c6afabcea374cca2f61dcba8e1"
+    },
+    {
+      "path": "course_study/01_course/final_paper_IEEE_rev3.docx",
+      "bytes": 1996401,
+      "sha256": "4c99b471564342339a917778e9593bec9d0cd56290afcb47d98f2d8d4af7ceba"
+    },
+    {
+      "path": "course_study/01_course/paper_text.txt",
+      "bytes": 48127,
+      "sha256": "b7db0515a90a37c2d21173f588adb8cf95f4e8286f8e440865edaa5d27a3bbb9"
+    },
+    {
+      "path": "course_study/01_course/recording_ready_presentation.pptx",
+      "bytes": 2023233,
+      "sha256": "cccea8edc210217c260993101ff9a1895464ee0e44b46b4d9d847e053a2d4497"
+    },
+    {
+      "path": "course_study/01_course/slides_and_notes.txt",
+      "bytes": 19295,
+      "sha256": "852ebee80d2c9cdbb1376f0403898a91e494870347c8d2ff87582a8737205ecf"
+    },
+    {
+      "path": "course_study/02_horizon_evidence/chkv_summary.json",
+      "bytes": 9470,
+      "sha256": "8923dfd4d5be7446c534e2f240235c97290c3e8dce4e12d7a27805984ea093a1"
+    },
+    {
+      "path": "course_study/02_horizon_evidence/dense_completion.json",
+      "bytes": 11498,
+      "sha256": "dd7a8cceeae713bace5d7077c4c0de3605597b4eea9c5b3204037b7514c15e11"
+    },
+    {
+      "path": "course_study/02_horizon_evidence/dense_extension_mechanism_summary.csv",
+      "bytes": 2219,
+      "sha256": "662473859aed6bc7fdacf8a765ce1da246e903f1c8a68e8b096619ac4dd272f2"
+    },
+    {
+      "path": "course_study/02_horizon_evidence/dense_spectrum_primary_points.csv",
+      "bytes": 1593,
+      "sha256": "fcd60028f09ff02d2172963b5ac04b40e6983080679d83dc23d9c31fe33f3291"
+    },
+    {
+      "path": "course_study/02_horizon_evidence/dense_structural_gates.json",
+      "bytes": 3455,
+      "sha256": "d459f67f91b8258a70854048583b0e05fc323f2ecdc81718f33fc2aa477c975f"
+    },
+    {
+      "path": "course_study/02_horizon_evidence/full_horizon_selection_census.csv",
+      "bytes": 4339,
+      "sha256": "3040d77b0296b6e828f97e9036147e1fd68097f2854b0612fdbf6a5ea724adc0"
+    },
+    {
+      "path": "course_study/02_horizon_evidence/full_horizon_selection_census_provenance.json",
+      "bytes": 2894,
+      "sha256": "6a5e7562b8c02504873f1fbf4ab3ce311e713defa01a73a6e4a5278bf5b52ce8"
+    },
+    {
+      "path": "course_study/02_horizon_evidence/guardrail_summary.csv",
+      "bytes": 947,
+      "sha256": "f641197c76f67696d625b278cd9946c42af42c182f3dbf13da3876a5c784996b"
+    },
+    {
+      "path": "course_study/02_horizon_evidence/horizon_ablation_paired_tests.json",
+      "bytes": 634,
+      "sha256": "b311598a53b5c792a48a4435b4c85e1810ca784ddcb57d91e56dbe7f23ecde25"
+    },
+    {
+      "path": "course_study/02_horizon_evidence/horizon_ablation_summary.csv",
+      "bytes": 1184,
+      "sha256": "cade9411dab6bcc03819081f71384b269ba4afdf29239bbd5dab9d8492646632"
+    },
+    {
+      "path": "course_study/02_horizon_evidence/mechanism_checks_report.md",
+      "bytes": 6724,
+      "sha256": "012550ebe5a69da69eda7e2463c6ffc0cfeae6f613cf8965ab332a709268e760"
+    },
+    {
+      "path": "course_study/02_horizon_evidence/mechanism_metrics_report.md",
+      "bytes": 21881,
+      "sha256": "6dcc87b9514eec83d55dd8adac8372c131a57b75df0325218322369c2a529576"
+    },
+    {
+      "path": "course_study/02_horizon_evidence/pilot_advancement.json",
+      "bytes": 427,
+      "sha256": "e65067a2c419eecc5702da366b1122cea19d4a3b3348723f4292267b6aebe13d"
+    },
+    {
+      "path": "course_study/02_horizon_evidence/protocol/horizon_dense_extension_20260725.manifest.json",
+      "bytes": 2308,
+      "sha256": "492ae0767a1e6eee320daf46b9f5698a083f014fd62cd3aefe09ae2431e55a21"
+    },
+    {
+      "path": "course_study/02_horizon_evidence/protocol/horizon_dense_extension_20260725.md",
+      "bytes": 3640,
+      "sha256": "e9851bc8aa4e491488f8f347e2583220b1076c196524e845fcc9bee3fa630b5f"
+    },
+    {
+      "path": "course_study/02_horizon_evidence/protocol/horizon_spectrum_ap_confirmation_20260723.manifest.json",
+      "bytes": 3369,
+      "sha256": "f96fca575ced0cf501b016dc55c294c3361e671f12c30302f6249d8128874cc5"
+    },
+    {
+      "path": "course_study/02_horizon_evidence/protocol/horizon_spectrum_ap_confirmation_20260723.md",
+      "bytes": 12667,
+      "sha256": "c5e69ad66d47edb1d4c087ab08945150f289b39a386e91ac1b2b98c29fc9b4a1"
+    },
+    {
+      "path": "course_study/02_horizon_evidence/registered_completion.json",
+      "bytes": 8037,
+      "sha256": "83fae6bec51a4a9aed51e17fe26bf1d8c696c667245e7b2e9351ee32da5e5e7d"
+    },
+    {
+      "path": "course_study/02_horizon_evidence/registered_gates.json",
+      "bytes": 1602,
+      "sha256": "6d2c8b5e54f30c347a65dc0de000dc230a254bb2f70c4ae69bde09c307901853"
+    },
+    {
+      "path": "course_study/02_horizon_evidence/v5_claims_ledger.csv",
+      "bytes": 8266,
+      "sha256": "27dcfb6ccf36fe564ea93ff09b110af2c9fd261a29b210d965ff06c5de117f93"
+    },
+    {
+      "path": "course_study/02_horizon_evidence/w1_report.md",
+      "bytes": 7757,
+      "sha256": "e1c10e64e51092f2ae11c04b00d3e1cd0f6c56013d8a3db8dc5cd4710e24d36c"
+    },
+    {
+      "path": "course_study/03_course_code/build_full_horizon_selection_census.py",
+      "bytes": 6063,
+      "sha256": "989161281ac101c41153945d74a2a92304104768b0f2ed5e3b05281e5ed31f28"
+    },
+    {
+      "path": "course_study/03_course_code/quadrotor_delay_ra_experiment.py",
+      "bytes": 105630,
+      "sha256": "8fb2df2b0ea09e9740540cf0ff0cb889fae3f9a2b38aab689f2572e828f5a1a5"
+    },
+    {
+      "path": "course_study/03_course_code/run_followup_experiments_20260708.py",
+      "bytes": 26107,
+      "sha256": "9cf5740426f35b2a13d5e3dfcd1a270452c9be345b94f00fb335d9ed87d151f5"
+    },
+    {
+      "path": "course_study/03_course_code/run_horizon_dense_extension.py",
+      "bytes": 37852,
+      "sha256": "a53735f322f4ca2f5e03bc0588a0348f01846667aba7a86f34227d2598dbd551"
+    },
+    {
+      "path": "course_study/03_course_code/run_horizon_mechanism_checks_part_a.py",
+      "bytes": 22539,
+      "sha256": "b1599c7364b1c238770bd5a00a14c37b58c1fda0d5ac4369394e638e7bd3a833"
+    },
+    {
+      "path": "course_study/03_course_code/run_horizon_spectrum_phase2b.py",
+      "bytes": 46202,
+      "sha256": "52e67b4a76f48b31fc27d4c781a55d28264a4c9c86bf7cd148d7dee602f02278"
+    },
+    {
+      "path": "course_study/03_course_code/src/quadrotor_delay_ra/__init__.py",
+      "bytes": 567,
+      "sha256": "f7272d2b05f3df7c7229c7a3d03c139b2e544c5c04cc7f381fd6d14c50ae2245"
+    },
+    {
+      "path": "course_study/03_course_code/src/quadrotor_delay_ra/delay_channel.py",
+      "bytes": 4525,
+      "sha256": "aa70289e80363b1f272d0b3178090106502afee145224075d78f3a46e9c09d81"
+    },
+    {
+      "path": "course_study/03_course_code/src/quadrotor_delay_ra/log_schema.py",
+      "bytes": 1765,
+      "sha256": "98751b3316fc0b18adefdd8e3524b3f931e2d88b0492762da3fd6923977d6247"
+    },
+    {
+      "path": "course_study/03_course_code/src/quadrotor_delay_ra/mechanism.py",
+      "bytes": 21635,
+      "sha256": "5909713061d53d3258b43da3bf9687fd712f2eab3288c794516a09b0f05d0d45"
+    },
+    {
+      "path": "course_study/03_course_code/src/quadrotor_delay_ra/metrics.py",
+      "bytes": 3764,
+      "sha256": "e60df6f8bdc6c34e9cfdf6e735c4e09015ea7efb6ab4bfea014a84200aa4bea3"
+    },
+    {
+      "path": "course_study/03_course_code/src/quadrotor_delay_ra/seed_manager.py",
+      "bytes": 5692,
+      "sha256": "5ffd6e09e611ffcaf0e7717ed80b7da9f0730a0c40af9652c4a8155d1b9f1eb5"
+    },
+    {
+      "path": "course_study/03_course_code/src/quadrotor_delay_ra/stream_logger.py",
+      "bytes": 8495,
+      "sha256": "89fc03749a065977c49a41dc3a6ae20e0ceadd6475c56b185a3a15619c2718be"
+    },
+    {
+      "path": "course_study/03_course_code/src/quadrotor_delay_ra/tensor_delay.py",
+      "bytes": 8546,
+      "sha256": "98e1a75869432b3d664709d911a1078e7b4109cdc1f9d4eeed2e72d07912ccfa"
+    },
+    {
+      "path": "course_study/04_separate_cbf_followup/amendment1.md",
+      "bytes": 17345,
+      "sha256": "b1a007ef4dfecdbb309e58db4fbf1f941fb72f2f9719f5da92699922d01df494"
+    },
+    {
+      "path": "course_study/04_separate_cbf_followup/code/analyze_v6_all_seed_mechanism.py",
+      "bytes": 13010,
+      "sha256": "13dd7aba4595df158930b45fb3779f5272decacc3bb9d801069b2778933612e8"
+    },
+    {
+      "path": "course_study/04_separate_cbf_followup/code/run_v6_cbf_qp_confirmation.py",
+      "bytes": 57736,
+      "sha256": "64d457462d24050d70d6254a19291cd5b3679c9fc4d241890e897d0bb6c40bca"
+    },
+    {
+      "path": "course_study/04_separate_cbf_followup/code/v6_cbf_qp_adapter.py",
+      "bytes": 17187,
+      "sha256": "01781c1d6acad2c45f779566141d4621771008a3779f2630cacb14dca73cd91e"
+    },
+    {
+      "path": "course_study/04_separate_cbf_followup/code/v6_exact_tests.py",
+      "bytes": 2922,
+      "sha256": "b9c16860b134735b61904ae9ae1c0d24ba306b2af280db125e2f4ee84853bb70"
+    },
+    {
+      "path": "course_study/04_separate_cbf_followup/gradual_guardrail/gates.json",
+      "bytes": 4182,
+      "sha256": "e6e8485efd4bb2bbd1d209ba9ca062c71526e207c2e3d9118b10a1efea75f24e"
+    },
+    {
+      "path": "course_study/04_separate_cbf_followup/gradual_guardrail/paired_outcomes_and_tests.json",
+      "bytes": 633,
+      "sha256": "3e5b918f1a7b2cfdd90815e5b9dd94b23ed27823a1bc3e20e8a03df6780fb9d5"
+    },
+    {
+      "path": "course_study/04_separate_cbf_followup/gradual_guardrail/runtime_config.json",
+      "bytes": 1047,
+      "sha256": "1642b31198e70a450e18e1863892455ce6a05a65b749c84ee4c109c328685c5f"
+    },
+    {
+      "path": "course_study/04_separate_cbf_followup/gradual_guardrail/summary.csv",
+      "bytes": 1568,
+      "sha256": "887a96679f49c3b13b95695d6f8d048adaabca801883ec5966262c1be3185558"
+    },
+    {
+      "path": "course_study/04_separate_cbf_followup/persistent_guardrail/gates.json",
+      "bytes": 4185,
+      "sha256": "b0ed01a3d6e43bd6ceb981255d15f0a0ea8b84ff1f447808586d449f512781eb"
+    },
+    {
+      "path": "course_study/04_separate_cbf_followup/persistent_guardrail/paired_outcomes_and_tests.json",
+      "bytes": 634,
+      "sha256": "b749370e316187b708d10deacf9ed19cdae5b58445bd266da36a81d477d6ab9c"
+    },
+    {
+      "path": "course_study/04_separate_cbf_followup/persistent_guardrail/runtime_config.json",
+      "bytes": 1048,
+      "sha256": "3fc8c8d2e0d1e2349f8d018fbb64e0b6f4e86fd512bdd44b6761767cc560a236"
+    },
+    {
+      "path": "course_study/04_separate_cbf_followup/persistent_guardrail/summary.csv",
+      "bytes": 1563,
+      "sha256": "cd6f5d1c5baf5cfacc217f1c7ed78dd3cb3d7b0495bff0d17742925823e5de23"
+    },
+    {
+      "path": "course_study/04_separate_cbf_followup/protocol.md",
+      "bytes": 13765,
+      "sha256": "a220eef71bc201eedd5810b1af47e1e5592463c6944a689ca0b415530b0e810f"
+    },
+    {
+      "path": "course_study/04_separate_cbf_followup/PVALUE_TAIL_ERRATA.md",
+      "bytes": 2955,
+      "sha256": "14e5a6268e49a2d4f9b27a4ccecbf6c6f4c0c88ab100ec5fc75e0d816baad61a"
+    },
+    {
+      "path": "course_study/04_separate_cbf_followup/uniform_primary/gates.json",
+      "bytes": 4179,
+      "sha256": "e5d27ce3f901fe17cf32f7ce65833043309afc1babd580a2be92abcd896bee72"
+    },
+    {
+      "path": "course_study/04_separate_cbf_followup/uniform_primary/paired_outcomes_and_tests.json",
+      "bytes": 1004,
+      "sha256": "8c42173396e9ba00ed18090862e56c6a3e71062c672af6fa94974544fb2b797e"
+    },
+    {
+      "path": "course_study/04_separate_cbf_followup/uniform_primary/runtime_config.json",
+      "bytes": 994,
+      "sha256": "ca395c546a298b813b84590599e75baf12c6a48bce4195df3f80662a02844caf"
+    },
+    {
+      "path": "course_study/04_separate_cbf_followup/uniform_primary/summary.csv",
+      "bytes": 1385,
+      "sha256": "c74b25c5cff342bd352a877993d3e4791b67303aa8a69f50b851bdd7a52b0617"
+    },
+    {
+      "path": "course_study/04_separate_cbf_followup/v6_all_seed_mechanism_report.md",
+      "bytes": 4777,
+      "sha256": "0b878b07ebbdfdbba9461b89f3a086dd4f7c7f273da683f20773bde343a38ceb"
+    },
+    {
+      "path": "course_study/04_separate_cbf_followup/v6_all_seed_mechanism_summary.csv",
+      "bytes": 1469,
+      "sha256": "3b9b7e21046adc364cda0b140ca03e65b147f00a65e18cb06a128b89a982e8a8"
+    },
+    {
+      "path": "course_study/README.md",
+      "bytes": 2484,
+      "sha256": "b8cd1e64406496e6c9f58daac0faa228a13417c46cf239828e40862661605eef"
+    },
+    {
+      "path": "docs/PUBLIC_RELEASE_20261024.md",
+      "bytes": 3706,
+      "sha256": "a14dd13edf12feb79de8a36d4420d5ebd8009ff33e2cf291d3295c8d31c97928"
+    },
+    {
+      "path": "experiments/20261014_bikeshare_multiscale/analyze.py",
+      "bytes": 7622,
+      "sha256": "1b8c368e2d1df4f4531d8ae080bb2a8801061b9ec40034a017c4186999e886c9"
+    },
+    {
+      "path": "experiments/20261014_bikeshare_multiscale/app/app.js",
+      "bytes": 32397,
+      "sha256": "3829d03442dd3fa131cbc71c5e1a77f72e787c44bb2379d828d0d88be72d6265"
+    },
+    {
+      "path": "experiments/20261014_bikeshare_multiscale/app/demo.css",
+      "bytes": 904,
+      "sha256": "a53ab6ff70c65c9425bb88318f0f745a580a47a1e2f446c974c512aee574f359"
+    },
+    {
+      "path": "experiments/20261014_bikeshare_multiscale/app/domain.js",
+      "bytes": 1979,
+      "sha256": "689bd5be8d09a9cb7b67aa9faafcfc19aa93529f7ab0299159fff5e62ce44944"
+    },
+    {
+      "path": "experiments/20261014_bikeshare_multiscale/app/index.html",
+      "bytes": 8053,
+      "sha256": "da16cfcf4d933d8bbed75d7ec466c2dd93d796f85300ddf98c6089e682d3d680"
+    },
+    {
+      "path": "experiments/20261014_bikeshare_multiscale/app/index_legacy.html",
+      "bytes": 16505,
+      "sha256": "1b0b82f9634680fcd0d2b07ef79b60c38f3f34c6c86d553409d7e0c2aa6ff52c"
+    },
+    {
+      "path": "experiments/20261014_bikeshare_multiscale/app/style.css",
+      "bytes": 8703,
+      "sha256": "c31349884451fd7c6025ef5e29c246446987c69cdb19768dd862d9c4e86b8b64"
+    },
+    {
+      "path": "experiments/20261014_bikeshare_multiscale/audit_networks.py",
+      "bytes": 4823,
+      "sha256": "a191cb6dc8b09d4cbd5c060b0cf0bdbe91fc4601f6d125399963267ca27851a2"
+    },
+    {
+      "path": "experiments/20261014_bikeshare_multiscale/audit_replays.py",
+      "bytes": 5305,
+      "sha256": "9d7a80c950075ba31653f1c7855489eca3ca8f20cc345431491afd179ad06672"
+    },
+    {
+      "path": "experiments/20261014_bikeshare_multiscale/CHECKPOINT.md",
+      "bytes": 7474,
+      "sha256": "a5700d37711510ef890d227fb881f7a51504fa41f3c29328a3b1545588e1065e"
+    },
+    {
+      "path": "experiments/20261014_bikeshare_multiscale/config.json",
+      "bytes": 1070,
+      "sha256": "3b028a3f1499ef0057806cff58ddf632005633a9108a0751cbd919feafaaace6"
+    },
+    {
+      "path": "experiments/20261014_bikeshare_multiscale/corrected_model.py",
+      "bytes": 431,
+      "sha256": "07b0aa52814829b7620d22d102778427a71306ea2e003d1bc47986c24a171513"
+    },
+    {
+      "path": "experiments/20261014_bikeshare_multiscale/finalize_dashboard.py",
+      "bytes": 3198,
+      "sha256": "c6c325eeca03ad853a52d8cc853ae6bc11fb57c6f9c1c61ddc9b10aca5c586a7"
+    },
+    {
+      "path": "experiments/20261014_bikeshare_multiscale/HANDOFF_PLANNING.md",
+      "bytes": 2232,
+      "sha256": "7f49251e79772eb767cb0728711934e084961879a83938ba278af04992146034"
+    },
+    {
+      "path": "experiments/20261014_bikeshare_multiscale/infrastructure.py",
+      "bytes": 10214,
+      "sha256": "3b1f02071e7c8eca4ae7ac67edddac54291825d8188fd089f2fdba1a38a7ddac"
+    },
+    {
+      "path": "experiments/20261014_bikeshare_multiscale/inspect_geography.py",
+      "bytes": 1343,
+      "sha256": "1307e8f4b276522166f91586831ef1ab8c114ec349c3e5a57094c6c535b3ea68"
+    },
+    {
+      "path": "experiments/20261014_bikeshare_multiscale/make_movie.py",
+      "bytes": 25708,
+      "sha256": "329bd8f16dfb7023bd6b9f98d46f79aa69d3b7ea68923d664bd734246303ee22"
+    },
+    {
+      "path": "experiments/20261014_bikeshare_multiscale/make_planning_figures.py",
+      "bytes": 2313,
+      "sha256": "5c265dcdcfde172f6191e2d2284e2e84b547fb6335c912d383cd1b32faf36869"
+    },
+    {
+      "path": "experiments/20261014_bikeshare_multiscale/output/infrastructure/interventions.json",
+      "bytes": 6185,
+      "sha256": "e7176981c30e2e30f6b5be4b197142193cb24f61365336ca9c7e3363375f7e7b"
+    },
+    {
+      "path": "experiments/20261014_bikeshare_multiscale/output/movie/captions.srt",
+      "bytes": 3905,
+      "sha256": "4b75a30f8b844e07723bf44bdf759377c159900b5c16736f00a470f0a5ed9ecd"
+    },
+    {
+      "path": "experiments/20261014_bikeshare_multiscale/output/movie/movie_validation.json",
+      "bytes": 1842,
+      "sha256": "a1664891f47024d8d135186374d7ad1e5d26cd7ead2c9c62e2c57d39710f09fe"
+    },
+    {
+      "path": "experiments/20261014_bikeshare_multiscale/output/movie/narration_segments.json",
+      "bytes": 3271,
+      "sha256": "8666e17d6dfda1baa7a855800342aa8830d23eda4f03e96217eff15fffc59e5d"
+    },
+    {
+      "path": "experiments/20261014_bikeshare_multiscale/output/movie/walkthrough.json",
+      "bytes": 2755,
+      "sha256": "e7e19dc8e33343a4c0e916e942998b6b8f0aa7f836ab2a05de5a2182ccf0fd04"
+    },
+    {
+      "path": "experiments/20261014_bikeshare_multiscale/output/movie/walkthrough_resolved.json",
+      "bytes": 29945,
+      "sha256": "343864e5e4f93762aac4401ac33f6fe99b0e268ea21b063216b35520a053d07d"
+    },
+    {
+      "path": "experiments/20261014_bikeshare_multiscale/output/network_assumption_sensitivity.csv",
+      "bytes": 1079,
+      "sha256": "e64885782d5cebfffa3ea47fa0c9be179dce4b3477ac3bedcd12538d83370919"
+    },
+    {
+      "path": "experiments/20261014_bikeshare_multiscale/output/network_validation.json",
+      "bytes": 5710,
+      "sha256": "692120e90945f43b516c392c19e84b57db2825c941c13f7bd3acc35a92330515"
+    },
+    {
+      "path": "experiments/20261014_bikeshare_multiscale/output/planning/analysis_validation.json",
+      "bytes": 905,
+      "sha256": "e321225e69e1b8f3f2d48ad9599be660f015fbd46eed2108c623cafe653b63ca"
+    },
+    {
+      "path": "experiments/20261014_bikeshare_multiscale/output/planning/benefit_scale_errors.csv",
+      "bytes": 137007,
+      "sha256": "552a7c1b518e29f9ea50b0ffa7366b65cb25bb4c920b5eee038f033b56f0899c"
+    },
+    {
+      "path": "experiments/20261014_bikeshare_multiscale/output/planning/browser_validation.json",
+      "bytes": 26219,
+      "sha256": "974505aac352a04185f2c880fdb373212fcb6b1c12a291e8f88569335e14ada4"
+    },
+    {
+      "path": "experiments/20261014_bikeshare_multiscale/output/planning/dashboard_1920.png",
+      "bytes": 839546,
+      "sha256": "945504b7f7978a81dbc7400a72ed1eff870e3a60daa8e7d4bc3d552dc70e4199"
+    },
+    {
+      "path": "experiments/20261014_bikeshare_multiscale/output/planning/data_quality.json",
+      "bytes": 7430,
+      "sha256": "d8f5686deadf0cbf9d2e8563fd92b02cde6aa8b7f0b181ac6c468177c3ad38f2"
+    },
+    {
+      "path": "experiments/20261014_bikeshare_multiscale/output/planning/episode_results.csv",
+      "bytes": 627123,
+      "sha256": "1ebacf4d048aef4f340ba37079ef7c43a0614c0fc7f111dfa1fbfd27287bbaf2"
+    },
+    {
+      "path": "experiments/20261014_bikeshare_multiscale/output/planning/investment_rankings.png",
+      "bytes": 61550,
+      "sha256": "2978fb50b1c35ab189f4a8781a2992d8471e826897a6b06713b00a317a0ed1f9"
+    },
+    {
+      "path": "experiments/20261014_bikeshare_multiscale/output/planning/journey_validation.json",
+      "bytes": 431,
+      "sha256": "93a9feec485e5ecf1260f8aba20a05a97020d467e0990a7c318ceb2b9fc6e644"
+    },
+    {
+      "path": "experiments/20261014_bikeshare_multiscale/output/planning/matched_benefits.csv",
+      "bytes": 364558,
+      "sha256": "6cbbca34d0ab39206fbc4bb78dbe2c73193d4a9239bb3b5c55a55c69d136498f"
+    },
+    {
+      "path": "experiments/20261014_bikeshare_multiscale/output/planning/ranked_benefits.csv",
+      "bytes": 48911,
+      "sha256": "5d1790ff5e8039de1c91f20e8ce6ca8dbd37c09e83c39facb76e662cd2a5c9d2"
+    },
+    {
+      "path": "experiments/20261014_bikeshare_multiscale/output/planning/ranking_agreement.csv",
+      "bytes": 4671,
+      "sha256": "8104cac033bcb4b8678e6c8182fc8ca8544c1b5d3ac993d13169edacf28f4453"
+    },
+    {
+      "path": "experiments/20261014_bikeshare_multiscale/output/planning/routing_scale_error.png",
+      "bytes": 77082,
+      "sha256": "200b1b8245d979dff2f5880846d250cb46ea5a2b88c3d76222d0ece599459e24"
+    },
+    {
+      "path": "experiments/20261014_bikeshare_multiscale/output/planning/runner_browser_validation.json",
+      "bytes": 6379,
+      "sha256": "fabc796d4357ed7575880941daee7b65062bf89ade6cc5942da2d42c613ef44a"
+    },
+    {
+      "path": "experiments/20261014_bikeshare_multiscale/output/routing_scale_errors.csv",
+      "bytes": 1174,
+      "sha256": "971f2c56df0661a6b4c63163d4956072584e51cd8c7244a110af030fca8095b9"
+    },
+    {
+      "path": "experiments/20261014_bikeshare_multiscale/planning_analysis.py",
+      "bytes": 10596,
+      "sha256": "45c4990eeadc981fd204cd63d95fc4801cc4301c4c3b5acbb00c61b7f56b53ca"
+    },
+    {
+      "path": "experiments/20261014_bikeshare_multiscale/prepare.py",
+      "bytes": 17988,
+      "sha256": "c02284750ed88ad83ccaa51bd8415b8ab6b2f953bcf3c3e91ec3c6d87c3b1e8e"
+    },
+    {
+      "path": "experiments/20261014_bikeshare_multiscale/prepare_walkthrough.py",
+      "bytes": 6552,
+      "sha256": "e18b1f3eabb5a20516affa9d15b742c81c840fd8abb234a08816b723d2c70aac"
+    },
+    {
+      "path": "experiments/20261014_bikeshare_multiscale/profile_run.py",
+      "bytes": 344,
+      "sha256": "16d399fd7816160c78d7d0e420ba89a76f227d097b2bdddeb7d1b0be8ae6ef3e"
+    },
+    {
+      "path": "experiments/20261014_bikeshare_multiscale/qa_app.cjs",
+      "bytes": 4529,
+      "sha256": "88ff94e11b0cd5051babf468a7bb9fa89156d4c723fb4b3031a82ff21d7c8e2a"
+    },
+    {
+      "path": "experiments/20261014_bikeshare_multiscale/qa_runner.cjs",
+      "bytes": 4236,
+      "sha256": "0642a86d2c0427815f147c77cf7e8acac6d65861f4ec486945bac404eb0f580b"
+    },
+    {
+      "path": "experiments/20261014_bikeshare_multiscale/README_PLANNING.md",
+      "bytes": 9248,
+      "sha256": "51ba3435df41b9e18e186fc9d191a59af012725083cce96a7ceca0d6f4efaff7"
+    },
+    {
+      "path": "experiments/20261014_bikeshare_multiscale/record_dashboard.cjs",
+      "bytes": 4007,
+      "sha256": "4076fb0313cd62dfff894cac9c31c40f834b61ea4e859f25b4f1a3cf177d6856"
+    },
+    {
+      "path": "experiments/20261014_bikeshare_multiscale/replay_export.py",
+      "bytes": 11529,
+      "sha256": "7776a6a75be22f982066ea634783ef05e798d28b8d20bbe94903b5d1faea8b48"
+    },
+    {
+      "path": "experiments/20261014_bikeshare_multiscale/resume_run.py",
+      "bytes": 10217,
+      "sha256": "002885a0431dec1c856117d6dc400ef3b39e665e7965cd2ecb4362adc3250c50"
+    },
+    {
+      "path": "experiments/20261014_bikeshare_multiscale/routing.py",
+      "bytes": 8906,
+      "sha256": "92cddccb12cc7f3f2a136cfbf5b65e52594c7e9bf374abae75b3eb32d1ac93c4"
+    },
+    {
+      "path": "experiments/20261014_bikeshare_multiscale/scenario_runner.py",
+      "bytes": 9392,
+      "sha256": "235d486bb44571884cd67446a07bbbb78bc5f539d67627cf9ab5d3f21108dd0f"
+    },
+    {
+      "path": "experiments/20261014_bikeshare_multiscale/serve.py",
+      "bytes": 2719,
+      "sha256": "dbd1189a7bc1a44f8c750cb074558ba57b84db307e38db93dba03894fd6699ff"
+    },
+    {
+      "path": "experiments/20261014_bikeshare_multiscale/simulate.py",
+      "bytes": 17231,
+      "sha256": "2394ba7f80255f47b020f57cb2899d871494c18e1b215a71a06e3a7d4bd92b9d"
+    },
+    {
+      "path": "experiments/20261014_bikeshare_multiscale/test_model.py",
+      "bytes": 2180,
+      "sha256": "cf3a4bf145ffbe8f14853d36525216266d926713056595aeaafd9765cea46c08"
+    },
+    {
+      "path": "experiments/20261014_bikeshare_multiscale/test_replay.py",
+      "bytes": 1092,
+      "sha256": "e1b350e42c9b9ff008df0757f7edcdfebba173f1ae432ea8316be2253b290044"
+    },
+    {
+      "path": "experiments/20261014_bikeshare_multiscale/test_runner.py",
+      "bytes": 1410,
+      "sha256": "41bc80ade8099a0f61946bcf2ea22bfd94bd61399d2ac58e05257ade3057126c"
+    },
+    {
+      "path": "experiments/20261014_bridge_fleet/assemble_audio.py",
+      "bytes": 2181,
+      "sha256": "797416a4ca7db2a4484b2ebc1f41c38b51cd1231ab6f5092dac1eb082f55e02b"
+    },
+    {
+      "path": "experiments/20261014_bridge_fleet/config.json",
+      "bytes": 1904,
+      "sha256": "c0f34e97d8317cd1fa219c2ea0784c883177b29ce2e3e5f400ca9d72fd204b62"
+    },
+    {
+      "path": "experiments/20261014_bridge_fleet/finalize.py",
+      "bytes": 5044,
+      "sha256": "532c7b25726ebdaad1c8f2996dc4bd699d404a4063a1dc91236976bad8a06e81"
+    },
+    {
+      "path": "experiments/20261014_bridge_fleet/HANDOFF.md",
+      "bytes": 3983,
+      "sha256": "05582e5a906fe327f36ea5f4f7e93d856f20c4d6a99756059a5d47b3507976ae"
+    },
+    {
+      "path": "experiments/20261014_bridge_fleet/make_docs.py",
+      "bytes": 15404,
+      "sha256": "71b087393575eaa7cfea7cff7dbab9f14e63752117c100f807ec31727eabe14f"
+    },
+    {
+      "path": "experiments/20261014_bridge_fleet/manifest.json",
+      "bytes": 15825,
+      "sha256": "7173d828b17dee5aead27e53897a9ea19f9c3cb46f1bd69d156010df743bcd98"
+    },
+    {
+      "path": "experiments/20261014_bridge_fleet/narrate.ps1",
+      "bytes": 1089,
+      "sha256": "2f14ac1523ed3778a149d39d1f8d263b03d00549d3d9653330de4244af673fe1"
+    },
+    {
+      "path": "experiments/20261014_bridge_fleet/README.md",
+      "bytes": 9824,
+      "sha256": "25fd6060fff9c0cced3c883b8d629e31e9bf79e8d7c0da401212bc4f874766f3"
+    },
+    {
+      "path": "experiments/20261014_bridge_fleet/render.py",
+      "bytes": 24055,
+      "sha256": "beb310c63d7563db25ba1f120c42f32abc3bfcdfcb54fa63c5f9b2c9e04c2bdb"
+    },
+    {
+      "path": "experiments/20261014_bridge_fleet/requirements.txt",
+      "bytes": 44,
+      "sha256": "9794c84e6ac2b144f6a4a7180066258f1d1512d39b0350ea0edb3bd528ab4ef5"
+    },
+    {
+      "path": "experiments/20261014_bridge_fleet/simulate.py",
+      "bytes": 24907,
+      "sha256": "ff8a71691eab1ca220e1215e8a54eceee65f065e4e749912f4f5a731d471584a"
+    },
+    {
+      "path": "experiments/20261014_bridge_fleet/sources.json",
+      "bytes": 2155,
+      "sha256": "0e92496d6e41bb6e6cae2f353e836fe52198794eb056ac60ffabf4a4d8f83cb9"
+    },
+    {
+      "path": "experiments/20261014_bridge_fleet/test_simulation.py",
+      "bytes": 2436,
+      "sha256": "3bcd92669312aadd059db4353e992a3089a905395c754f78d6a5899432cba077"
+    },
+    {
+      "path": "experiments/20261014_bridge_fleet/verify.py",
+      "bytes": 5653,
+      "sha256": "f63ac38c5fcc6338528d9a00f4459923a8ffd8e68bdd396ba54adc359112b8ca"
+    },
+    {
+      "path": "README.md",
+      "bytes": 6421,
+      "sha256": "07806e34e9356dc7bbca7a6e248f41842248d7525ae81d59cd39646c8a62733e"
+    }
+  ],
+  "large_local_artifacts_not_in_git": [
+    {
+      "path": "artifacts/20260813/basketball_affine_conditioning_v2/basketball_affine_telemetry.csv",
+      "bytes": 16096456627,
+      "reason": "Large local artifact; not uploaded in the source commit"
+    },
+    {
+      "path": "artifacts/20260813/basketball_affine_conditioning_v2_pilot/basketball_affine_telemetry.csv",
+      "bytes": 251519182,
+      "reason": "Large local artifact; not uploaded in the source commit"
+    },
+    {
+      "path": "artifacts/20261013/portfolio_rta/synchronized_frames.json",
+      "bytes": 10065751,
+      "reason": "Large local artifact; not uploaded in the source commit"
+    },
+    {
+      "path": "experiments/20261014_bikeshare_multiscale/data/kaliningrad_network.json",
+      "bytes": 14424216,
+      "reason": "Large local artifact; not uploaded in the source commit"
+    },
+    {
+      "path": "experiments/20261014_bikeshare_multiscale/data/raw/202504-capitalbikeshare-tripdata.zip",
+      "bytes": 25712657,
+      "reason": "Large local artifact; not uploaded in the source commit"
+    },
+    {
+      "path": "experiments/20261014_bikeshare_multiscale/data/raw/202609-capitalbikeshare-tripdata.zip",
+      "bytes": 25848624,
+      "reason": "Large local artifact; not uploaded in the source commit"
+    },
+    {
+      "path": "experiments/20261014_bikeshare_multiscale/data/raw/washington.osm.json",
+      "bytes": 26709559,
+      "reason": "Large local artifact; not uploaded in the source commit"
+    },
+    {
+      "path": "experiments/20261014_bikeshare_multiscale/data/washington_network.json",
+      "bytes": 44286988,
+      "reason": "Large local artifact; not uploaded in the source commit"
+    },
+    {
+      "path": "experiments/20261014_bikeshare_multiscale/data/washington_scale_0.json",
+      "bytes": 12749269,
+      "reason": "Large local artifact; not uploaded in the source commit"
+    },
+    {
+      "path": "experiments/20261014_bikeshare_multiscale/output/journeys/request_outcomes.csv.gz",
+      "bytes": 38995459,
+      "reason": "Large local artifact; not uploaded in the source commit"
+    },
+    {
+      "path": "experiments/20261014_bikeshare_multiscale/output/movie/dashboard_silent.mp4",
+      "bytes": 19808494,
+      "reason": "Large local artifact; not uploaded in the source commit"
+    },
+    {
+      "path": "experiments/20261014_bikeshare_multiscale/output/movie/narration.wav",
+      "bytes": 17280044,
+      "reason": "Large local artifact; not uploaded in the source commit"
+    },
+    {
+      "path": "experiments/20261014_bikeshare_multiscale/output/movie/river_links_planning_narrated.mp4",
+      "bytes": 22584034,
+      "reason": "Large local artifact; not uploaded in the source commit"
+    },
+    {
+      "path": "experiments/20261014_bikeshare_multiscale/output/planning/investment_request_outcomes.csv.gz",
+      "bytes": 10471779,
+      "reason": "Large local artifact; not uploaded in the source commit"
+    },
+    {
+      "path": "experiments/20261014_bridge_fleet/output/fleet_changing_networks.mp4",
+      "bytes": 11067695,
+      "reason": "Large local artifact; not uploaded in the source commit"
+    },
+    {
+      "path": "experiments/20261014_bridge_fleet/output/narration.wav",
+      "bytes": 17280044,
+      "reason": "Large local artifact; not uploaded in the source commit"
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "review_date": "2026-10-14",
+  "geographic_status": "No modern road dataset used. The permitted historical schematic fallback is used; it must not be presented as a motor-vehicle map of Kaliningrad.",
+  "sources": [
+    {
+      "title": "Leonard Euler's Solution to the Konigsberg Bridge Problem",
+      "publisher": "Mathematical Association of America, Convergence",
+      "url": "https://old.maa.org/press/periodicals/convergence/leonard-eulers-solution-to-the-konigsberg-bridge-problem",
+      "use": "Historical bridge-problem context. The supplied seven-edge topology is independently verified in code."
+    },
+    {
+      "title": "OpenStreetMap access restrictions",
+      "url": "https://wiki.openstreetmap.org/wiki/Key:access",
+      "use": "Scoping modern road-data verification, not a map-data source in this prototype. Direction and motor-vehicle access need verification before replacing the schematic."
+    },
+    {
+      "title": "Existing queue experiment",
+      "repository_path": "analysis/run_fair_queue_multiagent_simulation.py",
+      "use": "Finite queue capacity, arrived-packet eligibility and useful-message priority/coalescing. Adapted to common input tapes and variable network delays; FIFO uses actual arrival order."
+    },
+    {
+      "title": "Existing formation delay monitor",
+      "repository_path": "analysis/run_3d_formation_delay_monitor_simulation.py",
+      "use": "Explicit message age and fallback concept. No formation forces or repulsion equations copied into road dynamics."
+    },
+    {
+      "title": "Existing movie and local narration utilities",
+      "repository_paths": ["analysis/portfolio_rta_demo.py", "analysis/render_sensor_uncertainty_voiceover.ps1"],
+      "use": "Pillow/FFmpeg frame export and local Windows System.Speech narration patterns."
+    }
+  ],
+  "synthetic_inputs": ["passenger demand", "fleet inventory", "edge travel times", "closure timing", "network delays", "background queue traffic"],
+  "excluded_claims": ["measured Kaliningrad demand", "Washington DC bikeshare demand transfer", "actual Waymo policies or performance", "real autonomous-driving safety certification"]
+}

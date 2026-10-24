@@ -1,0 +1,47 @@
+{
+  "status": "FROZEN",
+  "freeze_date": "2026-07-25",
+  "authorization": "User-requested exploratory N={5,6,8,9} dense horizon extension",
+  "inputs": {
+    "protocol": {
+      "path": "C:\\Users\\anaxe\\RAGforAssurredAutonomy\\analysis\\prereg\\horizon_dense_extension_20260725.md",
+      "size_bytes": 3640,
+      "sha256": "e9851bc8aa4e491488f8f347e2583220b1076c196524e845fcc9bee3fa630b5f"
+    },
+    "runner": {
+      "path": "C:\\Users\\anaxe\\RAGforAssurredAutonomy\\analysis\\run_horizon_dense_extension.py",
+      "size_bytes": 37852,
+      "sha256": "a53735f322f4ca2f5e03bc0588a0348f01846667aba7a86f34227d2598dbd551"
+    },
+    "harness": {
+      "path": "C:\\Users\\anaxe\\RAGforAssurredAutonomy\\tools\\quadrotor_delay_ra_experiment.py",
+      "size_bytes": 105630,
+      "sha256": "8fb2df2b0ea09e9740540cf0ff0cb889fae3f9a2b38aab689f2572e828f5a1a5"
+    },
+    "reference_episodes": {
+      "path": "C:\\Users\\anaxe\\RAGforAssurredAutonomy\\analysis\\out\\horizon_spectrum_20260723\\phase2b\\confirmation\\episodes.csv",
+      "size_bytes": 3934210,
+      "sha256": "e0c6112eb3d7ac7d2d1247183aa2595ec3d1d015756af2393ee83b07537b0c5c"
+    },
+    "reference_n3_steps": {
+      "path": "C:\\Users\\anaxe\\RAGforAssurredAutonomy\\analysis\\out\\horizon_spectrum_20260723\\phase2b\\confirmation\\full_steps\\E-N3_steps.csv",
+      "size_bytes": 188152121,
+      "sha256": "a30b8c773cd16bb0dcc2276dfd2fad01c3ed9629794e31d246f488ef8660e1f6"
+    },
+    "phase2b_summary": {
+      "path": "C:\\Users\\anaxe\\RAGforAssurredAutonomy\\analysis\\out\\horizon_spectrum_20260723\\phase2b\\horizon_ablation_summary.csv",
+      "size_bytes": 1184,
+      "sha256": "cade9411dab6bcc03819081f71384b269ba4afdf29239bbd5dab9d8492646632"
+    },
+    "pilot_summary": {
+      "path": "C:\\Users\\anaxe\\RAGforAssurredAutonomy\\analysis\\out\\horizon_spectrum_20260723\\pilot\\horizon_spectrum_pilot.csv",
+      "size_bytes": 734,
+      "sha256": "9beb67025a0bdfdecdeab270ac4274dda56b9ee92bb814e998cc486ffb75f128"
+    },
+    "n7_summary": {
+      "path": "C:\\Users\\anaxe\\RAGforAssurredAutonomy\\analysis\\out\\horizon_spectrum_20260723\\exploratory_2x2_20260723\\part_b\\en7_exploratory_summary.csv",
+      "size_bytes": 498,
+      "sha256": "98164541336024cc4a8347965beab9fec02e69a0fe6f2c0a1e00ed291f2f3986"
+    }
+  }
+}

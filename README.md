@@ -1,8 +1,16 @@
 # Delay-Aware Runtime Assurance Lab
 
+## Public Research Collection
+
+The October 24, 2026 source release adds the [final course study](course_study/README.md), later formation/risk-allocation demonstrations, and the [multiscale infrastructure-planning laboratory](experiments/20261014_bikeshare_multiscale/README_PLANNING.md). [Release scope and exclusions](docs/PUBLIC_RELEASE_20261024.md) distinguish registered evidence from exploratory extensions and identify large files retained locally. The current working tree includes source and compact evidence, not every raw trace or map cache.
+
+The class literature-retrieval system is a separate repository: [Assured Autonomy Agentic RAG](https://github.com/rbajaj5/assured-autonomy-rag). The RAG is not a substitute for simulation or formal assurance evidence.
+
+## Original Exploratory Sandbox
+
 Small, reproducible simulations for studying how delayed messages, finite queues, and queue-aware processing affect multi-agent coordination.
 
-This repository is an exploratory companion to the delay-aware runtime-assurance work. It is intentionally separate from the manuscript bundles: the code here is a transparent sandbox for mechanism discovery, not registered evidence and not a safety case.
+The original repository was an exploratory companion to the delay-aware runtime-assurance work. Its sandbox experiments remain exploratory, not registered evidence or a safety case. The separately labeled `course_study/` directory now carries the final manuscript and selected registered evidence; those labels do not transfer to other folders.
 
 ## What is here
 
@@ -51,7 +59,7 @@ The simulations use Python, NumPy, pandas, and Matplotlib where needed. No simul
 
 The queue policies are deliberately simple abstractions. `priority_deduplicating` is not automatically safe: it can starve background work, requires an explicit message taxonomy, and needs boundedness, authentication, auditability, and failure-handling rules before deployment. The random-matrix and branch diagnostics are finite empirical probes; they do not establish Wigner, Sine-beta, Airy-beta, or universality claims.
 
-Every result should be read together with its report and source manifest. Numbers in this repository are exploratory unless a separate artifact explicitly says otherwise.
+Every result should be read together with its report and source manifest. Numbers in this repository are exploratory unless a separate artifact explicitly says otherwise. The original `REPO_MANIFEST.sha256` is a historical assembly manifest, not a hash list for the later additions; see `docs/PUBLIC_RELEASE_MANIFEST.json` for this source release.
 
 ## License
 

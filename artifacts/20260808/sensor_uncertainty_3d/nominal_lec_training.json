@@ -1,0 +1,9 @@
+{
+  "device": "cuda",
+  "seed": 20260808,
+  "training_samples": 65536,
+  "iterations": 500,
+  "final_batch_mse": 0.00015606347005814314,
+  "validation_mse": 0.00014160809223540127,
+  "training_seconds": 3.3845172999426723
+}
