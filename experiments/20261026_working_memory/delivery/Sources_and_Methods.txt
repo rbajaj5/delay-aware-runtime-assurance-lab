@@ -1,0 +1,71 @@
+WORKING MEMORY / 工作记忆
+Ravi Bajaj — queue-aware autonomy explainer, October 26, 2026
+
+CHINESE DEFINITIONS
+1. 认知实验标准工具箱, 中国科学院心理研究所
+   https://experiment.psych.ac.cn/WM
+   Quoted phrase: 在短时间内存储和加工有限信息
+   Our English translation: Holding and processing a limited amount of
+   information over a short time.
+
+2. Tencent Hunyuan, Hy-Memory
+   https://memory.hunyuan.tencent.com/
+   Quoted phrase: 记住任务做到哪里、经验何时适用
+   Our English translation: Remember where the task stands—and when experience
+   applies.
+
+Both sources accessed October 26, 2026. Only these descriptions are used;
+the video makes no claims about Tencent's benchmark rankings. It does not use
+Hy-Memory software. Cognitive working memory is an analogy for the task state
+and evidence maintained by these engineering systems.
+
+EXECUTED SOURCES
+https://github.com/rbajaj5/delay-aware-runtime-assurance-lab
+  analysis/run_fair_queue_multiagent_simulation.py
+  Base checkout: 2909919c7b4b3e9da3c2cd44cf4724680e8a7813
+  12 agents, 180 rounds, delay 3, service capacity 2/agent/round.
+  Two useful updates and mean 4 background arrivals/agent/round.
+  Ten identical seeds per policy: 20261026 through 20261035.
+  The video replay uses seed 20261026. Every displayed trace value comes from
+  an observed call to the original run_game, checked against a direct call.
+  Packet motion is schematic; the underlying served messages are real outputs.
+
+  Mean mismatch (unknowns included): FIFO 49.9%, newest priority 22.4%,
+  priority plus aging 34.1%. Mean background service counts: 2861.9, 46.7,
+  and 2127.4. These are new paired results, not the historical sweep.
+  All policies remain overloaded. Priority selects but does not purge old
+  messages. The evaluator's world truth is unavailable to agents.
+
+https://github.com/rbajaj5/humanoid-laundry-queues
+  laundry_task/supervisor.py, laundry_task/test_supervisor.py
+  Base checkout: 05d08a87ecf93d1759178b0ff6678a571130ee4c
+  All 16 existing pure-Python protocol tests rerun successfully.
+  New recorded synthetic sequence: issue, execute, same-ID retry, old
+  observation rejection, receipt-only event, fresh postcondition verification.
+  Default observation-age threshold: 0.25 seconds.
+
+NEW DOMAIN EXAMPLES
+  experiments/20261026_working_memory/domain_examples.py
+  Basketball: recheck target coverage before passing.
+  Multi-agent gardening: two agents propose one plant dose; one effect occurs.
+  Multi-agent laundry: two agents propose loading one washer; one effect occurs.
+  Resource versions, current preconditions, command identity and observation
+  age control acceptance. A centralized authority serializes checks/effects.
+  These examples use a synthetic 0.75-second freshness threshold and discrete
+  state transitions. They are not multi-robot physics or crash-safe consensus.
+
+RETAINED ROBOT MEDIA
+  humanoid-laundry-queues/laundry_task/output/laundry_task_silent.mp4
+  Original film seconds 8–20, robot view cropped and resized.
+  Retained CUDA simulation: one humanoid, one washer, one cloth.
+  This clip is separate from the new multi-agent laundry example.
+  No new physics run or hardware test was performed for this explainer.
+
+OUTPUT
+  1920x1080, 24 fps, 2 minutes 40 seconds; English voice and captions.
+  Narration: local Windows Microsoft Zira Desktop; no external voice service.
+  Generated with Python/Pillow and FFmpeg, with OpenAI Codex assistance.
+  Source, test output, raw replay and validation are in the example directory.
+
+These are working mechanism demonstrations, not a model of human cognition,
+a certification, or a general claim of safety.

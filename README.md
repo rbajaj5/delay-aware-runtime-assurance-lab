@@ -1,5 +1,16 @@
 # Delay-Aware Runtime Assurance Lab
 
+## Working Memory / 工作记忆
+
+The [working-memory example](experiments/20261026_working_memory/README.md)
+adds an English-narrated explainer with Chinese definitions, newly matched
+multi-agent queue replays, and executable basketball, gardening, and laundry
+coordination examples. It also exercises the existing laundry supervisor and
+clearly separates the new discrete models from a retained humanoid physics clip.
+[Generated video](experiments/20261026_working_memory/delivery/Working_Memory_Assured_Autonomy.mp4)
+and [sources](experiments/20261026_working_memory/delivery/Sources_and_Methods.txt).
+The video is included with this example; it is separate from the release assets below.
+
 ## Videos and MP4 Demonstrations
 
 **Start with a movie.** Click a preview or an **MP4** link below to open/download the original video. [All eight MP4s](https://github.com/rbajaj5/delay-aware-runtime-assurance-lab/releases/tag/videos-2026-10-24) are available without cloning the repository.

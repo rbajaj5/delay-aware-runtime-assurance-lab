@@ -1,0 +1,251 @@
+[
+  {
+    "title": "Basketball",
+    "rule": "Pass only to a currently open teammate",
+    "explanation": "Wing was open when planned; it is covered at service time.",
+    "initial": {
+      "holder": "Guard",
+      "wing_open": true,
+      "center_open": true
+    },
+    "final": {
+      "holder": "Center",
+      "wing_open": false,
+      "center_open": true
+    },
+    "events": [
+      {
+        "time_s": 0.4,
+        "command": {
+          "agent": "Guard",
+          "identity": "pass-wing",
+          "expected_version": 0,
+          "target": "wing",
+          "observed_at": 0.0
+        },
+        "status": "REJECT_CURRENT_PRECONDITION",
+        "state": {
+          "holder": "Guard",
+          "wing_open": false,
+          "center_open": true
+        },
+        "version": 0,
+        "effects": 0
+      },
+      {
+        "time_s": 0.7,
+        "command": {
+          "agent": "Guard",
+          "identity": "pass-center",
+          "expected_version": 0,
+          "target": "center",
+          "observed_at": 0.6
+        },
+        "status": "EXECUTE",
+        "state": {
+          "holder": "Center",
+          "wing_open": false,
+          "center_open": true
+        },
+        "version": 1,
+        "effects": 1
+      },
+      {
+        "time_s": 0.8,
+        "command": {
+          "agent": "Guard",
+          "identity": "pass-center",
+          "expected_version": 0,
+          "target": "center",
+          "observed_at": 0.6
+        },
+        "status": "DUPLICATE_NO_EXECUTION",
+        "state": {
+          "holder": "Center",
+          "wing_open": false,
+          "center_open": true
+        },
+        "version": 1,
+        "effects": 1
+      },
+      {
+        "time_s": 2.0,
+        "command": {
+          "agent": "Other",
+          "identity": "new-intent",
+          "expected_version": 1,
+          "target": "wing",
+          "observed_at": 0.0
+        },
+        "status": "REJECT_STALE_OBSERVATION",
+        "state": {
+          "holder": "Center",
+          "wing_open": false,
+          "center_open": true
+        },
+        "version": 1,
+        "effects": 1
+      }
+    ],
+    "effects": 1,
+    "scope": "Centralized discrete state machine; illustrative domain mapping; no physical simulation."
+  },
+  {
+    "title": "Multi-agent gardening",
+    "rule": "One measured dose for one plant",
+    "explanation": "Both gardeners remember a dry plant; only one dose is authorized.",
+    "initial": {
+      "plant_ml": 0
+    },
+    "final": {
+      "plant_ml": 60
+    },
+    "events": [
+      {
+        "time_s": 0.4,
+        "command": {
+          "agent": "Gardener A",
+          "identity": "water-plant",
+          "expected_version": 0,
+          "target": "plant",
+          "observed_at": 0.0
+        },
+        "status": "EXECUTE",
+        "state": {
+          "plant_ml": 60
+        },
+        "version": 1,
+        "effects": 1
+      },
+      {
+        "time_s": 0.5,
+        "command": {
+          "agent": "Gardener B",
+          "identity": "water-plant",
+          "expected_version": 0,
+          "target": "plant",
+          "observed_at": 0.0
+        },
+        "status": "REJECT_CHANGED_VERSION",
+        "state": {
+          "plant_ml": 60
+        },
+        "version": 1,
+        "effects": 1
+      },
+      {
+        "time_s": 0.6,
+        "command": {
+          "agent": "Gardener A",
+          "identity": "water-plant",
+          "expected_version": 0,
+          "target": "plant",
+          "observed_at": 0.0
+        },
+        "status": "DUPLICATE_NO_EXECUTION",
+        "state": {
+          "plant_ml": 60
+        },
+        "version": 1,
+        "effects": 1
+      },
+      {
+        "time_s": 2.0,
+        "command": {
+          "agent": "Other",
+          "identity": "new-intent",
+          "expected_version": 1,
+          "target": "plant",
+          "observed_at": 0.0
+        },
+        "status": "REJECT_STALE_OBSERVATION",
+        "state": {
+          "plant_ml": 60
+        },
+        "version": 1,
+        "effects": 1
+      }
+    ],
+    "effects": 1,
+    "scope": "Centralized discrete state machine; illustrative domain mapping; no physical simulation."
+  },
+  {
+    "title": "Multi-agent laundry",
+    "rule": "One loader for one shared washer",
+    "explanation": "Both loaders remember an empty washer; the second plan is obsolete.",
+    "initial": {
+      "loaded_by": null
+    },
+    "final": {
+      "loaded_by": "Loader A"
+    },
+    "events": [
+      {
+        "time_s": 0.4,
+        "command": {
+          "agent": "Loader A",
+          "identity": "load-washer",
+          "expected_version": 0,
+          "target": "washer",
+          "observed_at": 0.0
+        },
+        "status": "EXECUTE",
+        "state": {
+          "loaded_by": "Loader A"
+        },
+        "version": 1,
+        "effects": 1
+      },
+      {
+        "time_s": 0.5,
+        "command": {
+          "agent": "Loader B",
+          "identity": "load-washer",
+          "expected_version": 0,
+          "target": "washer",
+          "observed_at": 0.0
+        },
+        "status": "REJECT_CHANGED_VERSION",
+        "state": {
+          "loaded_by": "Loader A"
+        },
+        "version": 1,
+        "effects": 1
+      },
+      {
+        "time_s": 0.6,
+        "command": {
+          "agent": "Loader A",
+          "identity": "load-washer",
+          "expected_version": 0,
+          "target": "washer",
+          "observed_at": 0.0
+        },
+        "status": "DUPLICATE_NO_EXECUTION",
+        "state": {
+          "loaded_by": "Loader A"
+        },
+        "version": 1,
+        "effects": 1
+      },
+      {
+        "time_s": 2.0,
+        "command": {
+          "agent": "Other",
+          "identity": "new-intent",
+          "expected_version": 1,
+          "target": "washer",
+          "observed_at": 0.0
+        },
+        "status": "REJECT_STALE_OBSERVATION",
+        "state": {
+          "loaded_by": "Loader A"
+        },
+        "version": 1,
+        "effects": 1
+      }
+    ],
+    "effects": 1,
+    "scope": "Centralized discrete state machine; illustrative domain mapping; no physical simulation."
+  }
+]

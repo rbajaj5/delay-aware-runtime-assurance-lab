@@ -1,0 +1,48 @@
+{
+  "passed": true,
+  "matched_runs": 30,
+  "protocol_tests": 16,
+  "domain_examples": 3,
+  "video_duration_s": 160.0,
+  "width": 1920,
+  "height": 1080,
+  "fps": 24,
+  "codecs": [
+    "h264",
+    "aac",
+    "mov_text"
+  ],
+  "full_video_audio_decode": "passed",
+  "audio_peak_pcm16": 28999.999999999996,
+  "audio_rms_pcm16": 3461.6659356105765,
+  "retained_clip_sha256": "a88dcaa29c785150568e66031200547494848efb0ef32933d2593adfd6aa4209",
+  "source_hashes_unchanged": true,
+  "encoded_frames_checked": [
+    4,
+    17,
+    29,
+    43,
+    59,
+    74,
+    86,
+    98,
+    118,
+    130,
+    143,
+    154
+  ],
+  "delivery_sha256": {
+    "Contact_Sheet.jpg": "3ab22552824bb35b078bd460912b2e6375e0fc285de37e5b6298c23898ee4f2e",
+    "Sources_and_Methods.txt": "2fc7170dd925592c932ec641ce4beb03dd73bfd09f68baa9bd01c8ba19cc7e9a",
+    "Working_Memory_Assured_Autonomy.mp4": "2e2a4a15804bf587375dd043a5e5d91e7e8521a4ce7a0cf707186a8cf1a102fd",
+    "Working_Memory_Captions.srt": "53e832b21aa03177238a55704eb0263c258e5123be5f15e0174d45aed7ea68a0",
+    "Working_Memory_Poster.png": "df3942c3f72844a533fdb7c20ae5c709b9dffb6bef5c5293295e9b99b916dc97"
+  },
+  "code_sha256": {
+    "domain_examples.py": "afcc5bcb124356bc9a894a3182fec7ece352d382d7aae53f039198d6cb641dd4",
+    "make_video.py": "30c511f0625a0d7a9323ff9a10251a3cc20ff032dcc8915a3615310aff88c472",
+    "run_evidence.py": "d0f639795cf77f596adbd29d74accdbc2638900c7632d069992ab5af7bad2b28",
+    "verify.py": "1826b9561d58a3972aa39409ab0e51df4acb9cfee16b21aabb3250bd61457c8c"
+  },
+  "scope": "Matched queue execution, centralized synthetic examples and existing protocol tests; no new physics run."
+}

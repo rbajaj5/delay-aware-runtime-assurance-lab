@@ -1,0 +1,41 @@
+[
+  {
+    "delay": 3,
+    "background_rate": 4.0,
+    "policy": "fifo_blind",
+    "n_games": 10,
+    "mean_stale_decision_rate": 0.4989583333333334,
+    "mean_useful_processed": 1432.8,
+    "mean_background_processed": 2861.9,
+    "mean_useful_wait": 60.63717941217152,
+    "mean_background_wait": 60.69315761234956,
+    "mean_backlog": 4361.013333333333,
+    "mean_max_backlog": 8651.0
+  },
+  {
+    "delay": 3,
+    "background_rate": 4.0,
+    "policy": "priority_deduplicating",
+    "n_games": 10,
+    "mean_stale_decision_rate": 0.22402777777777777,
+    "mean_useful_processed": 4248.0,
+    "mean_background_processed": 46.7,
+    "mean_useful_wait": 3.0,
+    "mean_background_wait": 1.3354624062082436,
+    "mean_backlog": 4361.013333333333,
+    "mean_max_backlog": 8651.0
+  },
+  {
+    "delay": 3,
+    "background_rate": 4.0,
+    "policy": "priority_with_aging",
+    "n_games": 10,
+    "mean_stale_decision_rate": 0.3411342592592592,
+    "mean_useful_processed": 2167.3,
+    "mean_background_processed": 2127.4,
+    "mean_useful_wait": 3.0,
+    "mean_background_wait": 69.09383685445731,
+    "mean_backlog": 4361.013333333333,
+    "mean_max_backlog": 8651.0
+  }
+]

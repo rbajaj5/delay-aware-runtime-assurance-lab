@@ -1,0 +1,111 @@
+{
+  "segments": [
+    {
+      "segment": 0,
+      "original_duration": 11.312108843537414,
+      "speed": 1.0,
+      "window": 12,
+      "rendered_duration": 11.288895833333333
+    },
+    {
+      "segment": 1,
+      "original_duration": 12.242131519274377,
+      "speed": 1.073871185901261,
+      "window": 12,
+      "rendered_duration": 11.378458333333333
+    },
+    {
+      "segment": 2,
+      "original_duration": 12.827210884353741,
+      "speed": 1.1251939372240123,
+      "window": 12,
+      "rendered_duration": 11.3795625
+    },
+    {
+      "segment": 3,
+      "original_duration": 12.13687074829932,
+      "speed": 1.4448655652737283,
+      "window": 9,
+      "rendered_duration": 8.384645833333334
+    },
+    {
+      "segment": 4,
+      "original_duration": 11.932108843537415,
+      "speed": 1.4204891480401685,
+      "window": 9,
+      "rendered_duration": 8.3841875
+    },
+    {
+      "segment": 5,
+      "original_duration": 10.787301587301588,
+      "speed": 1.4577434577434578,
+      "window": 8,
+      "rendered_duration": 7.384145833333333
+    },
+    {
+      "segment": 6,
+      "original_duration": 9.71265306122449,
+      "speed": 1.3125206839492554,
+      "window": 8,
+      "rendered_duration": 7.381770833333333
+    },
+    {
+      "segment": 7,
+      "original_duration": 12.362267573696146,
+      "speed": 1.0844094362891357,
+      "window": 12,
+      "rendered_duration": 11.378645833333334
+    },
+    {
+      "segment": 8,
+      "original_duration": 12.507301587301587,
+      "speed": 1.0971317181843496,
+      "window": 12,
+      "rendered_duration": 11.378958333333333
+    },
+    {
+      "segment": 9,
+      "original_duration": 14.921904761904761,
+      "speed": 1.308939014202172,
+      "window": 12,
+      "rendered_duration": 11.383645833333333
+    },
+    {
+      "segment": 10,
+      "original_duration": 12.146938775510204,
+      "speed": 1.2922275293095962,
+      "window": 10,
+      "rendered_duration": 9.382375
+    },
+    {
+      "segment": 11,
+      "original_duration": 11.942267573696146,
+      "speed": 1.2704539972017177,
+      "window": 10,
+      "rendered_duration": 9.381958333333333
+    },
+    {
+      "segment": 12,
+      "original_duration": 14.186984126984127,
+      "speed": 1.244472291840713,
+      "window": 12,
+      "rendered_duration": 11.382229166666667
+    },
+    {
+      "segment": 13,
+      "original_duration": 14.64185941043084,
+      "speed": 1.2843736324939332,
+      "window": 12,
+      "rendered_duration": 11.383104166666667
+    },
+    {
+      "segment": 14,
+      "original_duration": 12.17233560090703,
+      "speed": 1.2949293192454285,
+      "window": 10,
+      "rendered_duration": 9.382416666666666
+    }
+  ],
+  "peak_pcm16": 28999.999999999996,
+  "rms_pcm16": 3461.6659356105765
+}

@@ -1,0 +1,40 @@
+{
+  "queue_runs": 30,
+  "matched_seeds": [
+    20261026,
+    20261027,
+    20261028,
+    20261029,
+    20261030,
+    20261031,
+    20261032,
+    20261033,
+    20261034,
+    20261035
+  ],
+  "replay_seed": 20261026,
+  "delay_rounds": 3,
+  "background_mean_per_agent_round": 4,
+  "agents": 12,
+  "rounds": 180,
+  "service_capacity_per_agent_round": 2,
+  "instrumentation_matches_direct_execution": true,
+  "trace_metrics_recomputed": true,
+  "matched_world_and_arrival_volume": true,
+  "protocol_tests_run": 16,
+  "protocol_tests_passed": true,
+  "protocol_demo_passed": true,
+  "source_sha256": {
+    "delay-aware-runtime-assurance-lab/analysis/run_fair_queue_multiagent_simulation.py": "a9a6e78a3f7c978acdb605c037f347a606e1deb992379ad2e38411da2a154936",
+    "humanoid-laundry-queues/laundry_task/supervisor.py": "22699d051b7f38dd51cd1a00e19102eabe1b6d9d4666887b275c8313a2dc87b0",
+    "humanoid-laundry-queues/laundry_task/test_supervisor.py": "9cec0ee564816eb1d62cc43c9f49f09b2db33eab80c456ee4fd7685a6a026162"
+  },
+  "scope": "New paired queue simulation plus synthetic supervisor test; retained robot video is not a new physics run.",
+  "limitations": [
+    "Unbounded queue storage; finite service capacity. Offered load exceeds service rate.",
+    "Original priority policy selects newest due updates but does not purge obsolete queued messages.",
+    "State mismatch uses evaluator truth unavailable to agents; unknown memory counts as mismatch.",
+    "Supervisor uses an in-memory ledger, one robot session, and no crash-recovery guarantee.",
+    "No hardware validation, human-cognition model, or general safety certificate."
+  ]
+}

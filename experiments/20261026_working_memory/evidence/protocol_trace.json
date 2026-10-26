@@ -1,0 +1,194 @@
+[
+  {
+    "time_s": 0.0,
+    "title": "Issue OPEN",
+    "status": "ISSUE",
+    "pending": "wm-demo:0",
+    "completed": [],
+    "receiver_active": null,
+    "executed_ids": [],
+    "events": [
+      {
+        "time_s": 0.0,
+        "event": "ISSUE",
+        "command_id": "wm-demo:0",
+        "session": "wm-demo",
+        "skill": "open_door",
+        "issued_at": 0.0,
+        "valid_until": 2.0,
+        "observation_sequence": 0
+      }
+    ]
+  },
+  {
+    "time_s": 0.1,
+    "title": "Start one execution",
+    "status": "EXECUTE",
+    "pending": "wm-demo:0",
+    "completed": [],
+    "receiver_active": "wm-demo:0",
+    "executed_ids": [
+      "wm-demo:0"
+    ],
+    "events": [
+      {
+        "time_s": 0.0,
+        "event": "ISSUE",
+        "command_id": "wm-demo:0",
+        "session": "wm-demo",
+        "skill": "open_door",
+        "issued_at": 0.0,
+        "valid_until": 2.0,
+        "observation_sequence": 0
+      }
+    ]
+  },
+  {
+    "time_s": 0.8,
+    "title": "No receipt: retry same identity",
+    "status": "DUPLICATE_NO_EXECUTION",
+    "pending": "wm-demo:0",
+    "completed": [],
+    "receiver_active": "wm-demo:0",
+    "executed_ids": [
+      "wm-demo:0"
+    ],
+    "events": [
+      {
+        "time_s": 0.0,
+        "event": "ISSUE",
+        "command_id": "wm-demo:0",
+        "session": "wm-demo",
+        "skill": "open_door",
+        "issued_at": 0.0,
+        "valid_until": 2.0,
+        "observation_sequence": 0
+      },
+      {
+        "time_s": 0.8,
+        "event": "RETRANSMIT_SAME_ID",
+        "command_id": "wm-demo:0"
+      }
+    ]
+  },
+  {
+    "time_s": 1.0,
+    "title": "Old observation rejected",
+    "status": "REJECT_OBSERVATION",
+    "pending": "wm-demo:0",
+    "completed": [],
+    "receiver_active": "wm-demo:0",
+    "executed_ids": [
+      "wm-demo:0"
+    ],
+    "events": [
+      {
+        "time_s": 0.0,
+        "event": "ISSUE",
+        "command_id": "wm-demo:0",
+        "session": "wm-demo",
+        "skill": "open_door",
+        "issued_at": 0.0,
+        "valid_until": 2.0,
+        "observation_sequence": 0
+      },
+      {
+        "time_s": 0.8,
+        "event": "RETRANSMIT_SAME_ID",
+        "command_id": "wm-demo:0"
+      },
+      {
+        "time_s": 1.0,
+        "event": "REJECT_OBSERVATION",
+        "sequence": 3
+      }
+    ]
+  },
+  {
+    "time_s": 1.1,
+    "title": "Even a done receipt is not completion",
+    "status": "RECEIPT_ONLY",
+    "pending": "wm-demo:0",
+    "completed": [],
+    "receiver_active": "wm-demo:0",
+    "executed_ids": [
+      "wm-demo:0"
+    ],
+    "events": [
+      {
+        "time_s": 0.0,
+        "event": "ISSUE",
+        "command_id": "wm-demo:0",
+        "session": "wm-demo",
+        "skill": "open_door",
+        "issued_at": 0.0,
+        "valid_until": 2.0,
+        "observation_sequence": 0
+      },
+      {
+        "time_s": 0.8,
+        "event": "RETRANSMIT_SAME_ID",
+        "command_id": "wm-demo:0"
+      },
+      {
+        "time_s": 1.0,
+        "event": "REJECT_OBSERVATION",
+        "sequence": 3
+      },
+      {
+        "time_s": 1.1,
+        "event": "RECEIPT_ONLY",
+        "command_id": "wm-demo:0",
+        "status": "done"
+      }
+    ]
+  },
+  {
+    "time_s": 1.2,
+    "title": "Fresh physical state verifies opening",
+    "status": "VERIFIED_POSTCONDITION",
+    "pending": null,
+    "completed": [
+      "open_door"
+    ],
+    "receiver_active": null,
+    "executed_ids": [
+      "wm-demo:0"
+    ],
+    "events": [
+      {
+        "time_s": 0.0,
+        "event": "ISSUE",
+        "command_id": "wm-demo:0",
+        "session": "wm-demo",
+        "skill": "open_door",
+        "issued_at": 0.0,
+        "valid_until": 2.0,
+        "observation_sequence": 0
+      },
+      {
+        "time_s": 0.8,
+        "event": "RETRANSMIT_SAME_ID",
+        "command_id": "wm-demo:0"
+      },
+      {
+        "time_s": 1.0,
+        "event": "REJECT_OBSERVATION",
+        "sequence": 3
+      },
+      {
+        "time_s": 1.1,
+        "event": "RECEIPT_ONLY",
+        "command_id": "wm-demo:0",
+        "status": "done"
+      },
+      {
+        "time_s": 1.2,
+        "event": "VERIFIED_POSTCONDITION",
+        "command_id": "wm-demo:0",
+        "skill": "open_door",
+        "observation_sequence": 4
+      }
+    ]
+  }
+]
