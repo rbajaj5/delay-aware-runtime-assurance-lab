@@ -22,9 +22,16 @@ No changes to registered evidence, the existing explainer, or humanoid repos.
   rendering; audio duration/peak/RMS checked; final visual review completed.
 - MP4 SHA-256: `02c53bd68563c59c002f4071d061b190a3d4783ed20944dc9ae890a1462bc0af`.
 
-## Pending at this checkpoint
+## Published and verified
 
-- Commit only this folder and the root README; push and verify the public files.
+- Delivery commit `73a235a` pushed to public `main`.
+- GitHub's README API returned the new top-of-page preview and direct MP4 link.
+- Remote MP4 size 5,298,986 bytes; Git blob
+  `932c3d234d1f8a72aebb701b0f83fc52686b258f` matches the local file exactly.
+- Public download:
+  https://raw.githubusercontent.com/rbajaj5/delay-aware-runtime-assurance-lab/main/experiments/20261026_memory_layers/delivery/memory_layers_drone_fleet.mp4
+- No required work remains for this video. The commands below rebuild it; do
+  not rerun unrelated experiments or republish historical artifacts.
 
 ## Exact resume commands
 
