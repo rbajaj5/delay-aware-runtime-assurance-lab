@@ -7,8 +7,10 @@ adds an English-narrated explainer with Chinese definitions, newly matched
 multi-agent queue replays, and executable basketball, gardening, and laundry
 coordination examples. It also exercises the existing laundry supervisor and
 clearly separates the new discrete models from a retained humanoid physics clip.
-[Generated video](experiments/20261026_working_memory/delivery/Working_Memory_Assured_Autonomy.mp4)
+[Download the 1080p MP4](https://github.com/rbajaj5/delay-aware-runtime-assurance-lab/raw/refs/heads/main/experiments/20261026_working_memory/delivery/Working_Memory_Assured_Autonomy.mp4)
 and [sources](experiments/20261026_working_memory/delivery/Sources_and_Methods.txt).
+Open the downloaded MP4 in your video player. GitHub's file page does not preview
+this video; the download link above goes directly to the file (2:40, 7.18 MiB).
 The video is included with this example; it is separate from the release assets below.
 
 ## Videos and MP4 Demonstrations

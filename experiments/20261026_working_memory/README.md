@@ -3,10 +3,15 @@
 A 2:40 English-narrated explainer with Chinese definitions, matched multi-agent
 queue replays, and executable basketball, gardening, and laundry examples.
 
-- [Watch the generated 1080p video](delivery/Working_Memory_Assured_Autonomy.mp4)
+- [Download the 1080p MP4](https://github.com/rbajaj5/delay-aware-runtime-assurance-lab/raw/refs/heads/main/experiments/20261026_working_memory/delivery/Working_Memory_Assured_Autonomy.mp4)
 - [Captions](delivery/Working_Memory_Captions.srt)
 - [Definitions, sources, and interpretation](delivery/Sources_and_Methods.txt)
 - [Poster](delivery/Working_Memory_Poster.png)
+
+Open the downloaded MP4 in your video player (2:40, 7.18 MiB, with narration).
+GitHub's file page shows a size-limit message instead of a video preview; the
+download link above goes directly to the file. In a local clone, open
+`delivery/Working_Memory_Assured_Autonomy.mp4` directly.
 
 This example belongs to **delay-aware-runtime-assurance-lab**, not the separate
 literature-retrieval/RAG project. It does not change registered course-study
