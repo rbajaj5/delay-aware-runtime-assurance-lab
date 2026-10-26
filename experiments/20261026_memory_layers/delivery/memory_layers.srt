@@ -1,0 +1,47 @@
+1
+00:00:00,000 --> 00:00:12,000
+Long-term memory stores knowledge we can reuse. Working memory maintains the information needed for the task in progress. A drone fleet makes this distinction visible.
+
+2
+00:00:12,000 --> 00:00:24,000
+Both controllers know the same map and procedure. Working memory tracks who has clearance. The message queue carries updates that have not yet been processed.
+
+3
+00:00:24,000 --> 00:00:34,000
+A and B accept their commands, but their receipts are lost. After one point two seconds, the timeout controller drops their reservations.
+
+4
+00:00:34,000 --> 00:00:44,000
+It then clears C and D. An empty pad may already be reserved. The queue-aware controller retains the first pair's unresolved commitments.
+
+5
+00:00:44,000 --> 00:00:54,000
+Two drones now share each pad. This is a resource conflict, not a simulated crash. Both controllers reject the old report.
+
+6
+00:00:54,000 --> 00:01:04,000
+Fresh telemetry confirms that the first drones have finished and their pads are clear. Only then does the queue-aware controller release the reservations and authorize the next pair.
+
+7
+00:01:04,000 --> 00:01:14,000
+The second pair now uses the pads. Waiting preserves one unfinished command per pad. Both controllers have identical stored knowledge.
+
+8
+00:01:14,000 --> 00:01:24,000
+This is an engineering analogy, not brain science. Reusable knowledge, active task state, and message transport serve different functions.
+
+9
+00:01:24,000 --> 00:01:34,000
+Now receipts are lost and telemetry stops after one second. The queue-aware controller keeps reservations because it cannot verify completion.
+
+10
+00:01:34,000 --> 00:01:44,000
+Two drones finish; two keep waiting. Caution prevents the modeled conflict but stalls progress. Recovery needs a separately justified procedure.
+
+11
+00:01:44,000 --> 00:01:56,000
+Thirty-two matched timing seeds reproduce this constructed example. Timely messages make the controllers identical. Lost receipts and lost observations reveal different tradeoffs.
+
+12
+00:01:56,000 --> 00:02:08,000
+Replace old observations. Retain unresolved commitments. Check before acting. This synthetic example comes with code, states, captions, and tests.

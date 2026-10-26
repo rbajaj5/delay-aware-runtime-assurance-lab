@@ -1,0 +1,99 @@
+{
+  "status": "PASS",
+  "tests": 11,
+  "episodes": 192,
+  "resolution": [
+    1920,
+    1080
+  ],
+  "fps": 24,
+  "duration_s": 128,
+  "decoded_frames": 3072,
+  "audio_codec": "aac",
+  "replay_coverage": {
+    "lost_ack": {
+      "rendered_states": 140,
+      "saved_states": 141,
+      "first_simulation_s": 0.0,
+      "last_simulation_s": 13.9
+    },
+    "telemetry_outage": {
+      "rendered_states": 140,
+      "saved_states": 141,
+      "first_simulation_s": 0.0,
+      "last_simulation_s": 13.9
+    }
+  },
+  "encoded_frame_checks": [
+    {
+      "video_t_s": 5,
+      "mean_absolute_pixel_error": 0.962753504372428
+    },
+    {
+      "video_t_s": 31,
+      "mean_absolute_pixel_error": 1.4065388695987655
+    },
+    {
+      "video_t_s": 39,
+      "mean_absolute_pixel_error": 1.3992807998971193
+    },
+    {
+      "video_t_s": 44,
+      "mean_absolute_pixel_error": 1.387629565329218
+    },
+    {
+      "video_t_s": 55,
+      "mean_absolute_pixel_error": 1.3927541473765432
+    },
+    {
+      "video_t_s": 79,
+      "mean_absolute_pixel_error": 1.3581537744341563
+    },
+    {
+      "video_t_s": 88,
+      "mean_absolute_pixel_error": 1.4467790316358025
+    },
+    {
+      "video_t_s": 94,
+      "mean_absolute_pixel_error": 1.4329864326131687
+    },
+    {
+      "video_t_s": 102,
+      "mean_absolute_pixel_error": 1.4043131108539095
+    },
+    {
+      "video_t_s": 109,
+      "mean_absolute_pixel_error": 1.3911300797325103
+    },
+    {
+      "video_t_s": 122,
+      "mean_absolute_pixel_error": 1.4287720228909464
+    }
+  ],
+  "sha256": {
+    ".gitattributes": "705fd4d6451a31d36b3df7de96f83f30ac976c9b4a6d1e51671d8e2f33e2d0da",
+    ".gitignore": "c7cd0fc55d4b88bc4ed87b1cdc33670d9046174ab762188a0f2ce10290bb56e0",
+    "config.json": "d4fc643cbf2d2b28d5a152ed65a47faba47e718ff34db5263a7dde84c8a2fa18",
+    "delivery/memory_layers.srt": "408dcfb4fb1d8a9bd913248ad51c1571747b2708b8e269f5a9f031a4609bb2e0",
+    "delivery/memory_layers_drone_fleet.mp4": "02c53bd68563c59c002f4071d061b190a3d4783ed20944dc9ae890a1462bc0af",
+    "delivery/memory_layers_poster.jpg": "881d450849a8de3316500b8eebeb999c13b3a36a2c44fc784c60ab28af4282e0",
+    "evidence/aggregates.json": "9e449fe02455f4f3ab2e39feb1933617d2b6fe08113147a62d69aea8d73d88fc",
+    "evidence/audio_validation.json": "92912a53ca4d49beed4715c56a7680af7963a7d7f1da693eb28737eac227affb",
+    "evidence/episode_summaries.json": "91dd65197d6e13ad795d2b30d48afe6cb939058366bed6eefb4b2d759a90ed06",
+    "evidence/lost_ack_queue_aware.json": "1fbd1c598a789be8f44287d58c23dd5fbb2f01ed1b23ed9c401033df2bd6dbfe",
+    "evidence/lost_ack_timeout_only.json": "9eeccac730dd3a44ab234b71f82bbe1c4a4ea0a7e0ac124b0201755d1f607854",
+    "evidence/telemetry_outage_queue_aware.json": "0b4d15fcca86d438ec7c8ac771245a84e8064fbeb351748877c3fa31c1a80df9",
+    "evidence/telemetry_outage_timeout_only.json": "9ad2545fc7e1b8db115a1e8cc46ec2281fa0c321f94e51b53191b52bfc77e6f8",
+    "evidence/tests.txt": "7a9ac8689943cae12255d259fe4eb958c6b631c0afd5df1332f378c75e003df0",
+    "evidence/timely_queue_aware.json": "4716989b1646c7379865d428e72a17baaffa7511afe905576007c7cbd2c7df2c",
+    "evidence/timely_timeout_only.json": "2efe485516da4e1a45b856c5819c470a4633cd9083712dd5aca3099b3e1ed3e7",
+    "evidence/video_frame_index.json": "9617dbfba6cdd5ef09bed6da5b271bca7b1ad41aaf173b888ac9c2983d205083",
+    "narrate.ps1": "0189660a17be36d836049ac2dd6526e49ff00b4077801f576bfeaffcb5706b4e",
+    "README.md": "0a35db1f957b05f9a54e75a304e59b918b74dbea7a21debf23187b1e60820515",
+    "requirements.txt": "b0ca75f7139ecc72e615efa52e9f9cee5af83e78b148886f02f403c254c02f94",
+    "simulate.py": "639ee385863d2b4f9f5d6d4682b35f307ffe48ffefa3d74dfec2178277953e0d",
+    "test_simulate.py": "b6a055b6d0bfd8a5df9c2e3c04711b713b2a7356f5a541c4699843149c958b51",
+    "verify.py": "468c21e3301ee799c364d2ecbe9d215c4230d7fd6a45c4e4b9b33c02ea40cdfe",
+    "video.py": "eb54fcc321044c82f9c107fc55a43a7d3b170e8106324c87acdb765776d922d6"
+  }
+}

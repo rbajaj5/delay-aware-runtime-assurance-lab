@@ -1,0 +1,56 @@
+[
+  {
+    "profile": "timely",
+    "policy": "timeout_only",
+    "n": 32,
+    "conflict_episodes": 0,
+    "mean_completed": 4,
+    "mean_conflict_duration_s": 0.0,
+    "mean_issue_time_s": 3.26640625
+  },
+  {
+    "profile": "timely",
+    "policy": "queue_aware",
+    "n": 32,
+    "conflict_episodes": 0,
+    "mean_completed": 4,
+    "mean_conflict_duration_s": 0.0,
+    "mean_issue_time_s": 3.26640625
+  },
+  {
+    "profile": "lost_ack",
+    "policy": "timeout_only",
+    "n": 32,
+    "conflict_episodes": 32,
+    "mean_completed": 4,
+    "mean_conflict_duration_s": 1.04375,
+    "mean_issue_time_s": 0.7999999999999999
+  },
+  {
+    "profile": "lost_ack",
+    "policy": "queue_aware",
+    "n": 32,
+    "conflict_episodes": 0,
+    "mean_completed": 4,
+    "mean_conflict_duration_s": 0.0,
+    "mean_issue_time_s": 3.26640625
+  },
+  {
+    "profile": "telemetry_outage",
+    "policy": "timeout_only",
+    "n": 32,
+    "conflict_episodes": 32,
+    "mean_completed": 4,
+    "mean_conflict_duration_s": 1.04375,
+    "mean_issue_time_s": 0.7999999999999999
+  },
+  {
+    "profile": "telemetry_outage",
+    "policy": "queue_aware",
+    "n": 32,
+    "conflict_episodes": 0,
+    "mean_completed": 2,
+    "mean_conflict_duration_s": 0.0,
+    "mean_issue_time_s": 0.2
+  }
+]

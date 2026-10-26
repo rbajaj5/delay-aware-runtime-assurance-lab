@@ -1,0 +1,17 @@
+{
+  "dt_s": 0.1,
+  "duration_s": 14.0,
+  "receipt_timeout_s": 1.2,
+  "observation_freshness_s": 0.6,
+  "outage_start_s": 1.0,
+  "seed_start": 20261027,
+  "seed_count": 32,
+  "profiles": ["timely", "lost_ack", "telemetry_outage"],
+  "policies": ["timeout_only", "queue_aware"],
+  "knowledge": {
+    "pads": {"P1": [-2.5, 0.0], "P2": [2.5, 0.0]},
+    "assignment": {"A": "P1", "B": "P2", "C": "P1", "D": "P2"},
+    "initial_xy": {"A": [-5.0, 5.0], "B": [5.0, 5.0], "C": [-2.0, 7.0], "D": [2.0, 7.0]},
+    "procedure": "A pad may serve one drone at a time. A receipt confirms command acceptance, not completion."
+  }
+}

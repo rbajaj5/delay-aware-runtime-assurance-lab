@@ -1,5 +1,22 @@
 # Delay-Aware Runtime Assurance Lab
 
+## New Video: Long-term Memory vs Working Memory
+
+[![Long-term knowledge and active working memory in a drone fleet](experiments/20261026_memory_layers/delivery/memory_layers_poster.jpg)](https://github.com/rbajaj5/delay-aware-runtime-assurance-lab/raw/refs/heads/main/experiments/20261026_memory_layers/delivery/memory_layers_drone_fleet.mp4)
+
+**[Watch/download the 2:08 MP4](https://github.com/rbajaj5/delay-aware-runtime-assurance-lab/raw/refs/heads/main/experiments/20261026_memory_layers/delivery/memory_layers_drone_fleet.mp4)**
+with English narration, Chinese labels, and captions. **长期记忆** stores reusable
+knowledge; **工作记忆** maintains the active task; **消息队列** carries updates.
+Both drone coordinators know the same map and procedures. A missing receipt
+exposes the difference between timing out an unresolved reservation and retaining
+it until completion is verified. A telemetry-outage counterexample shows the
+resulting cost in unfinished tasks.
+
+This is a new **synthetic CPU kinematic teaching model**, not GPU flight physics
+or a model of human cognition. The synchronized replay and 192 bounded timing
+runs are exploratory and do not extend the registered course-study claims.
+[Methods, code, states, and validation](experiments/20261026_memory_layers/README.md).
+
 ## Working Memory / 工作记忆
 
 The [working-memory example](experiments/20261026_working_memory/README.md)
