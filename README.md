@@ -2,27 +2,31 @@
 
 ## New: Queue-Aware Drone Fleets with GPU Flight Physics
 
-[![Queue-aware commitments in matched CUDA flight replays](experiments/20261027_gpu_fleet_active_state/delivery/preview_3.jpg)](https://github.com/rbajaj5/delay-aware-runtime-assurance-lab/releases/download/gpu-fleet-active-state-2026-10-27/queue_aware_gpu_fleet.mp4)
+[![Sixteen drones with measured physical trajectories and shared landing resources](experiments/20261027_gpu_fleet_scaleup/delivery/preview_3.jpg)](https://github.com/rbajaj5/delay-aware-runtime-assurance-lab/releases/download/gpu-fleet-trajectories-2026-10-27/sixteen_drone_gpu_trajectories.mp4)
 
-**[Watch the narrated 3:42 MP4](https://github.com/rbajaj5/delay-aware-runtime-assurance-lab/releases/download/gpu-fleet-active-state-2026-10-27/queue_aware_gpu_fleet.mp4)**
-| **[Research question, methods, results and reproduction](experiments/20261027_gpu_fleet_active_state/README.md)**
+**[Watch the narrated 3:21 MP4](https://github.com/rbajaj5/delay-aware-runtime-assurance-lab/releases/download/gpu-fleet-trajectories-2026-10-27/sixteen_drone_gpu_trajectories.mp4)**
+| **[Research question, methods, results and reproduction](experiments/20261027_gpu_fleet_scaleup/README.md)**
 
-**Measured final rendering/encoding: 176.89 s; audio/subtitle mux: 2.30 s.**
-These exclude simulation, speech synthesis, setup and validation.
-[Hardware and timing details](experiments/20261027_gpu_fleet_active_state/delivery/timing.json).
+**Now 16 drones, four pads, and visible physical trajectories.** Faint trails
+show measured xyz history; bold trails show the latest three simulated seconds.
+Altitude plots, persistent agent IDs and pad reservations share the same clock.
+**Measured render/encode: 418.13 s; audio/subtitle mux: 3.15 s.** These exclude
+physics simulation, speech generation, renderer setup and validation.
+[Render/mux timing and hardware](experiments/20261027_gpu_fleet_scaleup/delivery/timing.json).
 
-This illustrates **Ravi Bajaj's queue-aware assured-autonomy work** through four
-quadrotors sharing two landing resources. Missing acceptance receipts do not mean
+This illustrates **Ravi Bajaj's queue-aware assured-autonomy work** through
+successive waves sharing landing resources. Missing acceptance receipts do not mean
 that the original commands stopped executing. Retaining the outstanding
 commitment avoids double-booking in the tested cases; without fresh completion
 evidence, that same rule leaves other agents waiting.
 
 **48 matched CUDA-integrated episodes:** with acceptance receipts lost, pad
 conflicts occurred in **8/8 timeout episodes versus 0/8 queue-aware episodes**.
-With fresh telemetry the queue-aware fleet completes all four tasks; during a
-telemetry outage it completes only two. Both arms complete four under timely
-messages. The film shows the same fixed seed, synchronized flight states and task
-records, English narration, Mandarin terms and captions.
+With lost receipts and fresh telemetry, the queue-aware fleet completes all 16
+tasks; timeout-only completes a mean of 10 (range 6-14). During a telemetry outage,
+queue-awareness completes four and leaves 12 waiting. Both arms complete 16 under
+timely messages. The film shows one fixed seed, English narration, Mandarin terms
+and captions. [All eight seeds, failed preliminary run and audit](experiments/20261027_gpu_fleet_scaleup/README.md).
 
 Mass, inertia, gravity, bounded rotor thrust and contacts are integrated by
 MuJoCo Warp on an RTX 5070 Ti Laptop GPU. Scheduling and local feedback run on
@@ -30,6 +34,10 @@ CPU. Rendering and encoding are distinct from GPU physics. This is a deliberatel
 constructed **exploratory simulation**, not a reliability estimate, formal safety
 certificate, learned-controller result or hardware validation. The
 [registered course study](course_study/README.md) remains separate.
+
+The [earlier four-drone GPU study and 3:42 movie](experiments/20261027_gpu_fleet_active_state/README.md)
+remain available unchanged. Its sample counts are not pooled with this larger
+experiment, and the new layout is not a controlled fleet-size scaling study.
 
 ## Earlier Video: Long-term Memory vs Working Memory
 

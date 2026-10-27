@@ -1,0 +1,7 @@
+build/
+.warp-cache/
+__pycache__/
+delivery/*.mp4
+delivery/*.wav
+*/trajectories.npz
+*/featured_flight_paths.csv.gz

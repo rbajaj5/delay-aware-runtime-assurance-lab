@@ -1,0 +1,2447 @@
+{
+  "config": {
+    "drone_count": 16,
+    "pad_count": 4,
+    "physics_dt_s": 0.002,
+    "control_dt_s": 0.02,
+    "duration_s": 100.0,
+    "seed_start": 45300,
+    "seed_count": 1,
+    "receipt_timeout_s": 1.2,
+    "freshness_s": 0.6,
+    "outage_start_s": 1.0,
+    "approach_s": 8.0,
+    "dwell_s": 2.0,
+    "departure_s": 8.0,
+    "separation_m": 0.8,
+    "profiles": [
+      "timely",
+      "lost_ack",
+      "telemetry_outage"
+    ],
+    "policies": [
+      "timeout_only",
+      "queue_aware"
+    ],
+    "robot_mass_kg": 1.2,
+    "rotor_max_n": 6.0,
+    "description": "Sixteen physical quadrotors sharing four preassigned landing lanes; centralized reservations and local deterministic feedback; synthetic GPU rigid-body model, not hardware validation."
+  },
+  "device": "NVIDIA GeForce RTX 5070 Ti Laptop GPU",
+  "backend": "MuJoCo Warp CUDA",
+  "nworld": 6,
+  "setup_compile_s": 72.4592694999883,
+  "simulation_and_recording_s": 55.56167290004669,
+  "n_drones": 16,
+  "n_pads": 4,
+  "velocity_dofs": 96,
+  "rotor_actuators": 64,
+  "overflow_flags": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "gpu_contact_capacity": 3072,
+  "constraints_per_world": 2048,
+  "sources": {
+    "model.py": "d3dd4b6b38d8faaed6e79a69a107138e32c949d06785ca98529c6953e5d18038",
+    "simulate.py": "6ab1bb32b710b87412bdba338761cb6bda36513bb7ab61d513537c34a31f2566",
+    "config.json": "32b685be02cf5f48cb75f9c6ef9bbe50137dc255637361af18001b95b804cc32"
+  },
+  "packages": {
+    "mujoco": "3.17.0",
+    "mujoco-warp": "3.17.0",
+    "warp-lang": "1.17.0",
+    "numpy": "2.4.6"
+  },
+  "episodes": [
+    {
+      "policy": "timeout_only",
+      "profile": "timely",
+      "seed": 45300,
+      "input_sha256": "e4738bf98b1369b74188e1b37ea8c17b0f53d5492ac3d3222f1c27358e4a9c17",
+      "completed": 16,
+      "unfinished": 0,
+      "conflict_episode": false,
+      "conflict_sample_s": 0.0,
+      "separation_episode": false,
+      "min_separation_m": 2.9957664012908936,
+      "max_tilt_deg": 6.127559185028076,
+      "old_rejected": 1715,
+      "events": [
+        {
+          "t": 0.16,
+          "event": "GRANT",
+          "drone": 0,
+          "pad": 0
+        },
+        {
+          "t": 0.16,
+          "event": "GRANT",
+          "drone": 1,
+          "pad": 1
+        },
+        {
+          "t": 0.16,
+          "event": "GRANT",
+          "drone": 2,
+          "pad": 2
+        },
+        {
+          "t": 0.16,
+          "event": "GRANT",
+          "drone": 3,
+          "pad": 3
+        },
+        {
+          "t": 0.28,
+          "event": "START",
+          "drone": 3
+        },
+        {
+          "t": 0.3,
+          "event": "START",
+          "drone": 0
+        },
+        {
+          "t": 0.34,
+          "event": "START",
+          "drone": 2
+        },
+        {
+          "t": 0.34,
+          "event": "START",
+          "drone": 1
+        },
+        {
+          "t": 9.18,
+          "event": "LANDED",
+          "drone": 3
+        },
+        {
+          "t": 9.2,
+          "event": "LANDED",
+          "drone": 0
+        },
+        {
+          "t": 9.22,
+          "event": "LANDED",
+          "drone": 1
+        },
+        {
+          "t": 9.24,
+          "event": "LANDED",
+          "drone": 2
+        },
+        {
+          "t": 11.18,
+          "event": "DEPART",
+          "drone": 3
+        },
+        {
+          "t": 11.2,
+          "event": "DEPART",
+          "drone": 0
+        },
+        {
+          "t": 11.22,
+          "event": "DEPART",
+          "drone": 1
+        },
+        {
+          "t": 11.24,
+          "event": "DEPART",
+          "drone": 2
+        },
+        {
+          "t": 19.76,
+          "event": "FINISH",
+          "drone": 3
+        },
+        {
+          "t": 19.78,
+          "event": "FINISH",
+          "drone": 0
+        },
+        {
+          "t": 19.8,
+          "event": "FINISH",
+          "drone": 1
+        },
+        {
+          "t": 19.82,
+          "event": "FINISH",
+          "drone": 2
+        },
+        {
+          "t": 19.9,
+          "event": "RELEASE",
+          "drone": 0,
+          "reason": "VERIFIED"
+        },
+        {
+          "t": 19.9,
+          "event": "RELEASE",
+          "drone": 3,
+          "reason": "VERIFIED"
+        },
+        {
+          "t": 19.9,
+          "event": "GRANT",
+          "drone": 4,
+          "pad": 0
+        },
+        {
+          "t": 19.9,
+          "event": "GRANT",
+          "drone": 7,
+          "pad": 3
+        },
+        {
+          "t": 19.94,
+          "event": "RELEASE",
+          "drone": 1,
+          "reason": "VERIFIED"
+        },
+        {
+          "t": 19.94,
+          "event": "RELEASE",
+          "drone": 2,
+          "reason": "VERIFIED"
+        },
+        {
+          "t": 19.94,
+          "event": "GRANT",
+          "drone": 5,
+          "pad": 1
+        },
+        {
+          "t": 19.94,
+          "event": "GRANT",
+          "drone": 6,
+          "pad": 2
+        },
+        {
+          "t": 20.02,
+          "event": "START",
+          "drone": 4
+        },
+        {
+          "t": 20.06,
+          "event": "START",
+          "drone": 5
+        },
+        {
+          "t": 20.06,
+          "event": "START",
+          "drone": 7
+        },
+        {
+          "t": 20.1,
+          "event": "START",
+          "drone": 6
+        },
+        {
+          "t": 28.9,
+          "event": "LANDED",
+          "drone": 4
+        },
+        {
+          "t": 28.94,
+          "event": "LANDED",
+          "drone": 5
+        },
+        {
+          "t": 28.96,
+          "event": "LANDED",
+          "drone": 7
+        },
+        {
+          "t": 28.98,
+          "event": "LANDED",
+          "drone": 6
+        },
+        {
+          "t": 30.9,
+          "event": "DEPART",
+          "drone": 4
+        },
+        {
+          "t": 30.94,
+          "event": "DEPART",
+          "drone": 5
+        },
+        {
+          "t": 30.96,
+          "event": "DEPART",
+          "drone": 7
+        },
+        {
+          "t": 30.98,
+          "event": "DEPART",
+          "drone": 6
+        },
+        {
+          "t": 39.3,
+          "event": "FINISH",
+          "drone": 4
+        },
+        {
+          "t": 39.34,
+          "event": "FINISH",
+          "drone": 5
+        },
+        {
+          "t": 39.34,
+          "event": "FINISH",
+          "drone": 7
+        },
+        {
+          "t": 39.38,
+          "event": "FINISH",
+          "drone": 6
+        },
+        {
+          "t": 39.44,
+          "event": "RELEASE",
+          "drone": 4,
+          "reason": "VERIFIED"
+        },
+        {
+          "t": 39.44,
+          "event": "GRANT",
+          "drone": 8,
+          "pad": 0
+        },
+        {
+          "t": 39.48,
+          "event": "RELEASE",
+          "drone": 5,
+          "reason": "VERIFIED"
+        },
+        {
+          "t": 39.48,
+          "event": "RELEASE",
+          "drone": 7,
+          "reason": "VERIFIED"
+        },
+        {
+          "t": 39.48,
+          "event": "GRANT",
+          "drone": 9,
+          "pad": 1
+        },
+        {
+          "t": 39.48,
+          "event": "GRANT",
+          "drone": 11,
+          "pad": 3
+        },
+        {
+          "t": 39.54,
+          "event": "RELEASE",
+          "drone": 6,
+          "reason": "VERIFIED"
+        },
+        {
+          "t": 39.54,
+          "event": "GRANT",
+          "drone": 10,
+          "pad": 2
+        },
+        {
+          "t": 39.58,
+          "event": "START",
+          "drone": 8
+        },
+        {
+          "t": 39.64,
+          "event": "START",
+          "drone": 11
+        },
+        {
+          "t": 39.66,
+          "event": "START",
+          "drone": 9
+        },
+        {
+          "t": 39.7,
+          "event": "START",
+          "drone": 10
+        },
+        {
+          "t": 48.46,
+          "event": "LANDED",
+          "drone": 8
+        },
+        {
+          "t": 48.52,
+          "event": "LANDED",
+          "drone": 11
+        },
+        {
+          "t": 48.54,
+          "event": "LANDED",
+          "drone": 9
+        },
+        {
+          "t": 48.58,
+          "event": "LANDED",
+          "drone": 10
+        },
+        {
+          "t": 50.46,
+          "event": "DEPART",
+          "drone": 8
+        },
+        {
+          "t": 50.52,
+          "event": "DEPART",
+          "drone": 11
+        },
+        {
+          "t": 50.54,
+          "event": "DEPART",
+          "drone": 9
+        },
+        {
+          "t": 50.58,
+          "event": "DEPART",
+          "drone": 10
+        },
+        {
+          "t": 58.6,
+          "event": "FINISH",
+          "drone": 8
+        },
+        {
+          "t": 58.66,
+          "event": "FINISH",
+          "drone": 11
+        },
+        {
+          "t": 58.68,
+          "event": "FINISH",
+          "drone": 9
+        },
+        {
+          "t": 58.72,
+          "event": "FINISH",
+          "drone": 10
+        },
+        {
+          "t": 58.76,
+          "event": "RELEASE",
+          "drone": 8,
+          "reason": "VERIFIED"
+        },
+        {
+          "t": 58.76,
+          "event": "GRANT",
+          "drone": 12,
+          "pad": 0
+        },
+        {
+          "t": 58.8,
+          "event": "RELEASE",
+          "drone": 11,
+          "reason": "VERIFIED"
+        },
+        {
+          "t": 58.8,
+          "event": "GRANT",
+          "drone": 15,
+          "pad": 3
+        },
+        {
+          "t": 58.86,
+          "event": "RELEASE",
+          "drone": 9,
+          "reason": "VERIFIED"
+        },
+        {
+          "t": 58.86,
+          "event": "RELEASE",
+          "drone": 10,
+          "reason": "VERIFIED"
+        },
+        {
+          "t": 58.86,
+          "event": "GRANT",
+          "drone": 13,
+          "pad": 1
+        },
+        {
+          "t": 58.86,
+          "event": "GRANT",
+          "drone": 14,
+          "pad": 2
+        },
+        {
+          "t": 58.94,
+          "event": "START",
+          "drone": 12
+        },
+        {
+          "t": 58.98,
+          "event": "START",
+          "drone": 14
+        },
+        {
+          "t": 58.98,
+          "event": "START",
+          "drone": 15
+        },
+        {
+          "t": 59.02,
+          "event": "START",
+          "drone": 13
+        },
+        {
+          "t": 67.8,
+          "event": "LANDED",
+          "drone": 12
+        },
+        {
+          "t": 67.84,
+          "event": "LANDED",
+          "drone": 14
+        },
+        {
+          "t": 67.84,
+          "event": "LANDED",
+          "drone": 15
+        },
+        {
+          "t": 67.9,
+          "event": "LANDED",
+          "drone": 13
+        },
+        {
+          "t": 69.8,
+          "event": "DEPART",
+          "drone": 12
+        },
+        {
+          "t": 69.84,
+          "event": "DEPART",
+          "drone": 14
+        },
+        {
+          "t": 69.84,
+          "event": "DEPART",
+          "drone": 15
+        },
+        {
+          "t": 69.9,
+          "event": "DEPART",
+          "drone": 13
+        },
+        {
+          "t": 77.8,
+          "event": "FINISH",
+          "drone": 12
+        },
+        {
+          "t": 77.84,
+          "event": "FINISH",
+          "drone": 14
+        },
+        {
+          "t": 77.84,
+          "event": "FINISH",
+          "drone": 15
+        },
+        {
+          "t": 77.9,
+          "event": "FINISH",
+          "drone": 13
+        },
+        {
+          "t": 77.94,
+          "event": "RELEASE",
+          "drone": 12,
+          "reason": "VERIFIED"
+        },
+        {
+          "t": 77.96,
+          "event": "RELEASE",
+          "drone": 14,
+          "reason": "VERIFIED"
+        },
+        {
+          "t": 77.96,
+          "event": "RELEASE",
+          "drone": 15,
+          "reason": "VERIFIED"
+        },
+        {
+          "t": 78.04,
+          "event": "RELEASE",
+          "drone": 13,
+          "reason": "VERIFIED"
+        }
+      ]
+    },
+    {
+      "policy": "queue_aware",
+      "profile": "timely",
+      "seed": 45300,
+      "input_sha256": "e4738bf98b1369b74188e1b37ea8c17b0f53d5492ac3d3222f1c27358e4a9c17",
+      "completed": 16,
+      "unfinished": 0,
+      "conflict_episode": false,
+      "conflict_sample_s": 0.0,
+      "separation_episode": false,
+      "min_separation_m": 2.9957664012908936,
+      "max_tilt_deg": 6.127559185028076,
+      "old_rejected": 1715,
+      "events": [
+        {
+          "t": 0.16,
+          "event": "GRANT",
+          "drone": 0,
+          "pad": 0
+        },
+        {
+          "t": 0.16,
+          "event": "GRANT",
+          "drone": 1,
+          "pad": 1
+        },
+        {
+          "t": 0.16,
+          "event": "GRANT",
+          "drone": 2,
+          "pad": 2
+        },
+        {
+          "t": 0.16,
+          "event": "GRANT",
+          "drone": 3,
+          "pad": 3
+        },
+        {
+          "t": 0.28,
+          "event": "START",
+          "drone": 3
+        },
+        {
+          "t": 0.3,
+          "event": "START",
+          "drone": 0
+        },
+        {
+          "t": 0.34,
+          "event": "START",
+          "drone": 2
+        },
+        {
+          "t": 0.34,
+          "event": "START",
+          "drone": 1
+        },
+        {
+          "t": 9.18,
+          "event": "LANDED",
+          "drone": 3
+        },
+        {
+          "t": 9.2,
+          "event": "LANDED",
+          "drone": 0
+        },
+        {
+          "t": 9.22,
+          "event": "LANDED",
+          "drone": 1
+        },
+        {
+          "t": 9.24,
+          "event": "LANDED",
+          "drone": 2
+        },
+        {
+          "t": 11.18,
+          "event": "DEPART",
+          "drone": 3
+        },
+        {
+          "t": 11.2,
+          "event": "DEPART",
+          "drone": 0
+        },
+        {
+          "t": 11.22,
+          "event": "DEPART",
+          "drone": 1
+        },
+        {
+          "t": 11.24,
+          "event": "DEPART",
+          "drone": 2
+        },
+        {
+          "t": 19.76,
+          "event": "FINISH",
+          "drone": 3
+        },
+        {
+          "t": 19.78,
+          "event": "FINISH",
+          "drone": 0
+        },
+        {
+          "t": 19.8,
+          "event": "FINISH",
+          "drone": 1
+        },
+        {
+          "t": 19.82,
+          "event": "FINISH",
+          "drone": 2
+        },
+        {
+          "t": 19.9,
+          "event": "RELEASE",
+          "drone": 0,
+          "reason": "VERIFIED"
+        },
+        {
+          "t": 19.9,
+          "event": "RELEASE",
+          "drone": 3,
+          "reason": "VERIFIED"
+        },
+        {
+          "t": 19.9,
+          "event": "GRANT",
+          "drone": 4,
+          "pad": 0
+        },
+        {
+          "t": 19.9,
+          "event": "GRANT",
+          "drone": 7,
+          "pad": 3
+        },
+        {
+          "t": 19.94,
+          "event": "RELEASE",
+          "drone": 1,
+          "reason": "VERIFIED"
+        },
+        {
+          "t": 19.94,
+          "event": "RELEASE",
+          "drone": 2,
+          "reason": "VERIFIED"
+        },
+        {
+          "t": 19.94,
+          "event": "GRANT",
+          "drone": 5,
+          "pad": 1
+        },
+        {
+          "t": 19.94,
+          "event": "GRANT",
+          "drone": 6,
+          "pad": 2
+        },
+        {
+          "t": 20.02,
+          "event": "START",
+          "drone": 4
+        },
+        {
+          "t": 20.06,
+          "event": "START",
+          "drone": 5
+        },
+        {
+          "t": 20.06,
+          "event": "START",
+          "drone": 7
+        },
+        {
+          "t": 20.1,
+          "event": "START",
+          "drone": 6
+        },
+        {
+          "t": 28.9,
+          "event": "LANDED",
+          "drone": 4
+        },
+        {
+          "t": 28.94,
+          "event": "LANDED",
+          "drone": 5
+        },
+        {
+          "t": 28.96,
+          "event": "LANDED",
+          "drone": 7
+        },
+        {
+          "t": 28.98,
+          "event": "LANDED",
+          "drone": 6
+        },
+        {
+          "t": 30.9,
+          "event": "DEPART",
+          "drone": 4
+        },
+        {
+          "t": 30.94,
+          "event": "DEPART",
+          "drone": 5
+        },
+        {
+          "t": 30.96,
+          "event": "DEPART",
+          "drone": 7
+        },
+        {
+          "t": 30.98,
+          "event": "DEPART",
+          "drone": 6
+        },
+        {
+          "t": 39.3,
+          "event": "FINISH",
+          "drone": 4
+        },
+        {
+          "t": 39.34,
+          "event": "FINISH",
+          "drone": 5
+        },
+        {
+          "t": 39.34,
+          "event": "FINISH",
+          "drone": 7
+        },
+        {
+          "t": 39.38,
+          "event": "FINISH",
+          "drone": 6
+        },
+        {
+          "t": 39.44,
+          "event": "RELEASE",
+          "drone": 4,
+          "reason": "VERIFIED"
+        },
+        {
+          "t": 39.44,
+          "event": "GRANT",
+          "drone": 8,
+          "pad": 0
+        },
+        {
+          "t": 39.48,
+          "event": "RELEASE",
+          "drone": 5,
+          "reason": "VERIFIED"
+        },
+        {
+          "t": 39.48,
+          "event": "RELEASE",
+          "drone": 7,
+          "reason": "VERIFIED"
+        },
+        {
+          "t": 39.48,
+          "event": "GRANT",
+          "drone": 9,
+          "pad": 1
+        },
+        {
+          "t": 39.48,
+          "event": "GRANT",
+          "drone": 11,
+          "pad": 3
+        },
+        {
+          "t": 39.54,
+          "event": "RELEASE",
+          "drone": 6,
+          "reason": "VERIFIED"
+        },
+        {
+          "t": 39.54,
+          "event": "GRANT",
+          "drone": 10,
+          "pad": 2
+        },
+        {
+          "t": 39.58,
+          "event": "START",
+          "drone": 8
+        },
+        {
+          "t": 39.64,
+          "event": "START",
+          "drone": 11
+        },
+        {
+          "t": 39.66,
+          "event": "START",
+          "drone": 9
+        },
+        {
+          "t": 39.7,
+          "event": "START",
+          "drone": 10
+        },
+        {
+          "t": 48.46,
+          "event": "LANDED",
+          "drone": 8
+        },
+        {
+          "t": 48.52,
+          "event": "LANDED",
+          "drone": 11
+        },
+        {
+          "t": 48.54,
+          "event": "LANDED",
+          "drone": 9
+        },
+        {
+          "t": 48.58,
+          "event": "LANDED",
+          "drone": 10
+        },
+        {
+          "t": 50.46,
+          "event": "DEPART",
+          "drone": 8
+        },
+        {
+          "t": 50.52,
+          "event": "DEPART",
+          "drone": 11
+        },
+        {
+          "t": 50.54,
+          "event": "DEPART",
+          "drone": 9
+        },
+        {
+          "t": 50.58,
+          "event": "DEPART",
+          "drone": 10
+        },
+        {
+          "t": 58.6,
+          "event": "FINISH",
+          "drone": 8
+        },
+        {
+          "t": 58.66,
+          "event": "FINISH",
+          "drone": 11
+        },
+        {
+          "t": 58.68,
+          "event": "FINISH",
+          "drone": 9
+        },
+        {
+          "t": 58.72,
+          "event": "FINISH",
+          "drone": 10
+        },
+        {
+          "t": 58.76,
+          "event": "RELEASE",
+          "drone": 8,
+          "reason": "VERIFIED"
+        },
+        {
+          "t": 58.76,
+          "event": "GRANT",
+          "drone": 12,
+          "pad": 0
+        },
+        {
+          "t": 58.8,
+          "event": "RELEASE",
+          "drone": 11,
+          "reason": "VERIFIED"
+        },
+        {
+          "t": 58.8,
+          "event": "GRANT",
+          "drone": 15,
+          "pad": 3
+        },
+        {
+          "t": 58.86,
+          "event": "RELEASE",
+          "drone": 9,
+          "reason": "VERIFIED"
+        },
+        {
+          "t": 58.86,
+          "event": "RELEASE",
+          "drone": 10,
+          "reason": "VERIFIED"
+        },
+        {
+          "t": 58.86,
+          "event": "GRANT",
+          "drone": 13,
+          "pad": 1
+        },
+        {
+          "t": 58.86,
+          "event": "GRANT",
+          "drone": 14,
+          "pad": 2
+        },
+        {
+          "t": 58.94,
+          "event": "START",
+          "drone": 12
+        },
+        {
+          "t": 58.98,
+          "event": "START",
+          "drone": 14
+        },
+        {
+          "t": 58.98,
+          "event": "START",
+          "drone": 15
+        },
+        {
+          "t": 59.02,
+          "event": "START",
+          "drone": 13
+        },
+        {
+          "t": 67.8,
+          "event": "LANDED",
+          "drone": 12
+        },
+        {
+          "t": 67.84,
+          "event": "LANDED",
+          "drone": 14
+        },
+        {
+          "t": 67.84,
+          "event": "LANDED",
+          "drone": 15
+        },
+        {
+          "t": 67.9,
+          "event": "LANDED",
+          "drone": 13
+        },
+        {
+          "t": 69.8,
+          "event": "DEPART",
+          "drone": 12
+        },
+        {
+          "t": 69.84,
+          "event": "DEPART",
+          "drone": 14
+        },
+        {
+          "t": 69.84,
+          "event": "DEPART",
+          "drone": 15
+        },
+        {
+          "t": 69.9,
+          "event": "DEPART",
+          "drone": 13
+        },
+        {
+          "t": 77.8,
+          "event": "FINISH",
+          "drone": 12
+        },
+        {
+          "t": 77.84,
+          "event": "FINISH",
+          "drone": 14
+        },
+        {
+          "t": 77.84,
+          "event": "FINISH",
+          "drone": 15
+        },
+        {
+          "t": 77.9,
+          "event": "FINISH",
+          "drone": 13
+        },
+        {
+          "t": 77.94,
+          "event": "RELEASE",
+          "drone": 12,
+          "reason": "VERIFIED"
+        },
+        {
+          "t": 77.96,
+          "event": "RELEASE",
+          "drone": 14,
+          "reason": "VERIFIED"
+        },
+        {
+          "t": 77.96,
+          "event": "RELEASE",
+          "drone": 15,
+          "reason": "VERIFIED"
+        },
+        {
+          "t": 78.04,
+          "event": "RELEASE",
+          "drone": 13,
+          "reason": "VERIFIED"
+        }
+      ]
+    },
+    {
+      "policy": "timeout_only",
+      "profile": "lost_ack",
+      "seed": 45300,
+      "input_sha256": "e4738bf98b1369b74188e1b37ea8c17b0f53d5492ac3d3222f1c27358e4a9c17",
+      "completed": 10,
+      "unfinished": 6,
+      "conflict_episode": true,
+      "conflict_sample_s": 12.0,
+      "separation_episode": true,
+      "min_separation_m": 0.17701400816440582,
+      "max_tilt_deg": 180.0,
+      "old_rejected": 1715,
+      "events": [
+        {
+          "t": 0.16,
+          "event": "GRANT",
+          "drone": 0,
+          "pad": 0
+        },
+        {
+          "t": 0.16,
+          "event": "GRANT",
+          "drone": 1,
+          "pad": 1
+        },
+        {
+          "t": 0.16,
+          "event": "GRANT",
+          "drone": 2,
+          "pad": 2
+        },
+        {
+          "t": 0.16,
+          "event": "GRANT",
+          "drone": 3,
+          "pad": 3
+        },
+        {
+          "t": 0.28,
+          "event": "START",
+          "drone": 3
+        },
+        {
+          "t": 0.3,
+          "event": "START",
+          "drone": 0
+        },
+        {
+          "t": 0.34,
+          "event": "START",
+          "drone": 2
+        },
+        {
+          "t": 0.34,
+          "event": "START",
+          "drone": 1
+        },
+        {
+          "t": 1.36,
+          "event": "RELEASE",
+          "drone": 0,
+          "reason": "TIMEOUT"
+        },
+        {
+          "t": 1.36,
+          "event": "RELEASE",
+          "drone": 1,
+          "reason": "TIMEOUT"
+        },
+        {
+          "t": 1.36,
+          "event": "RELEASE",
+          "drone": 2,
+          "reason": "TIMEOUT"
+        },
+        {
+          "t": 1.36,
+          "event": "RELEASE",
+          "drone": 3,
+          "reason": "TIMEOUT"
+        },
+        {
+          "t": 1.36,
+          "event": "GRANT",
+          "drone": 4,
+          "pad": 0
+        },
+        {
+          "t": 1.36,
+          "event": "GRANT",
+          "drone": 5,
+          "pad": 1
+        },
+        {
+          "t": 1.36,
+          "event": "GRANT",
+          "drone": 6,
+          "pad": 2
+        },
+        {
+          "t": 1.36,
+          "event": "GRANT",
+          "drone": 7,
+          "pad": 3
+        },
+        {
+          "t": 1.48,
+          "event": "START",
+          "drone": 4
+        },
+        {
+          "t": 1.48,
+          "event": "START",
+          "drone": 5
+        },
+        {
+          "t": 1.52,
+          "event": "START",
+          "drone": 6
+        },
+        {
+          "t": 1.52,
+          "event": "START",
+          "drone": 7
+        },
+        {
+          "t": 2.56,
+          "event": "RELEASE",
+          "drone": 4,
+          "reason": "TIMEOUT"
+        },
+        {
+          "t": 2.56,
+          "event": "RELEASE",
+          "drone": 5,
+          "reason": "TIMEOUT"
+        },
+        {
+          "t": 2.56,
+          "event": "RELEASE",
+          "drone": 6,
+          "reason": "TIMEOUT"
+        },
+        {
+          "t": 2.56,
+          "event": "RELEASE",
+          "drone": 7,
+          "reason": "TIMEOUT"
+        },
+        {
+          "t": 2.56,
+          "event": "GRANT",
+          "drone": 8,
+          "pad": 0
+        },
+        {
+          "t": 2.56,
+          "event": "GRANT",
+          "drone": 9,
+          "pad": 1
+        },
+        {
+          "t": 2.56,
+          "event": "GRANT",
+          "drone": 10,
+          "pad": 2
+        },
+        {
+          "t": 2.56,
+          "event": "GRANT",
+          "drone": 11,
+          "pad": 3
+        },
+        {
+          "t": 2.7,
+          "event": "START",
+          "drone": 8
+        },
+        {
+          "t": 2.72,
+          "event": "START",
+          "drone": 11
+        },
+        {
+          "t": 2.72,
+          "event": "START",
+          "drone": 10
+        },
+        {
+          "t": 2.74,
+          "event": "START",
+          "drone": 9
+        },
+        {
+          "t": 3.76,
+          "event": "RELEASE",
+          "drone": 8,
+          "reason": "TIMEOUT"
+        },
+        {
+          "t": 3.76,
+          "event": "RELEASE",
+          "drone": 9,
+          "reason": "TIMEOUT"
+        },
+        {
+          "t": 3.76,
+          "event": "RELEASE",
+          "drone": 10,
+          "reason": "TIMEOUT"
+        },
+        {
+          "t": 3.76,
+          "event": "RELEASE",
+          "drone": 11,
+          "reason": "TIMEOUT"
+        },
+        {
+          "t": 3.76,
+          "event": "GRANT",
+          "drone": 12,
+          "pad": 0
+        },
+        {
+          "t": 3.76,
+          "event": "GRANT",
+          "drone": 13,
+          "pad": 1
+        },
+        {
+          "t": 3.76,
+          "event": "GRANT",
+          "drone": 14,
+          "pad": 2
+        },
+        {
+          "t": 3.76,
+          "event": "GRANT",
+          "drone": 15,
+          "pad": 3
+        },
+        {
+          "t": 3.88,
+          "event": "START",
+          "drone": 14
+        },
+        {
+          "t": 3.92,
+          "event": "START",
+          "drone": 13
+        },
+        {
+          "t": 3.94,
+          "event": "START",
+          "drone": 15
+        },
+        {
+          "t": 3.94,
+          "event": "START",
+          "drone": 12
+        },
+        {
+          "t": 4.96,
+          "event": "RELEASE",
+          "drone": 12,
+          "reason": "TIMEOUT"
+        },
+        {
+          "t": 4.96,
+          "event": "RELEASE",
+          "drone": 13,
+          "reason": "TIMEOUT"
+        },
+        {
+          "t": 4.96,
+          "event": "RELEASE",
+          "drone": 14,
+          "reason": "TIMEOUT"
+        },
+        {
+          "t": 4.96,
+          "event": "RELEASE",
+          "drone": 15,
+          "reason": "TIMEOUT"
+        },
+        {
+          "t": 9.18,
+          "event": "LANDED",
+          "drone": 3
+        },
+        {
+          "t": 9.2,
+          "event": "LANDED",
+          "drone": 0
+        },
+        {
+          "t": 9.22,
+          "event": "LANDED",
+          "drone": 1
+        },
+        {
+          "t": 9.24,
+          "event": "LANDED",
+          "drone": 2
+        },
+        {
+          "t": 11.18,
+          "event": "DEPART",
+          "drone": 3
+        },
+        {
+          "t": 11.2,
+          "event": "DEPART",
+          "drone": 0
+        },
+        {
+          "t": 11.22,
+          "event": "DEPART",
+          "drone": 1
+        },
+        {
+          "t": 11.24,
+          "event": "DEPART",
+          "drone": 2
+        },
+        {
+          "t": 12.16,
+          "event": "LANDED",
+          "drone": 5
+        },
+        {
+          "t": 12.36,
+          "event": "LANDED",
+          "drone": 4
+        },
+        {
+          "t": 12.4,
+          "event": "LANDED",
+          "drone": 8
+        },
+        {
+          "t": 12.56,
+          "event": "LANDED",
+          "drone": 11
+        },
+        {
+          "t": 12.74,
+          "event": "LANDED",
+          "drone": 7
+        },
+        {
+          "t": 13.04,
+          "event": "LANDED",
+          "drone": 10
+        },
+        {
+          "t": 13.46,
+          "event": "LANDED",
+          "drone": 6
+        },
+        {
+          "t": 14.16,
+          "event": "DEPART",
+          "drone": 5
+        },
+        {
+          "t": 14.36,
+          "event": "DEPART",
+          "drone": 4
+        },
+        {
+          "t": 14.4,
+          "event": "DEPART",
+          "drone": 8
+        },
+        {
+          "t": 14.56,
+          "event": "DEPART",
+          "drone": 11
+        },
+        {
+          "t": 14.74,
+          "event": "DEPART",
+          "drone": 7
+        },
+        {
+          "t": 15.04,
+          "event": "DEPART",
+          "drone": 10
+        },
+        {
+          "t": 15.38,
+          "event": "LANDED",
+          "drone": 9
+        },
+        {
+          "t": 15.46,
+          "event": "DEPART",
+          "drone": 6
+        },
+        {
+          "t": 15.58,
+          "event": "LANDED",
+          "drone": 13
+        },
+        {
+          "t": 16.56,
+          "event": "LANDED",
+          "drone": 14
+        },
+        {
+          "t": 17.4,
+          "event": "DEPART",
+          "drone": 9
+        },
+        {
+          "t": 17.6,
+          "event": "DEPART",
+          "drone": 13
+        },
+        {
+          "t": 17.98,
+          "event": "LANDED",
+          "drone": 15
+        },
+        {
+          "t": 18.56,
+          "event": "DEPART",
+          "drone": 14
+        },
+        {
+          "t": 19.78,
+          "event": "FINISH",
+          "drone": 0
+        },
+        {
+          "t": 19.8,
+          "event": "FINISH",
+          "drone": 1
+        },
+        {
+          "t": 19.82,
+          "event": "FINISH",
+          "drone": 2
+        },
+        {
+          "t": 19.98,
+          "event": "DEPART",
+          "drone": 15
+        },
+        {
+          "t": 22.54,
+          "event": "FINISH",
+          "drone": 5
+        },
+        {
+          "t": 22.74,
+          "event": "FINISH",
+          "drone": 4
+        },
+        {
+          "t": 22.76,
+          "event": "FINISH",
+          "drone": 3
+        },
+        {
+          "t": 23.1,
+          "event": "FINISH",
+          "drone": 7
+        },
+        {
+          "t": 25.52,
+          "event": "FINISH",
+          "drone": 9
+        },
+        {
+          "t": 25.6,
+          "event": "FINISH",
+          "drone": 13
+        },
+        {
+          "t": 26.56,
+          "event": "FINISH",
+          "drone": 14
+        }
+      ]
+    },
+    {
+      "policy": "queue_aware",
+      "profile": "lost_ack",
+      "seed": 45300,
+      "input_sha256": "e4738bf98b1369b74188e1b37ea8c17b0f53d5492ac3d3222f1c27358e4a9c17",
+      "completed": 16,
+      "unfinished": 0,
+      "conflict_episode": false,
+      "conflict_sample_s": 0.0,
+      "separation_episode": false,
+      "min_separation_m": 2.9957664012908936,
+      "max_tilt_deg": 6.127527236938477,
+      "old_rejected": 1715,
+      "events": [
+        {
+          "t": 0.16,
+          "event": "GRANT",
+          "drone": 0,
+          "pad": 0
+        },
+        {
+          "t": 0.16,
+          "event": "GRANT",
+          "drone": 1,
+          "pad": 1
+        },
+        {
+          "t": 0.16,
+          "event": "GRANT",
+          "drone": 2,
+          "pad": 2
+        },
+        {
+          "t": 0.16,
+          "event": "GRANT",
+          "drone": 3,
+          "pad": 3
+        },
+        {
+          "t": 0.28,
+          "event": "START",
+          "drone": 3
+        },
+        {
+          "t": 0.3,
+          "event": "START",
+          "drone": 0
+        },
+        {
+          "t": 0.34,
+          "event": "START",
+          "drone": 2
+        },
+        {
+          "t": 0.34,
+          "event": "START",
+          "drone": 1
+        },
+        {
+          "t": 9.18,
+          "event": "LANDED",
+          "drone": 3
+        },
+        {
+          "t": 9.2,
+          "event": "LANDED",
+          "drone": 0
+        },
+        {
+          "t": 9.22,
+          "event": "LANDED",
+          "drone": 1
+        },
+        {
+          "t": 9.24,
+          "event": "LANDED",
+          "drone": 2
+        },
+        {
+          "t": 11.18,
+          "event": "DEPART",
+          "drone": 3
+        },
+        {
+          "t": 11.2,
+          "event": "DEPART",
+          "drone": 0
+        },
+        {
+          "t": 11.22,
+          "event": "DEPART",
+          "drone": 1
+        },
+        {
+          "t": 11.24,
+          "event": "DEPART",
+          "drone": 2
+        },
+        {
+          "t": 19.76,
+          "event": "FINISH",
+          "drone": 3
+        },
+        {
+          "t": 19.78,
+          "event": "FINISH",
+          "drone": 0
+        },
+        {
+          "t": 19.8,
+          "event": "FINISH",
+          "drone": 1
+        },
+        {
+          "t": 19.82,
+          "event": "FINISH",
+          "drone": 2
+        },
+        {
+          "t": 19.9,
+          "event": "RELEASE",
+          "drone": 0,
+          "reason": "VERIFIED"
+        },
+        {
+          "t": 19.9,
+          "event": "RELEASE",
+          "drone": 3,
+          "reason": "VERIFIED"
+        },
+        {
+          "t": 19.9,
+          "event": "GRANT",
+          "drone": 4,
+          "pad": 0
+        },
+        {
+          "t": 19.9,
+          "event": "GRANT",
+          "drone": 7,
+          "pad": 3
+        },
+        {
+          "t": 19.94,
+          "event": "RELEASE",
+          "drone": 1,
+          "reason": "VERIFIED"
+        },
+        {
+          "t": 19.94,
+          "event": "RELEASE",
+          "drone": 2,
+          "reason": "VERIFIED"
+        },
+        {
+          "t": 19.94,
+          "event": "GRANT",
+          "drone": 5,
+          "pad": 1
+        },
+        {
+          "t": 19.94,
+          "event": "GRANT",
+          "drone": 6,
+          "pad": 2
+        },
+        {
+          "t": 20.02,
+          "event": "START",
+          "drone": 4
+        },
+        {
+          "t": 20.06,
+          "event": "START",
+          "drone": 5
+        },
+        {
+          "t": 20.06,
+          "event": "START",
+          "drone": 7
+        },
+        {
+          "t": 20.1,
+          "event": "START",
+          "drone": 6
+        },
+        {
+          "t": 28.9,
+          "event": "LANDED",
+          "drone": 4
+        },
+        {
+          "t": 28.94,
+          "event": "LANDED",
+          "drone": 5
+        },
+        {
+          "t": 28.96,
+          "event": "LANDED",
+          "drone": 7
+        },
+        {
+          "t": 28.98,
+          "event": "LANDED",
+          "drone": 6
+        },
+        {
+          "t": 30.9,
+          "event": "DEPART",
+          "drone": 4
+        },
+        {
+          "t": 30.94,
+          "event": "DEPART",
+          "drone": 5
+        },
+        {
+          "t": 30.96,
+          "event": "DEPART",
+          "drone": 7
+        },
+        {
+          "t": 30.98,
+          "event": "DEPART",
+          "drone": 6
+        },
+        {
+          "t": 39.3,
+          "event": "FINISH",
+          "drone": 4
+        },
+        {
+          "t": 39.34,
+          "event": "FINISH",
+          "drone": 5
+        },
+        {
+          "t": 39.34,
+          "event": "FINISH",
+          "drone": 7
+        },
+        {
+          "t": 39.38,
+          "event": "FINISH",
+          "drone": 6
+        },
+        {
+          "t": 39.44,
+          "event": "RELEASE",
+          "drone": 4,
+          "reason": "VERIFIED"
+        },
+        {
+          "t": 39.44,
+          "event": "GRANT",
+          "drone": 8,
+          "pad": 0
+        },
+        {
+          "t": 39.48,
+          "event": "RELEASE",
+          "drone": 5,
+          "reason": "VERIFIED"
+        },
+        {
+          "t": 39.48,
+          "event": "RELEASE",
+          "drone": 7,
+          "reason": "VERIFIED"
+        },
+        {
+          "t": 39.48,
+          "event": "GRANT",
+          "drone": 9,
+          "pad": 1
+        },
+        {
+          "t": 39.48,
+          "event": "GRANT",
+          "drone": 11,
+          "pad": 3
+        },
+        {
+          "t": 39.54,
+          "event": "RELEASE",
+          "drone": 6,
+          "reason": "VERIFIED"
+        },
+        {
+          "t": 39.54,
+          "event": "GRANT",
+          "drone": 10,
+          "pad": 2
+        },
+        {
+          "t": 39.58,
+          "event": "START",
+          "drone": 8
+        },
+        {
+          "t": 39.64,
+          "event": "START",
+          "drone": 11
+        },
+        {
+          "t": 39.66,
+          "event": "START",
+          "drone": 9
+        },
+        {
+          "t": 39.7,
+          "event": "START",
+          "drone": 10
+        },
+        {
+          "t": 48.46,
+          "event": "LANDED",
+          "drone": 8
+        },
+        {
+          "t": 48.52,
+          "event": "LANDED",
+          "drone": 11
+        },
+        {
+          "t": 48.54,
+          "event": "LANDED",
+          "drone": 9
+        },
+        {
+          "t": 48.58,
+          "event": "LANDED",
+          "drone": 10
+        },
+        {
+          "t": 50.46,
+          "event": "DEPART",
+          "drone": 8
+        },
+        {
+          "t": 50.52,
+          "event": "DEPART",
+          "drone": 11
+        },
+        {
+          "t": 50.54,
+          "event": "DEPART",
+          "drone": 9
+        },
+        {
+          "t": 50.58,
+          "event": "DEPART",
+          "drone": 10
+        },
+        {
+          "t": 58.6,
+          "event": "FINISH",
+          "drone": 8
+        },
+        {
+          "t": 58.66,
+          "event": "FINISH",
+          "drone": 11
+        },
+        {
+          "t": 58.68,
+          "event": "FINISH",
+          "drone": 9
+        },
+        {
+          "t": 58.72,
+          "event": "FINISH",
+          "drone": 10
+        },
+        {
+          "t": 58.76,
+          "event": "RELEASE",
+          "drone": 8,
+          "reason": "VERIFIED"
+        },
+        {
+          "t": 58.76,
+          "event": "GRANT",
+          "drone": 12,
+          "pad": 0
+        },
+        {
+          "t": 58.8,
+          "event": "RELEASE",
+          "drone": 11,
+          "reason": "VERIFIED"
+        },
+        {
+          "t": 58.8,
+          "event": "GRANT",
+          "drone": 15,
+          "pad": 3
+        },
+        {
+          "t": 58.86,
+          "event": "RELEASE",
+          "drone": 9,
+          "reason": "VERIFIED"
+        },
+        {
+          "t": 58.86,
+          "event": "RELEASE",
+          "drone": 10,
+          "reason": "VERIFIED"
+        },
+        {
+          "t": 58.86,
+          "event": "GRANT",
+          "drone": 13,
+          "pad": 1
+        },
+        {
+          "t": 58.86,
+          "event": "GRANT",
+          "drone": 14,
+          "pad": 2
+        },
+        {
+          "t": 58.94,
+          "event": "START",
+          "drone": 12
+        },
+        {
+          "t": 58.98,
+          "event": "START",
+          "drone": 14
+        },
+        {
+          "t": 58.98,
+          "event": "START",
+          "drone": 15
+        },
+        {
+          "t": 59.02,
+          "event": "START",
+          "drone": 13
+        },
+        {
+          "t": 67.8,
+          "event": "LANDED",
+          "drone": 12
+        },
+        {
+          "t": 67.84,
+          "event": "LANDED",
+          "drone": 14
+        },
+        {
+          "t": 67.84,
+          "event": "LANDED",
+          "drone": 15
+        },
+        {
+          "t": 67.9,
+          "event": "LANDED",
+          "drone": 13
+        },
+        {
+          "t": 69.8,
+          "event": "DEPART",
+          "drone": 12
+        },
+        {
+          "t": 69.84,
+          "event": "DEPART",
+          "drone": 14
+        },
+        {
+          "t": 69.84,
+          "event": "DEPART",
+          "drone": 15
+        },
+        {
+          "t": 69.9,
+          "event": "DEPART",
+          "drone": 13
+        },
+        {
+          "t": 77.8,
+          "event": "FINISH",
+          "drone": 12
+        },
+        {
+          "t": 77.84,
+          "event": "FINISH",
+          "drone": 14
+        },
+        {
+          "t": 77.84,
+          "event": "FINISH",
+          "drone": 15
+        },
+        {
+          "t": 77.9,
+          "event": "FINISH",
+          "drone": 13
+        },
+        {
+          "t": 77.94,
+          "event": "RELEASE",
+          "drone": 12,
+          "reason": "VERIFIED"
+        },
+        {
+          "t": 77.96,
+          "event": "RELEASE",
+          "drone": 14,
+          "reason": "VERIFIED"
+        },
+        {
+          "t": 77.96,
+          "event": "RELEASE",
+          "drone": 15,
+          "reason": "VERIFIED"
+        },
+        {
+          "t": 78.04,
+          "event": "RELEASE",
+          "drone": 13,
+          "reason": "VERIFIED"
+        }
+      ]
+    },
+    {
+      "policy": "timeout_only",
+      "profile": "telemetry_outage",
+      "seed": 45300,
+      "input_sha256": "e4738bf98b1369b74188e1b37ea8c17b0f53d5492ac3d3222f1c27358e4a9c17",
+      "completed": 0,
+      "unfinished": 16,
+      "conflict_episode": true,
+      "conflict_sample_s": 91.3,
+      "separation_episode": true,
+      "min_separation_m": 0.19990767538547516,
+      "max_tilt_deg": 104.05878448486328,
+      "old_rejected": 17,
+      "events": [
+        {
+          "t": 0.16,
+          "event": "GRANT",
+          "drone": 0,
+          "pad": 0
+        },
+        {
+          "t": 0.16,
+          "event": "GRANT",
+          "drone": 1,
+          "pad": 1
+        },
+        {
+          "t": 0.16,
+          "event": "GRANT",
+          "drone": 2,
+          "pad": 2
+        },
+        {
+          "t": 0.16,
+          "event": "GRANT",
+          "drone": 3,
+          "pad": 3
+        },
+        {
+          "t": 0.28,
+          "event": "START",
+          "drone": 3
+        },
+        {
+          "t": 0.3,
+          "event": "START",
+          "drone": 0
+        },
+        {
+          "t": 0.34,
+          "event": "START",
+          "drone": 2
+        },
+        {
+          "t": 0.34,
+          "event": "START",
+          "drone": 1
+        },
+        {
+          "t": 1.36,
+          "event": "RELEASE",
+          "drone": 0,
+          "reason": "TIMEOUT"
+        },
+        {
+          "t": 1.36,
+          "event": "RELEASE",
+          "drone": 1,
+          "reason": "TIMEOUT"
+        },
+        {
+          "t": 1.36,
+          "event": "RELEASE",
+          "drone": 2,
+          "reason": "TIMEOUT"
+        },
+        {
+          "t": 1.36,
+          "event": "RELEASE",
+          "drone": 3,
+          "reason": "TIMEOUT"
+        },
+        {
+          "t": 1.36,
+          "event": "GRANT",
+          "drone": 4,
+          "pad": 0
+        },
+        {
+          "t": 1.36,
+          "event": "GRANT",
+          "drone": 5,
+          "pad": 1
+        },
+        {
+          "t": 1.36,
+          "event": "GRANT",
+          "drone": 6,
+          "pad": 2
+        },
+        {
+          "t": 1.36,
+          "event": "GRANT",
+          "drone": 7,
+          "pad": 3
+        },
+        {
+          "t": 1.48,
+          "event": "START",
+          "drone": 4
+        },
+        {
+          "t": 1.48,
+          "event": "START",
+          "drone": 5
+        },
+        {
+          "t": 1.52,
+          "event": "START",
+          "drone": 6
+        },
+        {
+          "t": 1.52,
+          "event": "START",
+          "drone": 7
+        },
+        {
+          "t": 2.56,
+          "event": "RELEASE",
+          "drone": 4,
+          "reason": "TIMEOUT"
+        },
+        {
+          "t": 2.56,
+          "event": "RELEASE",
+          "drone": 5,
+          "reason": "TIMEOUT"
+        },
+        {
+          "t": 2.56,
+          "event": "RELEASE",
+          "drone": 6,
+          "reason": "TIMEOUT"
+        },
+        {
+          "t": 2.56,
+          "event": "RELEASE",
+          "drone": 7,
+          "reason": "TIMEOUT"
+        },
+        {
+          "t": 9.18,
+          "event": "LANDED",
+          "drone": 3
+        },
+        {
+          "t": 9.2,
+          "event": "LANDED",
+          "drone": 0
+        },
+        {
+          "t": 9.22,
+          "event": "LANDED",
+          "drone": 1
+        },
+        {
+          "t": 9.24,
+          "event": "LANDED",
+          "drone": 2
+        },
+        {
+          "t": 11.18,
+          "event": "DEPART",
+          "drone": 3
+        },
+        {
+          "t": 11.2,
+          "event": "DEPART",
+          "drone": 0
+        },
+        {
+          "t": 11.22,
+          "event": "DEPART",
+          "drone": 1
+        },
+        {
+          "t": 11.24,
+          "event": "DEPART",
+          "drone": 2
+        }
+      ]
+    },
+    {
+      "policy": "queue_aware",
+      "profile": "telemetry_outage",
+      "seed": 45300,
+      "input_sha256": "e4738bf98b1369b74188e1b37ea8c17b0f53d5492ac3d3222f1c27358e4a9c17",
+      "completed": 4,
+      "unfinished": 12,
+      "conflict_episode": false,
+      "conflict_sample_s": 0.0,
+      "separation_episode": false,
+      "min_separation_m": 2.995793581008911,
+      "max_tilt_deg": 6.127527236938477,
+      "old_rejected": 17,
+      "events": [
+        {
+          "t": 0.16,
+          "event": "GRANT",
+          "drone": 0,
+          "pad": 0
+        },
+        {
+          "t": 0.16,
+          "event": "GRANT",
+          "drone": 1,
+          "pad": 1
+        },
+        {
+          "t": 0.16,
+          "event": "GRANT",
+          "drone": 2,
+          "pad": 2
+        },
+        {
+          "t": 0.16,
+          "event": "GRANT",
+          "drone": 3,
+          "pad": 3
+        },
+        {
+          "t": 0.28,
+          "event": "START",
+          "drone": 3
+        },
+        {
+          "t": 0.3,
+          "event": "START",
+          "drone": 0
+        },
+        {
+          "t": 0.34,
+          "event": "START",
+          "drone": 2
+        },
+        {
+          "t": 0.34,
+          "event": "START",
+          "drone": 1
+        },
+        {
+          "t": 9.18,
+          "event": "LANDED",
+          "drone": 3
+        },
+        {
+          "t": 9.2,
+          "event": "LANDED",
+          "drone": 0
+        },
+        {
+          "t": 9.22,
+          "event": "LANDED",
+          "drone": 1
+        },
+        {
+          "t": 9.24,
+          "event": "LANDED",
+          "drone": 2
+        },
+        {
+          "t": 11.18,
+          "event": "DEPART",
+          "drone": 3
+        },
+        {
+          "t": 11.2,
+          "event": "DEPART",
+          "drone": 0
+        },
+        {
+          "t": 11.22,
+          "event": "DEPART",
+          "drone": 1
+        },
+        {
+          "t": 11.24,
+          "event": "DEPART",
+          "drone": 2
+        },
+        {
+          "t": 19.76,
+          "event": "FINISH",
+          "drone": 3
+        },
+        {
+          "t": 19.78,
+          "event": "FINISH",
+          "drone": 0
+        },
+        {
+          "t": 19.8,
+          "event": "FINISH",
+          "drone": 1
+        },
+        {
+          "t": 19.82,
+          "event": "FINISH",
+          "drone": 2
+        }
+      ]
+    }
+  ],
+  "trajectory_sha256": "20da9261eaf13231a4eca89f8ebc6a0546e3c2711ab8b2ef711470d596525721"
+}

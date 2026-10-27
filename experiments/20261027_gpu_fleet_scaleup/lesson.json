@@ -1,0 +1,49 @@
+{
+  "english_voice": "en-US-AndrewNeural",
+  "chinese_voice": "zh-CN-XiaoxiaoNeural",
+  "rate": "-5%",
+  "chapters": [
+    {
+      "term": "物理轨迹", "pinyin": "wùlǐ guǐjì", "english": "GPU physics, visible flight paths",
+      "subtitle": "Sixteen physical drones, four landing pads. Solid trails follow measured xyz, not commands.",
+      "profile": "timely", "from_s": 0, "to_s": 20,
+      "text": "This is Ravi Bajaj's queue-aware autonomy work, now illustrated with sixteen physical drones. The colored trails show measured three-dimensional flight paths, not planned splines. NVIDIA CUDA integrates mass, inertia, sixty-four rotor actuators, gravity, and contact. Task coordination runs on the CPU. The movie replays the saved physics; video rendering is a separate operation."
+    },
+    {
+      "term": "多智能体协调", "pinyin": "duō zhìnéngtǐ xiétiáo", "english": "Four waves, shared resources",
+      "subtitle": "Same initial states, flight controller and exogenous disturbances in both arms",
+      "profile": "timely", "from_s": 20, "to_s": 100,
+      "text": "With timely messages, both policies schedule successive waves through the four landing pads. The altitude histories show actual descent, contact, and departure. Waiting drones remain at their staging positions. Earlier departures park farther away so they do not block the later arrivals. These preassigned lanes isolate the coordination problem; this is not a general collision-avoidance planner."
+    },
+    {
+      "term": "消息队列", "pinyin": "xiāoxī duìliè", "english": "Missing receipts, active commands",
+      "subtitle": "New episode: acceptance acknowledgments are lost, but commands still arrive",
+      "profile": "lost_ack", "from_s": 0, "to_s": 12,
+      "text": "Now acceptance acknowledgments disappear. On the left, a one point two second timeout discards each unresolved reservation. Further drones receive clearance while earlier commands are still executing. Watch the measured trajectories converge toward the same pads. An apparently empty pad can already be committed to an approaching drone. Silence does not cancel that physical action."
+    },
+    {
+      "term": "当前任务状态", "pinyin": "dāngqián rènwù zhuàngtài", "english": "Retain the outstanding commitment",
+      "subtitle": "Pad owner, physical occupancy and waiting queue are different quantities",
+      "profile": "lost_ack", "from_s": 12, "to_s": 100,
+      "text": "On the right, active task state retains the owner until fresh telemetry confirms that this drone finished and the pad is clear. Both sides have the same flight controller and freshness check. Both disarm a vehicle if its tilt exceeds seventy degrees, while gravity and contacts continue. Only the reservation-release rule differs between policies. Exact motion after contact is illustrative, not a validated crash prediction."
+    },
+    {
+      "term": "观测时效", "pinyin": "guāncè shíxiào", "english": "The cost of missing evidence",
+      "subtitle": "New episode: receipts are lost and telemetry stops after one second",
+      "profile": "telemetry_outage", "from_s": 0, "to_s": 100,
+      "text": "When telemetry also stops, the queue-aware coordinator cannot confirm remote completion. The first wave can finish locally, but the other drones keep waiting. Their flat altitude traces are a real outcome of the hold, not missing animation. This exposes the safety-versus-progress tradeoff. The model has no battery limit, so indefinite hovering is not an operationally safe recovery plan."
+    },
+    {
+      "term": "匹配对照", "pinyin": "pǐpèi duìzhào", "english": "Measured comparison, bounded claim",
+      "subtitle": "48 independent episodes / 8 seeds / 3 communication profiles / 2 policies",
+      "profile": "telemetry_outage", "from_s": 100, "to_s": 100,
+      "text": "The comparison uses eight matched seeds across three message conditions and two policies. Each world contains sixteen drones; independent worlds are not one enormous swarm. This movie follows a fixed seed, while the accompanying results summarize every episode. It is an exploratory multi-agent extension, not new evidence for the original registered prediction-horizon claim."
+    },
+    {
+      "term": "运行时保障", "pinyin": "yùnxíngshí bǎozhàng", "english": "The supervisory-control lesson",
+      "subtitle": "Retain commitments. Check evidence age. Measure safety and task completion together.",
+      "profile": "timely", "from_s": 100, "to_s": 100,
+      "text": "Your queue-aware research is illustrated by the execution rule and its consequences. Physical trajectories make the mechanism visible, but graphics are not a safety proof. This simplified rigid-body model omits aerodynamic interactions, damaged-vehicle recovery, and hardware uncertainty. Good local flight tracking still needs correct shared-resource authority."
+    }
+  ]
+}

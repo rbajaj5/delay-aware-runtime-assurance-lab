@@ -1,0 +1,21 @@
+{
+  "drone_count": 16,
+  "pad_count": 4,
+  "physics_dt_s": 0.002,
+  "control_dt_s": 0.02,
+  "duration_s": 100.0,
+  "seed_start": 45300,
+  "seed_count": 8,
+  "receipt_timeout_s": 1.2,
+  "freshness_s": 0.6,
+  "outage_start_s": 1.0,
+  "approach_s": 8.0,
+  "dwell_s": 2.0,
+  "departure_s": 8.0,
+  "separation_m": 0.8,
+  "profiles": ["timely", "lost_ack", "telemetry_outage"],
+  "policies": ["timeout_only", "queue_aware"],
+  "robot_mass_kg": 1.2,
+  "rotor_max_n": 6.0,
+  "description": "Sixteen physical quadrotors sharing four preassigned landing lanes; centralized reservations and local deterministic feedback; synthetic GPU rigid-body model, not hardware validation."
+}

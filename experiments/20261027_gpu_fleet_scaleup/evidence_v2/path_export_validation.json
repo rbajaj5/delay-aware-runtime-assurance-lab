@@ -1,0 +1,11 @@
+{
+  "measured_rows": 480096,
+  "checked_rows": 480096,
+  "seed": 45300,
+  "worlds": 6,
+  "drones_per_world": 16,
+  "retained_times_per_world": 5001,
+  "sha256": "da1ba535b2871390e2936ea973e1ca40d7b1c251ac9a95d81b95e83e88180350",
+  "mean_position_reference_residual_m": 0.78957896923336,
+  "note": "All six seed-45300 worlds, not every seed. Positions and velocities come from GPU qpos/qvel. Residual is descriptive, across mixed modes and policies."
+}

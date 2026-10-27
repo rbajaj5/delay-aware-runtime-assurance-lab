@@ -1,0 +1,68 @@
+{
+  "complete": true,
+  "world_states_checked": 240048,
+  "finite": true,
+  "normalized_quaternions": true,
+  "bounded_rotor_forces": true,
+  "no_gpu_overflow": true,
+  "paired_inputs": true,
+  "timely_arms_numerically_agree": true,
+  "summary_recomputed": true,
+  "nominal_pair_checks": [
+    {
+      "seed": 45300,
+      "max_position_error_m": 3.821189602604136e-05,
+      "max_attitude_error_deg": 0.002160019653156245,
+      "identical_protocol_events": true
+    },
+    {
+      "seed": 45301,
+      "max_position_error_m": 1.455134793104662e-06,
+      "max_attitude_error_deg": 3.1624218414915807e-05,
+      "identical_protocol_events": true
+    },
+    {
+      "seed": 45302,
+      "max_position_error_m": 1.980453362193657e-06,
+      "max_attitude_error_deg": 4.108771812600651e-05,
+      "identical_protocol_events": true
+    },
+    {
+      "seed": 45303,
+      "max_position_error_m": 1.922192041092785e-06,
+      "max_attitude_error_deg": 5.8056607945109e-05,
+      "identical_protocol_events": true
+    },
+    {
+      "seed": 45304,
+      "max_position_error_m": 1.9073486328125e-06,
+      "max_attitude_error_deg": 3.971653693449408e-05,
+      "identical_protocol_events": true
+    },
+    {
+      "seed": 45305,
+      "max_position_error_m": 1.552929825265892e-05,
+      "max_attitude_error_deg": 0.0017506307485633038,
+      "identical_protocol_events": true
+    },
+    {
+      "seed": 45306,
+      "max_position_error_m": 2.2872191038914025e-06,
+      "max_attitude_error_deg": 0.0001434542990739674,
+      "identical_protocol_events": true
+    },
+    {
+      "seed": 45307,
+      "max_position_error_m": 2.86102294921875e-06,
+      "max_attitude_error_deg": 6.252981297730777e-05,
+      "identical_protocol_events": true
+    }
+  ],
+  "nominal_position_tolerance_m": 0.0001,
+  "nominal_attitude_tolerance_deg": 0.01,
+  "queue_ownership_invariant": true,
+  "cuda_analytic_hover_error_m": 4.7683715642676816e-08,
+  "cuda_analytic_freefall_error_m": 0.001962269592285182,
+  "cuda_device": "NVIDIA GeForce RTX 5070 Ti Laptop GPU",
+  "note": "20 ms endpoint samples; not continuous-time collision certification. GPU calibration is separate from comparison episodes."
+}

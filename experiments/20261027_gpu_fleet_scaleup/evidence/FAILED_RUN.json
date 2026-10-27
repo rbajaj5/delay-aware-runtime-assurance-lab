@@ -1,0 +1,12 @@
+{
+  "status": "invalid_aborted",
+  "worlds": 48,
+  "seed_start": 45300,
+  "seeds": 8,
+  "error": "Nonfinite GPU state at 4976",
+  "control_step_s": 0.02,
+  "approximate_failure_time_s": 99.54,
+  "scope": "No episode is counted as completed or pooled into final results.",
+  "limitation": "The original failure path did not retain partial trajectories or the failing world ID. Source snapshots remain in source/. Exact triggering contact is not established.",
+  "next_revision": "Identical excessive-tilt disarm in both arms; detailed failure logging; fresh output directory evidence_v2."
+}
