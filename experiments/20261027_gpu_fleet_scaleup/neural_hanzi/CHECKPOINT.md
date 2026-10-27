@@ -34,16 +34,19 @@ all prior source, recordings, results, movies and release tags.
 - README records selected-window coverage and production timing.
 - Research front page, experiment banner and gardening related link edited.
 
-## Active / Pending
+## Publication Complete
 
 - No running simulation/render jobs. Prior rendering attempt was stopped early
   to improve the conclusion camera; none of its output is delivered evidence.
-- Commit only this subfolder, parent experiment README/checkpoint, root README,
-  and gardening README. Leave historical unrelated dirty artifacts untouched.
-- Publish a new release `neural-hanzi-landings-2026-10-27` in
-  `rbajaj5/delay-aware-runtime-assurance-lab`, with MP4 and SRT. Full trajectory
-  input remains in the previous `gpu-fleet-trajectories-2026-10-27` release.
-- Verify asset digests, push gardening link, complete checkpoint.
+- Source and front page pushed in `72a77fa526a3b371f6585deab97c198b96d8b6f7`.
+- Release `neural-hanzi-landings-2026-10-27` targets that exact commit in
+  `rbajaj5/delay-aware-runtime-assurance-lab`. MP4 and SRT uploaded; both
+  GitHub asset digests and sizes match local files. See `delivery/publication.json`.
+- Full trajectory input remains in `gpu-fleet-trajectories-2026-10-27`.
+- Gardening related link pushed in `acc1350`. No laundry changes.
+- No required implementation remains. Historical unrelated dirty artifacts
+  were neither staged nor changed. Any future experiment needs a separate
+  evidence directory; do not overwrite the current recordings.
 
 ## Resume
 

@@ -1,0 +1,22 @@
+{
+  "repository": "rbajaj5/delay-aware-runtime-assurance-lab",
+  "tag": "neural-hanzi-landings-2026-10-27",
+  "source_commit": "72a77fa526a3b371f6585deab97c198b96d8b6f7",
+  "release_url": "https://github.com/rbajaj5/delay-aware-runtime-assurance-lab/releases/tag/neural-hanzi-landings-2026-10-27",
+  "gardening_related_link_commit": "acc1350",
+  "verification": "GitHub API asset SHA-256 digests and byte lengths match local Get-FileHash and file lengths",
+  "assets": [
+    {
+      "name": "neural_hanzi_drone_landings.mp4",
+      "bytes": 12355568,
+      "sha256": "23c1289a1c298741b59ed83498af8d76778e4d247440e25041516445cd6d128a"
+    },
+    {
+      "name": "captions.srt",
+      "bytes": 3374,
+      "sha256": "acb1f579b66353d6b0eb19814199b837407327aead95716ea5f6381a8a416032"
+    }
+  ],
+  "prior_release_preserved": "gpu-fleet-trajectories-2026-10-27",
+  "new_physics_experiments": false
+}

@@ -90,3 +90,17 @@ are in scope for commits; unrelated historical dirty files must remain intact.
 Release tag: `gpu-fleet-trajectories-2026-10-27` in
 `rbajaj5/delay-aware-runtime-assurance-lab`. Movie name:
 `sixteen_drone_gpu_trajectories.mp4`. Do not replace the previous release.
+
+## Later Neural Hanzi Camera and Lesson Edition
+
+Completed in `neural_hanzi/`, using the same recordings, no new physics.
+Six original memory terms now drive a 189.68 s narrated lesson with large
+matched landing close-ups, retained full-fleet overviews and linked altitude
+charts. All 4,742 frame links, audio/caption checks, overview/landing-center
+framing checks and nine existing unit tests passed. Render/encode 511.61518 s;
+mux 2.66569 s. Coverage and boundaries are in the lesson README.
+
+Source/front page commit `72a77fa526a3b371f6585deab97c198b96d8b6f7`; new release
+`neural-hanzi-landings-2026-10-27`. Both uploaded asset digests verified against
+local copies. Gardening related link commit `acc1350`. Prior releases preserved.
+No active jobs or pending implementation. See `neural_hanzi/CHECKPOINT.md`.
