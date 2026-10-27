@@ -1,5 +1,10 @@
 # Sixteen Drones: GPU Flight Physics and Queue-Aware Coordination
 
+**New teaching edition:** [Neural Hanzi: six engineering-memory terms with
+landing close-ups and the fleet overview](neural_hanzi/README.md). It reuses
+these exact recordings and results; the original wide-view movie below remains
+available. The new lesson has its own script, timing and media audit.
+
 An expanded illustration of **Ravi Bajaj's queue-aware assured-autonomy work**:
 16 physical quadrotors, four shared landing pads, four successive task waves.
 The earlier [four-drone experiment](../20261027_gpu_fleet_active_state/README.md)

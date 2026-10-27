@@ -1,0 +1,19 @@
+{
+  "render_encode_s": 511.61517990002176,
+  "audio_subtitle_mux_s": 2.665693399962038,
+  "duration_s": 189.68,
+  "frames": 4742,
+  "renderer": "Intel(R) Graphics",
+  "encoder": "CPU libx264",
+  "cpu": "Intel Core Ultra 9 275HX",
+  "ram_gib": 32,
+  "recorded_physics_gpu": "RTX 5070 Ti Laptop GPU / 12 GB",
+  "excludes": [
+    "original GPU simulation",
+    "speech synthesis",
+    "renderer setup",
+    "audio assembly",
+    "validation"
+  ],
+  "measurement": "One observed run, perf_counter around rendering/encoding and mux separately"
+}

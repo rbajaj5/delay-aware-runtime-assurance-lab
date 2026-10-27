@@ -1,0 +1,83 @@
+{
+  "complete": true,
+  "terms": [
+    "工作记忆",
+    "会话状态",
+    "团队记忆",
+    "记忆片段",
+    "观测时效",
+    "长期记忆"
+  ],
+  "mandarin_terms": 6,
+  "audio_cues": 12,
+  "audible_cue_rms": [
+    3006.8081062264614,
+    3914.4554165921363,
+    3231.502355723877,
+    3841.3619405343793,
+    3639.523358017924,
+    3884.760168911303,
+    3424.9523536978086,
+    3810.0489459720025,
+    3156.3820702760177,
+    3845.1001927332554,
+    3086.0902681848065,
+    3764.1292160424
+  ],
+  "decoded_frames": 4742,
+  "frame_links_checked": 4742,
+  "duration_s": 189.68,
+  "overview_position_samples": 480096,
+  "all_overview_positions_in_view": true,
+  "closeup_landing_center_samples": 24311,
+  "all_closeup_landing_centers_in_view": true,
+  "same_camera_settings_for_both_arms": true,
+  "encoded_frame_comparisons": [
+    {
+      "frame": 519,
+      "mean_absolute_pixel_error": 1.6175368119855966
+    },
+    {
+      "frame": 1288,
+      "mean_absolute_pixel_error": 1.62078125
+    },
+    {
+      "frame": 2002,
+      "mean_absolute_pixel_error": 1.591249196244856
+    },
+    {
+      "frame": 2746,
+      "mean_absolute_pixel_error": 1.6041708461934157
+    },
+    {
+      "frame": 3537,
+      "mean_absolute_pixel_error": 1.6225112525720164
+    },
+    {
+      "frame": 4404,
+      "mean_absolute_pixel_error": 1.8053915895061727
+    }
+  ],
+  "coverage": {
+    "timely": {
+      "shown": 1545,
+      "retained": 5001,
+      "first": 0,
+      "last": 5000
+    },
+    "lost_ack": {
+      "shown": 2068,
+      "retained": 5001,
+      "first": 0,
+      "last": 2600
+    },
+    "telemetry_outage": {
+      "shown": 743,
+      "retained": 5001,
+      "first": 0,
+      "last": 1600
+    }
+  },
+  "video_sha256": "23c1289a1c298741b59ed83498af8d76778e4d247440e25041516445cd6d128a",
+  "note": "Selected-window replay, not new simulation. Camera tests check centers, not every silhouette pixel. Waveform checks are not ASR or pronunciation evaluation."
+}

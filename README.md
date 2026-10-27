@@ -1,18 +1,38 @@
 # Delay-Aware Runtime Assurance Lab
 
+## New: Neural Hanzi, Memory Terms in Drone Landings
+
+[![Neural Hanzi: landing close-ups with the complete fleet below](experiments/20261027_gpu_fleet_scaleup/neural_hanzi/delivery/preview_0.jpg)](https://github.com/rbajaj5/delay-aware-runtime-assurance-lab/releases/download/neural-hanzi-landings-2026-10-27/neural_hanzi_drone_landings.mp4)
+
+**[Watch the narrated 3:10 MP4](https://github.com/rbajaj5/delay-aware-runtime-assurance-lab/releases/download/neural-hanzi-landings-2026-10-27/neural_hanzi_drone_landings.mp4)**
+| **[Six-term glossary, sources, methods and reproduction](experiments/20261027_gpu_fleet_scaleup/neural_hanzi/README.md)**
+
+**Large landing close-ups, with the 16-drone overview retained underneath.**
+This Neural Hanzi lesson uses queue-aware autonomy to illustrate six Chinese
+engineering terms, rather than teaching a new list of robotics vocabulary:
+
+| Term | English used in the lesson |
+|---|---|
+| 工作记忆 | Active task state, a contextual engineering interpretation of working memory |
+| 会话状态 | Session state |
+| 团队记忆 | Team memory |
+| 记忆片段 | Memory fragments |
+| 观测时效 | Observation freshness |
+| 长期记忆 | Long-term memory |
+
+All six receive Mandarin pronunciation and English explanation, with captions.
+The same saved GPU states drive the close-ups, overviews and altitude plots.
+Session restoration, vendor memory products and long-term learning are not
+tested; the lesson identifies those analogies explicitly. **No new simulation
+results are claimed.** Measured render/encode: **511.62 s**; audio/subtitle mux:
+**2.67 s**, excluding simulation and speech synthesis.
+[Hardware, exclusions and timing](experiments/20261027_gpu_fleet_scaleup/neural_hanzi/README.md).
+
 ## New: Queue-Aware Drone Fleets with GPU Flight Physics
 
-[![Sixteen drones with measured physical trajectories and shared landing resources](experiments/20261027_gpu_fleet_scaleup/delivery/preview_3.jpg)](https://github.com/rbajaj5/delay-aware-runtime-assurance-lab/releases/download/gpu-fleet-trajectories-2026-10-27/sixteen_drone_gpu_trajectories.mp4)
-
-**[Watch the narrated 3:21 MP4](https://github.com/rbajaj5/delay-aware-runtime-assurance-lab/releases/download/gpu-fleet-trajectories-2026-10-27/sixteen_drone_gpu_trajectories.mp4)**
-| **[Research question, methods, results and reproduction](experiments/20261027_gpu_fleet_scaleup/README.md)**
-
-**Now 16 drones, four pads, and visible physical trajectories.** Faint trails
-show measured xyz history; bold trails show the latest three simulated seconds.
-Altitude plots, persistent agent IDs and pad reservations share the same clock.
-**Measured render/encode: 418.13 s; audio/subtitle mux: 3.15 s.** These exclude
-physics simulation, speech generation, renderer setup and validation.
-[Render/mux timing and hardware](experiments/20261027_gpu_fleet_scaleup/delivery/timing.json).
+The underlying [16-drone experiment, results and earlier wide-view movie](experiments/20261027_gpu_fleet_scaleup/README.md)
+are preserved. Its earlier 3:21 render/encode took 418.13 s and mux took 3.15 s;
+those timings do not describe the new close-up lesson.
 
 This illustrates **Ravi Bajaj's queue-aware assured-autonomy work** through
 successive waves sharing landing resources. Missing acceptance receipts do not mean

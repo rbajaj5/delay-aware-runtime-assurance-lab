@@ -1,0 +1,55 @@
+{
+  "english_voice": "en-US-AndrewNeural",
+  "chinese_voice": "zh-CN-XiaoxiaoNeural",
+  "rate": "-5%",
+  "chapters": [
+    {
+      "term": "工作记忆", "pinyin": "gōngzuò jìyì", "english": "Active task state",
+      "definition": "Working memory, interpreted here as the live state needed to finish a task.",
+      "concept": "What is still executing?",
+      "scope": "Measured reservation behavior; not a context-window benchmark.",
+      "profile": "lost_ack", "from_s": 0, "to_s": 16,
+      "text": "Welcome to Neural Hanzi. Our six engineering terms come alive through a drone landing comparison. Working memory is interpreted here as active task state, not simply a context window. Watch pad one: losing a receipt does not stop an approaching drone. The timeout policy forgets its reservation; queue-awareness retains that outstanding commitment. Both views replay the same recorded GPU flight experiment, with the full fleet visible below."
+    },
+    {
+      "term": "会话状态", "pinyin": "huìhuà zhuàngtài", "english": "Session state",
+      "definition": "The context of one ongoing session, which can be saved and restored.",
+      "concept": "Keep the task's identity and progress.",
+      "scope": "Recorded state illustration; no restart or recovery experiment.",
+      "profile": "lost_ack", "from_s": 16, "to_s": 32,
+      "text": "Session state is the context of an ongoing interaction. In this example, it includes the episode identity, current owner, command identity, and waiting queue. A useful saved state would preserve those commitments, not just the instruction to land. Notice how the next drone waits on the right until completion is verified. We are inspecting recorded state here, not claiming to have tested session restoration."
+    },
+    {
+      "term": "团队记忆", "pinyin": "tuánduì jìyì", "english": "Team memory",
+      "definition": "Knowledge and memory assets that a team can share and reuse.",
+      "concept": "Shared knowledge is not exclusive authority.",
+      "scope": "A shared reservation ledger illustrates the extra coordination needed.",
+      "profile": "lost_ack", "from_s": 32, "to_s": 52,
+      "text": "Team memory lets agents share useful knowledge. All sixteen drones can know the pad locations and landing procedure, but that does not decide who may land next. Our shared reservation ledger adds that operational authority. The close-ups show the consequence; the overview keeps the whole team in view. This is an illustration of the distinction, not a test of a commercial team-memory product."
+    },
+    {
+      "term": "记忆片段", "pinyin": "jìyì piànduàn", "english": "Memory fragments",
+      "definition": "Stored pieces of information that can be recalled later.",
+      "concept": "A recalled fact still needs its timestamp.",
+      "scope": "Delayed observation analogy, not an implemented memory-retrieval model.",
+      "profile": "timely", "from_s": 0, "to_s": 14,
+      "text": "Memory fragments are pieces of stored information that can be recalled later. We now replay a different episode. A pad-clear snapshot from time zero arrives again at four point five seconds. It describes an earlier world, not permission to act now. Both policies reject older observations, so they agree here. The delayed snapshot illustrates a fragment's temporal limits; this is not an experiment with language-model retrieval."
+    },
+    {
+      "term": "观测时效", "pinyin": "guāncè shíxiào", "english": "Observation freshness",
+      "definition": "How old is the evidence, and is it still usable for this decision?",
+      "concept": "Fresh evidence is different from remembered evidence.",
+      "scope": "Measured outage behavior; hovering has no battery model here.",
+      "profile": "telemetry_outage", "from_s": 0, "to_s": 32,
+      "text": "Observation freshness asks how old the evidence is. In this new episode, telemetry stops after one second. Queue-awareness preserves the existing commitment but cannot verify completion remotely, so twelve drones remain waiting. The timeout case has already issued conflicting clearances. Watch the different landing paths. Holding has a cost: this model has no battery limit, so indefinite hovering is not a practical recovery strategy."
+    },
+    {
+      "term": "长期记忆", "pinyin": "chángqī jìyì", "english": "Long-term memory",
+      "definition": "Information retained across sessions, distinct from current task state.",
+      "concept": "Remember the procedure; recheck the present situation.",
+      "scope": "Persistent-knowledge analogy; no long-term-learning benchmark.",
+      "profile": "timely", "from_s": 70, "to_s": 100,
+      "text": "Long-term memory retains information across sessions. Reusable maps and procedures are examples of what might be retained; our static configuration illustrates that role, not a learned memory system. We finish with timely messages, where both fleets succeed. The lesson is the vocabulary: retained knowledge, session context, shared information, and fresh active state do different jobs. Queue-aware autonomy gives these distinctions visible physical consequences, without claiming hardware validation."
+    }
+  ]
+}
