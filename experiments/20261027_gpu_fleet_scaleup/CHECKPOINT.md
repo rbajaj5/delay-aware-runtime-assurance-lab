@@ -25,7 +25,7 @@ an upgraded narrated video on GitHub. Preserve the earlier four-drone study.
   gravity/contact. This is a new shared modeling assumption, not damage validation.
   New failure handler saves invalid state and world IDs. Never pool first run.
 
-## Completed Main Run and Active Work
+## Completed Work
 
 - Revised main simulation completed: 48 worlds = 8 seeds x 3 profiles x 2
   policies in `evidence_v2/`. GPU stepping/CPU control/logging 165.72 s;
@@ -40,7 +40,7 @@ an upgraded narrated video on GitHub. Preserve the earlier four-drone study.
   8/8, queue-aware 16 with 0/8 conflicts. Outage timeout 0 with 8/8 conflicts,
   queue-aware 4 completed / 12 waiting with 0/8 conflicts. Small synthetic suite.
 - Featured CSV export verified all 480,096 rows (six worlds at seed 45300).
-  Full 214 MB trajectory archive and 42 MB CSV will be release assets, not Git.
+  Full 214 MB trajectory archive and 42 MB CSV are release assets, not Git.
 - Neural speech complete: 201.314 s, seven chapters, thirteen cues. One empty
   speech-service response retried; revised narration discloses the disarm rule.
 - Updated renderer has measured xyz trails and altitude histories, four pad
@@ -56,14 +56,17 @@ an upgraded narrated video on GitHub. Preserve the earlier four-drone study.
   `6586784a56722f2893f0b03687b4b67ac0bfe1bf88eb983baef4b18aea0fb514`.
 - Measured timings and replay coverage are now documented beside the video.
 
-## Remaining
+## Publication Complete
 
-1. Commit and push source/evidence/README, then publish movie, captions, featured
-   path CSV AND full trajectory NPZ as release assets.
-   Compressed per-profile logs are tracked. Document exact download commands.
-2. Research front page and gardening related-example link are edited but not
-   pushed; four-drone study preserved. No laundry changes.
-3. Verify published asset hashes and finish this checkpoint.
+- Research source/evidence/front page pushed in `22b8ddf7947a1effc3f3fc368b1690dcfc0fa556`.
+- Public release `gpu-fleet-trajectories-2026-10-27` targets that commit.
+  Movie, captions, full main NPZ and featured CSV uploaded; all four GitHub
+  asset digests and byte lengths match local files. See `delivery/publication.json`.
+- Gardening related-example link pushed in `607e40f`. No laundry changes.
+- Earlier four-drone source, results and movie preserved. No active jobs remain.
+- No required implementation remains. Optional future work: battery-limited
+  recovery, more seeds/layouts, decentralized ownership and hardware validation.
+  These are not claims of this demonstration.
 
 ## Resume Commands
 
