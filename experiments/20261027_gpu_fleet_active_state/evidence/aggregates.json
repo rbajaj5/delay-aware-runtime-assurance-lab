@@ -1,0 +1,68 @@
+[
+  {
+    "profile": "timely",
+    "policy": "timeout_only",
+    "n": 8,
+    "conflict_episodes": 0,
+    "separation_episodes": 0,
+    "mean_completed": 4.0,
+    "mean_conflict_s": 0.0,
+    "min_separation_m": 1.9906032085418701,
+    "max_tilt_deg": 6.603132247924805
+  },
+  {
+    "profile": "timely",
+    "policy": "queue_aware",
+    "n": 8,
+    "conflict_episodes": 0,
+    "separation_episodes": 0,
+    "mean_completed": 4.0,
+    "mean_conflict_s": 0.0,
+    "min_separation_m": 1.9906032085418701,
+    "max_tilt_deg": 6.603132247924805
+  },
+  {
+    "profile": "lost_ack",
+    "policy": "timeout_only",
+    "n": 8,
+    "conflict_episodes": 8,
+    "separation_episodes": 8,
+    "mean_completed": 0.375,
+    "mean_conflict_s": 33.5675,
+    "min_separation_m": 0.13069377839565277,
+    "max_tilt_deg": 180.0
+  },
+  {
+    "profile": "lost_ack",
+    "policy": "queue_aware",
+    "n": 8,
+    "conflict_episodes": 0,
+    "separation_episodes": 0,
+    "mean_completed": 4.0,
+    "mean_conflict_s": 0.0,
+    "min_separation_m": 1.9906032085418701,
+    "max_tilt_deg": 6.603132247924805
+  },
+  {
+    "profile": "telemetry_outage",
+    "policy": "timeout_only",
+    "n": 8,
+    "conflict_episodes": 8,
+    "separation_episodes": 8,
+    "mean_completed": 0.375,
+    "mean_conflict_s": 33.5675,
+    "min_separation_m": 0.12772046029567719,
+    "max_tilt_deg": 180.0
+  },
+  {
+    "profile": "telemetry_outage",
+    "policy": "queue_aware",
+    "n": 8,
+    "conflict_episodes": 0,
+    "separation_episodes": 0,
+    "mean_completed": 2.0,
+    "mean_conflict_s": 0.0,
+    "min_separation_m": 2.82570481300354,
+    "max_tilt_deg": 5.616112232208252
+  }
+]

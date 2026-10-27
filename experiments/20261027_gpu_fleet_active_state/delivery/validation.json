@@ -1,0 +1,87 @@
+{
+  "complete": true,
+  "decoded_frames": 5544,
+  "frame_links_checked": 5544,
+  "duration_s": 221.76,
+  "audio_cues": 17,
+  "audible_cue_rms": [
+    3656.163584159772,
+    3734.7124646007605,
+    3039.874167328604,
+    3845.4563622664605,
+    3257.265591487953,
+    3696.473633842665,
+    3900.572167745185,
+    3923.951730416096,
+    3449.643863120205,
+    3633.430922065171,
+    3535.104470589179,
+    3753.7142374707437,
+    3125.7101438447908,
+    3666.5993656011724,
+    2915.339298441579,
+    3779.854046714193,
+    3694.584604489962
+  ],
+  "mandarin_terms": 8,
+  "encoded_frame_comparisons": [
+    {
+      "frame": 404,
+      "mean_absolute_pixel_error": 1.515193544238683
+    },
+    {
+      "frame": 1054,
+      "mean_absolute_pixel_error": 1.5512676826131688
+    },
+    {
+      "frame": 1649,
+      "mean_absolute_pixel_error": 1.5264798739711933
+    },
+    {
+      "frame": 2208,
+      "mean_absolute_pixel_error": 1.5405463927469136
+    },
+    {
+      "frame": 2826,
+      "mean_absolute_pixel_error": 1.5551396926440328
+    },
+    {
+      "frame": 3471,
+      "mean_absolute_pixel_error": 1.5836813593106995
+    },
+    {
+      "frame": 4109,
+      "mean_absolute_pixel_error": 1.576666345164609
+    },
+    {
+      "frame": 4754,
+      "mean_absolute_pixel_error": 1.5960942322530864
+    },
+    {
+      "frame": 5322,
+      "mean_absolute_pixel_error": 1.5921331661522633
+    }
+  ],
+  "coverage": {
+    "timely": {
+      "shown": 607,
+      "retained": 2001,
+      "first": 0,
+      "last": 2000
+    },
+    "lost_ack": {
+      "shown": 1477,
+      "retained": 2001,
+      "first": 0,
+      "last": 2000
+    },
+    "telemetry_outage": {
+      "shown": 573,
+      "retained": 2001,
+      "first": 0,
+      "last": 2000
+    }
+  },
+  "video_sha256": "8aa928e454da4c74405dfc791e9a65a0029e235972f7ed3ec1a3a8ab85031fbf",
+  "note": "Waveform and frame checks; no ASR/pronunciation benchmark."
+}

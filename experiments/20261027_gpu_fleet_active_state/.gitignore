@@ -1,0 +1,5 @@
+build/
+.warp-cache/
+__pycache__/
+delivery/*.mp4
+delivery/*.wav

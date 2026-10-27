@@ -1,0 +1,15 @@
+{
+  "complete": true,
+  "world_states_checked": 96048,
+  "finite": true,
+  "normalized_quaternions": true,
+  "bounded_rotor_forces": true,
+  "paired_inputs": true,
+  "timely_arms_equal": true,
+  "summary_recomputed": true,
+  "queue_ownership_invariant": true,
+  "cuda_analytic_hover_error_m": 0.0,
+  "cuda_analytic_freefall_error_m": 0.001962423324584961,
+  "cuda_device": "NVIDIA GeForce RTX 5070 Ti Laptop GPU",
+  "note": "20 ms endpoint samples; not continuous-time collision certification. GPU calibration is separate from comparison episodes."
+}

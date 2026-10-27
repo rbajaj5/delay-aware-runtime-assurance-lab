@@ -1,6 +1,37 @@
 # Delay-Aware Runtime Assurance Lab
 
-## New Video: Long-term Memory vs Working Memory
+## New: Queue-Aware Drone Fleets with GPU Flight Physics
+
+[![Queue-aware commitments in matched CUDA flight replays](experiments/20261027_gpu_fleet_active_state/delivery/preview_3.jpg)](https://github.com/rbajaj5/delay-aware-runtime-assurance-lab/releases/download/gpu-fleet-active-state-2026-10-27/queue_aware_gpu_fleet.mp4)
+
+**[Watch the narrated 3:42 MP4](https://github.com/rbajaj5/delay-aware-runtime-assurance-lab/releases/download/gpu-fleet-active-state-2026-10-27/queue_aware_gpu_fleet.mp4)**
+| **[Research question, methods, results and reproduction](experiments/20261027_gpu_fleet_active_state/README.md)**
+
+**Measured final rendering/encoding: 176.89 s; audio/subtitle mux: 2.30 s.**
+These exclude simulation, speech synthesis, setup and validation.
+[Hardware and timing details](experiments/20261027_gpu_fleet_active_state/delivery/timing.json).
+
+This illustrates **Ravi Bajaj's queue-aware assured-autonomy work** through four
+quadrotors sharing two landing resources. Missing acceptance receipts do not mean
+that the original commands stopped executing. Retaining the outstanding
+commitment avoids double-booking in the tested cases; without fresh completion
+evidence, that same rule leaves other agents waiting.
+
+**48 matched CUDA-integrated episodes:** with acceptance receipts lost, pad
+conflicts occurred in **8/8 timeout episodes versus 0/8 queue-aware episodes**.
+With fresh telemetry the queue-aware fleet completes all four tasks; during a
+telemetry outage it completes only two. Both arms complete four under timely
+messages. The film shows the same fixed seed, synchronized flight states and task
+records, English narration, Mandarin terms and captions.
+
+Mass, inertia, gravity, bounded rotor thrust and contacts are integrated by
+MuJoCo Warp on an RTX 5070 Ti Laptop GPU. Scheduling and local feedback run on
+CPU. Rendering and encoding are distinct from GPU physics. This is a deliberately
+constructed **exploratory simulation**, not a reliability estimate, formal safety
+certificate, learned-controller result or hardware validation. The
+[registered course study](course_study/README.md) remains separate.
+
+## Earlier Video: Long-term Memory vs Working Memory
 
 [![Long-term knowledge and active working memory in a drone fleet](experiments/20261026_memory_layers/delivery/memory_layers_poster.jpg)](https://github.com/rbajaj5/delay-aware-runtime-assurance-lab/raw/refs/heads/main/experiments/20261026_memory_layers/delivery/memory_layers_drone_fleet.mp4)
 

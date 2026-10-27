@@ -1,0 +1,61 @@
+{
+  "english_voice": "en-US-AndrewNeural",
+  "chinese_voice": "zh-CN-XiaoxiaoNeural",
+  "rate": "-5%",
+  "chapters": [
+    {
+      "term": "当前任务状态", "pinyin": "dāngqián rènwù zhuàngtài", "english": "Active task state",
+      "subtitle": "Ravi Bajaj / queue-aware autonomy: what is still authorized to happen?",
+      "profile": "timely", "from_s": 0, "to_s": 0,
+      "text": "This extends Ravi Bajaj's queue-aware autonomy work to four flying agents sharing two landing pads. The question is not how much a system remembers. It is whether active task state correctly represents actions that are still authorized to happen. These trajectories come from GPU rigid-body physics, not scripted drone positions."
+    },
+    {
+      "term": "长期记忆", "pinyin": "chángqī jìyì", "english": "Long-term memory",
+      "subtitle": "Same map, same flight controller, same random inputs; only reservation release differs",
+      "profile": "timely", "from_s": 0, "to_s": 40,
+      "text": "Long-term memory means information retained across sessions. Here, the reusable map and procedure are static configuration shared by both arms. With timely messages, both fleets finish all four tasks. Each drone has mass, inertia, four limited rotor forces, gravity, and ground contact. There is no learned controller in this extension."
+    },
+    {
+      "term": "消息队列", "pinyin": "xiāoxī duìliè", "english": "Message queue",
+      "subtitle": "New matched episode: commands arrive, but acceptance acknowledgments are lost",
+      "profile": "lost_ack", "from_s": 0, "to_s": 2,
+      "text": "Now the commands arrive, but acceptance acknowledgments are lost. Message transport and task ownership are separate. On the left, the coordinator discards a reservation after one point two seconds without an acknowledgment. It can authorize another drone even though the first command was already accepted."
+    },
+    {
+      "term": "资源预留", "pinyin": "zīyuán yùliú", "english": "Resource reservation",
+      "subtitle": "An empty pad can already be committed to an approaching drone",
+      "profile": "lost_ack", "from_s": 2, "to_s": 8,
+      "text": "A physically empty pad is not necessarily available. Another drone may already be approaching under a valid clearance. The right coordinator retains that unresolved commitment. Both arms use the same freshness checks. The difference is whether silence is incorrectly treated as permission to release the resource."
+    },
+    {
+      "term": "团队记忆", "pinyin": "tuánduì jìyì", "english": "Team memory",
+      "subtitle": "Shared knowledge is not shared execution authority; one coordinator serves four agents",
+      "profile": "lost_ack", "from_s": 8, "to_s": 18,
+      "text": "Team memory describes shared knowledge. It does not, by itself, prevent competing actions. Here the timeout arm develops pad conflicts and loses separation. The queue-aware arm waits for fresh completion evidence before clearing the next pair. This is centralized coordination of four local flight controllers, not distributed consensus."
+    },
+    {
+      "term": "运行时保障", "pinyin": "yùnxíngshí bǎozhàng", "english": "Runtime assurance",
+      "subtitle": "An execution gate checks commitments; the low-level flight controller is unchanged",
+      "profile": "lost_ack", "from_s": 18, "to_s": 40,
+      "text": "This is the assured-autonomy connection: a supervisory execution rule constrains otherwise valid local actions. Low-level tracking alone cannot decide who owns a shared landing pad. The queue-aware fleet finishes all four tasks here. A context window could store these records, but the execution layer must enforce their meaning."
+    },
+    {
+      "term": "观测时效", "pinyin": "guāncè shíxiào", "english": "Observation freshness",
+      "subtitle": "New matched episode: acknowledgments are lost and telemetry stops at 1 second",
+      "profile": "telemetry_outage", "from_s": 0, "to_s": 40,
+      "text": "Now telemetry also stops. Observation freshness is the age of the evidence used to authorize work. The queue-aware arm completes the first pair, but cannot verify completion remotely. Two drones keep waiting. Its conservative hold avoids the modeled conflict while sacrificing progress. Recovery needs another justified procedure."
+    },
+    {
+      "term": "匹配对照", "pinyin": "pǐpèi duìzhào", "english": "Matched comparisons",
+      "subtitle": "48 CUDA episodes / 8 matched seeds / 3 profiles / 2 policies; film shows seed 45200",
+      "profile": "telemetry_outage", "from_s": 40, "to_s": 40,
+      "text": "Across eight matched seeds, lost acknowledgments produced pad conflicts in all eight timeout episodes and none of the eight queue-aware episodes. Under telemetry loss, the queue-aware fleet finished two of four tasks. These are constructed mechanism checks, not a fleet reliability estimate or an extension of the original registered quadrotor result."
+    },
+    {
+      "term": "当前任务状态", "pinyin": "dāngqián rènwù zhuàngtài", "english": "The research lesson",
+      "subtitle": "Retain unresolved commitments. Check evidence age. Measure safety AND progress.",
+      "profile": "telemetry_outage", "from_s": 40, "to_s": 40,
+      "text": "The contribution illustrated here is the mechanism and its tradeoff, not the vocabulary or a universal promise of safety. This simplified model omits aerodynamics, battery limits, damage, and decentralized recovery. Your active task state must describe what can still happen, not merely what the latest message happened to say."
+    }
+  ]
+}

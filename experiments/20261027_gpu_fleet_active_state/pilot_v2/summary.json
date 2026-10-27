@@ -1,0 +1,699 @@
+{
+  "config": {
+    "physics_dt_s": 0.002,
+    "control_dt_s": 0.02,
+    "duration_s": 30.0,
+    "seed_start": 45200,
+    "seed_count": 1,
+    "receipt_timeout_s": 1.2,
+    "freshness_s": 0.6,
+    "outage_start_s": 1.0,
+    "approach_s": 5.0,
+    "dwell_s": 3.0,
+    "departure_s": 5.0,
+    "separation_m": 0.8,
+    "profiles": [
+      "timely",
+      "lost_ack",
+      "telemetry_outage"
+    ],
+    "policies": [
+      "timeout_only",
+      "queue_aware"
+    ],
+    "robot_mass_kg": 1.2,
+    "rotor_max_n": 6.0,
+    "description": "Synthetic 6-DoF quadrotor fleet; centralized task authority, local feedback control; no learned policy or hardware validation."
+  },
+  "device": "NVIDIA GeForce RTX 5070 Ti Laptop GPU",
+  "backend": "MuJoCo Warp CUDA",
+  "nworld": 6,
+  "setup_compile_s": 53.598067999992054,
+  "simulation_and_recording_s": 11.908682200009935,
+  "sources": {
+    "model.py": "a1cb83362c1b3c8f3db09b588aab59f4e1e080e148018bb270714f5b0d66abaa",
+    "simulate.py": "557015b2bab5b4c5d12efd7ee595da2dc4e7d0ee7ade6b4b0fcd4bcfd3497170",
+    "config.json": "7467c12a3da4af34c556d7fb2de32969d8bc5e81cb3a31a8cdad435d7e703e2a"
+  },
+  "packages": {
+    "mujoco": "3.17.0",
+    "mujoco-warp": "3.17.0",
+    "warp-lang": "1.17.0",
+    "numpy": "2.4.6"
+  },
+  "episodes": [
+    {
+      "policy": "timeout_only",
+      "profile": "timely",
+      "seed": 45200,
+      "input_sha256": "a16066baf80aeeb789dc179d50ffd4c45bd9336997694a20d288d3341a7d8b5d",
+      "completed": 2,
+      "unfinished": 2,
+      "conflict_episode": false,
+      "conflict_sample_s": 0.0,
+      "separation_episode": false,
+      "min_separation_m": 2.313544511795044,
+      "max_tilt_deg": 6.530807971954346,
+      "old_rejected": 513,
+      "events": [
+        {
+          "t": 0.16,
+          "event": "GRANT",
+          "drone": 0,
+          "pad": 0
+        },
+        {
+          "t": 0.16,
+          "event": "GRANT",
+          "drone": 1,
+          "pad": 1
+        },
+        {
+          "t": 0.28,
+          "event": "START",
+          "drone": 0
+        },
+        {
+          "t": 0.34,
+          "event": "START",
+          "drone": 1
+        },
+        {
+          "t": 6.88,
+          "event": "LANDED",
+          "drone": 0
+        },
+        {
+          "t": 6.94,
+          "event": "LANDED",
+          "drone": 1
+        },
+        {
+          "t": 9.88,
+          "event": "DEPART",
+          "drone": 0
+        },
+        {
+          "t": 9.96,
+          "event": "DEPART",
+          "drone": 1
+        },
+        {
+          "t": 15.6,
+          "event": "FINISH",
+          "drone": 0
+        },
+        {
+          "t": 15.68,
+          "event": "FINISH",
+          "drone": 1
+        },
+        {
+          "t": 15.72,
+          "event": "RELEASE",
+          "drone": 0,
+          "reason": "VERIFIED"
+        },
+        {
+          "t": 15.72,
+          "event": "GRANT",
+          "drone": 2,
+          "pad": 0
+        },
+        {
+          "t": 15.82,
+          "event": "RELEASE",
+          "drone": 1,
+          "reason": "VERIFIED"
+        },
+        {
+          "t": 15.82,
+          "event": "GRANT",
+          "drone": 3,
+          "pad": 1
+        },
+        {
+          "t": 15.9,
+          "event": "START",
+          "drone": 2
+        },
+        {
+          "t": 15.94,
+          "event": "START",
+          "drone": 3
+        },
+        {
+          "t": 22.48,
+          "event": "LANDED",
+          "drone": 2
+        },
+        {
+          "t": 22.54,
+          "event": "LANDED",
+          "drone": 3
+        },
+        {
+          "t": 25.48,
+          "event": "DEPART",
+          "drone": 2
+        },
+        {
+          "t": 25.54,
+          "event": "DEPART",
+          "drone": 3
+        }
+      ]
+    },
+    {
+      "policy": "queue_aware",
+      "profile": "timely",
+      "seed": 45200,
+      "input_sha256": "a16066baf80aeeb789dc179d50ffd4c45bd9336997694a20d288d3341a7d8b5d",
+      "completed": 2,
+      "unfinished": 2,
+      "conflict_episode": false,
+      "conflict_sample_s": 0.0,
+      "separation_episode": false,
+      "min_separation_m": 2.313544750213623,
+      "max_tilt_deg": 6.530807971954346,
+      "old_rejected": 513,
+      "events": [
+        {
+          "t": 0.16,
+          "event": "GRANT",
+          "drone": 0,
+          "pad": 0
+        },
+        {
+          "t": 0.16,
+          "event": "GRANT",
+          "drone": 1,
+          "pad": 1
+        },
+        {
+          "t": 0.28,
+          "event": "START",
+          "drone": 0
+        },
+        {
+          "t": 0.34,
+          "event": "START",
+          "drone": 1
+        },
+        {
+          "t": 6.88,
+          "event": "LANDED",
+          "drone": 0
+        },
+        {
+          "t": 6.94,
+          "event": "LANDED",
+          "drone": 1
+        },
+        {
+          "t": 9.88,
+          "event": "DEPART",
+          "drone": 0
+        },
+        {
+          "t": 9.96,
+          "event": "DEPART",
+          "drone": 1
+        },
+        {
+          "t": 15.6,
+          "event": "FINISH",
+          "drone": 0
+        },
+        {
+          "t": 15.68,
+          "event": "FINISH",
+          "drone": 1
+        },
+        {
+          "t": 15.72,
+          "event": "RELEASE",
+          "drone": 0,
+          "reason": "VERIFIED"
+        },
+        {
+          "t": 15.72,
+          "event": "GRANT",
+          "drone": 2,
+          "pad": 0
+        },
+        {
+          "t": 15.82,
+          "event": "RELEASE",
+          "drone": 1,
+          "reason": "VERIFIED"
+        },
+        {
+          "t": 15.82,
+          "event": "GRANT",
+          "drone": 3,
+          "pad": 1
+        },
+        {
+          "t": 15.9,
+          "event": "START",
+          "drone": 2
+        },
+        {
+          "t": 15.94,
+          "event": "START",
+          "drone": 3
+        },
+        {
+          "t": 22.48,
+          "event": "LANDED",
+          "drone": 2
+        },
+        {
+          "t": 22.54,
+          "event": "LANDED",
+          "drone": 3
+        },
+        {
+          "t": 25.48,
+          "event": "DEPART",
+          "drone": 2
+        },
+        {
+          "t": 25.54,
+          "event": "DEPART",
+          "drone": 3
+        }
+      ]
+    },
+    {
+      "policy": "timeout_only",
+      "profile": "lost_ack",
+      "seed": 45200,
+      "input_sha256": "a16066baf80aeeb789dc179d50ffd4c45bd9336997694a20d288d3341a7d8b5d",
+      "completed": 1,
+      "unfinished": 3,
+      "conflict_episode": true,
+      "conflict_sample_s": 23.56,
+      "separation_episode": true,
+      "min_separation_m": 0.308249294757843,
+      "max_tilt_deg": 180.0,
+      "old_rejected": 513,
+      "events": [
+        {
+          "t": 0.16,
+          "event": "GRANT",
+          "drone": 0,
+          "pad": 0
+        },
+        {
+          "t": 0.16,
+          "event": "GRANT",
+          "drone": 1,
+          "pad": 1
+        },
+        {
+          "t": 0.28,
+          "event": "START",
+          "drone": 0
+        },
+        {
+          "t": 0.34,
+          "event": "START",
+          "drone": 1
+        },
+        {
+          "t": 1.36,
+          "event": "RELEASE",
+          "drone": 0,
+          "reason": "TIMEOUT"
+        },
+        {
+          "t": 1.36,
+          "event": "RELEASE",
+          "drone": 1,
+          "reason": "TIMEOUT"
+        },
+        {
+          "t": 1.36,
+          "event": "GRANT",
+          "drone": 2,
+          "pad": 0
+        },
+        {
+          "t": 1.36,
+          "event": "GRANT",
+          "drone": 3,
+          "pad": 1
+        },
+        {
+          "t": 1.48,
+          "event": "START",
+          "drone": 3
+        },
+        {
+          "t": 1.54,
+          "event": "START",
+          "drone": 2
+        },
+        {
+          "t": 2.56,
+          "event": "RELEASE",
+          "drone": 2,
+          "reason": "TIMEOUT"
+        },
+        {
+          "t": 2.56,
+          "event": "RELEASE",
+          "drone": 3,
+          "reason": "TIMEOUT"
+        },
+        {
+          "t": 6.88,
+          "event": "LANDED",
+          "drone": 0
+        },
+        {
+          "t": 6.94,
+          "event": "LANDED",
+          "drone": 1
+        },
+        {
+          "t": 9.88,
+          "event": "DEPART",
+          "drone": 0
+        },
+        {
+          "t": 9.96,
+          "event": "DEPART",
+          "drone": 1
+        },
+        {
+          "t": 15.68,
+          "event": "FINISH",
+          "drone": 1
+        }
+      ]
+    },
+    {
+      "policy": "queue_aware",
+      "profile": "lost_ack",
+      "seed": 45200,
+      "input_sha256": "a16066baf80aeeb789dc179d50ffd4c45bd9336997694a20d288d3341a7d8b5d",
+      "completed": 2,
+      "unfinished": 2,
+      "conflict_episode": false,
+      "conflict_sample_s": 0.0,
+      "separation_episode": false,
+      "min_separation_m": 2.313544750213623,
+      "max_tilt_deg": 6.530807971954346,
+      "old_rejected": 513,
+      "events": [
+        {
+          "t": 0.16,
+          "event": "GRANT",
+          "drone": 0,
+          "pad": 0
+        },
+        {
+          "t": 0.16,
+          "event": "GRANT",
+          "drone": 1,
+          "pad": 1
+        },
+        {
+          "t": 0.28,
+          "event": "START",
+          "drone": 0
+        },
+        {
+          "t": 0.34,
+          "event": "START",
+          "drone": 1
+        },
+        {
+          "t": 6.88,
+          "event": "LANDED",
+          "drone": 0
+        },
+        {
+          "t": 6.94,
+          "event": "LANDED",
+          "drone": 1
+        },
+        {
+          "t": 9.88,
+          "event": "DEPART",
+          "drone": 0
+        },
+        {
+          "t": 9.96,
+          "event": "DEPART",
+          "drone": 1
+        },
+        {
+          "t": 15.6,
+          "event": "FINISH",
+          "drone": 0
+        },
+        {
+          "t": 15.68,
+          "event": "FINISH",
+          "drone": 1
+        },
+        {
+          "t": 15.72,
+          "event": "RELEASE",
+          "drone": 0,
+          "reason": "VERIFIED"
+        },
+        {
+          "t": 15.72,
+          "event": "GRANT",
+          "drone": 2,
+          "pad": 0
+        },
+        {
+          "t": 15.82,
+          "event": "RELEASE",
+          "drone": 1,
+          "reason": "VERIFIED"
+        },
+        {
+          "t": 15.82,
+          "event": "GRANT",
+          "drone": 3,
+          "pad": 1
+        },
+        {
+          "t": 15.9,
+          "event": "START",
+          "drone": 2
+        },
+        {
+          "t": 15.94,
+          "event": "START",
+          "drone": 3
+        },
+        {
+          "t": 22.48,
+          "event": "LANDED",
+          "drone": 2
+        },
+        {
+          "t": 22.54,
+          "event": "LANDED",
+          "drone": 3
+        },
+        {
+          "t": 25.48,
+          "event": "DEPART",
+          "drone": 2
+        },
+        {
+          "t": 25.54,
+          "event": "DEPART",
+          "drone": 3
+        }
+      ]
+    },
+    {
+      "policy": "timeout_only",
+      "profile": "telemetry_outage",
+      "seed": 45200,
+      "input_sha256": "a16066baf80aeeb789dc179d50ffd4c45bd9336997694a20d288d3341a7d8b5d",
+      "completed": 1,
+      "unfinished": 3,
+      "conflict_episode": true,
+      "conflict_sample_s": 23.56,
+      "separation_episode": true,
+      "min_separation_m": 0.12150032818317413,
+      "max_tilt_deg": 180.0,
+      "old_rejected": 18,
+      "events": [
+        {
+          "t": 0.16,
+          "event": "GRANT",
+          "drone": 0,
+          "pad": 0
+        },
+        {
+          "t": 0.16,
+          "event": "GRANT",
+          "drone": 1,
+          "pad": 1
+        },
+        {
+          "t": 0.28,
+          "event": "START",
+          "drone": 0
+        },
+        {
+          "t": 0.34,
+          "event": "START",
+          "drone": 1
+        },
+        {
+          "t": 1.36,
+          "event": "RELEASE",
+          "drone": 0,
+          "reason": "TIMEOUT"
+        },
+        {
+          "t": 1.36,
+          "event": "RELEASE",
+          "drone": 1,
+          "reason": "TIMEOUT"
+        },
+        {
+          "t": 1.36,
+          "event": "GRANT",
+          "drone": 2,
+          "pad": 0
+        },
+        {
+          "t": 1.36,
+          "event": "GRANT",
+          "drone": 3,
+          "pad": 1
+        },
+        {
+          "t": 1.48,
+          "event": "START",
+          "drone": 3
+        },
+        {
+          "t": 1.54,
+          "event": "START",
+          "drone": 2
+        },
+        {
+          "t": 2.56,
+          "event": "RELEASE",
+          "drone": 2,
+          "reason": "TIMEOUT"
+        },
+        {
+          "t": 2.56,
+          "event": "RELEASE",
+          "drone": 3,
+          "reason": "TIMEOUT"
+        },
+        {
+          "t": 6.88,
+          "event": "LANDED",
+          "drone": 0
+        },
+        {
+          "t": 6.94,
+          "event": "LANDED",
+          "drone": 1
+        },
+        {
+          "t": 9.88,
+          "event": "DEPART",
+          "drone": 0
+        },
+        {
+          "t": 9.96,
+          "event": "DEPART",
+          "drone": 1
+        },
+        {
+          "t": 15.68,
+          "event": "FINISH",
+          "drone": 1
+        }
+      ]
+    },
+    {
+      "policy": "queue_aware",
+      "profile": "telemetry_outage",
+      "seed": 45200,
+      "input_sha256": "a16066baf80aeeb789dc179d50ffd4c45bd9336997694a20d288d3341a7d8b5d",
+      "completed": 2,
+      "unfinished": 2,
+      "conflict_episode": false,
+      "conflict_sample_s": 0.0,
+      "separation_episode": false,
+      "min_separation_m": 2.828366756439209,
+      "max_tilt_deg": 5.487801551818848,
+      "old_rejected": 18,
+      "events": [
+        {
+          "t": 0.16,
+          "event": "GRANT",
+          "drone": 0,
+          "pad": 0
+        },
+        {
+          "t": 0.16,
+          "event": "GRANT",
+          "drone": 1,
+          "pad": 1
+        },
+        {
+          "t": 0.28,
+          "event": "START",
+          "drone": 0
+        },
+        {
+          "t": 0.34,
+          "event": "START",
+          "drone": 1
+        },
+        {
+          "t": 6.88,
+          "event": "LANDED",
+          "drone": 0
+        },
+        {
+          "t": 6.94,
+          "event": "LANDED",
+          "drone": 1
+        },
+        {
+          "t": 9.88,
+          "event": "DEPART",
+          "drone": 0
+        },
+        {
+          "t": 9.96,
+          "event": "DEPART",
+          "drone": 1
+        },
+        {
+          "t": 15.6,
+          "event": "FINISH",
+          "drone": 0
+        },
+        {
+          "t": 15.68,
+          "event": "FINISH",
+          "drone": 1
+        }
+      ]
+    }
+  ],
+  "trajectory_sha256": "e572ea7fc9bfdb99def8a6e303a8b8812ee89cd72ab35e787216185bcfdc323c"
+}

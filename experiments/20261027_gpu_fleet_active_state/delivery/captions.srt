@@ -1,0 +1,67 @@
+1
+00:00:00,000 --> 00:00:02,690
+当前任务状态 | dāngqián rènwù zhuàngtài | Active task state
+
+2
+00:00:02,690 --> 00:00:25,108
+This extends Ravi Bajaj's queue-aware autonomy work to four flying agents sharing two landing pads. The question is not how much a system remembers. It is whether active task state correctly represents actions that are still authorized to happen. These trajectories come from GPU rigid-body physics, not scripted drone positions.
+
+3
+00:00:25,108 --> 00:00:27,630
+长期记忆 | chángqī jìyì | Long-term memory
+
+4
+00:00:27,630 --> 00:00:51,872
+Long-term memory means information retained across sessions. Here, the reusable map and procedure are static configuration shared by both arms. With timely messages, both fleets finish all four tasks. Each drone has mass, inertia, four limited rotor forces, gravity, and ground contact. There is no learned controller in this extension.
+
+5
+00:00:51,872 --> 00:00:54,394
+消息队列 | xiāoxī duìliè | Message queue
+
+6
+00:00:54,394 --> 00:01:13,692
+Now the commands arrive, but acceptance acknowledgments are lost. Message transport and task ownership are separate. On the left, the coordinator discards a reservation after one point two seconds without an acknowledgment. It can authorize another drone even though the first command was already accepted.
+
+7
+00:01:13,692 --> 00:01:16,214
+资源预留 | zīyuán yùliú | Resource reservation
+
+8
+00:01:16,214 --> 00:01:36,376
+A physically empty pad is not necessarily available. Another drone may already be approaching under a valid clearance. The right coordinator retains that unresolved commitment. Both arms use the same freshness checks. The difference is whether silence is incorrectly treated as permission to release the resource.
+
+9
+00:01:36,376 --> 00:01:38,898
+团队记忆 | tuánduì jìyì | Team memory
+
+10
+00:01:38,898 --> 00:02:02,444
+Team memory describes shared knowledge. It does not, by itself, prevent competing actions. Here the timeout arm develops pad conflicts and loses separation. The queue-aware arm waits for fresh completion evidence before clearing the next pair. This is centralized coordination of four local flight controllers, not distributed consensus.
+
+11
+00:02:02,444 --> 00:02:05,014
+运行时保障 | yùnxíngshí bǎozhàng | Runtime assurance
+
+12
+00:02:05,014 --> 00:02:28,080
+This is the assured-autonomy connection: a supervisory execution rule constrains otherwise valid local actions. Low-level tracking alone cannot decide who owns a shared landing pad. The queue-aware fleet finishes all four tasks here. A context window could store these records, but the execution layer must enforce their meaning.
+
+13
+00:02:28,080 --> 00:02:30,602
+观测时效 | guāncè shíxiào | Observation freshness
+
+14
+00:02:30,602 --> 00:02:53,500
+Now telemetry also stops. Observation freshness is the age of the evidence used to authorize work. The queue-aware arm completes the first pair, but cannot verify completion remotely. Two drones keep waiting. Its conservative hold avoids the modeled conflict while sacrificing progress. Recovery needs another justified procedure.
+
+15
+00:02:53,500 --> 00:02:56,022
+匹配对照 | pǐpèi duìzhào | Matched comparisons
+
+16
+00:02:56,022 --> 00:03:19,616
+Across eight matched seeds, lost acknowledgments produced pad conflicts in all eight timeout episodes and none of the eight queue-aware episodes. Under telemetry loss, the queue-aware fleet finished two of four tasks. These are constructed mechanism checks, not a fleet reliability estimate or an extension of the original registered quadrotor result.
+
+17
+00:03:19,616 --> 00:03:41,746
+The contribution illustrated here is the mechanism and its tradeoff, not the vocabulary or a universal promise of safety. This simplified model omits aerodynamics, battery limits, damage, and decentralized recovery. Your active task state must describe what can still happen, not merely what the latest message happened to say.

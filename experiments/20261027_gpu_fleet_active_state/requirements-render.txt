@@ -1,0 +1,4 @@
+mujoco==3.17.0
+numpy==2.4.6
+Pillow==13.0.0
+PyOpenGL==3.1.10
