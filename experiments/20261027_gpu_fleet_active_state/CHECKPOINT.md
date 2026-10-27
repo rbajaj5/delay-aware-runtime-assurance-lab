@@ -42,14 +42,24 @@ MP4 untouched. Preserve the old 192-run kinematic video, gardening and laundry.
 - Eight unit tests pass. Exact-byte Git attributes protect source hashes from
   checkout line-ending conversions. Existing historical artifacts untouched.
 
-## Pending
+## Publication Complete
 
 - No simulation/render processes remain active. Do not rerun completed evidence.
-- Commit/push only new experiment and research root README. Publish release
-  `gpu-fleet-active-state-2026-10-27` with `delivery/queue_aware_gpu_fleet.mp4`
-  and `delivery/captions.srt`, using `RELEASE_NOTES.md`.
-- Commit/push the small related-example link in the separate gardening README.
-- Confirm remote asset digest and update this publication status.
+- Research source and front page pushed at
+  `a045fd75ecd1e6a57c25f25bd398c0d3f7422cc0`.
+- Public release `gpu-fleet-active-state-2026-10-27` targets that exact commit.
+  MP4 (11,631,944 bytes) and captions uploaded. Remote MP4 digest matches the
+  audited local SHA-256 above. No old release was replaced.
+- Gardening related-example link pushed at `513002d`. Laundry untouched.
+- No implementation work remains for this bounded upgrade. Further mission
+  profiles, decentralized coordination or battery-aware recovery would be new
+  experiments, not claims established by this film.
+
+Description page:
+https://github.com/rbajaj5/delay-aware-runtime-assurance-lab/tree/main/experiments/20261027_gpu_fleet_active_state
+
+Release:
+https://github.com/rbajaj5/delay-aware-runtime-assurance-lab/releases/tag/gpu-fleet-active-state-2026-10-27
 
 ## Commands
 
